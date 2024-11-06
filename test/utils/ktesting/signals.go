@@ -19,6 +19,7 @@ package ktesting
 import (
 	"context"
 	"errors"
+	"fmt"
 	"io"
 	"os"
 	"os/signal"
@@ -47,11 +48,13 @@ func init() {
 	cancelCtx, cancel := context.WithCancelCause(context.Background())
 	go func() {
 		<-signalCtx.Done()
+		fmt.Fprintf(os.Stdout, "\n\nINFO: canceling context: received interrupt signal\n\n")
 		cancel(errors.New("received interrupt signal"))
 	}()
 
 	// This reimplements the contract between Ginkgo and Gomega for progress reporting.
-	// When using Ginkgo contexts, Ginkgo will implement it. This here is for "go test".
+	// When using Ginkgo contexts, Ginkgo will implement it. This here is for "go test"
+	// in combination with Gomega.
 	//
 	// nolint:staticcheck // It complains about using a plain string. This can only be fixed
 	// by Ginkgo and Gomega formalizing this interface and define a type (somewhere...
