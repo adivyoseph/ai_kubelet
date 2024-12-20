@@ -63,7 +63,8 @@ type CSILimits struct {
 	scLister      storagelisters.StorageClassLister
 	vaLister      storagelisters.VolumeAttachmentLister
 
-	randomVolumeIDPrefix string
+	enableCSIMigrationPortworx bool
+	randomVolumeIDPrefix       string
 
 	translator InTreeToCSITranslator
 }
@@ -87,6 +88,7 @@ func (pl *CSILimits) EventsToRegister(_ context.Context) ([]framework.ClusterEve
 		// We don't register any `QueueingHintFn` intentionally
 		// because any new CSINode could make pods that were rejected by CSI volumes schedulable.
 		{Event: framework.ClusterEvent{Resource: framework.CSINode, ActionType: framework.Add}},
+		{Event: framework.ClusterEvent{Resource: framework.CSINode, ActionType: framework.Update}, QueueingHintFn: pl.isSchedulableAfterCSINodeUpdated},
 		{Event: framework.ClusterEvent{Resource: framework.Pod, ActionType: framework.Delete}, QueueingHintFn: pl.isSchedulableAfterPodDeleted},
 		{Event: framework.ClusterEvent{Resource: framework.PersistentVolumeClaim, ActionType: framework.Add}, QueueingHintFn: pl.isSchedulableAfterPVCAdded},
 		{Event: framework.ClusterEvent{Resource: framework.VolumeAttachment, ActionType: framework.Delete}, QueueingHintFn: pl.isSchedulableAfterVolumeAttachmentDeleted},
@@ -103,7 +105,7 @@ func (pl *CSILimits) isSchedulableAfterPodDeleted(logger klog.Logger, pod *v1.Po
 		return framework.QueueSkip, nil
 	}
 
-	if deletedPod.Spec.NodeName == "" {
+	if deletedPod.Spec.NodeName == "" && deletedPod.Status.NominatedNodeName == "" {
 		return framework.QueueSkip, nil
 	}
 
@@ -184,6 +186,47 @@ func (pl *CSILimits) isSchedulableAfterVolumeAttachmentDeleted(logger klog.Logge
 
 	logger.V(5).Info("the VolumeAttachment deletion wouldn't make this pod schedulable because the pod has no volume related to a deleted VolumeAttachment",
 		"pod", klog.KObj(pod), "volumeAttachment", klog.KObj(deletedVolumeAttachment))
+	return framework.QueueSkip, nil
+}
+
+func (pl *CSILimits) isSchedulableAfterCSINodeUpdated(logger klog.Logger, pod *v1.Pod, oldObj, newObj interface{}) (framework.QueueingHint, error) {
+	oldCSINode, newCSINode, err := util.As[*storagev1.CSINode](oldObj, newObj)
+	if err != nil {
+		return framework.Queue, fmt.Errorf("unexpected objects in isSchedulableAfterCSINodeUpdated: %w", err)
+	}
+
+	oldLimits := make(map[string]int32)
+	for _, d := range oldCSINode.Spec.Drivers {
+		var count int32
+		if d.Allocatable != nil && d.Allocatable.Count != nil {
+			count = *d.Allocatable.Count
+		}
+		oldLimits[d.Name] = count
+	}
+
+	// Compare new driver limits vs. old. If limit increased, queue pod.
+	for _, d := range newCSINode.Spec.Drivers {
+		var oldLimit int32
+		if val, exists := oldLimits[d.Name]; exists {
+			oldLimit = val
+		}
+		newLimit := int32(0)
+		if d.Allocatable != nil && d.Allocatable.Count != nil {
+			newLimit = *d.Allocatable.Count
+		}
+
+		if newLimit > oldLimit {
+			logger.V(5).Info("CSINode driver limit increased, might make this pod schedulable",
+				"pod", klog.KObj(pod),
+				"driver", d.Name,
+				"oldLimit", oldLimit,
+				"newLimit", newLimit,
+			)
+			return framework.Queue, nil
+		}
+	}
+
+	// If no driver limit was increased, skip queueing.
 	return framework.QueueSkip, nil
 }
 
@@ -377,7 +420,7 @@ func (pl *CSILimits) checkAttachableInlineVolume(logger klog.Logger, vol *v1.Vol
 	if err != nil {
 		return fmt.Errorf("looking up provisioner name for volume %s: %w", vol.Name, err)
 	}
-	if !isCSIMigrationOn(csiNode, inTreeProvisionerName) {
+	if !isCSIMigrationOn(csiNode, inTreeProvisionerName, pl.enableCSIMigrationPortworx) {
 		csiNodeName := ""
 		if csiNode != nil {
 			csiNodeName = csiNode.Name
@@ -438,7 +481,7 @@ func (pl *CSILimits) getCSIDriverInfo(logger klog.Logger, csiNode *storagev1.CSI
 			return "", ""
 		}
 
-		if !isCSIMigrationOn(csiNode, pluginName) {
+		if !isCSIMigrationOn(csiNode, pluginName, pl.enableCSIMigrationPortworx) {
 			logger.V(5).Info("CSI Migration of plugin is not enabled", "plugin", pluginName)
 			return "", ""
 		}
@@ -486,7 +529,7 @@ func (pl *CSILimits) getCSIDriverInfoFromSC(logger klog.Logger, csiNode *storage
 
 	provisioner := storageClass.Provisioner
 	if pl.translator.IsMigratableIntreePluginByName(provisioner) {
-		if !isCSIMigrationOn(csiNode, provisioner) {
+		if !isCSIMigrationOn(csiNode, provisioner, pl.enableCSIMigrationPortworx) {
 			logger.V(5).Info("CSI Migration of provisioner is not enabled", "provisioner", provisioner)
 			return "", ""
 		}
@@ -513,13 +556,14 @@ func NewCSI(_ context.Context, _ runtime.Object, handle framework.Handle, fts fe
 	csiTranslator := csitrans.New()
 
 	return &CSILimits{
-		csiNodeLister:        csiNodesLister,
-		pvLister:             pvLister,
-		pvcLister:            pvcLister,
-		scLister:             scLister,
-		vaLister:             vaLister,
-		randomVolumeIDPrefix: rand.String(32),
-		translator:           csiTranslator,
+		csiNodeLister:              csiNodesLister,
+		pvLister:                   pvLister,
+		pvcLister:                  pvcLister,
+		scLister:                   scLister,
+		vaLister:                   vaLister,
+		enableCSIMigrationPortworx: fts.EnableCSIMigrationPortworx,
+		randomVolumeIDPrefix:       rand.String(32),
+		translator:                 csiTranslator,
 	}, nil
 }
 

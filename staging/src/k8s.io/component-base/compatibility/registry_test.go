@@ -57,7 +57,7 @@ func TestEffectiveVersionRegistry(t *testing.T) {
 
 func testRegistry(t *testing.T) *componentGlobalsRegistry {
 	r := NewComponentGlobalsRegistry()
-	verKube := NewEffectiveVersionFromString("1.31", "1.31", "1.30")
+	verKube := NewEffectiveVersionFromString("1.31.1-beta.0.353", "1.31", "1.30")
 	fgKube := featuregate.NewVersionedFeatureGate(version.MustParse("0.0"))
 	err := fgKube.AddVersioned(map[featuregate.Feature]featuregate.VersionedSpecs{
 		"kubeA": {
@@ -103,13 +103,13 @@ func testRegistry(t *testing.T) *componentGlobalsRegistry {
 
 func TestVersionFlagOptions(t *testing.T) {
 	r := testRegistry(t)
-	emuVers := strings.Join(r.unsafeVersionFlagOptions(true), "\n")
-	expectedEmuVers := "kube=1.31..1.31 (default=1.31)\ntest=2.8..2.8 (default=2.8)"
+	emuVers := strings.Join(r.unsafeVersionFlagOptions(true), ",")
+	expectedEmuVers := "kube=1.31..1.31(default:1.31),test=2.8..2.8(default:2.8)"
 	if emuVers != expectedEmuVers {
 		t.Errorf("wanted emulation version flag options to be: %s, got %s", expectedEmuVers, emuVers)
 	}
-	minCompVers := strings.Join(r.unsafeVersionFlagOptions(false), "\n")
-	expectedMinCompVers := "kube=1.30..1.31 (default=1.30)\ntest=2.7..2.8 (default=2.7)"
+	minCompVers := strings.Join(r.unsafeVersionFlagOptions(false), ",")
+	expectedMinCompVers := "kube=1.30..1.31(default:1.30),test=2.7..2.8(default:2.7)"
 	if minCompVers != expectedMinCompVers {
 		t.Errorf("wanted min compatibility version flag options to be: %s, got %s", expectedMinCompVers, minCompVers)
 	}
@@ -119,13 +119,13 @@ func TestVersionFlagOptionsWithMapping(t *testing.T) {
 	r := testRegistry(t)
 	utilruntime.Must(r.SetEmulationVersionMapping(testComponent, DefaultKubeComponent,
 		func(from *version.Version) *version.Version { return version.MajorMinor(1, from.Minor()+23) }))
-	emuVers := strings.Join(r.unsafeVersionFlagOptions(true), "\n")
-	expectedEmuVers := "test=2.8..2.8 (default=2.8)"
+	emuVers := strings.Join(r.unsafeVersionFlagOptions(true), ",")
+	expectedEmuVers := "test=2.8..2.8(default:2.8)"
 	if emuVers != expectedEmuVers {
 		t.Errorf("wanted emulation version flag options to be: %s, got %s", expectedEmuVers, emuVers)
 	}
-	minCompVers := strings.Join(r.unsafeVersionFlagOptions(false), "\n")
-	expectedMinCompVers := "kube=1.30..1.31 (default=1.30)\ntest=2.7..2.8 (default=2.7)"
+	minCompVers := strings.Join(r.unsafeVersionFlagOptions(false), ",")
+	expectedMinCompVers := "kube=1.30..1.31(default:1.30),test=2.7..2.8(default:2.7)"
 	if minCompVers != expectedMinCompVers {
 		t.Errorf("wanted min compatibility version flag options to be: %s, got %s", expectedMinCompVers, minCompVers)
 	}
@@ -150,6 +150,7 @@ func TestVersionedFeatureGateFlags(t *testing.T) {
 func TestFlags(t *testing.T) {
 	tests := []struct {
 		name                         string
+		setupRegistry                func(r *componentGlobalsRegistry) error
 		flags                        []string
 		parseError                   string
 		expectedKubeEmulationVersion string
@@ -272,14 +273,46 @@ func TestFlags(t *testing.T) {
 			},
 			parseError: "component not registered: test3",
 		},
+		{
+			name: "feature gates config should accumulate across multiple flag sets",
+			setupRegistry: func(r *componentGlobalsRegistry) error {
+				fs := pflag.NewFlagSet("setupTestflag", pflag.ContinueOnError)
+				r.AddFlags(fs)
+				return fs.Parse([]string{"--feature-gates=test:commonC=true"})
+			},
+			flags: []string{
+				"--feature-gates=test:testA=true",
+			},
+			expectedTestFeatureValues: map[featuregate.Feature]bool{"testA": true, "commonC": true},
+		},
+		{
+			name: "feature gates config should be overridden when set multiple times one the same feature",
+			setupRegistry: func(r *componentGlobalsRegistry) error {
+				fs := pflag.NewFlagSet("setupTestflag", pflag.ContinueOnError)
+				r.AddFlags(fs)
+				return fs.Parse([]string{"--feature-gates=test:testA=false"})
+			},
+			flags: []string{
+				"--feature-gates=test:testA=true",
+			},
+			expectedTestFeatureValues: map[featuregate.Feature]bool{"testA": true},
+		},
 	}
 	for i, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			fs := pflag.NewFlagSet("testflag", pflag.ContinueOnError)
 			r := testRegistry(t)
+			if test.setupRegistry != nil {
+				if err := test.setupRegistry(r); err != nil {
+					t.Fatalf("failed to setup registry: %v", err)
+				}
+			}
 			r.AddFlags(fs)
 			err := fs.Parse(test.flags)
 			if err == nil {
+				// AddFlags again to check whether there is no resetting on the config.
+				fs = pflag.NewFlagSet("testflag2", pflag.ContinueOnError)
+				r.AddFlags(fs)
 				err = r.Set()
 			}
 			if test.parseError != "" {

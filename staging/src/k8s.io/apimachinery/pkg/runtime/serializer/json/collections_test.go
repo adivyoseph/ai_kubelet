@@ -18,6 +18,7 @@ package json
 
 import (
 	"bytes"
+	"fmt"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
@@ -26,25 +27,29 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	testapigroupv1 "k8s.io/apimachinery/pkg/apis/testapigroup/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"sigs.k8s.io/randfill"
 )
 
 func TestCollectionsEncoding(t *testing.T) {
 	t.Run("Normal", func(t *testing.T) {
-		testCollectionsEncoding(t, NewSerializerWithOptions(DefaultMetaFactory, nil, nil, SerializerOptions{}))
+		testCollectionsEncoding(t, NewSerializerWithOptions(DefaultMetaFactory, nil, nil, SerializerOptions{}), false)
 	})
-	// Leave place for testing streaming collection serializer proposed as part of KEP-5116
+	t.Run("Streaming", func(t *testing.T) {
+		testCollectionsEncoding(t, NewSerializerWithOptions(DefaultMetaFactory, nil, nil, SerializerOptions{StreamingCollectionsEncoding: true}), true)
+	})
 }
 
 // testCollectionsEncoding should provide comprehensive tests to validate streaming implementation of encoder.
-func testCollectionsEncoding(t *testing.T, s *Serializer) {
-	var buf bytes.Buffer
+func testCollectionsEncoding(t *testing.T, s *Serializer, streamingEnabled bool) {
+	var buf writeCountingBuffer
 	var remainingItems int64 = 1
 	// As defined in KEP-5116 we it should include the following scenarios:
 	// Context: https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/5116-streaming-response-encoding#unit-tests
 	for _, tc := range []struct {
-		name   string
-		in     runtime.Object
-		expect string
+		name         string
+		in           runtime.Object
+		cannotStream bool
+		expect       string
 	}{
 		// Preserving the distinction between integers and floating-point numbers
 		{
@@ -307,9 +312,10 @@ func testCollectionsEncoding(t *testing.T, s *Serializer) {
 		},
 		// Handling structs implementing MarshallJSON method, especially built-in collection types.
 		{
-			name:   "List with MarshallJSON",
-			in:     &ListWithMarshalJSONList{},
-			expect: "\"marshallJSON\"\n",
+			name:         "List with MarshallJSON cannot be streamed",
+			in:           &ListWithMarshalJSONList{},
+			expect:       "\"marshallJSON\"\n",
+			cannotStream: true,
 		},
 		{
 			name: "Struct with MarshallJSON",
@@ -436,6 +442,32 @@ func testCollectionsEncoding(t *testing.T, s *Serializer) {
 `,
 		},
 		{
+			name: "List with extra field cannot be streamed",
+			in: &ListWithAdditionalFields{
+				TypeMeta: metav1.TypeMeta{
+					Kind:       "List",
+					APIVersion: "v1",
+				},
+				ListMeta: metav1.ListMeta{
+					ResourceVersion: "2345",
+				},
+				Items: []testapigroupv1.Carp{},
+			},
+			cannotStream: true,
+			expect:       "{\"kind\":\"List\",\"apiVersion\":\"v1\",\"metadata\":{\"resourceVersion\":\"2345\"},\"items\":[],\"AdditionalField\":0}\n",
+		},
+		{
+			name: "Not a collection cannot be streamed",
+			in: &testapigroupv1.Carp{
+				TypeMeta: metav1.TypeMeta{
+					Kind:       "List",
+					APIVersion: "v1",
+				},
+			},
+			cannotStream: true,
+			expect:       "{\"kind\":\"List\",\"apiVersion\":\"v1\",\"metadata\":{\"creationTimestamp\":null},\"spec\":{},\"status\":{}}\n",
+		},
+		{
 			name:   "UnstructuredList empty",
 			in:     &unstructured.UnstructuredList{},
 			expect: "{\"items\":[]}\n",
@@ -543,9 +575,16 @@ func testCollectionsEncoding(t *testing.T, s *Serializer) {
 			if err := s.Encode(tc.in, &buf); err != nil {
 				t.Fatalf("unexpected error: %v", err)
 			}
-			t.Logf("normal: %s", buf.String())
+			t.Logf("encoded: %s", buf.String())
 			if diff := cmp.Diff(buf.String(), tc.expect); diff != "" {
 				t.Errorf("not matching:\n%s", diff)
+			}
+			expectStreaming := !tc.cannotStream && streamingEnabled
+			if expectStreaming && buf.writeCount <= 1 {
+				t.Errorf("expected streaming but Write was called only: %d", buf.writeCount)
+			}
+			if !expectStreaming && buf.writeCount > 1 {
+				t.Errorf("expected non-streaming but Write was called more than once: %d", buf.writeCount)
 			}
 		})
 	}
@@ -652,4 +691,104 @@ type StructWithRawBytes struct {
 
 func (s *StructWithRawBytes) DeepCopyObject() runtime.Object {
 	return nil
+}
+
+type ListWithAdditionalFields struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Items           []testapigroupv1.Carp `json:"items" protobuf:"bytes,2,rep,name=items"`
+	AdditionalField int
+}
+
+func (s *ListWithAdditionalFields) DeepCopyObject() runtime.Object {
+	return nil
+}
+
+type writeCountingBuffer struct {
+	writeCount int
+	bytes.Buffer
+}
+
+func (b *writeCountingBuffer) Write(data []byte) (int, error) {
+	b.writeCount++
+	return b.Buffer.Write(data)
+}
+
+func (b *writeCountingBuffer) Reset() {
+	b.writeCount = 0
+	b.Buffer.Reset()
+}
+
+func TestFuzzCollectionsEncoding(t *testing.T) {
+	disableFuzzFieldsV1 := func(field *metav1.FieldsV1, c randfill.Continue) {}
+	fuzzUnstructuredList := func(list *unstructured.UnstructuredList, c randfill.Continue) {
+		list.Object = map[string]interface{}{
+			"kind":       "List",
+			"apiVersion": "v1",
+			c.String(0):  c.String(0),
+			c.String(0):  c.Uint64(),
+			c.String(0):  c.Bool(),
+			"metadata": map[string]interface{}{
+				"resourceVersion":    fmt.Sprintf("%d", c.Uint64()),
+				"continue":           c.String(0),
+				"remainingItemCount": fmt.Sprintf("%d", c.Uint64()),
+				c.String(0):          c.String(0),
+			}}
+		c.Fill(&list.Items)
+	}
+	fuzzMap := func(kvs map[string]interface{}, c randfill.Continue) {
+		kvs[c.String(0)] = c.Bool()
+		kvs[c.String(0)] = c.Uint64()
+		kvs[c.String(0)] = c.String(0)
+	}
+	f := randfill.New().Funcs(disableFuzzFieldsV1, fuzzUnstructuredList, fuzzMap)
+	streamingBuffer := &bytes.Buffer{}
+	normalSerializer := NewSerializerWithOptions(DefaultMetaFactory, nil, nil, SerializerOptions{StreamingCollectionsEncoding: false})
+	normalBuffer := &bytes.Buffer{}
+	t.Run("CarpList", func(t *testing.T) {
+		for i := 0; i < 1000; i++ {
+			list := &testapigroupv1.CarpList{}
+			f.Fill(list)
+			streamingBuffer.Reset()
+			normalBuffer.Reset()
+			ok, err := streamEncodeCollections(list, streamingBuffer)
+			if err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+			if !ok {
+				t.Fatalf("expected streaming encoder to encode %T", list)
+			}
+			if err := normalSerializer.Encode(list, normalBuffer); err != nil {
+				t.Fatal(err)
+			}
+			if diff := cmp.Diff(normalBuffer.String(), streamingBuffer.String()); diff != "" {
+				t.Logf("normal: %s", normalBuffer.String())
+				t.Logf("streaming: %s", streamingBuffer.String())
+				t.Errorf("not matching:\n%s", diff)
+			}
+		}
+	})
+	t.Run("UnstructuredList", func(t *testing.T) {
+		for i := 0; i < 1000; i++ {
+			list := &unstructured.UnstructuredList{}
+			f.Fill(list)
+			streamingBuffer.Reset()
+			normalBuffer.Reset()
+			ok, err := streamEncodeCollections(list, streamingBuffer)
+			if err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+			if !ok {
+				t.Fatalf("expected streaming encoder to encode %T", list)
+			}
+			if err := normalSerializer.Encode(list, normalBuffer); err != nil {
+				t.Fatal(err)
+			}
+			if diff := cmp.Diff(normalBuffer.String(), streamingBuffer.String()); diff != "" {
+				t.Logf("normal: %s", normalBuffer.String())
+				t.Logf("streaming: %s", streamingBuffer.String())
+				t.Errorf("not matching:\n%s", diff)
+			}
+		}
+	})
 }

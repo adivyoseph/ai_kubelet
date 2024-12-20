@@ -28,6 +28,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/apimachinery/pkg/util/sets"
+	"k8s.io/apimachinery/pkg/util/version"
 	"k8s.io/apimachinery/pkg/util/wait"
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
 	featuregatetesting "k8s.io/component-base/featuregate/testing"
@@ -44,7 +45,7 @@ import (
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 	testutils "k8s.io/kubernetes/test/integration/util"
 	imageutils "k8s.io/kubernetes/test/utils/image"
-	"k8s.io/utils/pointer"
+	"k8s.io/utils/ptr"
 )
 
 // imported from testutils
@@ -80,7 +81,7 @@ const (
 func initTestSchedulerForScoringTests(t *testing.T, preScorePluginName, scorePluginName string) *testutils.TestContext {
 	cc := configv1.KubeSchedulerConfiguration{
 		Profiles: []configv1.KubeSchedulerProfile{{
-			SchedulerName: pointer.String(v1.DefaultSchedulerName),
+			SchedulerName: ptr.To(v1.DefaultSchedulerName),
 			Plugins: &configv1.Plugins{
 				PreScore: configv1.PluginSet{
 					Disabled: []configv1.Plugin{
@@ -89,7 +90,7 @@ func initTestSchedulerForScoringTests(t *testing.T, preScorePluginName, scorePlu
 				},
 				Score: configv1.PluginSet{
 					Enabled: []configv1.Plugin{
-						{Name: scorePluginName, Weight: pointer.Int32(1)},
+						{Name: scorePluginName, Weight: ptr.To[int32](1)},
 					},
 					Disabled: []configv1.Plugin{
 						{Name: "*"},
@@ -117,7 +118,7 @@ func initTestSchedulerForNodeResourcesTest(t *testing.T, strategy configv1.Scori
 	cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 		Profiles: []configv1.KubeSchedulerProfile{
 			{
-				SchedulerName: pointer.String(v1.DefaultSchedulerName),
+				SchedulerName: ptr.To(v1.DefaultSchedulerName),
 				PluginConfig: []configv1.PluginConfig{
 					{
 						Name: noderesources.Name,
@@ -728,7 +729,10 @@ func TestPodAffinityScoring(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.MatchLabelKeysInPodAffinity, tt.enableMatchLabelKeysInAffinity)
+			if !tt.enableMatchLabelKeysInAffinity {
+				featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.32"))
+				featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.MatchLabelKeysInPodAffinity, false)
+			}
 
 			testCtx := initTestSchedulerForScoringTests(t, interpodaffinity.Name, interpodaffinity.Name)
 			if err := createNamespacesWithLabels(testCtx.ClientSet, []string{"ns1", "ns2"}, map[string]string{"team": "team1"}); err != nil {
@@ -1082,7 +1086,11 @@ func TestPodTopologySpreadScoring(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.NodeInclusionPolicyInPodTopologySpread, tt.enableNodeInclusionPolicy)
+			if !tt.enableNodeInclusionPolicy {
+				// TODO: this will be removed in 1.36
+				featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.32"))
+				featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.NodeInclusionPolicyInPodTopologySpread, tt.enableNodeInclusionPolicy)
+			}
 			featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.MatchLabelKeysInPodTopologySpread, tt.enableMatchLabelKeys)
 
 			testCtx := initTestSchedulerForScoringTests(t, podtopologyspread.Name, podtopologyspread.Name)

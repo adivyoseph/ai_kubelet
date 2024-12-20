@@ -55,7 +55,7 @@ import (
 	schedulerutils "k8s.io/kubernetes/test/integration/scheduler"
 	testutils "k8s.io/kubernetes/test/integration/util"
 	imageutils "k8s.io/kubernetes/test/utils/image"
-	"k8s.io/utils/pointer"
+	"k8s.io/utils/ptr"
 )
 
 // imported from testutils
@@ -309,14 +309,18 @@ var _ framework.PreFilterPlugin = &PreFilterPlugin{}
 var _ framework.PostFilterPlugin = &PostFilterPlugin{}
 var _ framework.ScorePlugin = &ScorePlugin{}
 var _ framework.FilterPlugin = &FilterPlugin{}
+var _ framework.EnqueueExtensions = &FilterPlugin{}
 var _ framework.ScorePlugin = &ScorePlugin{}
 var _ framework.ScorePlugin = &ScoreWithNormalizePlugin{}
+var _ framework.EnqueueExtensions = &ScorePlugin{}
 var _ framework.ReservePlugin = &ReservePlugin{}
 var _ framework.PreScorePlugin = &PreScorePlugin{}
 var _ framework.PreBindPlugin = &PreBindPlugin{}
+var _ framework.EnqueueExtensions = &PreBindPlugin{}
 var _ framework.BindPlugin = &BindPlugin{}
 var _ framework.PostBindPlugin = &PostBindPlugin{}
 var _ framework.PermitPlugin = &PermitPlugin{}
+var _ framework.EnqueueExtensions = &PermitPlugin{}
 var _ framework.QueueSortPlugin = &QueueSortPlugin{}
 
 func (ep *QueueSortPlugin) Name() string {
@@ -355,7 +359,7 @@ func (sp *ScorePlugin) Name() string {
 }
 
 // Score returns the score of scheduling a pod on a specific node.
-func (sp *ScorePlugin) Score(ctx context.Context, state *framework.CycleState, p *v1.Pod, nodeName string) (int64, *framework.Status) {
+func (sp *ScorePlugin) Score(ctx context.Context, state *framework.CycleState, p *v1.Pod, nodeInfo *framework.NodeInfo) (int64, *framework.Status) {
 	sp.mutex.Lock()
 	defer sp.mutex.Unlock()
 
@@ -367,7 +371,7 @@ func (sp *ScorePlugin) Score(ctx context.Context, state *framework.CycleState, p
 	score := int64(1)
 	if sp.numScoreCalled == 1 {
 		// The first node is scored the highest, the rest is scored lower.
-		sp.highScoreNode = nodeName
+		sp.highScoreNode = nodeInfo.Node().Name
 		score = framework.MaxNodeScore
 	}
 	return score, nil
@@ -377,13 +381,17 @@ func (sp *ScorePlugin) ScoreExtensions() framework.ScoreExtensions {
 	return nil
 }
 
+func (sp *ScorePlugin) EventsToRegister(_ context.Context) ([]framework.ClusterEventWithHint, error) {
+	return nil, nil
+}
+
 // Name returns name of the score plugin.
 func (sp *ScoreWithNormalizePlugin) Name() string {
 	return scoreWithNormalizePluginName
 }
 
 // Score returns the score of scheduling a pod on a specific node.
-func (sp *ScoreWithNormalizePlugin) Score(ctx context.Context, state *framework.CycleState, p *v1.Pod, nodeName string) (int64, *framework.Status) {
+func (sp *ScoreWithNormalizePlugin) Score(ctx context.Context, state *framework.CycleState, p *v1.Pod, nodeInfo *framework.NodeInfo) (int64, *framework.Status) {
 	sp.mutex.Lock()
 	defer sp.mutex.Unlock()
 
@@ -425,6 +433,12 @@ func (fp *FilterPlugin) Filter(ctx context.Context, state *framework.CycleState,
 	}
 
 	return nil
+}
+
+func (fp *FilterPlugin) EventsToRegister(_ context.Context) ([]framework.ClusterEventWithHint, error) {
+	return []framework.ClusterEventWithHint{
+		{Event: framework.ClusterEvent{Resource: framework.Pod, ActionType: framework.Delete}},
+	}, nil
 }
 
 // Name returns name of the plugin.
@@ -489,6 +503,10 @@ func (pp *PreBindPlugin) PreBind(ctx context.Context, state *framework.CycleStat
 		return framework.NewStatus(framework.Unschedulable, fmt.Sprintf("reject pod %v", pod.Name))
 	}
 	return nil
+}
+
+func (pp *PreBindPlugin) EventsToRegister(_ context.Context) ([]framework.ClusterEventWithHint, error) {
+	return nil, nil
 }
 
 const bindPluginAnnotation = "bindPluginName"
@@ -649,6 +667,10 @@ func (pp *PermitPlugin) rejectAllPods() {
 	pp.mutex.Lock()
 	defer pp.mutex.Unlock()
 	pp.fh.IterateOverWaitingPods(func(wp framework.WaitingPod) { wp.Reject(pp.name, "rejectAllPods") })
+}
+
+func (pp *PermitPlugin) EventsToRegister(_ context.Context) ([]framework.ClusterEventWithHint, error) {
+	return nil, nil
 }
 
 // TestPreFilterPlugin tests invocation of prefilter plugins.
@@ -919,7 +941,7 @@ func TestPostFilterPlugin(t *testing.T) {
 			// Setup plugins for testing.
 			cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 				Profiles: []configv1.KubeSchedulerProfile{{
-					SchedulerName: pointer.String(v1.DefaultSchedulerName),
+					SchedulerName: ptr.To(v1.DefaultSchedulerName),
 					Plugins: &configv1.Plugins{
 						Filter: configv1.PluginSet{
 							Enabled: []configv1.Plugin{
@@ -1208,7 +1230,7 @@ func TestPrebindPlugin(t *testing.T) {
 			cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 				Profiles: []configv1.KubeSchedulerProfile{
 					{
-						SchedulerName: pointer.String(v1.DefaultSchedulerName),
+						SchedulerName: ptr.To(v1.DefaultSchedulerName),
 						Plugins: &configv1.Plugins{
 							PreBind: configv1.PluginSet{
 								Enabled: []configv1.Plugin{
@@ -1218,7 +1240,7 @@ func TestPrebindPlugin(t *testing.T) {
 						},
 					},
 					{
-						SchedulerName: pointer.String("2nd-scheduler"),
+						SchedulerName: ptr.To("2nd-scheduler"),
 						Plugins: &configv1.Plugins{
 							Filter: configv1.PluginSet{
 								Enabled: []configv1.Plugin{
@@ -1748,7 +1770,7 @@ func TestBindPlugin(t *testing.T) {
 			// Setup initial unreserve and bind plugins for testing.
 			cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 				Profiles: []configv1.KubeSchedulerProfile{{
-					SchedulerName: pointer.String(v1.DefaultSchedulerName),
+					SchedulerName: ptr.To(v1.DefaultSchedulerName),
 					Plugins: &configv1.Plugins{
 						MultiPoint: configv1.PluginSet{
 							Disabled: []configv1.Plugin{
@@ -2461,7 +2483,7 @@ func TestPreemptWithPermitPlugin(t *testing.T) {
 			cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 				Profiles: []configv1.KubeSchedulerProfile{
 					{
-						SchedulerName: pointer.String(v1.DefaultSchedulerName),
+						SchedulerName: ptr.To(v1.DefaultSchedulerName),
 						Plugins: &configv1.Plugins{
 							Permit: configv1.PluginSet{
 								Enabled: []configv1.Plugin{
@@ -2647,7 +2669,7 @@ func TestActivatePods(t *testing.T) {
 	// Setup initial filter plugin for testing.
 	cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 		Profiles: []configv1.KubeSchedulerProfile{{
-			SchedulerName: pointer.String(v1.DefaultSchedulerName),
+			SchedulerName: ptr.To(v1.DefaultSchedulerName),
 			Plugins: &configv1.Plugins{
 				PreFilter: configv1.PluginSet{
 					Enabled: []configv1.Plugin{
@@ -2823,7 +2845,7 @@ func TestPreEnqueuePluginEventsToRegister(t *testing.T) {
 				// Setup plugins for testing.
 				cfg := configtesting.V1ToInternalWithDefaults(t, configv1.KubeSchedulerConfiguration{
 					Profiles: []configv1.KubeSchedulerProfile{{
-						SchedulerName: pointer.String(v1.DefaultSchedulerName),
+						SchedulerName: ptr.To(v1.DefaultSchedulerName),
 						Plugins: &configv1.Plugins{
 							PreEnqueue: configv1.PluginSet{
 								Enabled: []configv1.Plugin{

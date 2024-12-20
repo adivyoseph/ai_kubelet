@@ -33,10 +33,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	"k8s.io/klog/v2"
-	utilexec "k8s.io/utils/exec"
-	netutils "k8s.io/utils/net"
-
 	v1 "k8s.io/api/core/v1"
 	discovery "k8s.io/api/discovery/v1"
 	"k8s.io/apimachinery/pkg/types"
@@ -45,6 +41,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/tools/events"
 	utilsysctl "k8s.io/component-helpers/node/util/sysctl"
+	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/proxy"
 	"k8s.io/kubernetes/pkg/proxy/conntrack"
 	"k8s.io/kubernetes/pkg/proxy/healthcheck"
@@ -56,6 +53,7 @@ import (
 	"k8s.io/kubernetes/pkg/util/async"
 	utiliptables "k8s.io/kubernetes/pkg/util/iptables"
 	utilkernel "k8s.io/kubernetes/pkg/util/kernel"
+	netutils "k8s.io/utils/net"
 )
 
 const (
@@ -112,11 +110,10 @@ const (
 // NewDualStackProxier returns a new Proxier for dual-stack operation
 func NewDualStackProxier(
 	ctx context.Context,
-	ipt [2]utiliptables.Interface,
+	ipts map[v1.IPFamily]utiliptables.Interface,
 	ipvs utilipvs.Interface,
 	ipset utilipset.Interface,
 	sysctl utilsysctl.Interface,
-	exec utilexec.Interface,
 	syncPeriod time.Duration,
 	minSyncPeriod time.Duration,
 	excludeCIDRs []string,
@@ -127,7 +124,7 @@ func NewDualStackProxier(
 	masqueradeAll bool,
 	masqueradeBit int,
 	localDetectors map[v1.IPFamily]proxyutil.LocalTrafficDetector,
-	hostname string,
+	nodeName string,
 	nodeIPs map[v1.IPFamily]net.IP,
 	recorder events.EventRecorder,
 	healthzServer *healthcheck.ProxyHealthServer,
@@ -136,19 +133,19 @@ func NewDualStackProxier(
 	initOnly bool,
 ) (proxy.Provider, error) {
 	// Create an ipv4 instance of the single-stack proxier
-	ipv4Proxier, err := NewProxier(ctx, v1.IPv4Protocol, ipt[0], ipvs, ipset, sysctl,
-		exec, syncPeriod, minSyncPeriod, filterCIDRs(false, excludeCIDRs), strictARP,
+	ipv4Proxier, err := NewProxier(ctx, v1.IPv4Protocol, ipts[v1.IPv4Protocol], ipvs, ipset, sysctl,
+		syncPeriod, minSyncPeriod, filterCIDRs(false, excludeCIDRs), strictARP,
 		tcpTimeout, tcpFinTimeout, udpTimeout, masqueradeAll, masqueradeBit,
-		localDetectors[v1.IPv4Protocol], hostname, nodeIPs[v1.IPv4Protocol], recorder,
+		localDetectors[v1.IPv4Protocol], nodeName, nodeIPs[v1.IPv4Protocol], recorder,
 		healthzServer, scheduler, nodePortAddresses, initOnly)
 	if err != nil {
 		return nil, fmt.Errorf("unable to create ipv4 proxier: %v", err)
 	}
 
-	ipv6Proxier, err := NewProxier(ctx, v1.IPv6Protocol, ipt[1], ipvs, ipset, sysctl,
-		exec, syncPeriod, minSyncPeriod, filterCIDRs(true, excludeCIDRs), strictARP,
+	ipv6Proxier, err := NewProxier(ctx, v1.IPv6Protocol, ipts[v1.IPv6Protocol], ipvs, ipset, sysctl,
+		syncPeriod, minSyncPeriod, filterCIDRs(true, excludeCIDRs), strictARP,
 		tcpTimeout, tcpFinTimeout, udpTimeout, masqueradeAll, masqueradeBit,
-		localDetectors[v1.IPv6Protocol], hostname, nodeIPs[v1.IPv6Protocol], recorder,
+		localDetectors[v1.IPv6Protocol], nodeName, nodeIPs[v1.IPv6Protocol], recorder,
 		healthzServer, scheduler, nodePortAddresses, initOnly)
 	if err != nil {
 		return nil, fmt.Errorf("unable to create ipv6 proxier: %v", err)
@@ -162,8 +159,7 @@ func NewDualStackProxier(
 	return metaproxier.NewMetaProxier(ipv4Proxier, ipv6Proxier), nil
 }
 
-// Proxier is an ipvs based proxy for connections between a localhost:lport
-// and services that provide the actual backends.
+// Proxier is an ipvs-based proxy
 type Proxier struct {
 	// the ipfamily on which this proxy is operating on.
 	ipFamily v1.IPFamily
@@ -198,8 +194,7 @@ type Proxier struct {
 	minSyncPeriod time.Duration
 	// Values are CIDR's to exclude when cleaning up IPVS rules.
 	excludeCIDRs []*net.IPNet
-	// Set to true to set sysctls arp_ignore and arp_announce
-	strictARP      bool
+
 	iptables       utiliptables.Interface
 	ipvs           utilipvs.Interface
 	ipset          utilipset.Interface
@@ -207,9 +202,8 @@ type Proxier struct {
 	masqueradeAll  bool
 	masqueradeMark string
 	localDetector  proxyutil.LocalTrafficDetector
-	hostname       string
+	nodeName       string
 	nodeIP         net.IP
-	recorder       events.EventRecorder
 
 	serviceHealthServer healthcheck.ServiceHealthServer
 	healthzServer       *healthcheck.ProxyHealthServer
@@ -259,11 +253,7 @@ type Proxier struct {
 // Proxier implements proxy.Provider
 var _ proxy.Provider = &Proxier{}
 
-// NewProxier returns a new Proxier given an iptables and ipvs Interface instance.
-// Because of the iptables and ipvs logic, it is assumed that there is only a single Proxier active on a machine.
-// An error will be returned if it fails to update or acquire the initial lock.
-// Once a proxier is created, it will keep iptables and ipvs rules up to date in the background and
-// will not terminate if a particular iptables or ipvs call fails.
+// NewProxier returns a new single-stack IPVS proxier.
 func NewProxier(
 	ctx context.Context,
 	ipFamily v1.IPFamily,
@@ -271,7 +261,6 @@ func NewProxier(
 	ipvs utilipvs.Interface,
 	ipset utilipset.Interface,
 	sysctl utilsysctl.Interface,
-	exec utilexec.Interface,
 	syncPeriod time.Duration,
 	minSyncPeriod time.Duration,
 	excludeCIDRs []string,
@@ -282,7 +271,7 @@ func NewProxier(
 	masqueradeAll bool,
 	masqueradeBit int,
 	localDetector proxyutil.LocalTrafficDetector,
-	hostname string,
+	nodeName string,
 	nodeIP net.IP,
 	recorder events.EventRecorder,
 	healthzServer *healthcheck.ProxyHealthServer,
@@ -367,7 +356,7 @@ func NewProxier(
 
 	nodePortAddresses := proxyutil.NewNodePortAddresses(ipFamily, nodePortAddressStrings)
 
-	serviceHealthServer := healthcheck.NewServiceHealthServer(hostname, recorder, nodePortAddresses, healthzServer)
+	serviceHealthServer := healthcheck.NewServiceHealthServer(nodeName, recorder, nodePortAddresses, healthzServer)
 
 	// excludeCIDRs has been validated before, here we just parse it to IPNet list
 	parsedExcludeCIDRs, _ := netutils.ParseCIDRs(excludeCIDRs)
@@ -377,7 +366,7 @@ func NewProxier(
 		svcPortMap:            make(proxy.ServicePortMap),
 		serviceChanges:        proxy.NewServiceChangeTracker(ipFamily, newServiceInfo, nil),
 		endpointsMap:          make(proxy.EndpointsMap),
-		endpointsChanges:      proxy.NewEndpointsChangeTracker(ipFamily, hostname, nil, nil),
+		endpointsChanges:      proxy.NewEndpointsChangeTracker(ipFamily, nodeName, nil, nil),
 		initialSync:           true,
 		syncPeriod:            syncPeriod,
 		minSyncPeriod:         minSyncPeriod,
@@ -387,9 +376,8 @@ func NewProxier(
 		masqueradeMark:        masqueradeMark,
 		conntrack:             conntrack.New(),
 		localDetector:         localDetector,
-		hostname:              hostname,
+		nodeName:              nodeName,
 		nodeIP:                nodeIP,
-		recorder:              recorder,
 		serviceHealthServer:   serviceHealthServer,
 		healthzServer:         healthzServer,
 		ipvs:                  ipvs,
@@ -838,8 +826,8 @@ func (proxier *Proxier) OnEndpointSlicesSynced() {
 // OnNodeAdd is called whenever creation of new node object
 // is observed.
 func (proxier *Proxier) OnNodeAdd(node *v1.Node) {
-	if node.Name != proxier.hostname {
-		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.hostname)
+	if node.Name != proxier.nodeName {
+		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.nodeName)
 		return
 	}
 
@@ -861,8 +849,8 @@ func (proxier *Proxier) OnNodeAdd(node *v1.Node) {
 // OnNodeUpdate is called whenever modification of an existing
 // node object is observed.
 func (proxier *Proxier) OnNodeUpdate(oldNode, node *v1.Node) {
-	if node.Name != proxier.hostname {
-		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.hostname)
+	if node.Name != proxier.nodeName {
+		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.nodeName)
 		return
 	}
 
@@ -884,8 +872,8 @@ func (proxier *Proxier) OnNodeUpdate(oldNode, node *v1.Node) {
 // OnNodeDelete is called whenever deletion of an existing node
 // object is observed.
 func (proxier *Proxier) OnNodeDelete(node *v1.Node) {
-	if node.Name != proxier.hostname {
-		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.hostname)
+	if node.Name != proxier.nodeName {
+		proxier.logger.Error(nil, "Received a watch event for a node that doesn't match the current node", "eventNode", node.Name, "currentNode", proxier.nodeName)
 		return
 	}
 
@@ -1855,7 +1843,7 @@ func (proxier *Proxier) syncEndpoint(svcPortName proxy.ServicePortName, onlyNode
 	if !ok {
 		proxier.logger.Info("Unable to filter endpoints due to missing service info", "servicePortName", svcPortName)
 	} else {
-		clusterEndpoints, localEndpoints, _, hasAnyEndpoints := proxy.CategorizeEndpoints(endpoints, svcInfo, proxier.nodeLabels)
+		clusterEndpoints, localEndpoints, _, hasAnyEndpoints := proxy.CategorizeEndpoints(endpoints, svcInfo, proxier.nodeName, proxier.nodeLabels)
 		if onlyNodeLocalEndpoints {
 			if len(localEndpoints) > 0 {
 				endpoints = localEndpoints
