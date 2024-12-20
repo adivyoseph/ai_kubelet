@@ -36,7 +36,12 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/transport/websocket"
+	"k8s.io/klog/v2"
 )
+
+func init() {
+	klog.InitFlags(nil)
+}
 
 func TestTunnelingConnection_ReadWriteClose(t *testing.T) {
 	// Stream channel that will receive streams created on upstream SPDY server.
@@ -51,12 +56,18 @@ func TestTunnelingConnection_ReadWriteClose(t *testing.T) {
 			Subprotocols: []string{constants.WebsocketsSPDYTunnelingPortForwardV1},
 		}
 		conn, err := upgrader.Upgrade(w, req, nil)
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		defer conn.Close() //nolint:errcheck
-		require.Equal(t, constants.WebsocketsSPDYTunnelingPortForwardV1, conn.Subprotocol())
-		tunnelingConn := NewTunnelingConnection("server", conn)
+		if conn.Subprotocol() != constants.WebsocketsSPDYTunnelingPortForwardV1 {
+			t.Errorf("Not acceptable agreement Subprotocol: %v", conn.Subprotocol())
+		}
+		tunnelingConn := NewTunnelingConnectionWithLogger(klog.LoggerWithName(klog.Background(), "server"), conn)
 		spdyConn, err := spdy.NewServerConnection(tunnelingConn, justQueueStream(streamChan))
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		defer spdyConn.Close() //nolint:errcheck
 		<-stopServerChan
 	}))
@@ -64,6 +75,7 @@ func TestTunnelingConnection_ReadWriteClose(t *testing.T) {
 	// Dial the client tunneling connection to the tunneling server.
 	url, err := url.Parse(tunnelingServer.URL)
 	require.NoError(t, err)
+	//nolint:logcheck // Intentionally uses the old API.
 	dialer, err := NewSPDYOverWebsocketDialer(url, &rest.Config{Host: url.Host})
 	require.NoError(t, err)
 	spdyClient, protocol, err := dialer.Dial(constants.PortForwardV1Name)
@@ -77,9 +89,13 @@ func TestTunnelingConnection_ReadWriteClose(t *testing.T) {
 	var actual []byte
 	go func() {
 		clientStream, err := spdyClient.CreateStream(http.Header{})
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		_, err = io.Copy(clientStream, strings.NewReader(expected))
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		clientStream.Close() //nolint:errcheck
 	}()
 	select {
@@ -102,9 +118,13 @@ func TestTunnelingConnection_LocalRemoteAddress(t *testing.T) {
 			Subprotocols: []string{constants.WebsocketsSPDYTunnelingPortForwardV1},
 		}
 		conn, err := upgrader.Upgrade(w, req, nil)
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		defer conn.Close() //nolint:errcheck
-		require.Equal(t, constants.WebsocketsSPDYTunnelingPortForwardV1, conn.Subprotocol())
+		if conn.Subprotocol() != constants.WebsocketsSPDYTunnelingPortForwardV1 {
+			t.Errorf("Not acceptable agreement Subprotocol: %v", conn.Subprotocol())
+		}
 		<-stopServerChan
 	}))
 	defer tunnelingServer.Close()
@@ -134,9 +154,13 @@ func TestTunnelingConnection_ReadWriteDeadlines(t *testing.T) {
 			Subprotocols: []string{constants.WebsocketsSPDYTunnelingPortForwardV1},
 		}
 		conn, err := upgrader.Upgrade(w, req, nil)
-		require.NoError(t, err)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 		defer conn.Close() //nolint:errcheck
-		require.Equal(t, constants.WebsocketsSPDYTunnelingPortForwardV1, conn.Subprotocol())
+		if conn.Subprotocol() != constants.WebsocketsSPDYTunnelingPortForwardV1 {
+			t.Errorf("Not acceptable agreement Subprotocol: %v", conn.Subprotocol())
+		}
 		<-stopServerChan
 	}))
 	defer tunnelingServer.Close()
@@ -179,6 +203,7 @@ func dialForTunnelingConnection(url *url.URL) (*TunnelingConnection, error) {
 	if err != nil {
 		return nil, err
 	}
+	//nolint:logcheck // Intentionally uses the old API.
 	return NewTunnelingConnection("client", conn), nil
 }
 
