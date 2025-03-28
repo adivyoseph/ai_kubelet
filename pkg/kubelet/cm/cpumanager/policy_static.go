@@ -483,6 +483,12 @@ func (p *staticPolicy) Allocate(s state.State, pod *v1.Pod, container *v1.Contai
 					// Attempt new allocation ( reusing allocated CPUs ) according to the NUMA affinity contained in the hint
 					// Since NUMA affinity container in the hint is unmutable already allocated CPUs pass the criteria
 					if mustKeepCPUsForResize, ok := s.GetPromisedCPUSet(string(pod.UID), container.Name); ok {
+						mustKeepCPUsBaseFromContainer := p.GetMustKeepCPUs(container, cpuset)
+						if mustKeepCPUsBasePerCpuUsage != nil {
+							if mustKeepCPUsForResize.IsSubsetOf(mustKeepCPUsBaseFromContainer) && mustKeepCPUsBaseFromContainer.Size() < numCPUs {
+								mustKeepCPUsForResize = mustKeepCPUsBaseFromContainer
+							}
+						}
 						newallocatedcpuset, err := p.allocateCPUs(s, numCPUs, hint.NUMANodeAffinity, p.cpusToReuse[string(pod.UID)], &cpusInUseByPodContainerToResize, &mustKeepCPUsForResize)
 						if err != nil {
 							klog.ErrorS(err, "Static policy: Unable to allocate new CPUs", "pod", klog.KObj(pod), "containerName", container.Name, "numCPUs", numCPUs)
@@ -540,6 +546,30 @@ func (p *staticPolicy) Allocate(s state.State, pod *v1.Pod, container *v1.Contai
 
 	klog.V(4).InfoS("Allocated exclusive CPUs", "pod", klog.KObj(pod), "containerName", container.Name, "cpuset", cpuAllocation.CPUs.String())
 	return nil
+}
+
+func (p *staticPolicy) GetMustKeepCPUs(container *v1.Container, oldCpuset cpuset.CPUSet) *cpuset.CPUSet {
+	mustKeepCPUs := cpuset.New()
+	klog.InfoS("GetMustKeepCPUs", "container.Resources.MustKeepCPUs", container.Resources.MustKeepCPUs)
+	ResourcesMustKeepCPUs, err := cpuset.Parse(container.Resources.MustKeepCPUs)
+	if err == nil && ResourcesMustKeepCPUs.Size() != 0 {
+		mustKeepCPUs = oldCpuset.Intersection(ResourcesMustKeepCPUs)
+	}
+	klog.InfoS("mustKeepCPUs ", "is", mustKeepCPUs)
+	if p.options.FullPhysicalCPUsOnly {
+		// mustKeepCPUs must be aligned to the physical core
+		if (mustKeepCPUs.Size() % 2) != 0 {
+			return nil
+		}
+		mustKeepCPUsDetail := p.topology.CPUDetails.KeepOnly(mustKeepCPUs)
+		mustKeepCPUsDetailCores := mustKeepCPUsDetail.Cores()
+		if (mustKeepCPUs.Size() / mustKeepCPUsDetailCores.Size()) != p.cpuGroupSize {
+			klog.InfoS("mustKeepCPUs is nil")
+			return nil
+		}
+	}
+	klog.InfoS("GetMustKeepCPUs", "mustKeepCPUs", mustKeepCPUs)
+	return &mustKeepCPUs
 }
 
 // getAssignedCPUsOfSiblings returns assigned cpus of given container's siblings(all containers other than the given container) in the given pod `podUID`.
