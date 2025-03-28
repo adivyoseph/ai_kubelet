@@ -1510,5 +1510,5 @@ var _ = SIGDescribe("CPU Manager", framework.WithSerial(), feature.CPUManager, f
 
 	ginkgo.Context("With kubeconfig updated with static CPU Manager policy run the CPU Manager tests", func() {
 		runCPUManagerTests(f)
-	})
+	}, false, false)
 })
