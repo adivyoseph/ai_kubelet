@@ -1138,11 +1138,6 @@ func podWithCommand(volumeSource *v1.VolumeSource, resources v1.ResourceRequirem
 		volumes = []v1.Volume{{Name: volumeName, VolumeSource: *volumeSource}}
 	}
 
-	cmd := fmt.Sprintf("i=0; while [ $i -lt %d ]; do %s i=$(($i+1)); done", iterations, command)
-	if sleepAfterExecuting {
-		cmd += "; " + e2epod.InfiniteSleepCommand
-	}
-
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{Name: fmt.Sprintf("%s-pod", name)},
 		Spec: v1.PodSpec{
@@ -1155,7 +1150,7 @@ func podWithCommand(volumeSource *v1.VolumeSource, resources v1.ResourceRequirem
 					Command: []string{
 						"sh",
 						"-c",
-						cmd,
+						fmt.Sprintf("i=0; while [ $i -lt %d ]; do %s i=$(($i+1)); done; while %v; do sleep 5; done", iterations, command, sleepAfterExecuting),
 					},
 					Resources:    resources,
 					VolumeMounts: volumeMounts,
