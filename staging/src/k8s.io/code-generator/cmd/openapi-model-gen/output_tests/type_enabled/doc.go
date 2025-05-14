@@ -1,5 +1,5 @@
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright 2025 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,14 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +k8s:deepcopy-gen=package
-// +k8s:protobuf-gen=package
-// +k8s:conversion-gen=k8s.io/metrics/pkg/apis/metrics
-// +k8s:openapi-gen=true
+package type_enabled
+
+type TypeMeta int
+
 // +k8s:openapi-model-gen=true
+// +modelName=io.k8s.api.core.v1.T1
+type T1 struct {
+	TypeMeta
+}
 
-// +groupName=metrics.k8s.io
-// +modelPackageName=io.k8s.metrics.pkg.apis.metrics.v1alpha1
-
-// Package v1alpha1 is the v1alpha1 version of the metrics API.
-package v1alpha1
+// +modelName=io.k8s.api.core.v1.T2
+type T2 struct {
+	TypeMeta
+}
