@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package api
+package apis
 
 import (
 	"fmt"
@@ -23,7 +23,15 @@ import (
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/kube-openapi/pkg/util"
+
+	apiregistrationv1 "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1"
+	apiregistrationv1beta1 "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1"
 )
+
+var groups = []runtime.SchemeBuilder{
+	apiregistrationv1.SchemeBuilder,
+	apiregistrationv1beta1.SchemeBuilder,
+}
 
 func TestOpenAPIDefinitionNames(t *testing.T) {
 	scheme := runtime.NewScheme()
