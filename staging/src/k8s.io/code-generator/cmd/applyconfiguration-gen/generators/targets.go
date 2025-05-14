@@ -145,7 +145,7 @@ func GetTargets(context *generator.Context, args *args.Args) []generator.Target 
 	return targetList
 }
 
-func typeName(t *types.Type) string {
+func typeName(t *types.Type) string { // FIXME: this uses package names
 	typePackage := t.Name.Package
 	return fmt.Sprintf("%s.%s", typePackage, t.Name.Name)
 }

@@ -343,6 +343,9 @@ func (g openAPITypeWriter) generateCall(t *types.Type) error {
 	// Only generate for struct type and ignore the rest
 	switch t.Kind {
 	case types.Struct:
+		if namer.IsPrivateGoName(t.Name.Name) { // skip private types
+			return nil
+		}
 		args := argsFromType(t)
 
 		// Use the actual model name here...
@@ -1038,7 +1041,11 @@ func (g openAPITypeWriter) generateSimpleProperty(typeString, format string) {
 
 func (g openAPITypeWriter) generateReferenceProperty(t *types.Type) {
 	g.refTypes[t.Name.String()] = t
-	g.Do("Ref: ref(\"$.$\"),\n", t.Name.String())
+	if g.useOpenAPIModelNames {
+		g.Do("Ref: ref((&$.|raw${}).OpenAPIModelName()),\n", t)
+	} else {
+		g.Do("Ref: ref(\"$.$\"),\n", t.Name.String())
+	}
 }
 
 func resolvePtrType(t *types.Type) *types.Type {
