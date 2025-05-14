@@ -92,6 +92,10 @@ type OpenAPICanonicalTypeNamer interface {
 	OpenAPICanonicalTypeName() string
 }
 
+// OpenAPIModelNamer is an interface Go types may implement to provide an OpenAPI model name.
+//
+// This takes precedence over OpenAPICanonicalTypeNamer, and should be used when a Go type has a model
+// name that differs from its canonical type name as determined by Go package name reflection.
 type OpenAPIModelNamer interface {
 	OpenAPIModelName() string
 }
@@ -100,10 +104,10 @@ type OpenAPIModelNamer interface {
 // the "vendor" part of the path
 func GetCanonicalTypeName(model interface{}) string {
 	switch namer := model.(type) {
+	case OpenAPIModelNamer:
+		return namer.OpenAPIModelName()
 	case OpenAPICanonicalTypeNamer:
 		return namer.OpenAPICanonicalTypeName()
-	case OpenAPIModelNamer:
-		return toCanonicalTypeName(namer.OpenAPIModelName())
 	}
 	t := reflect.TypeOf(model)
 	if t.Kind() == reflect.Ptr {
@@ -119,18 +123,4 @@ func GetCanonicalTypeName(model interface{}) string {
 		path = strings.TrimPrefix(path, "vendor/")
 	}
 	return path + "." + t.Name()
-}
-
-func toCanonicalTypeName(restFriendlyName string) string {
-	if strings.HasPrefix(restFriendlyName, "io.k8s.") {
-		rest := strings.TrimPrefix(restFriendlyName, "io.k8s.")
-		return "k8s.io/" + toPathDotType(rest)
-	}
-	return toPathDotType(restFriendlyName)
-}
-
-func toPathDotType(dotString string) string {
-	parts := strings.Split(dotString, ".")
-	head, last := parts[0:len(parts)-1], parts[len(parts)-1]
-	return strings.Join(head, "/") + "." + last
 }

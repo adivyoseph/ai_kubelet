@@ -9,7 +9,7 @@ godebug default=go1.24
 require (
 	github.com/gogo/protobuf v1.3.2
 	k8s.io/apimachinery v0.0.0
-	k8s.io/kube-openapi v0.0.0-20250514123443-9a3d502d19a0
+	k8s.io/kube-openapi v0.0.0-20250514125028-564c9cb993e1
 )
 
 require (
@@ -37,5 +37,5 @@ require (
 
 replace (
 	k8s.io/apimachinery => ../apimachinery
-	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514123443-9a3d502d19a0
+	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514125028-564c9cb993e1
 )
