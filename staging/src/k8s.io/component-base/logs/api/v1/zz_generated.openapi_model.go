@@ -22,46 +22,46 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FormatOptions) OpenAPIModelName() string {
+func (in FormatOptions) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.FormatOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSONOptions) OpenAPIModelName() string {
+func (in JSONOptions) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.JSONOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LoggingConfiguration) OpenAPIModelName() string {
+func (in LoggingConfiguration) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.LoggingConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LoggingOptions) OpenAPIModelName() string {
+func (in LoggingOptions) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.LoggingOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *OutputRoutingOptions) OpenAPIModelName() string {
+func (in OutputRoutingOptions) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.OutputRoutingOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RuntimeControl) OpenAPIModelName() string {
+func (in RuntimeControl) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.RuntimeControl"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TextOptions) OpenAPIModelName() string {
+func (in TextOptions) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.TextOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TimeOrMetaDuration) OpenAPIModelName() string {
+func (in TimeOrMetaDuration) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.TimeOrMetaDuration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VModuleItem) OpenAPIModelName() string {
+func (in VModuleItem) OpenAPIModelName() string {
 	return "io.k8s.component-base.logs.api.v1.VModuleItem"
 }

@@ -22,11 +22,11 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Policy) OpenAPIModelName() string {
+func (in Policy) OpenAPIModelName() string {
 	return "pkg.apis.abac.v1beta1.Policy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PolicySpec) OpenAPIModelName() string {
+func (in PolicySpec) OpenAPIModelName() string {
 	return "pkg.apis.abac.v1beta1.PolicySpec"
 }

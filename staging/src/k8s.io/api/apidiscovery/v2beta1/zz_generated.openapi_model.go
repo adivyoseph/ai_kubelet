@@ -22,26 +22,26 @@ limitations under the License.
 package v2beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIGroupDiscovery) OpenAPIModelName() string {
+func (in APIGroupDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIGroupDiscovery"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIGroupDiscoveryList) OpenAPIModelName() string {
+func (in APIGroupDiscoveryList) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIGroupDiscoveryList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIResourceDiscovery) OpenAPIModelName() string {
+func (in APIResourceDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIResourceDiscovery"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APISubresourceDiscovery) OpenAPIModelName() string {
+func (in APISubresourceDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APISubresourceDiscovery"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIVersionDiscovery) OpenAPIModelName() string {
+func (in APIVersionDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIVersionDiscovery"
 }

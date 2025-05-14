@@ -22,101 +22,101 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DefaultPreemptionArgs) OpenAPIModelName() string {
+func (in DefaultPreemptionArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.DefaultPreemptionArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Extender) OpenAPIModelName() string {
+func (in Extender) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.Extender"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExtenderManagedResource) OpenAPIModelName() string {
+func (in ExtenderManagedResource) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.ExtenderManagedResource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExtenderTLSConfig) OpenAPIModelName() string {
+func (in ExtenderTLSConfig) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.ExtenderTLSConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *InterPodAffinityArgs) OpenAPIModelName() string {
+func (in InterPodAffinityArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.InterPodAffinityArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeSchedulerConfiguration) OpenAPIModelName() string {
+func (in KubeSchedulerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.KubeSchedulerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeSchedulerProfile) OpenAPIModelName() string {
+func (in KubeSchedulerProfile) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.KubeSchedulerProfile"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeAffinityArgs) OpenAPIModelName() string {
+func (in NodeAffinityArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.NodeAffinityArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeResourcesBalancedAllocationArgs) OpenAPIModelName() string {
+func (in NodeResourcesBalancedAllocationArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.NodeResourcesBalancedAllocationArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeResourcesFitArgs) OpenAPIModelName() string {
+func (in NodeResourcesFitArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.NodeResourcesFitArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Plugin) OpenAPIModelName() string {
+func (in Plugin) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.Plugin"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PluginConfig) OpenAPIModelName() string {
+func (in PluginConfig) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.PluginConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PluginSet) OpenAPIModelName() string {
+func (in PluginSet) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.PluginSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Plugins) OpenAPIModelName() string {
+func (in Plugins) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.Plugins"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodTopologySpreadArgs) OpenAPIModelName() string {
+func (in PodTopologySpreadArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.PodTopologySpreadArgs"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RequestedToCapacityRatioParam) OpenAPIModelName() string {
+func (in RequestedToCapacityRatioParam) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.RequestedToCapacityRatioParam"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceSpec) OpenAPIModelName() string {
+func (in ResourceSpec) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.ResourceSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScoringStrategy) OpenAPIModelName() string {
+func (in ScoringStrategy) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.ScoringStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *UtilizationShapePoint) OpenAPIModelName() string {
+func (in UtilizationShapePoint) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.UtilizationShapePoint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeBindingArgs) OpenAPIModelName() string {
+func (in VolumeBindingArgs) OpenAPIModelName() string {
 	return "io.k8s.kube-scheduler.config.v1alpha1.VolumeBindingArgs"
 }

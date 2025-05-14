@@ -22,11 +22,11 @@ limitations under the License.
 package resource
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Quantity) OpenAPIModelName() string {
+func (in Quantity) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pk.api.resource.Quantity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *QuantityValue) OpenAPIModelName() string {
+func (in QuantityValue) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.api.resource.QuantityValue"
 }

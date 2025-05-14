@@ -22,16 +22,16 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClientConnectionConfiguration) OpenAPIModelName() string {
+func (in ClientConnectionConfiguration) OpenAPIModelName() string {
 	return "io.k8s.component-base.config.v1alpha1.ClientConnectionConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DebuggingConfiguration) OpenAPIModelName() string {
+func (in DebuggingConfiguration) OpenAPIModelName() string {
 	return "io.k8s.component-base.config.v1alpha1.DebuggingConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LeaderElectionConfiguration) OpenAPIModelName() string {
+func (in LeaderElectionConfiguration) OpenAPIModelName() string {
 	return "io.k8s.component-base.config.v1alpha1.LeaderElectionConfiguration"
 }

@@ -22,6 +22,6 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PartialObjectMetadataList) OpenAPIModelName() string {
+func (in PartialObjectMetadataList) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1beta1.PartialObjectMetadataList"
 }

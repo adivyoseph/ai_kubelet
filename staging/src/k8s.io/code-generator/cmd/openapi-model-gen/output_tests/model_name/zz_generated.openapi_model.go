@@ -22,11 +22,11 @@ limitations under the License.
 package model_name
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *T1) OpenAPIModelName() string {
+func (in T1) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.T1"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *T2) OpenAPIModelName() string {
+func (in T2) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.T2"
 }

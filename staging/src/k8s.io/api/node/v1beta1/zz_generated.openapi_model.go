@@ -22,21 +22,21 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Overhead) OpenAPIModelName() string {
+func (in Overhead) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1beta1.Overhead"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RuntimeClass) OpenAPIModelName() string {
+func (in RuntimeClass) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1beta1.RuntimeClass"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RuntimeClassList) OpenAPIModelName() string {
+func (in RuntimeClassList) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1beta1.RuntimeClassList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Scheduling) OpenAPIModelName() string {
+func (in Scheduling) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1beta1.Scheduling"
 }

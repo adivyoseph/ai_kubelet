@@ -22,156 +22,156 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AttachDetachControllerConfiguration) OpenAPIModelName() string {
+func (in AttachDetachControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.AttachDetachControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CSRSigningConfiguration) OpenAPIModelName() string {
+func (in CSRSigningConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.CSRSigningConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CSRSigningControllerConfiguration) OpenAPIModelName() string {
+func (in CSRSigningControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.CSRSigningControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CronJobControllerConfiguration) OpenAPIModelName() string {
+func (in CronJobControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.CronJobControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetControllerConfiguration) OpenAPIModelName() string {
+func (in DaemonSetControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.DaemonSetControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentControllerConfiguration) OpenAPIModelName() string {
+func (in DeploymentControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.DeploymentControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeprecatedControllerConfiguration) OpenAPIModelName() string {
+func (in DeprecatedControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.DeprecatedControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointControllerConfiguration) OpenAPIModelName() string {
+func (in EndpointControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.EndpointControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointSliceControllerConfiguration) OpenAPIModelName() string {
+func (in EndpointSliceControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.EndpointSliceControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointSliceMirroringControllerConfiguration) OpenAPIModelName() string {
+func (in EndpointSliceMirroringControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.EndpointSliceMirroringControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EphemeralVolumeControllerConfiguration) OpenAPIModelName() string {
+func (in EphemeralVolumeControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.EphemeralVolumeControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GarbageCollectorControllerConfiguration) OpenAPIModelName() string {
+func (in GarbageCollectorControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.GarbageCollectorControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GroupResource) OpenAPIModelName() string {
+func (in GroupResource) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.GroupResource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HPAControllerConfiguration) OpenAPIModelName() string {
+func (in HPAControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.HPAControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JobControllerConfiguration) OpenAPIModelName() string {
+func (in JobControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.JobControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeControllerManagerConfiguration) OpenAPIModelName() string {
+func (in KubeControllerManagerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.KubeControllerManagerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LegacySATokenCleanerConfiguration) OpenAPIModelName() string {
+func (in LegacySATokenCleanerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.LegacySATokenCleanerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamespaceControllerConfiguration) OpenAPIModelName() string {
+func (in NamespaceControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.NamespaceControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeIPAMControllerConfiguration) OpenAPIModelName() string {
+func (in NodeIPAMControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.NodeIPAMControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeLifecycleControllerConfiguration) OpenAPIModelName() string {
+func (in NodeLifecycleControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.NodeLifecycleControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeBinderControllerConfiguration) OpenAPIModelName() string {
+func (in PersistentVolumeBinderControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.PersistentVolumeBinderControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeRecyclerConfiguration) OpenAPIModelName() string {
+func (in PersistentVolumeRecyclerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.PersistentVolumeRecyclerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodGCControllerConfiguration) OpenAPIModelName() string {
+func (in PodGCControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.PodGCControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetControllerConfiguration) OpenAPIModelName() string {
+func (in ReplicaSetControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.ReplicaSetControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerConfiguration) OpenAPIModelName() string {
+func (in ReplicationControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.ReplicationControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaControllerConfiguration) OpenAPIModelName() string {
+func (in ResourceQuotaControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.ResourceQuotaControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SAControllerConfiguration) OpenAPIModelName() string {
+func (in SAControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.SAControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetControllerConfiguration) OpenAPIModelName() string {
+func (in StatefulSetControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.StatefulSetControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TTLAfterFinishedControllerConfiguration) OpenAPIModelName() string {
+func (in TTLAfterFinishedControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.TTLAfterFinishedControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyStatusControllerConfiguration) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyStatusControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.ValidatingAdmissionPolicyStatusControllerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeConfiguration) OpenAPIModelName() string {
+func (in VolumeConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-controller-manager.config.v1alpha1.VolumeConfiguration"
 }

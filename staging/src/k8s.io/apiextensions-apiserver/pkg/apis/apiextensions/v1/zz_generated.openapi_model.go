@@ -22,136 +22,136 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConversionRequest) OpenAPIModelName() string {
+func (in ConversionRequest) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConversionResponse) OpenAPIModelName() string {
+func (in ConversionResponse) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionResponse"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConversionReview) OpenAPIModelName() string {
+func (in ConversionReview) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceColumnDefinition) OpenAPIModelName() string {
+func (in CustomResourceColumnDefinition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceColumnDefinition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceConversion) OpenAPIModelName() string {
+func (in CustomResourceConversion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceConversion"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinition) OpenAPIModelName() string {
+func (in CustomResourceDefinition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionCondition) OpenAPIModelName() string {
+func (in CustomResourceDefinitionCondition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionList) OpenAPIModelName() string {
+func (in CustomResourceDefinitionList) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionNames) OpenAPIModelName() string {
+func (in CustomResourceDefinitionNames) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionNames"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionSpec) OpenAPIModelName() string {
+func (in CustomResourceDefinitionSpec) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionStatus) OpenAPIModelName() string {
+func (in CustomResourceDefinitionStatus) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionVersion) OpenAPIModelName() string {
+func (in CustomResourceDefinitionVersion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionVersion"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresourceScale) OpenAPIModelName() string {
+func (in CustomResourceSubresourceScale) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresourceScale"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresourceStatus) OpenAPIModelName() string {
+func (in CustomResourceSubresourceStatus) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresourceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresources) OpenAPIModelName() string {
+func (in CustomResourceSubresources) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresources"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceValidation) OpenAPIModelName() string {
+func (in CustomResourceValidation) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceValidation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExternalDocumentation) OpenAPIModelName() string {
+func (in ExternalDocumentation) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ExternalDocumentation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSON) OpenAPIModelName() string {
+func (in JSON) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSON"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaProps) OpenAPIModelName() string {
+func (in JSONSchemaProps) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaProps"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrArray) OpenAPIModelName() string {
+func (in JSONSchemaPropsOrArray) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrArray"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrBool) OpenAPIModelName() string {
+func (in JSONSchemaPropsOrBool) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrBool"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrStringArray) OpenAPIModelName() string {
+func (in JSONSchemaPropsOrStringArray) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrStringArray"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelectableField) OpenAPIModelName() string {
+func (in SelectableField) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.SelectableField"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceReference) OpenAPIModelName() string {
+func (in ServiceReference) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ServiceReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidationRule) OpenAPIModelName() string {
+func (in ValidationRule) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ValidationRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WebhookClientConfig) OpenAPIModelName() string {
+func (in WebhookClientConfig) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.WebhookClientConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WebhookConversion) OpenAPIModelName() string {
+func (in WebhookConversion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.WebhookConversion"
 }

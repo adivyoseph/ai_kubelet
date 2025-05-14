@@ -22,61 +22,61 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AggregationRule) OpenAPIModelName() string {
+func (in AggregationRule) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.AggregationRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterRole) OpenAPIModelName() string {
+func (in ClusterRole) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.ClusterRole"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterRoleBinding) OpenAPIModelName() string {
+func (in ClusterRoleBinding) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.ClusterRoleBinding"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterRoleBindingList) OpenAPIModelName() string {
+func (in ClusterRoleBindingList) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterRoleList) OpenAPIModelName() string {
+func (in ClusterRoleList) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.ClusterRoleList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PolicyRule) OpenAPIModelName() string {
+func (in PolicyRule) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.PolicyRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Role) OpenAPIModelName() string {
+func (in Role) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.Role"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RoleBinding) OpenAPIModelName() string {
+func (in RoleBinding) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.RoleBinding"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RoleBindingList) OpenAPIModelName() string {
+func (in RoleBindingList) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.RoleBindingList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RoleList) OpenAPIModelName() string {
+func (in RoleList) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.RoleList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RoleRef) OpenAPIModelName() string {
+func (in RoleRef) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.RoleRef"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Subject) OpenAPIModelName() string {
+func (in Subject) OpenAPIModelName() string {
 	return "io.k8s.api.rbac.v1alpha1.Subject"
 }

@@ -22,126 +22,126 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPIngressPath) OpenAPIModelName() string {
+func (in HTTPIngressPath) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.HTTPIngressPath"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPIngressRuleValue) OpenAPIModelName() string {
+func (in HTTPIngressRuleValue) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.HTTPIngressRuleValue"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddress) OpenAPIModelName() string {
+func (in IPAddress) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddressList) OpenAPIModelName() string {
+func (in IPAddressList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddressList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddressSpec) OpenAPIModelName() string {
+func (in IPAddressSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddressSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Ingress) OpenAPIModelName() string {
+func (in Ingress) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.Ingress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressBackend) OpenAPIModelName() string {
+func (in IngressBackend) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressBackend"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressClass) OpenAPIModelName() string {
+func (in IngressClass) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClass"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressClassList) OpenAPIModelName() string {
+func (in IngressClassList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressClassParametersReference) OpenAPIModelName() string {
+func (in IngressClassParametersReference) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassParametersReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressClassSpec) OpenAPIModelName() string {
+func (in IngressClassSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressList) OpenAPIModelName() string {
+func (in IngressList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressLoadBalancerIngress) OpenAPIModelName() string {
+func (in IngressLoadBalancerIngress) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressLoadBalancerIngress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressLoadBalancerStatus) OpenAPIModelName() string {
+func (in IngressLoadBalancerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressLoadBalancerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressPortStatus) OpenAPIModelName() string {
+func (in IngressPortStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressPortStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressRule) OpenAPIModelName() string {
+func (in IngressRule) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressRuleValue) OpenAPIModelName() string {
+func (in IngressRuleValue) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressRuleValue"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressSpec) OpenAPIModelName() string {
+func (in IngressSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressStatus) OpenAPIModelName() string {
+func (in IngressStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressTLS) OpenAPIModelName() string {
+func (in IngressTLS) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressTLS"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ParentReference) OpenAPIModelName() string {
+func (in ParentReference) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.ParentReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDR) OpenAPIModelName() string {
+func (in ServiceCIDR) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDR"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRList) OpenAPIModelName() string {
+func (in ServiceCIDRList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRSpec) OpenAPIModelName() string {
+func (in ServiceCIDRSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRStatus) OpenAPIModelName() string {
+func (in ServiceCIDRStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRStatus"
 }

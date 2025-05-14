@@ -22,226 +22,226 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSet) OpenAPIModelName() string {
+func (in DaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetCondition) OpenAPIModelName() string {
+func (in DaemonSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSetCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetList) OpenAPIModelName() string {
+func (in DaemonSetList) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetSpec) OpenAPIModelName() string {
+func (in DaemonSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetStatus) OpenAPIModelName() string {
+func (in DaemonSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSetStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetUpdateStrategy) OpenAPIModelName() string {
+func (in DaemonSetUpdateStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DaemonSetUpdateStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Deployment) OpenAPIModelName() string {
+func (in Deployment) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.Deployment"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentCondition) OpenAPIModelName() string {
+func (in DeploymentCondition) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentList) OpenAPIModelName() string {
+func (in DeploymentList) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentRollback) OpenAPIModelName() string {
+func (in DeploymentRollback) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentRollback"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentSpec) OpenAPIModelName() string {
+func (in DeploymentSpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStatus) OpenAPIModelName() string {
+func (in DeploymentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStrategy) OpenAPIModelName() string {
+func (in DeploymentStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.DeploymentStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPIngressPath) OpenAPIModelName() string {
+func (in HTTPIngressPath) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.HTTPIngressPath"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPIngressRuleValue) OpenAPIModelName() string {
+func (in HTTPIngressRuleValue) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.HTTPIngressRuleValue"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPBlock) OpenAPIModelName() string {
+func (in IPBlock) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IPBlock"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Ingress) OpenAPIModelName() string {
+func (in Ingress) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.Ingress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressBackend) OpenAPIModelName() string {
+func (in IngressBackend) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressBackend"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressList) OpenAPIModelName() string {
+func (in IngressList) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressLoadBalancerIngress) OpenAPIModelName() string {
+func (in IngressLoadBalancerIngress) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressLoadBalancerIngress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressLoadBalancerStatus) OpenAPIModelName() string {
+func (in IngressLoadBalancerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressLoadBalancerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressPortStatus) OpenAPIModelName() string {
+func (in IngressPortStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressPortStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressRule) OpenAPIModelName() string {
+func (in IngressRule) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressRuleValue) OpenAPIModelName() string {
+func (in IngressRuleValue) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressRuleValue"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressSpec) OpenAPIModelName() string {
+func (in IngressSpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressStatus) OpenAPIModelName() string {
+func (in IngressStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IngressTLS) OpenAPIModelName() string {
+func (in IngressTLS) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.IngressTLS"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicy) OpenAPIModelName() string {
+func (in NetworkPolicy) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicyEgressRule) OpenAPIModelName() string {
+func (in NetworkPolicyEgressRule) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicyEgressRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicyIngressRule) OpenAPIModelName() string {
+func (in NetworkPolicyIngressRule) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicyIngressRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicyList) OpenAPIModelName() string {
+func (in NetworkPolicyList) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicyList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicyPeer) OpenAPIModelName() string {
+func (in NetworkPolicyPeer) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicyPeer"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicyPort) OpenAPIModelName() string {
+func (in NetworkPolicyPort) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicyPort"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkPolicySpec) OpenAPIModelName() string {
+func (in NetworkPolicySpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.NetworkPolicySpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSet) OpenAPIModelName() string {
+func (in ReplicaSet) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ReplicaSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetCondition) OpenAPIModelName() string {
+func (in ReplicaSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ReplicaSetCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetList) OpenAPIModelName() string {
+func (in ReplicaSetList) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ReplicaSetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetSpec) OpenAPIModelName() string {
+func (in ReplicaSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ReplicaSetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetStatus) OpenAPIModelName() string {
+func (in ReplicaSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ReplicaSetStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollbackConfig) OpenAPIModelName() string {
+func (in RollbackConfig) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.RollbackConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDaemonSet) OpenAPIModelName() string {
+func (in RollingUpdateDaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.RollingUpdateDaemonSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDeployment) OpenAPIModelName() string {
+func (in RollingUpdateDeployment) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.RollingUpdateDeployment"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Scale) OpenAPIModelName() string {
+func (in Scale) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.Scale"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScaleSpec) OpenAPIModelName() string {
+func (in ScaleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ScaleSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScaleStatus) OpenAPIModelName() string {
+func (in ScaleStatus) OpenAPIModelName() string {
 	return "io.k8s.api.extensions.v1beta1.ScaleStatus"
 }

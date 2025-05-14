@@ -22,201 +22,201 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AllocatedDeviceStatus) OpenAPIModelName() string {
+func (in AllocatedDeviceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.AllocatedDeviceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AllocationResult) OpenAPIModelName() string {
+func (in AllocationResult) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.AllocationResult"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *BasicDevice) OpenAPIModelName() string {
+func (in BasicDevice) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.BasicDevice"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CELDeviceSelector) OpenAPIModelName() string {
+func (in CELDeviceSelector) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.CELDeviceSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Counter) OpenAPIModelName() string {
+func (in Counter) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.Counter"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CounterSet) OpenAPIModelName() string {
+func (in CounterSet) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.CounterSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Device) OpenAPIModelName() string {
+func (in Device) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.Device"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceAllocationConfiguration) OpenAPIModelName() string {
+func (in DeviceAllocationConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceAllocationConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceAllocationResult) OpenAPIModelName() string {
+func (in DeviceAllocationResult) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceAllocationResult"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceAttribute) OpenAPIModelName() string {
+func (in DeviceAttribute) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceAttribute"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceCapacity) OpenAPIModelName() string {
+func (in DeviceCapacity) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceCapacity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClaim) OpenAPIModelName() string {
+func (in DeviceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClaim"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClaimConfiguration) OpenAPIModelName() string {
+func (in DeviceClaimConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClaimConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClass) OpenAPIModelName() string {
+func (in DeviceClass) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClass"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClassConfiguration) OpenAPIModelName() string {
+func (in DeviceClassConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClassConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClassList) OpenAPIModelName() string {
+func (in DeviceClassList) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClassList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceClassSpec) OpenAPIModelName() string {
+func (in DeviceClassSpec) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceClassSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceConfiguration) OpenAPIModelName() string {
+func (in DeviceConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceConstraint) OpenAPIModelName() string {
+func (in DeviceConstraint) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceConstraint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceCounterConsumption) OpenAPIModelName() string {
+func (in DeviceCounterConsumption) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceCounterConsumption"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceRequest) OpenAPIModelName() string {
+func (in DeviceRequest) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceRequestAllocationResult) OpenAPIModelName() string {
+func (in DeviceRequestAllocationResult) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceRequestAllocationResult"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceSelector) OpenAPIModelName() string {
+func (in DeviceSelector) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceSubRequest) OpenAPIModelName() string {
+func (in DeviceSubRequest) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceSubRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceTaint) OpenAPIModelName() string {
+func (in DeviceTaint) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceTaint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeviceToleration) OpenAPIModelName() string {
+func (in DeviceToleration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.DeviceToleration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NetworkDeviceData) OpenAPIModelName() string {
+func (in NetworkDeviceData) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.NetworkDeviceData"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *OpaqueDeviceConfiguration) OpenAPIModelName() string {
+func (in OpaqueDeviceConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.OpaqueDeviceConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaim) OpenAPIModelName() string {
+func (in ResourceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaim"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimConsumerReference) OpenAPIModelName() string {
+func (in ResourceClaimConsumerReference) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimConsumerReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimList) OpenAPIModelName() string {
+func (in ResourceClaimList) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimSpec) OpenAPIModelName() string {
+func (in ResourceClaimSpec) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimStatus) OpenAPIModelName() string {
+func (in ResourceClaimStatus) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimTemplate) OpenAPIModelName() string {
+func (in ResourceClaimTemplate) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimTemplate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimTemplateList) OpenAPIModelName() string {
+func (in ResourceClaimTemplateList) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimTemplateList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaimTemplateSpec) OpenAPIModelName() string {
+func (in ResourceClaimTemplateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceClaimTemplateSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourcePool) OpenAPIModelName() string {
+func (in ResourcePool) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourcePool"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceSlice) OpenAPIModelName() string {
+func (in ResourceSlice) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceSlice"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceSliceList) OpenAPIModelName() string {
+func (in ResourceSliceList) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceSliceList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceSliceSpec) OpenAPIModelName() string {
+func (in ResourceSliceSpec) OpenAPIModelName() string {
 	return "io.k8s.api.resource.v1beta1.ResourceSliceSpec"
 }

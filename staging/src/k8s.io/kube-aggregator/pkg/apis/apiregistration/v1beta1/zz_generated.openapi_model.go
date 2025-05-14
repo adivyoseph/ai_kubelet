@@ -22,31 +22,31 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIService) OpenAPIModelName() string {
+func (in APIService) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIService"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIServiceCondition) OpenAPIModelName() string {
+func (in APIServiceCondition) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIServiceList) OpenAPIModelName() string {
+func (in APIServiceList) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIServiceSpec) OpenAPIModelName() string {
+func (in APIServiceSpec) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *APIServiceStatus) OpenAPIModelName() string {
+func (in APIServiceStatus) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceReference) OpenAPIModelName() string {
+func (in ServiceReference) OpenAPIModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.ServiceReference"
 }

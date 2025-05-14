@@ -22,16 +22,16 @@ limitations under the License.
 package runtime
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RawExtension) OpenAPIModelName() string {
+func (in RawExtension) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.runtime.RawExtension"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TypeMeta) OpenAPIModelName() string {
+func (in TypeMeta) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.runtime.TypeMeta"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Unknown) OpenAPIModelName() string {
+func (in Unknown) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.runtime.Unknown"
 }

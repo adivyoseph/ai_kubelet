@@ -22,26 +22,26 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequest) OpenAPIModelName() string {
+func (in CertificateSigningRequest) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestCondition) OpenAPIModelName() string {
+func (in CertificateSigningRequestCondition) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestList) OpenAPIModelName() string {
+func (in CertificateSigningRequestList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestSpec) OpenAPIModelName() string {
+func (in CertificateSigningRequestSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestStatus) OpenAPIModelName() string {
+func (in CertificateSigningRequestStatus) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestStatus"
 }

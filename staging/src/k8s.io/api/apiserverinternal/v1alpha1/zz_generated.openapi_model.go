@@ -22,31 +22,31 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServerStorageVersion) OpenAPIModelName() string {
+func (in ServerStorageVersion) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.ServerStorageVersion"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersion) OpenAPIModelName() string {
+func (in StorageVersion) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersion"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionCondition) OpenAPIModelName() string {
+func (in StorageVersionCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionList) OpenAPIModelName() string {
+func (in StorageVersionList) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionSpec) OpenAPIModelName() string {
+func (in StorageVersionSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionStatus) OpenAPIModelName() string {
+func (in StorageVersionStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionStatus"
 }

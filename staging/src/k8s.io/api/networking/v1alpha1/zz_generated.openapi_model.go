@@ -22,41 +22,41 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddress) OpenAPIModelName() string {
+func (in IPAddress) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddressList) OpenAPIModelName() string {
+func (in IPAddressList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddressList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IPAddressSpec) OpenAPIModelName() string {
+func (in IPAddressSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddressSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ParentReference) OpenAPIModelName() string {
+func (in ParentReference) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ParentReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDR) OpenAPIModelName() string {
+func (in ServiceCIDR) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDR"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRList) OpenAPIModelName() string {
+func (in ServiceCIDRList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRSpec) OpenAPIModelName() string {
+func (in ServiceCIDRSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRStatus) OpenAPIModelName() string {
+func (in ServiceCIDRStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRStatus"
 }

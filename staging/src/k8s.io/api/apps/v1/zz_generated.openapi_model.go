@@ -22,151 +22,151 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ControllerRevision) OpenAPIModelName() string {
+func (in ControllerRevision) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ControllerRevision"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ControllerRevisionList) OpenAPIModelName() string {
+func (in ControllerRevisionList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ControllerRevisionList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSet) OpenAPIModelName() string {
+func (in DaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetCondition) OpenAPIModelName() string {
+func (in DaemonSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSetCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetList) OpenAPIModelName() string {
+func (in DaemonSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetSpec) OpenAPIModelName() string {
+func (in DaemonSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetStatus) OpenAPIModelName() string {
+func (in DaemonSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSetStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetUpdateStrategy) OpenAPIModelName() string {
+func (in DaemonSetUpdateStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DaemonSetUpdateStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Deployment) OpenAPIModelName() string {
+func (in Deployment) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.Deployment"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentCondition) OpenAPIModelName() string {
+func (in DeploymentCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DeploymentCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentList) OpenAPIModelName() string {
+func (in DeploymentList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DeploymentList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentSpec) OpenAPIModelName() string {
+func (in DeploymentSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DeploymentSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStatus) OpenAPIModelName() string {
+func (in DeploymentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DeploymentStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStrategy) OpenAPIModelName() string {
+func (in DeploymentStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.DeploymentStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSet) OpenAPIModelName() string {
+func (in ReplicaSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ReplicaSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetCondition) OpenAPIModelName() string {
+func (in ReplicaSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ReplicaSetCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetList) OpenAPIModelName() string {
+func (in ReplicaSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ReplicaSetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetSpec) OpenAPIModelName() string {
+func (in ReplicaSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ReplicaSetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetStatus) OpenAPIModelName() string {
+func (in ReplicaSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.ReplicaSetStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDaemonSet) OpenAPIModelName() string {
+func (in RollingUpdateDaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.RollingUpdateDaemonSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDeployment) OpenAPIModelName() string {
+func (in RollingUpdateDeployment) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.RollingUpdateDeployment"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateStatefulSetStrategy) OpenAPIModelName() string {
+func (in RollingUpdateStatefulSetStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.RollingUpdateStatefulSetStrategy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSet) OpenAPIModelName() string {
+func (in StatefulSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSet"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetCondition) OpenAPIModelName() string {
+func (in StatefulSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetList) OpenAPIModelName() string {
+func (in StatefulSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetOrdinals) OpenAPIModelName() string {
+func (in StatefulSetOrdinals) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetOrdinals"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetPersistentVolumeClaimRetentionPolicy) OpenAPIModelName() string {
+func (in StatefulSetPersistentVolumeClaimRetentionPolicy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetPersistentVolumeClaimRetentionPolicy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetSpec) OpenAPIModelName() string {
+func (in StatefulSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetStatus) OpenAPIModelName() string {
+func (in StatefulSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetUpdateStrategy) OpenAPIModelName() string {
+func (in StatefulSetUpdateStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1.StatefulSetUpdateStrategy"
 }

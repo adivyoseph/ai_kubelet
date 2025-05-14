@@ -22,6 +22,6 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceControllerConfiguration) OpenAPIModelName() string {
+func (in ServiceControllerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.cloud-provider.controllers.service.config.v1alpha1.ServiceControllerConfiguration"
 }

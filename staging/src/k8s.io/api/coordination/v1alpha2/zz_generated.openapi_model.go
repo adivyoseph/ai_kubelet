@@ -22,16 +22,16 @@ limitations under the License.
 package v1alpha2
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidate) OpenAPIModelName() string {
+func (in LeaseCandidate) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1alpha2.LeaseCandidate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidateList) OpenAPIModelName() string {
+func (in LeaseCandidateList) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1alpha2.LeaseCandidateList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidateSpec) OpenAPIModelName() string {
+func (in LeaseCandidateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1alpha2.LeaseCandidateSpec"
 }

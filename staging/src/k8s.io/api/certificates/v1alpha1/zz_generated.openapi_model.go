@@ -22,16 +22,16 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundle) OpenAPIModelName() string {
+func (in ClusterTrustBundle) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundle"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleList) OpenAPIModelName() string {
+func (in ClusterTrustBundleList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundleList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleSpec) OpenAPIModelName() string {
+func (in ClusterTrustBundleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundleSpec"
 }

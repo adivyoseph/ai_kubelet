@@ -22,6 +22,6 @@ limitations under the License.
 package intstr
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *IntOrString) OpenAPIModelName() string {
+func (in IntOrString) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.util.intstr.IntOrString"
 }

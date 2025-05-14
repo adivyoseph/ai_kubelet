@@ -22,16 +22,16 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricListOptions) OpenAPIModelName() string {
+func (in MetricListOptions) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.custom_metrics.v1beta1.MetricListOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricValue) OpenAPIModelName() string {
+func (in MetricValue) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.custom_metrics.v1beta1.MetricValue"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricValueList) OpenAPIModelName() string {
+func (in MetricValueList) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.custom_metrics.v1beta1.MetricValueList"
 }

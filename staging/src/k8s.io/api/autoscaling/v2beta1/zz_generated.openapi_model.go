@@ -22,91 +22,91 @@ limitations under the License.
 package v2beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerResourceMetricSource) OpenAPIModelName() string {
+func (in ContainerResourceMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ContainerResourceMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerResourceMetricStatus) OpenAPIModelName() string {
+func (in ContainerResourceMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ContainerResourceMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CrossVersionObjectReference) OpenAPIModelName() string {
+func (in CrossVersionObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.CrossVersionObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExternalMetricSource) OpenAPIModelName() string {
+func (in ExternalMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ExternalMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExternalMetricStatus) OpenAPIModelName() string {
+func (in ExternalMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ExternalMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscaler) OpenAPIModelName() string {
+func (in HorizontalPodAutoscaler) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerCondition) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerCondition) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerList) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerList) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerSpec) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerStatus) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricSpec) OpenAPIModelName() string {
+func (in MetricSpec) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.MetricSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricStatus) OpenAPIModelName() string {
+func (in MetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.MetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectMetricSource) OpenAPIModelName() string {
+func (in ObjectMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ObjectMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectMetricStatus) OpenAPIModelName() string {
+func (in ObjectMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ObjectMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodsMetricSource) OpenAPIModelName() string {
+func (in PodsMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.PodsMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodsMetricStatus) OpenAPIModelName() string {
+func (in PodsMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.PodsMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceMetricSource) OpenAPIModelName() string {
+func (in ResourceMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ResourceMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceMetricStatus) OpenAPIModelName() string {
+func (in ResourceMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ResourceMetricStatus"
 }

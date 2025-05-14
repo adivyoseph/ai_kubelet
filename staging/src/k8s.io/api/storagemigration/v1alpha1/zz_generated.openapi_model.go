@@ -22,31 +22,31 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GroupVersionResource) OpenAPIModelName() string {
+func (in GroupVersionResource) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.GroupVersionResource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MigrationCondition) OpenAPIModelName() string {
+func (in MigrationCondition) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.MigrationCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigration) OpenAPIModelName() string {
+func (in StorageVersionMigration) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationList) OpenAPIModelName() string {
+func (in StorageVersionMigrationList) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationSpec) OpenAPIModelName() string {
+func (in StorageVersionMigrationSpec) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationStatus) OpenAPIModelName() string {
+func (in StorageVersionMigrationStatus) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationStatus"
 }

@@ -22,16 +22,16 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ControllerLeaderConfiguration) OpenAPIModelName() string {
+func (in ControllerLeaderConfiguration) OpenAPIModelName() string {
 	return "io.k8s.controller-manager.config.v1alpha1.ControllerLeaderConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GenericControllerManagerConfiguration) OpenAPIModelName() string {
+func (in GenericControllerManagerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.controller-manager.config.v1alpha1.GenericControllerManagerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LeaderMigrationConfiguration) OpenAPIModelName() string {
+func (in LeaderMigrationConfiguration) OpenAPIModelName() string {
 	return "io.k8s.controller-manager.config.v1alpha1.LeaderMigrationConfiguration"
 }

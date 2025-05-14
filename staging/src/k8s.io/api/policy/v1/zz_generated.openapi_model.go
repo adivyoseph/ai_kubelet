@@ -22,26 +22,26 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Eviction) OpenAPIModelName() string {
+func (in Eviction) OpenAPIModelName() string {
 	return "io.k8s.api.policy.v1.Eviction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDisruptionBudget) OpenAPIModelName() string {
+func (in PodDisruptionBudget) OpenAPIModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudget"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDisruptionBudgetList) OpenAPIModelName() string {
+func (in PodDisruptionBudgetList) OpenAPIModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDisruptionBudgetSpec) OpenAPIModelName() string {
+func (in PodDisruptionBudgetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDisruptionBudgetStatus) OpenAPIModelName() string {
+func (in PodDisruptionBudgetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetStatus"
 }

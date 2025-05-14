@@ -22,121 +22,121 @@ limitations under the License.
 package v2
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerResourceMetricSource) OpenAPIModelName() string {
+func (in ContainerResourceMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ContainerResourceMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerResourceMetricStatus) OpenAPIModelName() string {
+func (in ContainerResourceMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ContainerResourceMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CrossVersionObjectReference) OpenAPIModelName() string {
+func (in CrossVersionObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.CrossVersionObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExternalMetricSource) OpenAPIModelName() string {
+func (in ExternalMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ExternalMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExternalMetricStatus) OpenAPIModelName() string {
+func (in ExternalMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ExternalMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HPAScalingPolicy) OpenAPIModelName() string {
+func (in HPAScalingPolicy) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HPAScalingPolicy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HPAScalingRules) OpenAPIModelName() string {
+func (in HPAScalingRules) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HPAScalingRules"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscaler) OpenAPIModelName() string {
+func (in HorizontalPodAutoscaler) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscaler"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerBehavior) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerBehavior) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerBehavior"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerCondition) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerCondition) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerList) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerList) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerSpec) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HorizontalPodAutoscalerStatus) OpenAPIModelName() string {
+func (in HorizontalPodAutoscalerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricIdentifier) OpenAPIModelName() string {
+func (in MetricIdentifier) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.MetricIdentifier"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricSpec) OpenAPIModelName() string {
+func (in MetricSpec) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.MetricSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricStatus) OpenAPIModelName() string {
+func (in MetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.MetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricTarget) OpenAPIModelName() string {
+func (in MetricTarget) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.MetricTarget"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MetricValueStatus) OpenAPIModelName() string {
+func (in MetricValueStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.MetricValueStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectMetricSource) OpenAPIModelName() string {
+func (in ObjectMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ObjectMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectMetricStatus) OpenAPIModelName() string {
+func (in ObjectMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ObjectMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodsMetricSource) OpenAPIModelName() string {
+func (in PodsMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.PodsMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodsMetricStatus) OpenAPIModelName() string {
+func (in PodsMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.PodsMetricStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceMetricSource) OpenAPIModelName() string {
+func (in ResourceMetricSource) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ResourceMetricSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceMetricStatus) OpenAPIModelName() string {
+func (in ResourceMetricStatus) OpenAPIModelName() string {
 	return "io.k8s.api.autoscaling.v2.ResourceMetricStatus"
 }

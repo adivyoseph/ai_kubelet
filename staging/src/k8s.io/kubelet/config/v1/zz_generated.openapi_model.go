@@ -22,21 +22,21 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProvider) OpenAPIModelName() string {
+func (in CredentialProvider) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProvider"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProviderConfig) OpenAPIModelName() string {
+func (in CredentialProviderConfig) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProviderConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecEnvVar) OpenAPIModelName() string {
+func (in ExecEnvVar) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ExecEnvVar"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountTokenAttributes) OpenAPIModelName() string {
+func (in ServiceAccountTokenAttributes) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ServiceAccountTokenAttributes"
 }

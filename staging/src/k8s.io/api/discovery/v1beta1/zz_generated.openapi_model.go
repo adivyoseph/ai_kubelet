@@ -22,41 +22,41 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Endpoint) OpenAPIModelName() string {
+func (in Endpoint) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.Endpoint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointConditions) OpenAPIModelName() string {
+func (in EndpointConditions) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.EndpointConditions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointHints) OpenAPIModelName() string {
+func (in EndpointHints) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.EndpointHints"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointPort) OpenAPIModelName() string {
+func (in EndpointPort) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.EndpointPort"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointSlice) OpenAPIModelName() string {
+func (in EndpointSlice) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.EndpointSlice"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointSliceList) OpenAPIModelName() string {
+func (in EndpointSliceList) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.EndpointSliceList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ForNode) OpenAPIModelName() string {
+func (in ForNode) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.ForNode"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ForZone) OpenAPIModelName() string {
+func (in ForZone) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1beta1.ForZone"
 }

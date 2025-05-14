@@ -22,26 +22,26 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CronJob) OpenAPIModelName() string {
+func (in CronJob) OpenAPIModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJob"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CronJobList) OpenAPIModelName() string {
+func (in CronJobList) OpenAPIModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CronJobSpec) OpenAPIModelName() string {
+func (in CronJobSpec) OpenAPIModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CronJobStatus) OpenAPIModelName() string {
+func (in CronJobStatus) OpenAPIModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *JobTemplateSpec) OpenAPIModelName() string {
+func (in JobTemplateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.batch.v1beta1.JobTemplateSpec"
 }

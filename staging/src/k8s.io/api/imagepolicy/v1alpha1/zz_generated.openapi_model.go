@@ -22,21 +22,21 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImageReview) OpenAPIModelName() string {
+func (in ImageReview) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewContainerSpec) OpenAPIModelName() string {
+func (in ImageReviewContainerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewContainerSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewSpec) OpenAPIModelName() string {
+func (in ImageReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewStatus) OpenAPIModelName() string {
+func (in ImageReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewStatus"
 }

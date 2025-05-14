@@ -22,76 +22,76 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FieldSelectorAttributes) OpenAPIModelName() string {
+func (in FieldSelectorAttributes) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.FieldSelectorAttributes"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LabelSelectorAttributes) OpenAPIModelName() string {
+func (in LabelSelectorAttributes) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.LabelSelectorAttributes"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LocalSubjectAccessReview) OpenAPIModelName() string {
+func (in LocalSubjectAccessReview) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.LocalSubjectAccessReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NonResourceAttributes) OpenAPIModelName() string {
+func (in NonResourceAttributes) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.NonResourceAttributes"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NonResourceRule) OpenAPIModelName() string {
+func (in NonResourceRule) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.NonResourceRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceAttributes) OpenAPIModelName() string {
+func (in ResourceAttributes) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.ResourceAttributes"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceRule) OpenAPIModelName() string {
+func (in ResourceRule) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.ResourceRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectAccessReview) OpenAPIModelName() string {
+func (in SelfSubjectAccessReview) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SelfSubjectAccessReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectAccessReviewSpec) OpenAPIModelName() string {
+func (in SelfSubjectAccessReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SelfSubjectAccessReviewSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectRulesReview) OpenAPIModelName() string {
+func (in SelfSubjectRulesReview) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SelfSubjectRulesReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectRulesReviewSpec) OpenAPIModelName() string {
+func (in SelfSubjectRulesReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SelfSubjectRulesReviewSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SubjectAccessReview) OpenAPIModelName() string {
+func (in SubjectAccessReview) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SubjectAccessReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SubjectAccessReviewSpec) OpenAPIModelName() string {
+func (in SubjectAccessReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SubjectAccessReviewSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SubjectAccessReviewStatus) OpenAPIModelName() string {
+func (in SubjectAccessReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SubjectAccessReviewStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SubjectRulesReviewStatus) OpenAPIModelName() string {
+func (in SubjectRulesReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.authorization.v1.SubjectRulesReviewStatus"
 }

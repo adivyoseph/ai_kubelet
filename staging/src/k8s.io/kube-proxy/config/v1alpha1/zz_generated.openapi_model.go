@@ -22,36 +22,36 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DetectLocalConfiguration) OpenAPIModelName() string {
+func (in DetectLocalConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.DetectLocalConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyConfiguration) OpenAPIModelName() string {
+func (in KubeProxyConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyConntrackConfiguration) OpenAPIModelName() string {
+func (in KubeProxyConntrackConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyConntrackConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyIPTablesConfiguration) OpenAPIModelName() string {
+func (in KubeProxyIPTablesConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyIPTablesConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyIPVSConfiguration) OpenAPIModelName() string {
+func (in KubeProxyIPVSConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyIPVSConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyNFTablesConfiguration) OpenAPIModelName() string {
+func (in KubeProxyNFTablesConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyNFTablesConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeProxyWinkernelConfiguration) OpenAPIModelName() string {
+func (in KubeProxyWinkernelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kube-proxy.config.v1alpha1.KubeProxyWinkernelConfiguration"
 }

@@ -22,26 +22,26 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerMetrics) OpenAPIModelName() string {
+func (in ContainerMetrics) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.metrics.v1alpha1.ContainerMetrics"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeMetrics) OpenAPIModelName() string {
+func (in NodeMetrics) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.metrics.v1alpha1.NodeMetrics"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeMetricsList) OpenAPIModelName() string {
+func (in NodeMetricsList) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.metrics.v1alpha1.NodeMetricsList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodMetrics) OpenAPIModelName() string {
+func (in PodMetrics) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.metrics.v1alpha1.PodMetrics"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodMetricsList) OpenAPIModelName() string {
+func (in PodMetricsList) OpenAPIModelName() string {
 	return "io.k8s.metrics.pkg.apis.metrics.v1alpha1.PodMetricsList"
 }

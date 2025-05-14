@@ -22,31 +22,31 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectReview) OpenAPIModelName() string {
+func (in SelfSubjectReview) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.SelfSubjectReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectReviewStatus) OpenAPIModelName() string {
+func (in SelfSubjectReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.SelfSubjectReviewStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TokenReview) OpenAPIModelName() string {
+func (in TokenReview) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.TokenReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TokenReviewSpec) OpenAPIModelName() string {
+func (in TokenReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.TokenReviewSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TokenReviewStatus) OpenAPIModelName() string {
+func (in TokenReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.TokenReviewStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *UserInfo) OpenAPIModelName() string {
+func (in UserInfo) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1beta1.UserInfo"
 }

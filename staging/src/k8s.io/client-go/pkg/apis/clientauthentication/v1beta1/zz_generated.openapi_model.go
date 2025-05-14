@@ -22,21 +22,21 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Cluster) OpenAPIModelName() string {
+func (in Cluster) OpenAPIModelName() string {
 	return "io.k8s.client-go.pkg.apis.clientauthentication.v1beta1.Cluster"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecCredential) OpenAPIModelName() string {
+func (in ExecCredential) OpenAPIModelName() string {
 	return "io.k8s.client-go.pkg.apis.clientauthentication.v1beta1.ExecCredential"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecCredentialSpec) OpenAPIModelName() string {
+func (in ExecCredentialSpec) OpenAPIModelName() string {
 	return "io.k8s.client-go.pkg.apis.clientauthentication.v1beta1.ExecCredentialSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecCredentialStatus) OpenAPIModelName() string {
+func (in ExecCredentialStatus) OpenAPIModelName() string {
 	return "io.k8s.client-go.pkg.apis.clientauthentication.v1beta1.ExecCredentialStatus"
 }

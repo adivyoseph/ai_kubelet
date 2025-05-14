@@ -22,41 +22,41 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequest) OpenAPIModelName() string {
+func (in CertificateSigningRequest) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestCondition) OpenAPIModelName() string {
+func (in CertificateSigningRequestCondition) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestList) OpenAPIModelName() string {
+func (in CertificateSigningRequestList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestSpec) OpenAPIModelName() string {
+func (in CertificateSigningRequestSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestStatus) OpenAPIModelName() string {
+func (in CertificateSigningRequestStatus) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundle) OpenAPIModelName() string {
+func (in ClusterTrustBundle) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundle"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleList) OpenAPIModelName() string {
+func (in ClusterTrustBundleList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleSpec) OpenAPIModelName() string {
+func (in ClusterTrustBundleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleSpec"
 }

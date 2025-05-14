@@ -22,16 +22,16 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AdmissionRequest) OpenAPIModelName() string {
+func (in AdmissionRequest) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1.AdmissionRequest"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AdmissionResponse) OpenAPIModelName() string {
+func (in AdmissionResponse) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1.AdmissionResponse"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AdmissionReview) OpenAPIModelName() string {
+func (in AdmissionReview) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1.AdmissionReview"
 }

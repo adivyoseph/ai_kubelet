@@ -22,36 +22,36 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Event) OpenAPIModelName() string {
+func (in Event) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.Event"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventList) OpenAPIModelName() string {
+func (in EventList) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.EventList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GroupResources) OpenAPIModelName() string {
+func (in GroupResources) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.GroupResources"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectReference) OpenAPIModelName() string {
+func (in ObjectReference) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.ObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Policy) OpenAPIModelName() string {
+func (in Policy) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.Policy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PolicyList) OpenAPIModelName() string {
+func (in PolicyList) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.PolicyList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PolicyRule) OpenAPIModelName() string {
+func (in PolicyRule) OpenAPIModelName() string {
 	return "io.k8s.apiserver.pkg.apis.audit.v1.PolicyRule"
 }

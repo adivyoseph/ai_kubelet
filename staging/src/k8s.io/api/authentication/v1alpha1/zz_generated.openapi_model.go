@@ -22,11 +22,11 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectReview) OpenAPIModelName() string {
+func (in SelfSubjectReview) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1alpha1.SelfSubjectReview"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SelfSubjectReviewStatus) OpenAPIModelName() string {
+func (in SelfSubjectReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.authentication.v1alpha1.SelfSubjectReviewStatus"
 }

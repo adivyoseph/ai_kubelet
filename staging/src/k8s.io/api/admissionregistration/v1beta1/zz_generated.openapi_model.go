@@ -22,126 +22,126 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AuditAnnotation) OpenAPIModelName() string {
+func (in AuditAnnotation) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.AuditAnnotation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExpressionWarning) OpenAPIModelName() string {
+func (in ExpressionWarning) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ExpressionWarning"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MatchCondition) OpenAPIModelName() string {
+func (in MatchCondition) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.MatchCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MatchResources) OpenAPIModelName() string {
+func (in MatchResources) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.MatchResources"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MutatingWebhook) OpenAPIModelName() string {
+func (in MutatingWebhook) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.MutatingWebhook"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MutatingWebhookConfiguration) OpenAPIModelName() string {
+func (in MutatingWebhookConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MutatingWebhookConfigurationList) OpenAPIModelName() string {
+func (in MutatingWebhookConfigurationList) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfigurationList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamedRuleWithOperations) OpenAPIModelName() string {
+func (in NamedRuleWithOperations) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.NamedRuleWithOperations"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ParamKind) OpenAPIModelName() string {
+func (in ParamKind) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ParamKind"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ParamRef) OpenAPIModelName() string {
+func (in ParamRef) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ParamRef"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceReference) OpenAPIModelName() string {
+func (in ServiceReference) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ServiceReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TypeChecking) OpenAPIModelName() string {
+func (in TypeChecking) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.TypeChecking"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicy) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicy) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyBinding) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyBinding) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBinding"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyBindingList) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyBindingList) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBindingList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyBindingSpec) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyBindingSpec) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBindingSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyList) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyList) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicyList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicySpec) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicySpec) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicySpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingAdmissionPolicyStatus) OpenAPIModelName() string {
+func (in ValidatingAdmissionPolicyStatus) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingAdmissionPolicyStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingWebhook) OpenAPIModelName() string {
+func (in ValidatingWebhook) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhook"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingWebhookConfiguration) OpenAPIModelName() string {
+func (in ValidatingWebhookConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ValidatingWebhookConfigurationList) OpenAPIModelName() string {
+func (in ValidatingWebhookConfigurationList) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfigurationList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Validation) OpenAPIModelName() string {
+func (in Validation) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.Validation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Variable) OpenAPIModelName() string {
+func (in Variable) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.Variable"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WebhookClientConfig) OpenAPIModelName() string {
+func (in WebhookClientConfig) OpenAPIModelName() string {
 	return "io.k8s.api.admissionregistration.v1beta1.WebhookClientConfig"
 }

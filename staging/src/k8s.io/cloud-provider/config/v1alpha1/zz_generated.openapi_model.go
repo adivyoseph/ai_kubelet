@@ -22,21 +22,21 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CloudControllerManagerConfiguration) OpenAPIModelName() string {
+func (in CloudControllerManagerConfiguration) OpenAPIModelName() string {
 	return "io.k8s.cloud-provider.config.v1alpha1.CloudControllerManagerConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CloudProviderConfiguration) OpenAPIModelName() string {
+func (in CloudProviderConfiguration) OpenAPIModelName() string {
 	return "io.k8s.cloud-provider.config.v1alpha1.CloudProviderConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeCloudSharedConfiguration) OpenAPIModelName() string {
+func (in KubeCloudSharedConfiguration) OpenAPIModelName() string {
 	return "io.k8s.cloud-provider.config.v1alpha1.KubeCloudSharedConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WebhookConfiguration) OpenAPIModelName() string {
+func (in WebhookConfiguration) OpenAPIModelName() string {
 	return "io.k8s.cloud-provider.config.v1alpha1.WebhookConfiguration"
 }

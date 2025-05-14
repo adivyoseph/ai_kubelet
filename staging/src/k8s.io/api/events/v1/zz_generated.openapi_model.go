@@ -22,16 +22,16 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Event) OpenAPIModelName() string {
+func (in Event) OpenAPIModelName() string {
 	return "io.k8s.api.events.v1.Event"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventList) OpenAPIModelName() string {
+func (in EventList) OpenAPIModelName() string {
 	return "io.k8s.api.events.v1.EventList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventSeries) OpenAPIModelName() string {
+func (in EventSeries) OpenAPIModelName() string {
 	return "io.k8s.api.events.v1.EventSeries"
 }

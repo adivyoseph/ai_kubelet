@@ -22,36 +22,36 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProvider) OpenAPIModelName() string {
+func (in CredentialProvider) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProvider"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProviderConfig) OpenAPIModelName() string {
+func (in CredentialProviderConfig) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProviderConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecEnvVar) OpenAPIModelName() string {
+func (in ExecEnvVar) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ExecEnvVar"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImagePullCredentials) OpenAPIModelName() string {
+func (in ImagePullCredentials) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ImagePullCredentials"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImagePullIntent) OpenAPIModelName() string {
+func (in ImagePullIntent) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ImagePullIntent"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImagePullSecret) OpenAPIModelName() string {
+func (in ImagePullSecret) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ImagePullSecret"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImagePulledRecord) OpenAPIModelName() string {
+func (in ImagePulledRecord) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ImagePulledRecord"
 }

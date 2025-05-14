@@ -22,81 +22,81 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CrashLoopBackOffConfig) OpenAPIModelName() string {
+func (in CrashLoopBackOffConfig) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CrashLoopBackOffConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProvider) OpenAPIModelName() string {
+func (in CredentialProvider) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProvider"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CredentialProviderConfig) OpenAPIModelName() string {
+func (in CredentialProviderConfig) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.CredentialProviderConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecEnvVar) OpenAPIModelName() string {
+func (in ExecEnvVar) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ExecEnvVar"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletAnonymousAuthentication) OpenAPIModelName() string {
+func (in KubeletAnonymousAuthentication) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletAnonymousAuthentication"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletAuthentication) OpenAPIModelName() string {
+func (in KubeletAuthentication) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletAuthentication"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletAuthorization) OpenAPIModelName() string {
+func (in KubeletAuthorization) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletAuthorization"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletConfiguration) OpenAPIModelName() string {
+func (in KubeletConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletWebhookAuthentication) OpenAPIModelName() string {
+func (in KubeletWebhookAuthentication) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletWebhookAuthentication"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletWebhookAuthorization) OpenAPIModelName() string {
+func (in KubeletWebhookAuthorization) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletWebhookAuthorization"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KubeletX509Authentication) OpenAPIModelName() string {
+func (in KubeletX509Authentication) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.KubeletX509Authentication"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MemoryReservation) OpenAPIModelName() string {
+func (in MemoryReservation) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.MemoryReservation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *MemorySwapConfiguration) OpenAPIModelName() string {
+func (in MemorySwapConfiguration) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.MemorySwapConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SerializedNodeConfigSource) OpenAPIModelName() string {
+func (in SerializedNodeConfigSource) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.SerializedNodeConfigSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ShutdownGracePeriodByPodPriority) OpenAPIModelName() string {
+func (in ShutdownGracePeriodByPodPriority) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.ShutdownGracePeriodByPodPriority"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *UserNamespaces) OpenAPIModelName() string {
+func (in UserNamespaces) OpenAPIModelName() string {
 	return "io.k8s.kubelet.config.v1.UserNamespaces"
 }

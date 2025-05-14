@@ -22,21 +22,21 @@ limitations under the License.
 package v1alpha1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AliasOverride) OpenAPIModelName() string {
+func (in AliasOverride) OpenAPIModelName() string {
 	return "io.k8s.kubectl.pkg.config.v1alpha1.AliasOverride"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CommandOverride) OpenAPIModelName() string {
+func (in CommandOverride) OpenAPIModelName() string {
 	return "io.k8s.kubectl.pkg.config.v1alpha1.CommandOverride"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CommandOverrideFlag) OpenAPIModelName() string {
+func (in CommandOverrideFlag) OpenAPIModelName() string {
 	return "io.k8s.kubectl.pkg.config.v1alpha1.CommandOverrideFlag"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Preference) OpenAPIModelName() string {
+func (in Preference) OpenAPIModelName() string {
 	return "io.k8s.kubectl.pkg.config.v1alpha1.Preference"
 }

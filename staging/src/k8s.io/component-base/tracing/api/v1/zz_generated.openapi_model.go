@@ -22,6 +22,6 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TracingConfiguration) OpenAPIModelName() string {
+func (in TracingConfiguration) OpenAPIModelName() string {
 	return "io.k8s.component-base.tracing.api.v1.TracingConfiguration"
 }

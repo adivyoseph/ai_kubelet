@@ -22,6 +22,6 @@ limitations under the License.
 package version
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Info) OpenAPIModelName() string {
+func (in Info) OpenAPIModelName() string {
 	return "io.k8s.apimachinery.pkg.version.Info"
 }

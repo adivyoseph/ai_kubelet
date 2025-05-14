@@ -22,11 +22,11 @@ limitations under the License.
 package v1beta1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityClass) OpenAPIModelName() string {
+func (in PriorityClass) OpenAPIModelName() string {
 	return "io.k8s.api.scheduling.v1beta1.PriorityClass"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityClassList) OpenAPIModelName() string {
+func (in PriorityClassList) OpenAPIModelName() string {
 	return "io.k8s.api.scheduling.v1beta1.PriorityClassList"
 }

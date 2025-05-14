@@ -22,1156 +22,1156 @@ limitations under the License.
 package v1
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AWSElasticBlockStoreVolumeSource) OpenAPIModelName() string {
+func (in AWSElasticBlockStoreVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AWSElasticBlockStoreVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Affinity) OpenAPIModelName() string {
+func (in Affinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Affinity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AppArmorProfile) OpenAPIModelName() string {
+func (in AppArmorProfile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AppArmorProfile"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AttachedVolume) OpenAPIModelName() string {
+func (in AttachedVolume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AttachedVolume"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AvoidPods) OpenAPIModelName() string {
+func (in AvoidPods) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AvoidPods"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AzureDiskVolumeSource) OpenAPIModelName() string {
+func (in AzureDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureDiskVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AzureFilePersistentVolumeSource) OpenAPIModelName() string {
+func (in AzureFilePersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureFilePersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *AzureFileVolumeSource) OpenAPIModelName() string {
+func (in AzureFileVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureFileVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Binding) OpenAPIModelName() string {
+func (in Binding) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Binding"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CSIPersistentVolumeSource) OpenAPIModelName() string {
+func (in CSIPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CSIPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CSIVolumeSource) OpenAPIModelName() string {
+func (in CSIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CSIVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Capabilities) OpenAPIModelName() string {
+func (in Capabilities) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Capabilities"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CephFSPersistentVolumeSource) OpenAPIModelName() string {
+func (in CephFSPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CephFSPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CephFSVolumeSource) OpenAPIModelName() string {
+func (in CephFSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CephFSVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CinderPersistentVolumeSource) OpenAPIModelName() string {
+func (in CinderPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CinderPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *CinderVolumeSource) OpenAPIModelName() string {
+func (in CinderVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CinderVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClientIPConfig) OpenAPIModelName() string {
+func (in ClientIPConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ClientIPConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleProjection) OpenAPIModelName() string {
+func (in ClusterTrustBundleProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ClusterTrustBundleProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ComponentCondition) OpenAPIModelName() string {
+func (in ComponentCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ComponentStatus) OpenAPIModelName() string {
+func (in ComponentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ComponentStatusList) OpenAPIModelName() string {
+func (in ComponentStatusList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentStatusList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMap) OpenAPIModelName() string {
+func (in ConfigMap) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMap"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapEnvSource) OpenAPIModelName() string {
+func (in ConfigMapEnvSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapEnvSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapKeySelector) OpenAPIModelName() string {
+func (in ConfigMapKeySelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapKeySelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapList) OpenAPIModelName() string {
+func (in ConfigMapList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapNodeConfigSource) OpenAPIModelName() string {
+func (in ConfigMapNodeConfigSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapNodeConfigSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapProjection) OpenAPIModelName() string {
+func (in ConfigMapProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapVolumeSource) OpenAPIModelName() string {
+func (in ConfigMapVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Container) OpenAPIModelName() string {
+func (in Container) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Container"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerImage) OpenAPIModelName() string {
+func (in ContainerImage) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerImage"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerPort) OpenAPIModelName() string {
+func (in ContainerPort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerPort"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerResizePolicy) OpenAPIModelName() string {
+func (in ContainerResizePolicy) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerResizePolicy"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerState) OpenAPIModelName() string {
+func (in ContainerState) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerState"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateRunning) OpenAPIModelName() string {
+func (in ContainerStateRunning) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateRunning"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateTerminated) OpenAPIModelName() string {
+func (in ContainerStateTerminated) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateTerminated"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateWaiting) OpenAPIModelName() string {
+func (in ContainerStateWaiting) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateWaiting"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerStatus) OpenAPIModelName() string {
+func (in ContainerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ContainerUser) OpenAPIModelName() string {
+func (in ContainerUser) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerUser"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DaemonEndpoint) OpenAPIModelName() string {
+func (in DaemonEndpoint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DaemonEndpoint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIProjection) OpenAPIModelName() string {
+func (in DownwardAPIProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIVolumeFile) OpenAPIModelName() string {
+func (in DownwardAPIVolumeFile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIVolumeFile"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIVolumeSource) OpenAPIModelName() string {
+func (in DownwardAPIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EmptyDirVolumeSource) OpenAPIModelName() string {
+func (in EmptyDirVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EmptyDirVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointAddress) OpenAPIModelName() string {
+func (in EndpointAddress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointAddress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointPort) OpenAPIModelName() string {
+func (in EndpointPort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointPort"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointSubset) OpenAPIModelName() string {
+func (in EndpointSubset) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointSubset"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Endpoints) OpenAPIModelName() string {
+func (in Endpoints) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Endpoints"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EndpointsList) OpenAPIModelName() string {
+func (in EndpointsList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointsList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EnvFromSource) OpenAPIModelName() string {
+func (in EnvFromSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvFromSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EnvVar) OpenAPIModelName() string {
+func (in EnvVar) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvVar"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EnvVarSource) OpenAPIModelName() string {
+func (in EnvVarSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvVarSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EphemeralContainer) OpenAPIModelName() string {
+func (in EphemeralContainer) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralContainer"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EphemeralContainerCommon) OpenAPIModelName() string {
+func (in EphemeralContainerCommon) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralContainerCommon"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EphemeralVolumeSource) OpenAPIModelName() string {
+func (in EphemeralVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Event) OpenAPIModelName() string {
+func (in Event) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Event"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventList) OpenAPIModelName() string {
+func (in EventList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventSeries) OpenAPIModelName() string {
+func (in EventSeries) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventSeries"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *EventSource) OpenAPIModelName() string {
+func (in EventSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExecAction) OpenAPIModelName() string {
+func (in ExecAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ExecAction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FCVolumeSource) OpenAPIModelName() string {
+func (in FCVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FCVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlexPersistentVolumeSource) OpenAPIModelName() string {
+func (in FlexPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlexPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlexVolumeSource) OpenAPIModelName() string {
+func (in FlexVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlexVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlockerVolumeSource) OpenAPIModelName() string {
+func (in FlockerVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlockerVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GCEPersistentDiskVolumeSource) OpenAPIModelName() string {
+func (in GCEPersistentDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GCEPersistentDiskVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GRPCAction) OpenAPIModelName() string {
+func (in GRPCAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GRPCAction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GitRepoVolumeSource) OpenAPIModelName() string {
+func (in GitRepoVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GitRepoVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GlusterfsPersistentVolumeSource) OpenAPIModelName() string {
+func (in GlusterfsPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GlusterfsPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GlusterfsVolumeSource) OpenAPIModelName() string {
+func (in GlusterfsVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GlusterfsVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPGetAction) OpenAPIModelName() string {
+func (in HTTPGetAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HTTPGetAction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HTTPHeader) OpenAPIModelName() string {
+func (in HTTPHeader) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HTTPHeader"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HostAlias) OpenAPIModelName() string {
+func (in HostAlias) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostAlias"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HostIP) OpenAPIModelName() string {
+func (in HostIP) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostIP"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *HostPathVolumeSource) OpenAPIModelName() string {
+func (in HostPathVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostPathVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ISCSIPersistentVolumeSource) OpenAPIModelName() string {
+func (in ISCSIPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ISCSIPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ISCSIVolumeSource) OpenAPIModelName() string {
+func (in ISCSIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ISCSIVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ImageVolumeSource) OpenAPIModelName() string {
+func (in ImageVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ImageVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *KeyToPath) OpenAPIModelName() string {
+func (in KeyToPath) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.KeyToPath"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Lifecycle) OpenAPIModelName() string {
+func (in Lifecycle) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Lifecycle"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LifecycleHandler) OpenAPIModelName() string {
+func (in LifecycleHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LifecycleHandler"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitRange) OpenAPIModelName() string {
+func (in LimitRange) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRange"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeItem) OpenAPIModelName() string {
+func (in LimitRangeItem) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeItem"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeList) OpenAPIModelName() string {
+func (in LimitRangeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeSpec) OpenAPIModelName() string {
+func (in LimitRangeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LinuxContainerUser) OpenAPIModelName() string {
+func (in LinuxContainerUser) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LinuxContainerUser"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *List) OpenAPIModelName() string {
+func (in List) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.List"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LoadBalancerIngress) OpenAPIModelName() string {
+func (in LoadBalancerIngress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LoadBalancerIngress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LoadBalancerStatus) OpenAPIModelName() string {
+func (in LoadBalancerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LoadBalancerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LocalObjectReference) OpenAPIModelName() string {
+func (in LocalObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LocalObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LocalVolumeSource) OpenAPIModelName() string {
+func (in LocalVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LocalVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ModifyVolumeStatus) OpenAPIModelName() string {
+func (in ModifyVolumeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ModifyVolumeStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NFSVolumeSource) OpenAPIModelName() string {
+func (in NFSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NFSVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Namespace) OpenAPIModelName() string {
+func (in Namespace) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Namespace"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamespaceCondition) OpenAPIModelName() string {
+func (in NamespaceCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamespaceList) OpenAPIModelName() string {
+func (in NamespaceList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamespaceSpec) OpenAPIModelName() string {
+func (in NamespaceSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NamespaceStatus) OpenAPIModelName() string {
+func (in NamespaceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Node) OpenAPIModelName() string {
+func (in Node) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Node"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeAddress) OpenAPIModelName() string {
+func (in NodeAddress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeAddress"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeAffinity) OpenAPIModelName() string {
+func (in NodeAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeAffinity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeCondition) OpenAPIModelName() string {
+func (in NodeCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeConfigSource) OpenAPIModelName() string {
+func (in NodeConfigSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeConfigSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeConfigStatus) OpenAPIModelName() string {
+func (in NodeConfigStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeConfigStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeDaemonEndpoints) OpenAPIModelName() string {
+func (in NodeDaemonEndpoints) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeDaemonEndpoints"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeFeatures) OpenAPIModelName() string {
+func (in NodeFeatures) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeFeatures"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeList) OpenAPIModelName() string {
+func (in NodeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeProxyOptions) OpenAPIModelName() string {
+func (in NodeProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeProxyOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeRuntimeHandler) OpenAPIModelName() string {
+func (in NodeRuntimeHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeRuntimeHandler"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeRuntimeHandlerFeatures) OpenAPIModelName() string {
+func (in NodeRuntimeHandlerFeatures) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeRuntimeHandlerFeatures"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSelector) OpenAPIModelName() string {
+func (in NodeSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSelectorRequirement) OpenAPIModelName() string {
+func (in NodeSelectorRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelectorRequirement"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSelectorTerm) OpenAPIModelName() string {
+func (in NodeSelectorTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelectorTerm"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSpec) OpenAPIModelName() string {
+func (in NodeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeStatus) OpenAPIModelName() string {
+func (in NodeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSwapStatus) OpenAPIModelName() string {
+func (in NodeSwapStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSwapStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NodeSystemInfo) OpenAPIModelName() string {
+func (in NodeSystemInfo) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSystemInfo"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectFieldSelector) OpenAPIModelName() string {
+func (in ObjectFieldSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ObjectFieldSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ObjectReference) OpenAPIModelName() string {
+func (in ObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolume) OpenAPIModelName() string {
+func (in PersistentVolume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolume"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaim) OpenAPIModelName() string {
+func (in PersistentVolumeClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaim"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimCondition) OpenAPIModelName() string {
+func (in PersistentVolumeClaimCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimList) OpenAPIModelName() string {
+func (in PersistentVolumeClaimList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimSpec) OpenAPIModelName() string {
+func (in PersistentVolumeClaimSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimStatus) OpenAPIModelName() string {
+func (in PersistentVolumeClaimStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimTemplate) OpenAPIModelName() string {
+func (in PersistentVolumeClaimTemplate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimTemplate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimVolumeSource) OpenAPIModelName() string {
+func (in PersistentVolumeClaimVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeList) OpenAPIModelName() string {
+func (in PersistentVolumeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeSource) OpenAPIModelName() string {
+func (in PersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeSpec) OpenAPIModelName() string {
+func (in PersistentVolumeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeStatus) OpenAPIModelName() string {
+func (in PersistentVolumeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PhotonPersistentDiskVolumeSource) OpenAPIModelName() string {
+func (in PhotonPersistentDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PhotonPersistentDiskVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Pod) OpenAPIModelName() string {
+func (in Pod) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Pod"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodAffinity) OpenAPIModelName() string {
+func (in PodAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAffinity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodAffinityTerm) OpenAPIModelName() string {
+func (in PodAffinityTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAffinityTerm"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodAntiAffinity) OpenAPIModelName() string {
+func (in PodAntiAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAntiAffinity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodAttachOptions) OpenAPIModelName() string {
+func (in PodAttachOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAttachOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodCondition) OpenAPIModelName() string {
+func (in PodCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDNSConfig) OpenAPIModelName() string {
+func (in PodDNSConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodDNSConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodDNSConfigOption) OpenAPIModelName() string {
+func (in PodDNSConfigOption) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodDNSConfigOption"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodExecOptions) OpenAPIModelName() string {
+func (in PodExecOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodExecOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodIP) OpenAPIModelName() string {
+func (in PodIP) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodIP"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodList) OpenAPIModelName() string {
+func (in PodList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodLogOptions) OpenAPIModelName() string {
+func (in PodLogOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodLogOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodOS) OpenAPIModelName() string {
+func (in PodOS) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodOS"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodPortForwardOptions) OpenAPIModelName() string {
+func (in PodPortForwardOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodPortForwardOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodProxyOptions) OpenAPIModelName() string {
+func (in PodProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodProxyOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodReadinessGate) OpenAPIModelName() string {
+func (in PodReadinessGate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodReadinessGate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodResourceClaim) OpenAPIModelName() string {
+func (in PodResourceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodResourceClaim"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodResourceClaimStatus) OpenAPIModelName() string {
+func (in PodResourceClaimStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodResourceClaimStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodSchedulingGate) OpenAPIModelName() string {
+func (in PodSchedulingGate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSchedulingGate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodSecurityContext) OpenAPIModelName() string {
+func (in PodSecurityContext) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSecurityContext"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodSignature) OpenAPIModelName() string {
+func (in PodSignature) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSignature"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodSpec) OpenAPIModelName() string {
+func (in PodSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodStatus) OpenAPIModelName() string {
+func (in PodStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodStatusResult) OpenAPIModelName() string {
+func (in PodStatusResult) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodStatusResult"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodTemplate) OpenAPIModelName() string {
+func (in PodTemplate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplate"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodTemplateList) OpenAPIModelName() string {
+func (in PodTemplateList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplateList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PodTemplateSpec) OpenAPIModelName() string {
+func (in PodTemplateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplateSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PortStatus) OpenAPIModelName() string {
+func (in PortStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PortStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PortworxVolumeSource) OpenAPIModelName() string {
+func (in PortworxVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PortworxVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Preconditions) OpenAPIModelName() string {
+func (in Preconditions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Preconditions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PreferAvoidPodsEntry) OpenAPIModelName() string {
+func (in PreferAvoidPodsEntry) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PreferAvoidPodsEntry"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PreferredSchedulingTerm) OpenAPIModelName() string {
+func (in PreferredSchedulingTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PreferredSchedulingTerm"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Probe) OpenAPIModelName() string {
+func (in Probe) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Probe"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ProbeHandler) OpenAPIModelName() string {
+func (in ProbeHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ProbeHandler"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ProjectedVolumeSource) OpenAPIModelName() string {
+func (in ProjectedVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ProjectedVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *QuobyteVolumeSource) OpenAPIModelName() string {
+func (in QuobyteVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.QuobyteVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RBDPersistentVolumeSource) OpenAPIModelName() string {
+func (in RBDPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RBDPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RBDVolumeSource) OpenAPIModelName() string {
+func (in RBDVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RBDVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *RangeAllocation) OpenAPIModelName() string {
+func (in RangeAllocation) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RangeAllocation"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationController) OpenAPIModelName() string {
+func (in ReplicationController) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationController"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerCondition) OpenAPIModelName() string {
+func (in ReplicationControllerCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerList) OpenAPIModelName() string {
+func (in ReplicationControllerList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerSpec) OpenAPIModelName() string {
+func (in ReplicationControllerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerStatus) OpenAPIModelName() string {
+func (in ReplicationControllerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaim) OpenAPIModelName() string {
+func (in ResourceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceClaim"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceFieldSelector) OpenAPIModelName() string {
+func (in ResourceFieldSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceFieldSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceHealth) OpenAPIModelName() string {
+func (in ResourceHealth) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceHealth"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuota) OpenAPIModelName() string {
+func (in ResourceQuota) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuota"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaList) OpenAPIModelName() string {
+func (in ResourceQuotaList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaSpec) OpenAPIModelName() string {
+func (in ResourceQuotaSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaStatus) OpenAPIModelName() string {
+func (in ResourceQuotaStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceRequirements) OpenAPIModelName() string {
+func (in ResourceRequirements) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceRequirements"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourceStatus) OpenAPIModelName() string {
+func (in ResourceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SELinuxOptions) OpenAPIModelName() string {
+func (in SELinuxOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SELinuxOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScaleIOPersistentVolumeSource) OpenAPIModelName() string {
+func (in ScaleIOPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScaleIOPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScaleIOVolumeSource) OpenAPIModelName() string {
+func (in ScaleIOVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScaleIOVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScopeSelector) OpenAPIModelName() string {
+func (in ScopeSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScopeSelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ScopedResourceSelectorRequirement) OpenAPIModelName() string {
+func (in ScopedResourceSelectorRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScopedResourceSelectorRequirement"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SeccompProfile) OpenAPIModelName() string {
+func (in SeccompProfile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SeccompProfile"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Secret) OpenAPIModelName() string {
+func (in Secret) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Secret"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretEnvSource) OpenAPIModelName() string {
+func (in SecretEnvSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretEnvSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretKeySelector) OpenAPIModelName() string {
+func (in SecretKeySelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretKeySelector"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretList) OpenAPIModelName() string {
+func (in SecretList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretProjection) OpenAPIModelName() string {
+func (in SecretProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretReference) OpenAPIModelName() string {
+func (in SecretReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecretVolumeSource) OpenAPIModelName() string {
+func (in SecretVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SecurityContext) OpenAPIModelName() string {
+func (in SecurityContext) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecurityContext"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SerializedReference) OpenAPIModelName() string {
+func (in SerializedReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SerializedReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Service) OpenAPIModelName() string {
+func (in Service) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Service"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccount) OpenAPIModelName() string {
+func (in ServiceAccount) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccount"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountList) OpenAPIModelName() string {
+func (in ServiceAccountList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccountList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountTokenProjection) OpenAPIModelName() string {
+func (in ServiceAccountTokenProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccountTokenProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceList) OpenAPIModelName() string {
+func (in ServiceList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServicePort) OpenAPIModelName() string {
+func (in ServicePort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServicePort"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceProxyOptions) OpenAPIModelName() string {
+func (in ServiceProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceProxyOptions"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceSpec) OpenAPIModelName() string {
+func (in ServiceSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceStatus) OpenAPIModelName() string {
+func (in ServiceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SessionAffinityConfig) OpenAPIModelName() string {
+func (in SessionAffinityConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SessionAffinityConfig"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *SleepAction) OpenAPIModelName() string {
+func (in SleepAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SleepAction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageOSPersistentVolumeSource) OpenAPIModelName() string {
+func (in StorageOSPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.StorageOSPersistentVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *StorageOSVolumeSource) OpenAPIModelName() string {
+func (in StorageOSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.StorageOSVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Sysctl) OpenAPIModelName() string {
+func (in Sysctl) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Sysctl"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TCPSocketAction) OpenAPIModelName() string {
+func (in TCPSocketAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TCPSocketAction"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Taint) OpenAPIModelName() string {
+func (in Taint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Taint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Toleration) OpenAPIModelName() string {
+func (in Toleration) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Toleration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TopologySelectorLabelRequirement) OpenAPIModelName() string {
+func (in TopologySelectorLabelRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySelectorLabelRequirement"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TopologySelectorTerm) OpenAPIModelName() string {
+func (in TopologySelectorTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySelectorTerm"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TopologySpreadConstraint) OpenAPIModelName() string {
+func (in TopologySpreadConstraint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySpreadConstraint"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TypedLocalObjectReference) OpenAPIModelName() string {
+func (in TypedLocalObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TypedLocalObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *TypedObjectReference) OpenAPIModelName() string {
+func (in TypedObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TypedObjectReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Volume) OpenAPIModelName() string {
+func (in Volume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Volume"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeDevice) OpenAPIModelName() string {
+func (in VolumeDevice) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeDevice"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeMount) OpenAPIModelName() string {
+func (in VolumeMount) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeMount"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeMountStatus) OpenAPIModelName() string {
+func (in VolumeMountStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeMountStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeNodeAffinity) OpenAPIModelName() string {
+func (in VolumeNodeAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeNodeAffinity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeProjection) OpenAPIModelName() string {
+func (in VolumeProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeProjection"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeResourceRequirements) OpenAPIModelName() string {
+func (in VolumeResourceRequirements) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeResourceRequirements"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VolumeSource) OpenAPIModelName() string {
+func (in VolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *VsphereVirtualDiskVolumeSource) OpenAPIModelName() string {
+func (in VsphereVirtualDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WeightedPodAffinityTerm) OpenAPIModelName() string {
+func (in WeightedPodAffinityTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.WeightedPodAffinityTerm"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *WindowsSecurityContextOptions) OpenAPIModelName() string {
+func (in WindowsSecurityContextOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.WindowsSecurityContextOptions"
 }

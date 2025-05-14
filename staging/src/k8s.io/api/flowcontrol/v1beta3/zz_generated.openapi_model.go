@@ -22,116 +22,116 @@ limitations under the License.
 package v1beta3
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ExemptPriorityLevelConfiguration) OpenAPIModelName() string {
+func (in ExemptPriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ExemptPriorityLevelConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowDistinguisherMethod) OpenAPIModelName() string {
+func (in FlowDistinguisherMethod) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowDistinguisherMethod"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowSchema) OpenAPIModelName() string {
+func (in FlowSchema) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchema"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaCondition) OpenAPIModelName() string {
+func (in FlowSchemaCondition) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaList) OpenAPIModelName() string {
+func (in FlowSchemaList) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaSpec) OpenAPIModelName() string {
+func (in FlowSchemaSpec) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaStatus) OpenAPIModelName() string {
+func (in FlowSchemaStatus) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *GroupSubject) OpenAPIModelName() string {
+func (in GroupSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.GroupSubject"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitResponse) OpenAPIModelName() string {
+func (in LimitResponse) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.LimitResponse"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *LimitedPriorityLevelConfiguration) OpenAPIModelName() string {
+func (in LimitedPriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.LimitedPriorityLevelConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *NonResourcePolicyRule) OpenAPIModelName() string {
+func (in NonResourcePolicyRule) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.NonResourcePolicyRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PolicyRulesWithSubjects) OpenAPIModelName() string {
+func (in PolicyRulesWithSubjects) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PolicyRulesWithSubjects"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfiguration) OpenAPIModelName() string {
+func (in PriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationCondition) OpenAPIModelName() string {
+func (in PriorityLevelConfigurationCondition) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationCondition"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationList) OpenAPIModelName() string {
+func (in PriorityLevelConfigurationList) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationList"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationReference) OpenAPIModelName() string {
+func (in PriorityLevelConfigurationReference) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationReference"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationSpec) OpenAPIModelName() string {
+func (in PriorityLevelConfigurationSpec) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationSpec"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationStatus) OpenAPIModelName() string {
+func (in PriorityLevelConfigurationStatus) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationStatus"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *QueuingConfiguration) OpenAPIModelName() string {
+func (in QueuingConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.QueuingConfiguration"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ResourcePolicyRule) OpenAPIModelName() string {
+func (in ResourcePolicyRule) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ResourcePolicyRule"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountSubject) OpenAPIModelName() string {
+func (in ServiceAccountSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ServiceAccountSubject"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *Subject) OpenAPIModelName() string {
+func (in Subject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.Subject"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
-func (in *UserSubject) OpenAPIModelName() string {
+func (in UserSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.UserSubject"
 }
