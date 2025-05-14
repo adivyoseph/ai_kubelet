@@ -39,8 +39,8 @@ const (
 	tagOpenAPIModelName    = "modelName"
 )
 
-func extractEnabledTypeTag(t *types.Package) (bool, error) {
-	v, err := singularTag(tagEnabledName, t.Comments)
+func extractEnabledTypeTag(comments []string) (bool, error) {
+	v, err := singularTag(tagEnabledName, comments)
 	if v == nil || err != nil {
 		return false, err
 	}
@@ -118,13 +118,9 @@ func GetTargets(context *generator.Context, args *args.Args) []generator.Target 
 
 		pkg := context.Universe[i]
 
-		enabled, err := extractEnabledTypeTag(pkg)
+		pkgEnabled, err := extractEnabledTypeTag(pkg.Comments)
 		if err != nil {
 			klog.Fatalf("Package %v: invalid %s:%v", i, tagEnabledName, err)
-		}
-		if !enabled {
-			klog.V(5).Infof("  skipping package")
-			continue
 		}
 		klog.V(3).Infof("Generating package %q", pkg.Path)
 
@@ -141,6 +137,13 @@ func GetTargets(context *generator.Context, args *args.Args) []generator.Target 
 			if modelType {
 				hasModels = true
 			}
+			typeEnabled, err := extractEnabledTypeTag(t.CommentLines)
+			if err != nil {
+				klog.Fatalf("Package %v type %v: invalid %s:%v", i, t, tagEnabledName, err)
+			}
+			if !pkgEnabled && typeEnabled {
+				pkgEnabled = true
+			}
 			modelName, err := extractOpenAPIModelName(t)
 			if err != nil {
 				klog.Fatalf("Type %v: invalid %s:%v", t.Name.String(), tagEnabledName, err)
@@ -153,7 +156,8 @@ func GetTargets(context *generator.Context, args *args.Args) []generator.Target 
 			}
 			hasNamedModels = true
 		}
-		if !hasNamedModels && !(hasModels && openAPIModelPackage != "") {
+		if !pkgEnabled || !hasModels || (!hasNamedModels && openAPIModelPackage == "") {
+			klog.V(5).Infof("  skipping package")
 			continue
 		}
 
