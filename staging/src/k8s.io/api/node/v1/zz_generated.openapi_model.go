@@ -21,22 +21,42 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Overhead) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/node/v1.Overhead"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Overhead) ModelName() string {
 	return "io.k8s.api.node.v1.Overhead"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RuntimeClass) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/node/v1.RuntimeClass"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RuntimeClass) ModelName() string {
 	return "io.k8s.api.node.v1.RuntimeClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RuntimeClassList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/node/v1.RuntimeClassList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RuntimeClassList) ModelName() string {
 	return "io.k8s.api.node.v1.RuntimeClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Scheduling) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/node/v1.Scheduling"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Scheduling) ModelName() string {
 	return "io.k8s.api.node.v1.Scheduling"
 }

@@ -21,27 +21,52 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1.CertificateSigningRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequest) ModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1.CertificateSigningRequestCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestCondition) ModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1.CertificateSigningRequestList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestList) ModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1.CertificateSigningRequestSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestSpec) ModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1.CertificateSigningRequestStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestStatus) ModelName() string {
 	return "io.k8s.api.certificates.v1.CertificateSigningRequestStatus"
 }

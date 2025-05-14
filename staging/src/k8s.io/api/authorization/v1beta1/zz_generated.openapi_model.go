@@ -21,67 +21,132 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *LocalSubjectAccessReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.LocalSubjectAccessReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *LocalSubjectAccessReview) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.LocalSubjectAccessReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *NonResourceAttributes) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.NonResourceAttributes"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *NonResourceAttributes) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.NonResourceAttributes"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *NonResourceRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.NonResourceRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *NonResourceRule) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.NonResourceRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceAttributes) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.ResourceAttributes"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceAttributes) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.ResourceAttributes"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.ResourceRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceRule) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.ResourceRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectAccessReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SelfSubjectAccessReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectAccessReview) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectAccessReviewSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SelfSubjectAccessReviewSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectAccessReviewSpec) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReviewSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectRulesReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SelfSubjectRulesReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectRulesReview) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectRulesReviewSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SelfSubjectRulesReviewSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectRulesReviewSpec) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReviewSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SubjectAccessReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SubjectAccessReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SubjectAccessReview) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SubjectAccessReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SubjectAccessReviewSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SubjectAccessReviewSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SubjectAccessReviewSpec) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SubjectAccessReviewSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SubjectAccessReviewStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SubjectAccessReviewStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SubjectAccessReviewStatus) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SubjectAccessReviewStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SubjectRulesReviewStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authorization/v1beta1.SubjectRulesReviewStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SubjectRulesReviewStatus) ModelName() string {
 	return "io.k8s.api.authorization.v1beta1.SubjectRulesReviewStatus"
 }

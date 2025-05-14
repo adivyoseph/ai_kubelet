@@ -21,62 +21,122 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *AggregationRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.AggregationRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *AggregationRule) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.AggregationRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterRole) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.ClusterRole"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterRole) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.ClusterRole"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterRoleBinding) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.ClusterRoleBinding"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterRoleBinding) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.ClusterRoleBinding"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterRoleBindingList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.ClusterRoleBindingList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterRoleBindingList) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.ClusterRoleBindingList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterRoleList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.ClusterRoleList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterRoleList) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.ClusterRoleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PolicyRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.PolicyRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PolicyRule) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.PolicyRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Role) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.Role"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Role) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.Role"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RoleBinding) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.RoleBinding"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RoleBinding) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.RoleBinding"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RoleBindingList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.RoleBindingList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RoleBindingList) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.RoleBindingList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RoleList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.RoleList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RoleList) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.RoleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RoleRef) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.RoleRef"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RoleRef) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.RoleRef"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Subject) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/rbac/v1beta1.Subject"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Subject) ModelName() string {
 	return "io.k8s.api.rbac.v1beta1.Subject"
 }

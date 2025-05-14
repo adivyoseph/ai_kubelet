@@ -21,27 +21,52 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJob) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1beta1.CronJob"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJob) ModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJob"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1beta1.CronJobList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobList) ModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1beta1.CronJobSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobSpec) ModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1beta1.CronJobStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobStatus) ModelName() string {
 	return "io.k8s.api.batch.v1beta1.CronJobStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobTemplateSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1beta1.JobTemplateSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobTemplateSpec) ModelName() string {
 	return "io.k8s.api.batch.v1beta1.JobTemplateSpec"
 }

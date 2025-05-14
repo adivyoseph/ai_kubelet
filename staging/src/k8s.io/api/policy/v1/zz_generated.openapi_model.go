@@ -21,27 +21,52 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Eviction) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/policy/v1.Eviction"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Eviction) ModelName() string {
 	return "io.k8s.api.policy.v1.Eviction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodDisruptionBudget) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/policy/v1.PodDisruptionBudget"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodDisruptionBudget) ModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudget"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodDisruptionBudgetList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/policy/v1.PodDisruptionBudgetList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodDisruptionBudgetList) ModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodDisruptionBudgetSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/policy/v1.PodDisruptionBudgetSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodDisruptionBudgetSpec) ModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodDisruptionBudgetStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/policy/v1.PodDisruptionBudgetStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodDisruptionBudgetStatus) ModelName() string {
 	return "io.k8s.api.policy.v1.PodDisruptionBudgetStatus"
 }

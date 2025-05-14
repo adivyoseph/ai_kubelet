@@ -21,32 +21,62 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServerStorageVersion) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.ServerStorageVersion"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServerStorageVersion) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.ServerStorageVersion"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageVersion) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.StorageVersion"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageVersion) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersion"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageVersionCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionCondition) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageVersionList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionList) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageVersionSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionSpec) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageVersionStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionStatus) ModelName() string {
 	return "io.k8s.api.apiserverinternal.v1alpha1.StorageVersionStatus"
 }

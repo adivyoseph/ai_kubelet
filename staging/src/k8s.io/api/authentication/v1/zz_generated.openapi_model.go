@@ -21,52 +21,102 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *BoundObjectReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.BoundObjectReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *BoundObjectReference) ModelName() string {
 	return "io.k8s.api.authentication.v1.BoundObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.SelfSubjectReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectReview) ModelName() string {
 	return "io.k8s.api.authentication.v1.SelfSubjectReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SelfSubjectReviewStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.SelfSubjectReviewStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SelfSubjectReviewStatus) ModelName() string {
 	return "io.k8s.api.authentication.v1.SelfSubjectReviewStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenRequest) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenRequestSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenRequestSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenRequestSpec) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenRequestSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenRequestStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenRequestStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenRequestStatus) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenRequestStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenReview) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenReview"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenReview) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenReviewSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenReviewSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenReviewSpec) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenReviewSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenReviewStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.TokenReviewStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenReviewStatus) ModelName() string {
 	return "io.k8s.api.authentication.v1.TokenReviewStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *UserInfo) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/authentication/v1.UserInfo"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *UserInfo) ModelName() string {
 	return "io.k8s.api.authentication.v1.UserInfo"
 }

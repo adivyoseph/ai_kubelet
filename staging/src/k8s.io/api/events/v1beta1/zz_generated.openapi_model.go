@@ -21,17 +21,32 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Event) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/events/v1beta1.Event"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Event) ModelName() string {
 	return "io.k8s.api.events.v1beta1.Event"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *EventList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/events/v1beta1.EventList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *EventList) ModelName() string {
 	return "io.k8s.api.events.v1beta1.EventList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *EventSeries) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/events/v1beta1.EventSeries"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *EventSeries) ModelName() string {
 	return "io.k8s.api.events.v1beta1.EventSeries"
 }

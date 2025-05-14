@@ -21,12 +21,22 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PriorityClass) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/scheduling/v1.PriorityClass"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PriorityClass) ModelName() string {
 	return "io.k8s.api.scheduling.v1.PriorityClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PriorityClassList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/scheduling/v1.PriorityClassList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PriorityClassList) ModelName() string {
 	return "io.k8s.api.scheduling.v1.PriorityClassList"
 }

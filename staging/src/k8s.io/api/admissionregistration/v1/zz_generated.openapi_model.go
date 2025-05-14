@@ -21,137 +21,272 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *AuditAnnotation) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.AuditAnnotation"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *AuditAnnotation) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.AuditAnnotation"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ExpressionWarning) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ExpressionWarning"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ExpressionWarning) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ExpressionWarning"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MatchCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.MatchCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MatchCondition) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.MatchCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MatchResources) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.MatchResources"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MatchResources) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.MatchResources"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MutatingWebhook) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.MutatingWebhook"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MutatingWebhook) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.MutatingWebhook"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MutatingWebhookConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.MutatingWebhookConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MutatingWebhookConfiguration) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MutatingWebhookConfigurationList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.MutatingWebhookConfigurationList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MutatingWebhookConfigurationList) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *NamedRuleWithOperations) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.NamedRuleWithOperations"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *NamedRuleWithOperations) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.NamedRuleWithOperations"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ParamKind) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ParamKind"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ParamKind) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ParamKind"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ParamRef) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ParamRef"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ParamRef) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ParamRef"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Rule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.Rule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Rule) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.Rule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RuleWithOperations) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.RuleWithOperations"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RuleWithOperations) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.RuleWithOperations"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ServiceReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceReference) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ServiceReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TypeChecking) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.TypeChecking"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TypeChecking) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.TypeChecking"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicy) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicy"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicy) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicyBinding) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyBinding"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicyBinding) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyBinding"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicyBindingList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyBindingList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicyBindingList) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyBindingList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicyBindingSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyBindingSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicyBindingSpec) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyBindingSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicyList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicyList) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicySpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicySpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicySpec) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicySpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingAdmissionPolicyStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingAdmissionPolicyStatus) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingWebhook) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingWebhook"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingWebhook) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingWebhook"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingWebhookConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingWebhookConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingWebhookConfiguration) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingWebhookConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ValidatingWebhookConfigurationList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.ValidatingWebhookConfigurationList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ValidatingWebhookConfigurationList) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Validation) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.Validation"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Validation) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.Validation"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Variable) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.Variable"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Variable) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.Variable"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *WebhookClientConfig) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/admissionregistration/v1.WebhookClientConfig"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *WebhookClientConfig) ModelName() string {
 	return "io.k8s.api.admissionregistration.v1.WebhookClientConfig"
 }

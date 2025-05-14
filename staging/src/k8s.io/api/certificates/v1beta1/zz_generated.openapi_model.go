@@ -21,42 +21,82 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequest) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestCondition) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestList) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestSpec) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CertificateSigningRequestStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestStatus) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterTrustBundle) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundle"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundle) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundle"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterTrustBundleList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundleList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleList) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ClusterTrustBundleSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundleSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleSpec) ModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleSpec"
 }

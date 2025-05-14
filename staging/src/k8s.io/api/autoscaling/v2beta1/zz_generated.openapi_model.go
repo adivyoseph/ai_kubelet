@@ -21,92 +21,182 @@ limitations under the License.
 
 package v2beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ContainerResourceMetricSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ContainerResourceMetricSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ContainerResourceMetricSource) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ContainerResourceMetricSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ContainerResourceMetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ContainerResourceMetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ContainerResourceMetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ContainerResourceMetricStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CrossVersionObjectReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.CrossVersionObjectReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CrossVersionObjectReference) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.CrossVersionObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ExternalMetricSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ExternalMetricSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ExternalMetricSource) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ExternalMetricSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ExternalMetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ExternalMetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ExternalMetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ExternalMetricStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HorizontalPodAutoscaler) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscaler"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HorizontalPodAutoscaler) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HorizontalPodAutoscalerCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HorizontalPodAutoscalerCondition) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HorizontalPodAutoscalerList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HorizontalPodAutoscalerList) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HorizontalPodAutoscalerSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HorizontalPodAutoscalerSpec) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HorizontalPodAutoscalerStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HorizontalPodAutoscalerStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MetricSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.MetricSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MetricSpec) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.MetricSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.MetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.MetricStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ObjectMetricSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ObjectMetricSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ObjectMetricSource) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ObjectMetricSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ObjectMetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ObjectMetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ObjectMetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ObjectMetricStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodsMetricSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.PodsMetricSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodsMetricSource) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.PodsMetricSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodsMetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.PodsMetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodsMetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.PodsMetricStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceMetricSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ResourceMetricSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceMetricSource) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ResourceMetricSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceMetricStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/autoscaling/v2beta1.ResourceMetricStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceMetricStatus) ModelName() string {
 	return "io.k8s.api.autoscaling.v2beta1.ResourceMetricStatus"
 }

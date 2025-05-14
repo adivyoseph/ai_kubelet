@@ -21,12 +21,22 @@ limitations under the License.
 
 package model_and_package_name
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *T1) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/core/v1.T1"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *T1) ModelName() string {
 	return "io.k8s.api.core.v1.T1"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *T2) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/core/v1.T2"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *T2) ModelName() string {
 	return "io.k8s.api.core.v1.T2"
 }

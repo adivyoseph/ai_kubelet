@@ -21,32 +21,62 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIService) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIService"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIService) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIService"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIServiceCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIServiceCondition) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIServiceList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIServiceList) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIServiceSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIServiceSpec) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIServiceStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIServiceStatus) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.ServiceReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceReference) ModelName() string {
 	return "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.ServiceReference"
 }

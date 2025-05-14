@@ -21,247 +21,492 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIGroup) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.APIGroup"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIGroup) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIGroupList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.APIGroupList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIGroupList) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.APIGroupList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIResource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.APIResource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIResource) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.APIResource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIResourceList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.APIResourceList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIResourceList) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *APIVersions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.APIVersions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *APIVersions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.APIVersions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ApplyOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ApplyOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ApplyOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ApplyOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Condition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Condition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Condition) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CreateOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.CreateOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CreateOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.CreateOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeleteOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.DeleteOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeleteOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Duration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Duration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Duration) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Duration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *FieldSelectorRequirement) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.FieldSelectorRequirement"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *FieldSelectorRequirement) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.FieldSelectorRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *FieldsV1) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.FieldsV1"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *FieldsV1) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.FieldsV1"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GetOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GetOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GetOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GetOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupKind) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupKind"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupKind) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupKind"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupResource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupResource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupResource) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupResource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupVersion) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersion"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupVersion) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersion"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupVersionForDiscovery) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionForDiscovery"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupVersionForDiscovery) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupVersionKind) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionKind"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupVersionKind) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionKind"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *GroupVersionResource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionResource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *GroupVersionResource) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionResource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *InternalEvent) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.InternalEvent"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *InternalEvent) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.InternalEvent"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *LabelSelector) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *LabelSelector) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *LabelSelectorRequirement) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *LabelSelectorRequirement) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *List) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.List"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *List) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.List"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ListMeta) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ListMeta) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ListOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ListOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ListOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ListOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ManagedFieldsEntry) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ManagedFieldsEntry"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ManagedFieldsEntry) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *MicroTime) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *MicroTime) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ObjectMeta) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ObjectMeta) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *OwnerReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.OwnerReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *OwnerReference) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.OwnerReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PartialObjectMetadata) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.PartialObjectMetadata"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PartialObjectMetadata) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.PartialObjectMetadata"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PartialObjectMetadataList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.PartialObjectMetadataList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PartialObjectMetadataList) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.PartialObjectMetadataList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Patch) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Patch"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Patch) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PatchOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.PatchOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PatchOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.PatchOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Preconditions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Preconditions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Preconditions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *RootPaths) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.RootPaths"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *RootPaths) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.RootPaths"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServerAddressByClientCIDR) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.ServerAddressByClientCIDR"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServerAddressByClientCIDR) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Status) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Status"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Status) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Status"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StatusCause) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.StatusCause"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StatusCause) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StatusDetails) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.StatusDetails"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StatusDetails) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Table) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Table"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Table) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Table"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TableColumnDefinition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.TableColumnDefinition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TableColumnDefinition) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.TableColumnDefinition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TableOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.TableOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TableOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.TableOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TableRow) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.TableRow"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TableRow) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.TableRow"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TableRowCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.TableRowCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TableRowCondition) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.TableRowCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Time) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Time"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Time) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Time"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Timestamp) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.Timestamp"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Timestamp) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.Timestamp"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TypeMeta) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.TypeMeta"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TypeMeta) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.TypeMeta"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *UpdateOptions) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.UpdateOptions"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *UpdateOptions) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.UpdateOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *WatchEvent) OpenAPICanonicalTypeName() string {
+	return "k8s.io/apimachinery/pkg/apis/meta/v1.WatchEvent"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *WatchEvent) ModelName() string {
 	return "io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent"
 }

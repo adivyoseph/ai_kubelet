@@ -21,217 +21,432 @@ limitations under the License.
 
 package v1alpha3
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *AllocatedDeviceStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.AllocatedDeviceStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *AllocatedDeviceStatus) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.AllocatedDeviceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *AllocationResult) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.AllocationResult"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *AllocationResult) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.AllocationResult"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *BasicDevice) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.BasicDevice"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *BasicDevice) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.BasicDevice"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CELDeviceSelector) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.CELDeviceSelector"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CELDeviceSelector) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.CELDeviceSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Counter) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.Counter"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Counter) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.Counter"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CounterSet) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.CounterSet"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CounterSet) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.CounterSet"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Device) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.Device"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Device) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.Device"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceAllocationConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceAllocationConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceAllocationConfiguration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceAllocationConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceAllocationResult) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceAllocationResult"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceAllocationResult) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceAllocationResult"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceAttribute) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceAttribute"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceAttribute) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceAttribute"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClaim) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClaim"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClaim) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClaim"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClaimConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClaimConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClaimConfiguration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClaimConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClass) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClass"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClass) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClassConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClassConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClassConfiguration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClassConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClassList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClassList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClassList) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceClassSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceClassSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceClassSpec) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceClassSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceConfiguration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceConstraint) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceConstraint"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceConstraint) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceConstraint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceCounterConsumption) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceCounterConsumption"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceCounterConsumption) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceCounterConsumption"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceRequest) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceRequestAllocationResult) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceRequestAllocationResult"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceRequestAllocationResult) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceRequestAllocationResult"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceSelector) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceSelector"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceSelector) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceSubRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceSubRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceSubRequest) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceSubRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceTaint) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceTaint"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceTaint) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceTaint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceTaintRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceTaintRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceTaintRule) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceTaintRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceTaintRuleList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceTaintRuleList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceTaintRuleList) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceTaintRuleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceTaintRuleSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceTaintRuleSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceTaintRuleSpec) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceTaintRuleSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceTaintSelector) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceTaintSelector"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceTaintSelector) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceTaintSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *DeviceToleration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.DeviceToleration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *DeviceToleration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.DeviceToleration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *NetworkDeviceData) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.NetworkDeviceData"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *NetworkDeviceData) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.NetworkDeviceData"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *OpaqueDeviceConfiguration) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.OpaqueDeviceConfiguration"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *OpaqueDeviceConfiguration) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.OpaqueDeviceConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaim) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaim"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaim) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaim"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimConsumerReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimConsumerReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimConsumerReference) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimConsumerReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimList) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimSpec) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimStatus) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimTemplate) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimTemplate"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimTemplate) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimTemplate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimTemplateList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimTemplateList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimTemplateList) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimTemplateList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceClaimTemplateSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceClaimTemplateSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaimTemplateSpec) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceClaimTemplateSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourcePool) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourcePool"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourcePool) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourcePool"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceSlice) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceSlice"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceSlice) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceSlice"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceSliceList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceSliceList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceSliceList) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceSliceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ResourceSliceSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/resource/v1alpha3.ResourceSliceSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ResourceSliceSpec) ModelName() string {
 	return "io.k8s.api.resource.v1alpha3.ResourceSliceSpec"
 }

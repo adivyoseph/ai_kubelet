@@ -21,87 +21,172 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJob) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.CronJob"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJob) ModelName() string {
 	return "io.k8s.api.batch.v1.CronJob"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.CronJobList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobList) ModelName() string {
 	return "io.k8s.api.batch.v1.CronJobList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.CronJobSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobSpec) ModelName() string {
 	return "io.k8s.api.batch.v1.CronJobSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CronJobStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.CronJobStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CronJobStatus) ModelName() string {
 	return "io.k8s.api.batch.v1.CronJobStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Job) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.Job"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Job) ModelName() string {
 	return "io.k8s.api.batch.v1.Job"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobCondition) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.JobCondition"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobCondition) ModelName() string {
 	return "io.k8s.api.batch.v1.JobCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.JobList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobList) ModelName() string {
 	return "io.k8s.api.batch.v1.JobList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.JobSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobSpec) ModelName() string {
 	return "io.k8s.api.batch.v1.JobSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.JobStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobStatus) ModelName() string {
 	return "io.k8s.api.batch.v1.JobStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *JobTemplateSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.JobTemplateSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *JobTemplateSpec) ModelName() string {
 	return "io.k8s.api.batch.v1.JobTemplateSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodFailurePolicy) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.PodFailurePolicy"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodFailurePolicy) ModelName() string {
 	return "io.k8s.api.batch.v1.PodFailurePolicy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodFailurePolicyOnExitCodesRequirement) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.PodFailurePolicyOnExitCodesRequirement"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodFailurePolicyOnExitCodesRequirement) ModelName() string {
 	return "io.k8s.api.batch.v1.PodFailurePolicyOnExitCodesRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodFailurePolicyOnPodConditionsPattern) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.PodFailurePolicyOnPodConditionsPattern"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodFailurePolicyOnPodConditionsPattern) ModelName() string {
 	return "io.k8s.api.batch.v1.PodFailurePolicyOnPodConditionsPattern"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *PodFailurePolicyRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.PodFailurePolicyRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *PodFailurePolicyRule) ModelName() string {
 	return "io.k8s.api.batch.v1.PodFailurePolicyRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SuccessPolicy) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.SuccessPolicy"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SuccessPolicy) ModelName() string {
 	return "io.k8s.api.batch.v1.SuccessPolicy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *SuccessPolicyRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.SuccessPolicyRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *SuccessPolicyRule) ModelName() string {
 	return "io.k8s.api.batch.v1.SuccessPolicyRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *UncountedTerminatedPods) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/batch/v1.UncountedTerminatedPods"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *UncountedTerminatedPods) ModelName() string {
 	return "io.k8s.api.batch.v1.UncountedTerminatedPods"
 }

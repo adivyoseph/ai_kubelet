@@ -21,127 +21,252 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HTTPIngressPath) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.HTTPIngressPath"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HTTPIngressPath) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.HTTPIngressPath"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *HTTPIngressRuleValue) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.HTTPIngressRuleValue"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *HTTPIngressRuleValue) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.HTTPIngressRuleValue"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IPAddress) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IPAddress"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IPAddress) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IPAddressList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IPAddressList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IPAddressList) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddressList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IPAddressSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IPAddressSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IPAddressSpec) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IPAddressSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *Ingress) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.Ingress"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *Ingress) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.Ingress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressBackend) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressBackend"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressBackend) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressBackend"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressClass) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressClass"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressClass) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressClassList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressClassList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressClassList) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressClassParametersReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressClassParametersReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressClassParametersReference) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassParametersReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressClassSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressClassSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressClassSpec) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressClassSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressList) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressLoadBalancerIngress) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressLoadBalancerIngress"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressLoadBalancerIngress) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressLoadBalancerIngress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressLoadBalancerStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressLoadBalancerStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressLoadBalancerStatus) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressLoadBalancerStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressPortStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressPortStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressPortStatus) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressPortStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressRule) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressRule"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressRule) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressRuleValue) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressRuleValue"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressRuleValue) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressRuleValue"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressSpec) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressStatus) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *IngressTLS) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.IngressTLS"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *IngressTLS) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.IngressTLS"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ParentReference) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.ParentReference"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ParentReference) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.ParentReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceCIDR) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.ServiceCIDR"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDR) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDR"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceCIDRList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.ServiceCIDRList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRList) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceCIDRSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.ServiceCIDRSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRSpec) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *ServiceCIDRStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/networking/v1beta1.ServiceCIDRStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRStatus) ModelName() string {
 	return "io.k8s.api.networking.v1beta1.ServiceCIDRStatus"
 }

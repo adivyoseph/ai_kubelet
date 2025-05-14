@@ -21,97 +21,192 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSIDriver) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSIDriver"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSIDriver) ModelName() string {
 	return "io.k8s.api.storage.v1.CSIDriver"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSIDriverList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSIDriverList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSIDriverList) ModelName() string {
 	return "io.k8s.api.storage.v1.CSIDriverList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSIDriverSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSIDriverSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSIDriverSpec) ModelName() string {
 	return "io.k8s.api.storage.v1.CSIDriverSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSINode) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSINode"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSINode) ModelName() string {
 	return "io.k8s.api.storage.v1.CSINode"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSINodeDriver) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSINodeDriver"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSINodeDriver) ModelName() string {
 	return "io.k8s.api.storage.v1.CSINodeDriver"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSINodeList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSINodeList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSINodeList) ModelName() string {
 	return "io.k8s.api.storage.v1.CSINodeList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSINodeSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSINodeSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSINodeSpec) ModelName() string {
 	return "io.k8s.api.storage.v1.CSINodeSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSIStorageCapacity) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSIStorageCapacity"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSIStorageCapacity) ModelName() string {
 	return "io.k8s.api.storage.v1.CSIStorageCapacity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *CSIStorageCapacityList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.CSIStorageCapacityList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *CSIStorageCapacityList) ModelName() string {
 	return "io.k8s.api.storage.v1.CSIStorageCapacityList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageClass) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.StorageClass"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageClass) ModelName() string {
 	return "io.k8s.api.storage.v1.StorageClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *StorageClassList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.StorageClassList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *StorageClassList) ModelName() string {
 	return "io.k8s.api.storage.v1.StorageClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *TokenRequest) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.TokenRequest"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *TokenRequest) ModelName() string {
 	return "io.k8s.api.storage.v1.TokenRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeAttachment) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeAttachment"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachment) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeAttachment"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeAttachmentList) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeAttachmentList"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentList) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeAttachmentList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeAttachmentSource) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeAttachmentSource"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentSource) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeAttachmentSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeAttachmentSpec) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeAttachmentSpec"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentSpec) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeAttachmentSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeAttachmentStatus) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeAttachmentStatus"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentStatus) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeAttachmentStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeError) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeError"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeError) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeError"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI model name for this type.
+// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
 func (in *VolumeNodeResources) OpenAPICanonicalTypeName() string {
+	return "k8s.io/api/storage/v1.VolumeNodeResources"
+}
+
+// ModelName returns the OpenAPI model name for this type.
+func (in *VolumeNodeResources) ModelName() string {
 	return "io.k8s.api.storage.v1.VolumeNodeResources"
 }
