@@ -347,7 +347,7 @@ func (g openAPITypeWriter) generateCall(t *types.Type) error {
 
 		// Use the actual model name here...
 		if g.useOpenAPIModelNames {
-			g.Do("$.|raw${}.OpenAPIModelName(): ", t)
+			g.Do("(&$.|raw${}).OpenAPIModelName(): ", t)
 		} else {
 			// Legacy case: use the "canonical type name"
 			g.Do("\"$.$\": ", t.Name)

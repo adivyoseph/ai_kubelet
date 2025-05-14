@@ -11,7 +11,7 @@ require (
 	k8s.io/apimachinery v0.0.0
 	k8s.io/client-go v0.0.0
 	k8s.io/klog/v2 v2.130.1
-	k8s.io/kube-openapi v0.0.0-20250514125028-564c9cb993e1
+	k8s.io/kube-openapi v0.0.0-20250514130351-eae66b4bfe5b
 	sigs.k8s.io/structured-merge-diff/v4 v4.7.0
 )
 
@@ -57,4 +57,4 @@ replace (
 	k8s.io/client-go => ../../client-go
 )
 
-replace k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514125028-564c9cb993e1
+replace k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514130351-eae66b4bfe5b

@@ -24,4 +24,4 @@ require (
 
 replace k8s.io/kms => ../../../../kms
 
-replace k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514125028-564c9cb993e1
+replace k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514130351-eae66b4bfe5b
