@@ -274,17 +274,11 @@ func (g *genOpenAPIModel) GenerateType(c *generator.Context, t *types.Type, w io
 	}
 
 	a := map[string]interface{}{
-		"type":              t,
-		"modelName":         modelName,
-		"canonicalTypeName": FromRESTFriendlyName(modelName),
+		"type":      t,
+		"modelName": modelName,
 	}
 
 	sw := generator.NewSnippetWriter(w, c, "$", "$")
-
-	sw.Do("// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.\n", a)
-	sw.Do("func (in *$.type|intrapackage$) OpenAPICanonicalTypeName() string {\n", a)
-	sw.Do("    return \"$.canonicalTypeName$\"\n", a)
-	sw.Do("}\n\n", nil)
 
 	sw.Do("// ModelName returns the OpenAPI model name for this type.\n", a)
 	sw.Do("func (in *$.type|intrapackage$) ModelName() string {\n", a)
@@ -292,18 +286,4 @@ func (g *genOpenAPIModel) GenerateType(c *generator.Context, t *types.Type, w io
 	sw.Do("}\n\n", nil)
 
 	return sw.Error()
-}
-
-func FromRESTFriendlyName(name string) string {
-	if strings.HasPrefix(name, "io.k8s.") {
-		rest := strings.TrimPrefix(name, "io.k8s.")
-		return "k8s.io/" + toCanonical(rest)
-	}
-	return toCanonical(name)
-}
-
-func toCanonical(dotString string) string {
-	parts := strings.Split(dotString, ".")
-	head, last := parts[0:len(parts)-1], parts[len(parts)-1]
-	return strings.Join(head, "/") + "." + last
 }
