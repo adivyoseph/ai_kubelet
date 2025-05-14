@@ -681,7 +681,12 @@ func (g openAPITypeWriter) generate(t *types.Type) error {
 		if len(deps) > 0 {
 			g.Do("Dependencies: []string{\n", args)
 			for _, k := range deps {
-				g.Do("\"$.$\",", k)
+				t := g.refTypes[k]
+				if g.useOpenAPIModelNames {
+					g.Do("(&$.|raw${}).OpenAPIModelName(),", t)
+				} else {
+					g.Do("\"$.$\",", k)
+				}
 			}
 			g.Do("},\n", nil)
 		}

@@ -1609,7 +1609,7 @@ func schema_k8sio_api_admissionregistration_v1_MatchResources(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.NamedRuleWithOperations", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1.NamedRuleWithOperations{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -1754,7 +1754,7 @@ func schema_k8sio_api_admissionregistration_v1_MutatingWebhook(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.MatchCondition", "k8s.io/api/admissionregistration/v1.RuleWithOperations", "k8s.io/api/admissionregistration/v1.WebhookClientConfig", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1.MatchCondition{}).OpenAPIModelName(), (&v1.RuleWithOperations{}).OpenAPIModelName(), (&v1.WebhookClientConfig{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -1814,7 +1814,7 @@ func schema_k8sio_api_admissionregistration_v1_MutatingWebhookConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.MutatingWebhook", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1.MutatingWebhook{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -1865,7 +1865,7 @@ func schema_k8sio_api_admissionregistration_v1_MutatingWebhookConfigurationList(
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.MutatingWebhookConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1.MutatingWebhookConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2070,7 +2070,7 @@ func schema_k8sio_api_admissionregistration_v1_ParamRef(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -2329,7 +2329,7 @@ func schema_k8sio_api_admissionregistration_v1_TypeChecking(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ExpressionWarning"},
+			(&v1.ExpressionWarning{}).OpenAPIModelName()},
 	}
 }
 
@@ -2379,7 +2379,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicy(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicySpec", "k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1.ValidatingAdmissionPolicySpec{}).OpenAPIModelName(), (&v1.ValidatingAdmissionPolicyStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2422,7 +2422,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicyBinding(
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyBindingSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1.ValidatingAdmissionPolicyBindingSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2473,7 +2473,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicyBindingL
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicyBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1.ValidatingAdmissionPolicyBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2528,7 +2528,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicyBindingS
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.MatchResources", "k8s.io/api/admissionregistration/v1.ParamRef"},
+			(&v1.MatchResources{}).OpenAPIModelName(), (&v1.ParamRef{}).OpenAPIModelName()},
 	}
 }
 
@@ -2579,7 +2579,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicyList(ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingAdmissionPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1.ValidatingAdmissionPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2700,7 +2700,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicySpec(ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.AuditAnnotation", "k8s.io/api/admissionregistration/v1.MatchCondition", "k8s.io/api/admissionregistration/v1.MatchResources", "k8s.io/api/admissionregistration/v1.ParamKind", "k8s.io/api/admissionregistration/v1.Validation", "k8s.io/api/admissionregistration/v1.Variable"},
+			(&v1.AuditAnnotation{}).OpenAPIModelName(), (&v1.MatchCondition{}).OpenAPIModelName(), (&v1.MatchResources{}).OpenAPIModelName(), (&v1.ParamKind{}).OpenAPIModelName(), (&v1.Validation{}).OpenAPIModelName(), (&v1.Variable{}).OpenAPIModelName()},
 	}
 }
 
@@ -2750,7 +2750,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingAdmissionPolicyStatus(r
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.TypeChecking", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&v1.TypeChecking{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -2887,7 +2887,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingWebhook(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.MatchCondition", "k8s.io/api/admissionregistration/v1.RuleWithOperations", "k8s.io/api/admissionregistration/v1.WebhookClientConfig", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1.MatchCondition{}).OpenAPIModelName(), (&v1.RuleWithOperations{}).OpenAPIModelName(), (&v1.WebhookClientConfig{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -2947,7 +2947,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingWebhookConfiguration(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingWebhook", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1.ValidatingWebhook{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -2998,7 +2998,7 @@ func schema_k8sio_api_admissionregistration_v1_ValidatingWebhookConfigurationLis
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ValidatingWebhookConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1.ValidatingWebhookConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -3111,7 +3111,7 @@ func schema_k8sio_api_admissionregistration_v1_WebhookClientConfig(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.ServiceReference"},
+			(&v1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -3318,7 +3318,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MatchResources(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.NamedRuleWithOperations", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1alpha1.NamedRuleWithOperations{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -3361,7 +3361,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicy(ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MutatingAdmissionPolicySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha1.MutatingAdmissionPolicySpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -3404,7 +3404,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicyBind
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MutatingAdmissionPolicyBindingSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha1.MutatingAdmissionPolicyBindingSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -3455,7 +3455,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicyBind
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MutatingAdmissionPolicyBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha1.MutatingAdmissionPolicyBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -3489,7 +3489,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicyBind
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MatchResources", "k8s.io/api/admissionregistration/v1alpha1.ParamRef"},
+			(&v1alpha1.MatchResources{}).OpenAPIModelName(), (&v1alpha1.ParamRef{}).OpenAPIModelName()},
 	}
 }
 
@@ -3540,7 +3540,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicyList
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MutatingAdmissionPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha1.MutatingAdmissionPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -3645,7 +3645,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_MutatingAdmissionPolicySpec
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MatchCondition", "k8s.io/api/admissionregistration/v1alpha1.MatchResources", "k8s.io/api/admissionregistration/v1alpha1.Mutation", "k8s.io/api/admissionregistration/v1alpha1.ParamKind", "k8s.io/api/admissionregistration/v1alpha1.Variable"},
+			(&v1alpha1.MatchCondition{}).OpenAPIModelName(), (&v1alpha1.MatchResources{}).OpenAPIModelName(), (&v1alpha1.Mutation{}).OpenAPIModelName(), (&v1alpha1.ParamKind{}).OpenAPIModelName(), (&v1alpha1.Variable{}).OpenAPIModelName()},
 	}
 }
 
@@ -3682,7 +3682,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_Mutation(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ApplyConfiguration", "k8s.io/api/admissionregistration/v1alpha1.JSONPatch"},
+			(&v1alpha1.ApplyConfiguration{}).OpenAPIModelName(), (&v1alpha1.JSONPatch{}).OpenAPIModelName()},
 	}
 }
 
@@ -3888,7 +3888,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ParamRef(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -3922,7 +3922,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_TypeChecking(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ExpressionWarning"},
+			(&v1alpha1.ExpressionWarning{}).OpenAPIModelName()},
 	}
 }
 
@@ -3972,7 +3972,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicy(r
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ValidatingAdmissionPolicySpec", "k8s.io/api/admissionregistration/v1alpha1.ValidatingAdmissionPolicyStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha1.ValidatingAdmissionPolicySpec{}).OpenAPIModelName(), (&v1alpha1.ValidatingAdmissionPolicyStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -4015,7 +4015,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicyBi
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ValidatingAdmissionPolicyBindingSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha1.ValidatingAdmissionPolicyBindingSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -4066,7 +4066,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicyBi
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ValidatingAdmissionPolicyBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha1.ValidatingAdmissionPolicyBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -4121,7 +4121,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicyBi
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.MatchResources", "k8s.io/api/admissionregistration/v1alpha1.ParamRef"},
+			(&v1alpha1.MatchResources{}).OpenAPIModelName(), (&v1alpha1.ParamRef{}).OpenAPIModelName()},
 	}
 }
 
@@ -4172,7 +4172,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicyLi
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.ValidatingAdmissionPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha1.ValidatingAdmissionPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -4293,7 +4293,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicySp
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.AuditAnnotation", "k8s.io/api/admissionregistration/v1alpha1.MatchCondition", "k8s.io/api/admissionregistration/v1alpha1.MatchResources", "k8s.io/api/admissionregistration/v1alpha1.ParamKind", "k8s.io/api/admissionregistration/v1alpha1.Validation", "k8s.io/api/admissionregistration/v1alpha1.Variable"},
+			(&v1alpha1.AuditAnnotation{}).OpenAPIModelName(), (&v1alpha1.MatchCondition{}).OpenAPIModelName(), (&v1alpha1.MatchResources{}).OpenAPIModelName(), (&v1alpha1.ParamKind{}).OpenAPIModelName(), (&v1alpha1.Validation{}).OpenAPIModelName(), (&v1alpha1.Variable{}).OpenAPIModelName()},
 	}
 }
 
@@ -4343,7 +4343,7 @@ func schema_k8sio_api_admissionregistration_v1alpha1_ValidatingAdmissionPolicySt
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1alpha1.TypeChecking", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&v1alpha1.TypeChecking{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -4583,7 +4583,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_MatchResources(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.NamedRuleWithOperations", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1beta1.NamedRuleWithOperations{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -4724,7 +4724,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_MutatingWebhook(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.RuleWithOperations", "k8s.io/api/admissionregistration/v1beta1.MatchCondition", "k8s.io/api/admissionregistration/v1beta1.WebhookClientConfig", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1.RuleWithOperations{}).OpenAPIModelName(), (&v1beta1.MatchCondition{}).OpenAPIModelName(), (&v1beta1.WebhookClientConfig{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -4784,7 +4784,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_MutatingWebhookConfiguration
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.MutatingWebhook", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta1.MutatingWebhook{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -4835,7 +4835,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_MutatingWebhookConfiguration
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.MutatingWebhookConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta1.MutatingWebhookConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5040,7 +5040,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ParamRef(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -5118,7 +5118,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_TypeChecking(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ExpressionWarning"},
+			(&v1beta1.ExpressionWarning{}).OpenAPIModelName()},
 	}
 }
 
@@ -5168,7 +5168,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicy(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingAdmissionPolicySpec", "k8s.io/api/admissionregistration/v1beta1.ValidatingAdmissionPolicyStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta1.ValidatingAdmissionPolicySpec{}).OpenAPIModelName(), (&v1beta1.ValidatingAdmissionPolicyStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5211,7 +5211,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicyBin
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingAdmissionPolicyBindingSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta1.ValidatingAdmissionPolicyBindingSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5262,7 +5262,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicyBin
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingAdmissionPolicyBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta1.ValidatingAdmissionPolicyBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5317,7 +5317,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicyBin
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.MatchResources", "k8s.io/api/admissionregistration/v1beta1.ParamRef"},
+			(&v1beta1.MatchResources{}).OpenAPIModelName(), (&v1beta1.ParamRef{}).OpenAPIModelName()},
 	}
 }
 
@@ -5368,7 +5368,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicyLis
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingAdmissionPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta1.ValidatingAdmissionPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5488,7 +5488,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicySpe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.AuditAnnotation", "k8s.io/api/admissionregistration/v1beta1.MatchCondition", "k8s.io/api/admissionregistration/v1beta1.MatchResources", "k8s.io/api/admissionregistration/v1beta1.ParamKind", "k8s.io/api/admissionregistration/v1beta1.Validation", "k8s.io/api/admissionregistration/v1beta1.Variable"},
+			(&v1beta1.AuditAnnotation{}).OpenAPIModelName(), (&v1beta1.MatchCondition{}).OpenAPIModelName(), (&v1beta1.MatchResources{}).OpenAPIModelName(), (&v1beta1.ParamKind{}).OpenAPIModelName(), (&v1beta1.Validation{}).OpenAPIModelName(), (&v1beta1.Variable{}).OpenAPIModelName()},
 	}
 }
 
@@ -5538,7 +5538,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingAdmissionPolicySta
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.TypeChecking", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&v1beta1.TypeChecking{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -5677,7 +5677,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingWebhook(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1.RuleWithOperations", "k8s.io/api/admissionregistration/v1beta1.MatchCondition", "k8s.io/api/admissionregistration/v1beta1.WebhookClientConfig", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1.RuleWithOperations{}).OpenAPIModelName(), (&v1beta1.MatchCondition{}).OpenAPIModelName(), (&v1beta1.WebhookClientConfig{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -5737,7 +5737,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingWebhookConfigurati
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingWebhook", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta1.ValidatingWebhook{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5788,7 +5788,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_ValidatingWebhookConfigurati
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ValidatingWebhookConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta1.ValidatingWebhookConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -5901,7 +5901,7 @@ func schema_k8sio_api_admissionregistration_v1beta1_WebhookClientConfig(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/admissionregistration/v1beta1.ServiceReference"},
+			(&v1beta1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -5959,7 +5959,7 @@ func schema_k8sio_api_apidiscovery_v2_APIGroupDiscovery(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2.APIVersionDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v2.APIVersionDiscovery{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6010,7 +6010,7 @@ func schema_k8sio_api_apidiscovery_v2_APIGroupDiscoveryList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2.APIGroupDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v2.APIGroupDiscovery{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6138,7 +6138,7 @@ func schema_k8sio_api_apidiscovery_v2_APIResourceDiscovery(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2.APISubresourceDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionKind"},
+			(&v2.APISubresourceDiscovery{}).OpenAPIModelName(), (&metav1.GroupVersionKind{}).OpenAPIModelName()},
 	}
 }
 
@@ -6212,7 +6212,7 @@ func schema_k8sio_api_apidiscovery_v2_APISubresourceDiscovery(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionKind"},
+			(&metav1.GroupVersionKind{}).OpenAPIModelName()},
 	}
 }
 
@@ -6265,7 +6265,7 @@ func schema_k8sio_api_apidiscovery_v2_APIVersionDiscovery(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2.APIResourceDiscovery"},
+			(&v2.APIResourceDiscovery{}).OpenAPIModelName()},
 	}
 }
 
@@ -6323,7 +6323,7 @@ func schema_k8sio_api_apidiscovery_v2beta1_APIGroupDiscovery(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2beta1.APIVersionDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v2beta1.APIVersionDiscovery{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6374,7 +6374,7 @@ func schema_k8sio_api_apidiscovery_v2beta1_APIGroupDiscoveryList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2beta1.APIGroupDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v2beta1.APIGroupDiscovery{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6502,7 +6502,7 @@ func schema_k8sio_api_apidiscovery_v2beta1_APIResourceDiscovery(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2beta1.APISubresourceDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionKind"},
+			(&v2beta1.APISubresourceDiscovery{}).OpenAPIModelName(), (&metav1.GroupVersionKind{}).OpenAPIModelName()},
 	}
 }
 
@@ -6576,7 +6576,7 @@ func schema_k8sio_api_apidiscovery_v2beta1_APISubresourceDiscovery(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionKind"},
+			(&metav1.GroupVersionKind{}).OpenAPIModelName()},
 	}
 }
 
@@ -6629,7 +6629,7 @@ func schema_k8sio_api_apidiscovery_v2beta1_APIVersionDiscovery(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apidiscovery/v2beta1.APIResourceDiscovery"},
+			(&v2beta1.APIResourceDiscovery{}).OpenAPIModelName()},
 	}
 }
 
@@ -6747,7 +6747,7 @@ func schema_k8sio_api_apiserverinternal_v1alpha1_StorageVersion(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apiserverinternal/v1alpha1.StorageVersionSpec", "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&apiserverinternalv1alpha1.StorageVersionSpec{}).OpenAPIModelName(), (&apiserverinternalv1alpha1.StorageVersionStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6807,7 +6807,7 @@ func schema_k8sio_api_apiserverinternal_v1alpha1_StorageVersionCondition(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -6858,7 +6858,7 @@ func schema_k8sio_api_apiserverinternal_v1alpha1_StorageVersionList(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apiserverinternal/v1alpha1.StorageVersion", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&apiserverinternalv1alpha1.StorageVersion{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -6935,7 +6935,7 @@ func schema_k8sio_api_apiserverinternal_v1alpha1_StorageVersionStatus(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apiserverinternal/v1alpha1.ServerStorageVersion", "k8s.io/api/apiserverinternal/v1alpha1.StorageVersionCondition"},
+			(&apiserverinternalv1alpha1.ServerStorageVersion{}).OpenAPIModelName(), (&apiserverinternalv1alpha1.StorageVersionCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -6986,7 +6986,7 @@ func schema_k8sio_api_apps_v1_ControllerRevision(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -7037,7 +7037,7 @@ func schema_k8sio_api_apps_v1_ControllerRevisionList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.ControllerRevision", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1.ControllerRevision{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7087,7 +7087,7 @@ func schema_k8sio_api_apps_v1_DaemonSet(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DaemonSetSpec", "k8s.io/api/apps/v1.DaemonSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1.DaemonSetSpec{}).OpenAPIModelName(), (&appsv1.DaemonSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7139,7 +7139,7 @@ func schema_k8sio_api_apps_v1_DaemonSetCondition(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -7190,7 +7190,7 @@ func schema_k8sio_api_apps_v1_DaemonSetList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DaemonSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1.DaemonSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7240,7 +7240,7 @@ func schema_k8sio_api_apps_v1_DaemonSetSpec(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DaemonSetUpdateStrategy", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&appsv1.DaemonSetUpdateStrategy{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -7347,7 +7347,7 @@ func schema_k8sio_api_apps_v1_DaemonSetStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DaemonSetCondition"},
+			(&appsv1.DaemonSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -7376,7 +7376,7 @@ func schema_k8sio_api_apps_v1_DaemonSetUpdateStrategy(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.RollingUpdateDaemonSet"},
+			(&appsv1.RollingUpdateDaemonSet{}).OpenAPIModelName()},
 	}
 }
 
@@ -7426,7 +7426,7 @@ func schema_k8sio_api_apps_v1_Deployment(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DeploymentSpec", "k8s.io/api/apps/v1.DeploymentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1.DeploymentSpec{}).OpenAPIModelName(), (&appsv1.DeploymentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7484,7 +7484,7 @@ func schema_k8sio_api_apps_v1_DeploymentCondition(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -7535,7 +7535,7 @@ func schema_k8sio_api_apps_v1_DeploymentList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.Deployment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1.Deployment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7611,7 +7611,7 @@ func schema_k8sio_api_apps_v1_DeploymentSpec(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DeploymentStrategy", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&appsv1.DeploymentStrategy{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -7706,7 +7706,7 @@ func schema_k8sio_api_apps_v1_DeploymentStatus(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.DeploymentCondition"},
+			(&appsv1.DeploymentCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -7735,7 +7735,7 @@ func schema_k8sio_api_apps_v1_DeploymentStrategy(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.RollingUpdateDeployment"},
+			(&appsv1.RollingUpdateDeployment{}).OpenAPIModelName()},
 	}
 }
 
@@ -7785,7 +7785,7 @@ func schema_k8sio_api_apps_v1_ReplicaSet(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.ReplicaSetSpec", "k8s.io/api/apps/v1.ReplicaSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1.ReplicaSetSpec{}).OpenAPIModelName(), (&appsv1.ReplicaSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7837,7 +7837,7 @@ func schema_k8sio_api_apps_v1_ReplicaSetCondition(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -7888,7 +7888,7 @@ func schema_k8sio_api_apps_v1_ReplicaSetList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.ReplicaSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1.ReplicaSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -7931,7 +7931,7 @@ func schema_k8sio_api_apps_v1_ReplicaSetSpec(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -8014,7 +8014,7 @@ func schema_k8sio_api_apps_v1_ReplicaSetStatus(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.ReplicaSetCondition"},
+			(&appsv1.ReplicaSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -8041,7 +8041,7 @@ func schema_k8sio_api_apps_v1_RollingUpdateDaemonSet(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -8068,7 +8068,7 @@ func schema_k8sio_api_apps_v1_RollingUpdateDeployment(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -8096,7 +8096,7 @@ func schema_k8sio_api_apps_v1_RollingUpdateStatefulSetStrategy(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -8146,7 +8146,7 @@ func schema_k8sio_api_apps_v1_StatefulSet(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.StatefulSetSpec", "k8s.io/api/apps/v1.StatefulSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1.StatefulSetSpec{}).OpenAPIModelName(), (&appsv1.StatefulSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -8198,7 +8198,7 @@ func schema_k8sio_api_apps_v1_StatefulSetCondition(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -8249,7 +8249,7 @@ func schema_k8sio_api_apps_v1_StatefulSetList(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.StatefulSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1.StatefulSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -8401,7 +8401,7 @@ func schema_k8sio_api_apps_v1_StatefulSetSpec(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.StatefulSetOrdinals", "k8s.io/api/apps/v1.StatefulSetPersistentVolumeClaimRetentionPolicy", "k8s.io/api/apps/v1.StatefulSetUpdateStrategy", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&appsv1.StatefulSetOrdinals{}).OpenAPIModelName(), (&appsv1.StatefulSetPersistentVolumeClaimRetentionPolicy{}).OpenAPIModelName(), (&appsv1.StatefulSetUpdateStrategy{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaim{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -8506,7 +8506,7 @@ func schema_k8sio_api_apps_v1_StatefulSetStatus(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.StatefulSetCondition"},
+			(&appsv1.StatefulSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -8535,7 +8535,7 @@ func schema_k8sio_api_apps_v1_StatefulSetUpdateStrategy(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1.RollingUpdateStatefulSetStrategy"},
+			(&appsv1.RollingUpdateStatefulSetStrategy{}).OpenAPIModelName()},
 	}
 }
 
@@ -8586,7 +8586,7 @@ func schema_k8sio_api_apps_v1beta1_ControllerRevision(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -8637,7 +8637,7 @@ func schema_k8sio_api_apps_v1beta1_ControllerRevisionList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.ControllerRevision", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1beta1.ControllerRevision{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -8687,7 +8687,7 @@ func schema_k8sio_api_apps_v1beta1_Deployment(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.DeploymentSpec", "k8s.io/api/apps/v1beta1.DeploymentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1beta1.DeploymentSpec{}).OpenAPIModelName(), (&appsv1beta1.DeploymentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -8745,7 +8745,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentCondition(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -8796,7 +8796,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.Deployment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1beta1.Deployment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -8857,7 +8857,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentRollback(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.RollbackConfig"},
+			(&appsv1beta1.RollbackConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -8939,7 +8939,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.DeploymentStrategy", "k8s.io/api/apps/v1beta1.RollbackConfig", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&appsv1beta1.DeploymentStrategy{}).OpenAPIModelName(), (&appsv1beta1.RollbackConfig{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -9034,7 +9034,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentStatus(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.DeploymentCondition"},
+			(&appsv1beta1.DeploymentCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -9062,7 +9062,7 @@ func schema_k8sio_api_apps_v1beta1_DeploymentStrategy(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.RollingUpdateDeployment"},
+			(&appsv1beta1.RollingUpdateDeployment{}).OpenAPIModelName()},
 	}
 }
 
@@ -9109,7 +9109,7 @@ func schema_k8sio_api_apps_v1beta1_RollingUpdateDeployment(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -9137,7 +9137,7 @@ func schema_k8sio_api_apps_v1beta1_RollingUpdateStatefulSetStrategy(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -9187,7 +9187,7 @@ func schema_k8sio_api_apps_v1beta1_Scale(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.ScaleSpec", "k8s.io/api/apps/v1beta1.ScaleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1beta1.ScaleSpec{}).OpenAPIModelName(), (&appsv1beta1.ScaleStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9301,7 +9301,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSet(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.StatefulSetSpec", "k8s.io/api/apps/v1beta1.StatefulSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&appsv1beta1.StatefulSetSpec{}).OpenAPIModelName(), (&appsv1beta1.StatefulSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9353,7 +9353,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSetCondition(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -9402,7 +9402,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSetList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.StatefulSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&appsv1beta1.StatefulSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9553,7 +9553,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSetSpec(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.StatefulSetOrdinals", "k8s.io/api/apps/v1beta1.StatefulSetPersistentVolumeClaimRetentionPolicy", "k8s.io/api/apps/v1beta1.StatefulSetUpdateStrategy", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&appsv1beta1.StatefulSetOrdinals{}).OpenAPIModelName(), (&appsv1beta1.StatefulSetPersistentVolumeClaimRetentionPolicy{}).OpenAPIModelName(), (&appsv1beta1.StatefulSetUpdateStrategy{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaim{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -9658,7 +9658,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSetStatus(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.StatefulSetCondition"},
+			(&appsv1beta1.StatefulSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -9686,7 +9686,7 @@ func schema_k8sio_api_apps_v1beta1_StatefulSetUpdateStrategy(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta1.RollingUpdateStatefulSetStrategy"},
+			(&appsv1beta1.RollingUpdateStatefulSetStrategy{}).OpenAPIModelName()},
 	}
 }
 
@@ -9737,7 +9737,7 @@ func schema_k8sio_api_apps_v1beta2_ControllerRevision(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -9788,7 +9788,7 @@ func schema_k8sio_api_apps_v1beta2_ControllerRevisionList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.ControllerRevision", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta2.ControllerRevision{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9838,7 +9838,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSet(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DaemonSetSpec", "k8s.io/api/apps/v1beta2.DaemonSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta2.DaemonSetSpec{}).OpenAPIModelName(), (&v1beta2.DaemonSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9890,7 +9890,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSetCondition(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -9941,7 +9941,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSetList(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DaemonSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta2.DaemonSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -9991,7 +9991,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSetSpec(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DaemonSetUpdateStrategy", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1beta2.DaemonSetUpdateStrategy{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -10098,7 +10098,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSetStatus(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DaemonSetCondition"},
+			(&v1beta2.DaemonSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -10126,7 +10126,7 @@ func schema_k8sio_api_apps_v1beta2_DaemonSetUpdateStrategy(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.RollingUpdateDaemonSet"},
+			(&v1beta2.RollingUpdateDaemonSet{}).OpenAPIModelName()},
 	}
 }
 
@@ -10176,7 +10176,7 @@ func schema_k8sio_api_apps_v1beta2_Deployment(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DeploymentSpec", "k8s.io/api/apps/v1beta2.DeploymentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta2.DeploymentSpec{}).OpenAPIModelName(), (&v1beta2.DeploymentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -10234,7 +10234,7 @@ func schema_k8sio_api_apps_v1beta2_DeploymentCondition(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -10285,7 +10285,7 @@ func schema_k8sio_api_apps_v1beta2_DeploymentList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.Deployment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta2.Deployment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -10361,7 +10361,7 @@ func schema_k8sio_api_apps_v1beta2_DeploymentSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DeploymentStrategy", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1beta2.DeploymentStrategy{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -10456,7 +10456,7 @@ func schema_k8sio_api_apps_v1beta2_DeploymentStatus(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.DeploymentCondition"},
+			(&v1beta2.DeploymentCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -10484,7 +10484,7 @@ func schema_k8sio_api_apps_v1beta2_DeploymentStrategy(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.RollingUpdateDeployment"},
+			(&v1beta2.RollingUpdateDeployment{}).OpenAPIModelName()},
 	}
 }
 
@@ -10534,7 +10534,7 @@ func schema_k8sio_api_apps_v1beta2_ReplicaSet(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.ReplicaSetSpec", "k8s.io/api/apps/v1beta2.ReplicaSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta2.ReplicaSetSpec{}).OpenAPIModelName(), (&v1beta2.ReplicaSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -10586,7 +10586,7 @@ func schema_k8sio_api_apps_v1beta2_ReplicaSetCondition(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -10637,7 +10637,7 @@ func schema_k8sio_api_apps_v1beta2_ReplicaSetList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.ReplicaSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta2.ReplicaSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -10680,7 +10680,7 @@ func schema_k8sio_api_apps_v1beta2_ReplicaSetSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -10763,7 +10763,7 @@ func schema_k8sio_api_apps_v1beta2_ReplicaSetStatus(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.ReplicaSetCondition"},
+			(&v1beta2.ReplicaSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -10790,7 +10790,7 @@ func schema_k8sio_api_apps_v1beta2_RollingUpdateDaemonSet(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -10817,7 +10817,7 @@ func schema_k8sio_api_apps_v1beta2_RollingUpdateDeployment(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -10845,7 +10845,7 @@ func schema_k8sio_api_apps_v1beta2_RollingUpdateStatefulSetStrategy(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -10895,7 +10895,7 @@ func schema_k8sio_api_apps_v1beta2_Scale(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.ScaleSpec", "k8s.io/api/apps/v1beta2.ScaleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta2.ScaleSpec{}).OpenAPIModelName(), (&v1beta2.ScaleStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11014,7 +11014,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSet(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.StatefulSetSpec", "k8s.io/api/apps/v1beta2.StatefulSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta2.StatefulSetSpec{}).OpenAPIModelName(), (&v1beta2.StatefulSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11066,7 +11066,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSetCondition(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -11115,7 +11115,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSetList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.StatefulSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta2.StatefulSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11266,7 +11266,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSetSpec(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.StatefulSetOrdinals", "k8s.io/api/apps/v1beta2.StatefulSetPersistentVolumeClaimRetentionPolicy", "k8s.io/api/apps/v1beta2.StatefulSetUpdateStrategy", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&v1beta2.StatefulSetOrdinals{}).OpenAPIModelName(), (&v1beta2.StatefulSetPersistentVolumeClaimRetentionPolicy{}).OpenAPIModelName(), (&v1beta2.StatefulSetUpdateStrategy{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaim{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -11371,7 +11371,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSetStatus(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.StatefulSetCondition"},
+			(&v1beta2.StatefulSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -11399,7 +11399,7 @@ func schema_k8sio_api_apps_v1beta2_StatefulSetUpdateStrategy(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/apps/v1beta2.RollingUpdateStatefulSetStrategy"},
+			(&v1beta2.RollingUpdateStatefulSetStrategy{}).OpenAPIModelName()},
 	}
 }
 
@@ -11483,7 +11483,7 @@ func schema_k8sio_api_authentication_v1_SelfSubjectReview(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.SelfSubjectReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1.SelfSubjectReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11505,7 +11505,7 @@ func schema_k8sio_api_authentication_v1_SelfSubjectReviewStatus(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.UserInfo"},
+			(&authenticationv1.UserInfo{}).OpenAPIModelName()},
 	}
 }
 
@@ -11556,7 +11556,7 @@ func schema_k8sio_api_authentication_v1_TokenRequest(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.TokenRequestSpec", "k8s.io/api/authentication/v1.TokenRequestStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1.TokenRequestSpec{}).OpenAPIModelName(), (&authenticationv1.TokenRequestStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11605,7 +11605,7 @@ func schema_k8sio_api_authentication_v1_TokenRequestSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.BoundObjectReference"},
+			(&authenticationv1.BoundObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -11635,7 +11635,7 @@ func schema_k8sio_api_authentication_v1_TokenRequestStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -11686,7 +11686,7 @@ func schema_k8sio_api_authentication_v1_TokenReview(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.TokenReviewSpec", "k8s.io/api/authentication/v1.TokenReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1.TokenReviewSpec{}).OpenAPIModelName(), (&authenticationv1.TokenReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11782,7 +11782,7 @@ func schema_k8sio_api_authentication_v1_TokenReviewStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.UserInfo"},
+			(&authenticationv1.UserInfo{}).OpenAPIModelName()},
 	}
 }
 
@@ -11895,7 +11895,7 @@ func schema_k8sio_api_authentication_v1alpha1_SelfSubjectReview(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1alpha1.SelfSubjectReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1alpha1.SelfSubjectReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11917,7 +11917,7 @@ func schema_k8sio_api_authentication_v1alpha1_SelfSubjectReviewStatus(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.UserInfo"},
+			(&authenticationv1.UserInfo{}).OpenAPIModelName()},
 	}
 }
 
@@ -11960,7 +11960,7 @@ func schema_k8sio_api_authentication_v1beta1_SelfSubjectReview(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1beta1.SelfSubjectReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1beta1.SelfSubjectReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -11982,7 +11982,7 @@ func schema_k8sio_api_authentication_v1beta1_SelfSubjectReviewStatus(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.UserInfo"},
+			(&authenticationv1.UserInfo{}).OpenAPIModelName()},
 	}
 }
 
@@ -12033,7 +12033,7 @@ func schema_k8sio_api_authentication_v1beta1_TokenReview(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1beta1.TokenReviewSpec", "k8s.io/api/authentication/v1beta1.TokenReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authenticationv1beta1.TokenReviewSpec{}).OpenAPIModelName(), (&authenticationv1beta1.TokenReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -12129,7 +12129,7 @@ func schema_k8sio_api_authentication_v1beta1_TokenReviewStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1beta1.UserInfo"},
+			(&authenticationv1beta1.UserInfo{}).OpenAPIModelName()},
 	}
 }
 
@@ -12240,7 +12240,7 @@ func schema_k8sio_api_authorization_v1_FieldSelectorAttributes(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.FieldSelectorRequirement"},
+			(&metav1.FieldSelectorRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -12281,7 +12281,7 @@ func schema_k8sio_api_authorization_v1_LabelSelectorAttributes(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"},
+			(&metav1.LabelSelectorRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -12332,7 +12332,7 @@ func schema_k8sio_api_authorization_v1_LocalSubjectAccessReview(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.SubjectAccessReviewSpec", "k8s.io/api/authorization/v1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1.SubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -12489,7 +12489,7 @@ func schema_k8sio_api_authorization_v1_ResourceAttributes(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.FieldSelectorAttributes", "k8s.io/api/authorization/v1.LabelSelectorAttributes"},
+			(&authorizationv1.FieldSelectorAttributes{}).OpenAPIModelName(), (&authorizationv1.LabelSelectorAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -12634,7 +12634,7 @@ func schema_k8sio_api_authorization_v1_SelfSubjectAccessReview(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.SelfSubjectAccessReviewSpec", "k8s.io/api/authorization/v1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1.SelfSubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -12661,7 +12661,7 @@ func schema_k8sio_api_authorization_v1_SelfSubjectAccessReviewSpec(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.NonResourceAttributes", "k8s.io/api/authorization/v1.ResourceAttributes"},
+			(&authorizationv1.NonResourceAttributes{}).OpenAPIModelName(), (&authorizationv1.ResourceAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -12712,7 +12712,7 @@ func schema_k8sio_api_authorization_v1_SelfSubjectRulesReview(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.SelfSubjectRulesReviewSpec", "k8s.io/api/authorization/v1.SubjectRulesReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1.SelfSubjectRulesReviewSpec{}).OpenAPIModelName(), (&authorizationv1.SubjectRulesReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -12783,7 +12783,7 @@ func schema_k8sio_api_authorization_v1_SubjectAccessReview(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.SubjectAccessReviewSpec", "k8s.io/api/authorization/v1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1.SubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -12867,7 +12867,7 @@ func schema_k8sio_api_authorization_v1_SubjectAccessReviewSpec(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.NonResourceAttributes", "k8s.io/api/authorization/v1.ResourceAttributes"},
+			(&authorizationv1.NonResourceAttributes{}).OpenAPIModelName(), (&authorizationv1.ResourceAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -12979,7 +12979,7 @@ func schema_k8sio_api_authorization_v1_SubjectRulesReviewStatus(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.NonResourceRule", "k8s.io/api/authorization/v1.ResourceRule"},
+			(&authorizationv1.NonResourceRule{}).OpenAPIModelName(), (&authorizationv1.ResourceRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -13030,7 +13030,7 @@ func schema_k8sio_api_authorization_v1beta1_LocalSubjectAccessReview(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.SubjectAccessReviewSpec", "k8s.io/api/authorization/v1beta1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1beta1.SubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1beta1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -13187,7 +13187,7 @@ func schema_k8sio_api_authorization_v1beta1_ResourceAttributes(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1.FieldSelectorAttributes", "k8s.io/api/authorization/v1.LabelSelectorAttributes"},
+			(&authorizationv1.FieldSelectorAttributes{}).OpenAPIModelName(), (&authorizationv1.LabelSelectorAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -13332,7 +13332,7 @@ func schema_k8sio_api_authorization_v1beta1_SelfSubjectAccessReview(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.SelfSubjectAccessReviewSpec", "k8s.io/api/authorization/v1beta1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1beta1.SelfSubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1beta1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -13359,7 +13359,7 @@ func schema_k8sio_api_authorization_v1beta1_SelfSubjectAccessReviewSpec(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.NonResourceAttributes", "k8s.io/api/authorization/v1beta1.ResourceAttributes"},
+			(&authorizationv1beta1.NonResourceAttributes{}).OpenAPIModelName(), (&authorizationv1beta1.ResourceAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -13410,7 +13410,7 @@ func schema_k8sio_api_authorization_v1beta1_SelfSubjectRulesReview(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.SelfSubjectRulesReviewSpec", "k8s.io/api/authorization/v1beta1.SubjectRulesReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1beta1.SelfSubjectRulesReviewSpec{}).OpenAPIModelName(), (&authorizationv1beta1.SubjectRulesReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -13481,7 +13481,7 @@ func schema_k8sio_api_authorization_v1beta1_SubjectAccessReview(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.SubjectAccessReviewSpec", "k8s.io/api/authorization/v1beta1.SubjectAccessReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&authorizationv1beta1.SubjectAccessReviewSpec{}).OpenAPIModelName(), (&authorizationv1beta1.SubjectAccessReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -13565,7 +13565,7 @@ func schema_k8sio_api_authorization_v1beta1_SubjectAccessReviewSpec(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.NonResourceAttributes", "k8s.io/api/authorization/v1beta1.ResourceAttributes"},
+			(&authorizationv1beta1.NonResourceAttributes{}).OpenAPIModelName(), (&authorizationv1beta1.ResourceAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -13677,7 +13677,7 @@ func schema_k8sio_api_authorization_v1beta1_SubjectRulesReviewStatus(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authorization/v1beta1.NonResourceRule", "k8s.io/api/authorization/v1beta1.ResourceRule"},
+			(&authorizationv1beta1.NonResourceRule{}).OpenAPIModelName(), (&authorizationv1beta1.ResourceRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -13722,7 +13722,7 @@ func schema_k8sio_api_autoscaling_v1_ContainerResourceMetricSource(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -13767,7 +13767,7 @@ func schema_k8sio_api_autoscaling_v1_ContainerResourceMetricStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -13851,7 +13851,7 @@ func schema_k8sio_api_autoscaling_v1_ExternalMetricSource(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -13893,7 +13893,7 @@ func schema_k8sio_api_autoscaling_v1_ExternalMetricStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -13943,7 +13943,7 @@ func schema_k8sio_api_autoscaling_v1_HorizontalPodAutoscaler(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.HorizontalPodAutoscalerSpec", "k8s.io/api/autoscaling/v1.HorizontalPodAutoscalerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&autoscalingv1.HorizontalPodAutoscalerSpec{}).OpenAPIModelName(), (&autoscalingv1.HorizontalPodAutoscalerStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -13995,7 +13995,7 @@ func schema_k8sio_api_autoscaling_v1_HorizontalPodAutoscalerCondition(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -14046,7 +14046,7 @@ func schema_k8sio_api_autoscaling_v1_HorizontalPodAutoscalerList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.HorizontalPodAutoscaler", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&autoscalingv1.HorizontalPodAutoscaler{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -14091,7 +14091,7 @@ func schema_k8sio_api_autoscaling_v1_HorizontalPodAutoscalerSpec(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.CrossVersionObjectReference"},
+			(&autoscalingv1.CrossVersionObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -14143,7 +14143,7 @@ func schema_k8sio_api_autoscaling_v1_HorizontalPodAutoscalerStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -14198,7 +14198,7 @@ func schema_k8sio_api_autoscaling_v1_MetricSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.ContainerResourceMetricSource", "k8s.io/api/autoscaling/v1.ExternalMetricSource", "k8s.io/api/autoscaling/v1.ObjectMetricSource", "k8s.io/api/autoscaling/v1.PodsMetricSource", "k8s.io/api/autoscaling/v1.ResourceMetricSource"},
+			(&autoscalingv1.ContainerResourceMetricSource{}).OpenAPIModelName(), (&autoscalingv1.ExternalMetricSource{}).OpenAPIModelName(), (&autoscalingv1.ObjectMetricSource{}).OpenAPIModelName(), (&autoscalingv1.PodsMetricSource{}).OpenAPIModelName(), (&autoscalingv1.ResourceMetricSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -14253,7 +14253,7 @@ func schema_k8sio_api_autoscaling_v1_MetricStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.ContainerResourceMetricStatus", "k8s.io/api/autoscaling/v1.ExternalMetricStatus", "k8s.io/api/autoscaling/v1.ObjectMetricStatus", "k8s.io/api/autoscaling/v1.PodsMetricStatus", "k8s.io/api/autoscaling/v1.ResourceMetricStatus"},
+			(&autoscalingv1.ContainerResourceMetricStatus{}).OpenAPIModelName(), (&autoscalingv1.ExternalMetricStatus{}).OpenAPIModelName(), (&autoscalingv1.ObjectMetricStatus{}).OpenAPIModelName(), (&autoscalingv1.PodsMetricStatus{}).OpenAPIModelName(), (&autoscalingv1.ResourceMetricStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -14302,7 +14302,7 @@ func schema_k8sio_api_autoscaling_v1_ObjectMetricSource(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.CrossVersionObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&autoscalingv1.CrossVersionObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -14351,7 +14351,7 @@ func schema_k8sio_api_autoscaling_v1_ObjectMetricStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.CrossVersionObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&autoscalingv1.CrossVersionObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -14387,7 +14387,7 @@ func schema_k8sio_api_autoscaling_v1_PodsMetricSource(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -14423,7 +14423,7 @@ func schema_k8sio_api_autoscaling_v1_PodsMetricStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -14460,7 +14460,7 @@ func schema_k8sio_api_autoscaling_v1_ResourceMetricSource(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -14497,7 +14497,7 @@ func schema_k8sio_api_autoscaling_v1_ResourceMetricStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -14547,7 +14547,7 @@ func schema_k8sio_api_autoscaling_v1_Scale(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v1.ScaleSpec", "k8s.io/api/autoscaling/v1.ScaleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&autoscalingv1.ScaleSpec{}).OpenAPIModelName(), (&autoscalingv1.ScaleStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -14635,7 +14635,7 @@ func schema_k8sio_api_autoscaling_v2_ContainerResourceMetricSource(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricTarget"},
+			(&autoscalingv2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -14674,7 +14674,7 @@ func schema_k8sio_api_autoscaling_v2_ContainerResourceMetricStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricValueStatus"},
+			(&autoscalingv2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -14741,7 +14741,7 @@ func schema_k8sio_api_autoscaling_v2_ExternalMetricSource(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricTarget"},
+			(&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -14771,7 +14771,7 @@ func schema_k8sio_api_autoscaling_v2_ExternalMetricStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricValueStatus"},
+			(&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -14863,7 +14863,7 @@ func schema_k8sio_api_autoscaling_v2_HPAScalingRules(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.HPAScalingPolicy", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&autoscalingv2.HPAScalingPolicy{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -14913,7 +14913,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscaler(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.HorizontalPodAutoscalerSpec", "k8s.io/api/autoscaling/v2.HorizontalPodAutoscalerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&autoscalingv2.HorizontalPodAutoscalerSpec{}).OpenAPIModelName(), (&autoscalingv2.HorizontalPodAutoscalerStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -14940,7 +14940,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscalerBehavior(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.HPAScalingRules"},
+			(&autoscalingv2.HPAScalingRules{}).OpenAPIModelName()},
 	}
 }
 
@@ -14992,7 +14992,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscalerCondition(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -15043,7 +15043,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscalerList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.HorizontalPodAutoscaler", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&autoscalingv2.HorizontalPodAutoscaler{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -15106,7 +15106,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscalerSpec(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2.HorizontalPodAutoscalerBehavior", "k8s.io/api/autoscaling/v2.MetricSpec"},
+			(&autoscalingv2.CrossVersionObjectReference{}).OpenAPIModelName(), (&autoscalingv2.HorizontalPodAutoscalerBehavior{}).OpenAPIModelName(), (&autoscalingv2.MetricSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -15193,7 +15193,7 @@ func schema_k8sio_api_autoscaling_v2_HorizontalPodAutoscalerStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.HorizontalPodAutoscalerCondition", "k8s.io/api/autoscaling/v2.MetricStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&autoscalingv2.HorizontalPodAutoscalerCondition{}).OpenAPIModelName(), (&autoscalingv2.MetricStatus{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -15223,7 +15223,7 @@ func schema_k8sio_api_autoscaling_v2_MetricIdentifier(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -15277,7 +15277,7 @@ func schema_k8sio_api_autoscaling_v2_MetricSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.ContainerResourceMetricSource", "k8s.io/api/autoscaling/v2.ExternalMetricSource", "k8s.io/api/autoscaling/v2.ObjectMetricSource", "k8s.io/api/autoscaling/v2.PodsMetricSource", "k8s.io/api/autoscaling/v2.ResourceMetricSource"},
+			(&autoscalingv2.ContainerResourceMetricSource{}).OpenAPIModelName(), (&autoscalingv2.ExternalMetricSource{}).OpenAPIModelName(), (&autoscalingv2.ObjectMetricSource{}).OpenAPIModelName(), (&autoscalingv2.PodsMetricSource{}).OpenAPIModelName(), (&autoscalingv2.ResourceMetricSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -15331,7 +15331,7 @@ func schema_k8sio_api_autoscaling_v2_MetricStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.ContainerResourceMetricStatus", "k8s.io/api/autoscaling/v2.ExternalMetricStatus", "k8s.io/api/autoscaling/v2.ObjectMetricStatus", "k8s.io/api/autoscaling/v2.PodsMetricStatus", "k8s.io/api/autoscaling/v2.ResourceMetricStatus"},
+			(&autoscalingv2.ContainerResourceMetricStatus{}).OpenAPIModelName(), (&autoscalingv2.ExternalMetricStatus{}).OpenAPIModelName(), (&autoscalingv2.ObjectMetricStatus{}).OpenAPIModelName(), (&autoscalingv2.PodsMetricStatus{}).OpenAPIModelName(), (&autoscalingv2.ResourceMetricStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -15374,7 +15374,7 @@ func schema_k8sio_api_autoscaling_v2_MetricTarget(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -15408,7 +15408,7 @@ func schema_k8sio_api_autoscaling_v2_MetricValueStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -15445,7 +15445,7 @@ func schema_k8sio_api_autoscaling_v2_ObjectMetricSource(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricTarget"},
+			(&autoscalingv2.CrossVersionObjectReference{}).OpenAPIModelName(), (&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -15482,7 +15482,7 @@ func schema_k8sio_api_autoscaling_v2_ObjectMetricStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricValueStatus"},
+			(&autoscalingv2.CrossVersionObjectReference{}).OpenAPIModelName(), (&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -15512,7 +15512,7 @@ func schema_k8sio_api_autoscaling_v2_PodsMetricSource(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricTarget"},
+			(&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -15542,7 +15542,7 @@ func schema_k8sio_api_autoscaling_v2_PodsMetricStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricIdentifier", "k8s.io/api/autoscaling/v2.MetricValueStatus"},
+			(&autoscalingv2.MetricIdentifier{}).OpenAPIModelName(), (&autoscalingv2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -15573,7 +15573,7 @@ func schema_k8sio_api_autoscaling_v2_ResourceMetricSource(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricTarget"},
+			(&autoscalingv2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -15604,7 +15604,7 @@ func schema_k8sio_api_autoscaling_v2_ResourceMetricStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2.MetricValueStatus"},
+			(&autoscalingv2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -15649,7 +15649,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ContainerResourceMetricSource(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -15694,7 +15694,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ContainerResourceMetricStatus(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -15773,7 +15773,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ExternalMetricSource(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -15815,7 +15815,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ExternalMetricStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -15865,7 +15865,7 @@ func schema_k8sio_api_autoscaling_v2beta1_HorizontalPodAutoscaler(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerSpec", "k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&autoscalingv2beta1.HorizontalPodAutoscalerSpec{}).OpenAPIModelName(), (&autoscalingv2beta1.HorizontalPodAutoscalerStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -15917,7 +15917,7 @@ func schema_k8sio_api_autoscaling_v2beta1_HorizontalPodAutoscalerCondition(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -15968,7 +15968,7 @@ func schema_k8sio_api_autoscaling_v2beta1_HorizontalPodAutoscalerList(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscaler", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&autoscalingv2beta1.HorizontalPodAutoscaler{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -16025,7 +16025,7 @@ func schema_k8sio_api_autoscaling_v2beta1_HorizontalPodAutoscalerSpec(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2beta1.MetricSpec"},
+			(&autoscalingv2beta1.CrossVersionObjectReference{}).OpenAPIModelName(), (&autoscalingv2beta1.MetricSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -16108,7 +16108,7 @@ func schema_k8sio_api_autoscaling_v2beta1_HorizontalPodAutoscalerStatus(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.HorizontalPodAutoscalerCondition", "k8s.io/api/autoscaling/v2beta1.MetricStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&autoscalingv2beta1.HorizontalPodAutoscalerCondition{}).OpenAPIModelName(), (&autoscalingv2beta1.MetricStatus{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -16162,7 +16162,7 @@ func schema_k8sio_api_autoscaling_v2beta1_MetricSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.ContainerResourceMetricSource", "k8s.io/api/autoscaling/v2beta1.ExternalMetricSource", "k8s.io/api/autoscaling/v2beta1.ObjectMetricSource", "k8s.io/api/autoscaling/v2beta1.PodsMetricSource", "k8s.io/api/autoscaling/v2beta1.ResourceMetricSource"},
+			(&autoscalingv2beta1.ContainerResourceMetricSource{}).OpenAPIModelName(), (&autoscalingv2beta1.ExternalMetricSource{}).OpenAPIModelName(), (&autoscalingv2beta1.ObjectMetricSource{}).OpenAPIModelName(), (&autoscalingv2beta1.PodsMetricSource{}).OpenAPIModelName(), (&autoscalingv2beta1.ResourceMetricSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -16216,7 +16216,7 @@ func schema_k8sio_api_autoscaling_v2beta1_MetricStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.ContainerResourceMetricStatus", "k8s.io/api/autoscaling/v2beta1.ExternalMetricStatus", "k8s.io/api/autoscaling/v2beta1.ObjectMetricStatus", "k8s.io/api/autoscaling/v2beta1.PodsMetricStatus", "k8s.io/api/autoscaling/v2beta1.ResourceMetricStatus"},
+			(&autoscalingv2beta1.ContainerResourceMetricStatus{}).OpenAPIModelName(), (&autoscalingv2beta1.ExternalMetricStatus{}).OpenAPIModelName(), (&autoscalingv2beta1.ObjectMetricStatus{}).OpenAPIModelName(), (&autoscalingv2beta1.PodsMetricStatus{}).OpenAPIModelName(), (&autoscalingv2beta1.ResourceMetricStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -16265,7 +16265,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ObjectMetricSource(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.CrossVersionObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&autoscalingv2beta1.CrossVersionObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -16314,7 +16314,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ObjectMetricStatus(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta1.CrossVersionObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&autoscalingv2beta1.CrossVersionObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -16350,7 +16350,7 @@ func schema_k8sio_api_autoscaling_v2beta1_PodsMetricSource(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -16386,7 +16386,7 @@ func schema_k8sio_api_autoscaling_v2beta1_PodsMetricStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -16423,7 +16423,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ResourceMetricSource(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -16460,7 +16460,7 @@ func schema_k8sio_api_autoscaling_v2beta1_ResourceMetricStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -16499,7 +16499,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ContainerResourceMetricSource(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricTarget"},
+			(&v2beta2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -16538,7 +16538,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ContainerResourceMetricStatus(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricValueStatus"},
+			(&v2beta2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -16605,7 +16605,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ExternalMetricSource(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricTarget"},
+			(&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -16635,7 +16635,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ExternalMetricStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricValueStatus"},
+			(&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -16721,7 +16721,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HPAScalingRules(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.HPAScalingPolicy"},
+			(&v2beta2.HPAScalingPolicy{}).OpenAPIModelName()},
 	}
 }
 
@@ -16771,7 +16771,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscaler(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.HorizontalPodAutoscalerSpec", "k8s.io/api/autoscaling/v2beta2.HorizontalPodAutoscalerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v2beta2.HorizontalPodAutoscalerSpec{}).OpenAPIModelName(), (&v2beta2.HorizontalPodAutoscalerStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -16798,7 +16798,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscalerBehavior(ref co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.HPAScalingRules"},
+			(&v2beta2.HPAScalingRules{}).OpenAPIModelName()},
 	}
 }
 
@@ -16850,7 +16850,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscalerCondition(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -16901,7 +16901,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscalerList(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.HorizontalPodAutoscaler", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v2beta2.HorizontalPodAutoscaler{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -16964,7 +16964,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscalerSpec(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2beta2.HorizontalPodAutoscalerBehavior", "k8s.io/api/autoscaling/v2beta2.MetricSpec"},
+			(&v2beta2.CrossVersionObjectReference{}).OpenAPIModelName(), (&v2beta2.HorizontalPodAutoscalerBehavior{}).OpenAPIModelName(), (&v2beta2.MetricSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -17047,7 +17047,7 @@ func schema_k8sio_api_autoscaling_v2beta2_HorizontalPodAutoscalerStatus(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.HorizontalPodAutoscalerCondition", "k8s.io/api/autoscaling/v2beta2.MetricStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&v2beta2.HorizontalPodAutoscalerCondition{}).OpenAPIModelName(), (&v2beta2.MetricStatus{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -17077,7 +17077,7 @@ func schema_k8sio_api_autoscaling_v2beta2_MetricIdentifier(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -17131,7 +17131,7 @@ func schema_k8sio_api_autoscaling_v2beta2_MetricSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.ContainerResourceMetricSource", "k8s.io/api/autoscaling/v2beta2.ExternalMetricSource", "k8s.io/api/autoscaling/v2beta2.ObjectMetricSource", "k8s.io/api/autoscaling/v2beta2.PodsMetricSource", "k8s.io/api/autoscaling/v2beta2.ResourceMetricSource"},
+			(&v2beta2.ContainerResourceMetricSource{}).OpenAPIModelName(), (&v2beta2.ExternalMetricSource{}).OpenAPIModelName(), (&v2beta2.ObjectMetricSource{}).OpenAPIModelName(), (&v2beta2.PodsMetricSource{}).OpenAPIModelName(), (&v2beta2.ResourceMetricSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -17185,7 +17185,7 @@ func schema_k8sio_api_autoscaling_v2beta2_MetricStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.ContainerResourceMetricStatus", "k8s.io/api/autoscaling/v2beta2.ExternalMetricStatus", "k8s.io/api/autoscaling/v2beta2.ObjectMetricStatus", "k8s.io/api/autoscaling/v2beta2.PodsMetricStatus", "k8s.io/api/autoscaling/v2beta2.ResourceMetricStatus"},
+			(&v2beta2.ContainerResourceMetricStatus{}).OpenAPIModelName(), (&v2beta2.ExternalMetricStatus{}).OpenAPIModelName(), (&v2beta2.ObjectMetricStatus{}).OpenAPIModelName(), (&v2beta2.PodsMetricStatus{}).OpenAPIModelName(), (&v2beta2.ResourceMetricStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -17228,7 +17228,7 @@ func schema_k8sio_api_autoscaling_v2beta2_MetricTarget(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -17262,7 +17262,7 @@ func schema_k8sio_api_autoscaling_v2beta2_MetricValueStatus(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -17298,7 +17298,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ObjectMetricSource(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricTarget"},
+			(&v2beta2.CrossVersionObjectReference{}).OpenAPIModelName(), (&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -17334,7 +17334,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ObjectMetricStatus(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.CrossVersionObjectReference", "k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricValueStatus"},
+			(&v2beta2.CrossVersionObjectReference{}).OpenAPIModelName(), (&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -17364,7 +17364,7 @@ func schema_k8sio_api_autoscaling_v2beta2_PodsMetricSource(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricTarget"},
+			(&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -17394,7 +17394,7 @@ func schema_k8sio_api_autoscaling_v2beta2_PodsMetricStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricIdentifier", "k8s.io/api/autoscaling/v2beta2.MetricValueStatus"},
+			(&v2beta2.MetricIdentifier{}).OpenAPIModelName(), (&v2beta2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -17425,7 +17425,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ResourceMetricSource(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricTarget"},
+			(&v2beta2.MetricTarget{}).OpenAPIModelName()},
 	}
 }
 
@@ -17456,7 +17456,7 @@ func schema_k8sio_api_autoscaling_v2beta2_ResourceMetricStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/autoscaling/v2beta2.MetricValueStatus"},
+			(&v2beta2.MetricValueStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -17506,7 +17506,7 @@ func schema_k8sio_api_batch_v1_CronJob(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.CronJobSpec", "k8s.io/api/batch/v1.CronJobStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&batchv1.CronJobSpec{}).OpenAPIModelName(), (&batchv1.CronJobStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -17557,7 +17557,7 @@ func schema_k8sio_api_batch_v1_CronJobList(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.CronJob", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&batchv1.CronJob{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -17631,7 +17631,7 @@ func schema_k8sio_api_batch_v1_CronJobSpec(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.JobTemplateSpec"},
+			(&batchv1.JobTemplateSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -17677,7 +17677,7 @@ func schema_k8sio_api_batch_v1_CronJobStatus(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -17727,7 +17727,7 @@ func schema_k8sio_api_batch_v1_Job(ref common.ReferenceCallback) common.OpenAPID
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.JobSpec", "k8s.io/api/batch/v1.JobStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&batchv1.JobSpec{}).OpenAPIModelName(), (&batchv1.JobStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -17785,7 +17785,7 @@ func schema_k8sio_api_batch_v1_JobCondition(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -17836,7 +17836,7 @@ func schema_k8sio_api_batch_v1_JobList(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.Job", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&batchv1.Job{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -17963,7 +17963,7 @@ func schema_k8sio_api_batch_v1_JobSpec(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.PodFailurePolicy", "k8s.io/api/batch/v1.SuccessPolicy", "k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&batchv1.PodFailurePolicy{}).OpenAPIModelName(), (&batchv1.SuccessPolicy{}).OpenAPIModelName(), (&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -18066,7 +18066,7 @@ func schema_k8sio_api_batch_v1_JobStatus(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.JobCondition", "k8s.io/api/batch/v1.UncountedTerminatedPods", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&batchv1.JobCondition{}).OpenAPIModelName(), (&batchv1.UncountedTerminatedPods{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -18095,7 +18095,7 @@ func schema_k8sio_api_batch_v1_JobTemplateSpec(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.JobSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&batchv1.JobSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18130,7 +18130,7 @@ func schema_k8sio_api_batch_v1_PodFailurePolicy(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.PodFailurePolicyRule"},
+			(&batchv1.PodFailurePolicyRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -18260,7 +18260,7 @@ func schema_k8sio_api_batch_v1_PodFailurePolicyRule(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.PodFailurePolicyOnExitCodesRequirement", "k8s.io/api/batch/v1.PodFailurePolicyOnPodConditionsPattern"},
+			(&batchv1.PodFailurePolicyOnExitCodesRequirement{}).OpenAPIModelName(), (&batchv1.PodFailurePolicyOnPodConditionsPattern{}).OpenAPIModelName()},
 	}
 }
 
@@ -18295,7 +18295,7 @@ func schema_k8sio_api_batch_v1_SuccessPolicy(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.SuccessPolicyRule"},
+			(&batchv1.SuccessPolicyRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -18425,7 +18425,7 @@ func schema_k8sio_api_batch_v1beta1_CronJob(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1beta1.CronJobSpec", "k8s.io/api/batch/v1beta1.CronJobStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&batchv1beta1.CronJobSpec{}).OpenAPIModelName(), (&batchv1beta1.CronJobStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18476,7 +18476,7 @@ func schema_k8sio_api_batch_v1beta1_CronJobList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1beta1.CronJob", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&batchv1beta1.CronJob{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18549,7 +18549,7 @@ func schema_k8sio_api_batch_v1beta1_CronJobSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1beta1.JobTemplateSpec"},
+			(&batchv1beta1.JobTemplateSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -18595,7 +18595,7 @@ func schema_k8sio_api_batch_v1beta1_CronJobStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -18624,7 +18624,7 @@ func schema_k8sio_api_batch_v1beta1_JobTemplateSpec(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/batch/v1.JobSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&batchv1.JobSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18674,7 +18674,7 @@ func schema_k8sio_api_certificates_v1_CertificateSigningRequest(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1.CertificateSigningRequestSpec", "k8s.io/api/certificates/v1.CertificateSigningRequestStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&certificatesv1.CertificateSigningRequestSpec{}).OpenAPIModelName(), (&certificatesv1.CertificateSigningRequestStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18732,7 +18732,7 @@ func schema_k8sio_api_certificates_v1_CertificateSigningRequestCondition(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -18782,7 +18782,7 @@ func schema_k8sio_api_certificates_v1_CertificateSigningRequestList(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1.CertificateSigningRequest", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&certificatesv1.CertificateSigningRequest{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -18950,7 +18950,7 @@ func schema_k8sio_api_certificates_v1_CertificateSigningRequestStatus(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1.CertificateSigningRequestCondition"},
+			(&certificatesv1.CertificateSigningRequestCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -18994,7 +18994,7 @@ func schema_k8sio_api_certificates_v1alpha1_ClusterTrustBundle(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1alpha1.ClusterTrustBundleSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&certificatesv1alpha1.ClusterTrustBundleSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19045,7 +19045,7 @@ func schema_k8sio_api_certificates_v1alpha1_ClusterTrustBundleList(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1alpha1.ClusterTrustBundle", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&certificatesv1alpha1.ClusterTrustBundle{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19124,7 +19124,7 @@ func schema_k8sio_api_certificates_v1beta1_CertificateSigningRequest(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1beta1.CertificateSigningRequestSpec", "k8s.io/api/certificates/v1beta1.CertificateSigningRequestStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&certificatesv1beta1.CertificateSigningRequestSpec{}).OpenAPIModelName(), (&certificatesv1beta1.CertificateSigningRequestStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19181,7 +19181,7 @@ func schema_k8sio_api_certificates_v1beta1_CertificateSigningRequestCondition(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -19229,7 +19229,7 @@ func schema_k8sio_api_certificates_v1beta1_CertificateSigningRequestList(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1beta1.CertificateSigningRequest", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&certificatesv1beta1.CertificateSigningRequest{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19394,7 +19394,7 @@ func schema_k8sio_api_certificates_v1beta1_CertificateSigningRequestStatus(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1beta1.CertificateSigningRequestCondition"},
+			(&certificatesv1beta1.CertificateSigningRequestCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -19438,7 +19438,7 @@ func schema_k8sio_api_certificates_v1beta1_ClusterTrustBundle(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1beta1.ClusterTrustBundleSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&certificatesv1beta1.ClusterTrustBundleSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19489,7 +19489,7 @@ func schema_k8sio_api_certificates_v1beta1_ClusterTrustBundleList(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/certificates/v1beta1.ClusterTrustBundle", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&certificatesv1beta1.ClusterTrustBundle{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19561,7 +19561,7 @@ func schema_k8sio_api_coordination_v1_Lease(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1.LeaseSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&coordinationv1.LeaseSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19612,7 +19612,7 @@ func schema_k8sio_api_coordination_v1_LeaseList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1.Lease", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&coordinationv1.Lease{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19674,7 +19674,7 @@ func schema_k8sio_api_coordination_v1_LeaseSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -19717,7 +19717,7 @@ func schema_k8sio_api_coordination_v1alpha2_LeaseCandidate(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1alpha2.LeaseCandidateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha2.LeaseCandidateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19768,7 +19768,7 @@ func schema_k8sio_api_coordination_v1alpha2_LeaseCandidateList(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1alpha2.LeaseCandidate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha2.LeaseCandidate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19826,7 +19826,7 @@ func schema_k8sio_api_coordination_v1alpha2_LeaseCandidateSpec(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -19869,7 +19869,7 @@ func schema_k8sio_api_coordination_v1beta1_Lease(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1beta1.LeaseSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&coordinationv1beta1.LeaseSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19912,7 +19912,7 @@ func schema_k8sio_api_coordination_v1beta1_LeaseCandidate(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1beta1.LeaseCandidateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&coordinationv1beta1.LeaseCandidateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -19963,7 +19963,7 @@ func schema_k8sio_api_coordination_v1beta1_LeaseCandidateList(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1beta1.LeaseCandidate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&coordinationv1beta1.LeaseCandidate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -20021,7 +20021,7 @@ func schema_k8sio_api_coordination_v1beta1_LeaseCandidateSpec(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -20072,7 +20072,7 @@ func schema_k8sio_api_coordination_v1beta1_LeaseList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/coordination/v1beta1.Lease", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&coordinationv1beta1.Lease{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -20134,7 +20134,7 @@ func schema_k8sio_api_coordination_v1beta1_LeaseSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -20210,7 +20210,7 @@ func schema_k8sio_api_core_v1_Affinity(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeAffinity", "k8s.io/api/core/v1.PodAffinity", "k8s.io/api/core/v1.PodAntiAffinity"},
+			(&corev1.NodeAffinity{}).OpenAPIModelName(), (&corev1.PodAffinity{}).OpenAPIModelName(), (&corev1.PodAntiAffinity{}).OpenAPIModelName()},
 	}
 }
 
@@ -20316,7 +20316,7 @@ func schema_k8sio_api_core_v1_AvoidPods(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PreferAvoidPodsEntry"},
+			(&corev1.PreferAvoidPodsEntry{}).OpenAPIModelName()},
 	}
 }
 
@@ -20505,7 +20505,7 @@ func schema_k8sio_api_core_v1_Binding(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -20597,7 +20597,7 @@ func schema_k8sio_api_core_v1_CSIPersistentVolumeSource(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -20657,7 +20657,7 @@ func schema_k8sio_api_core_v1_CSIVolumeSource(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -20780,7 +20780,7 @@ func schema_k8sio_api_core_v1_CephFSPersistentVolumeSource(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -20850,7 +20850,7 @@ func schema_k8sio_api_core_v1_CephFSVolumeSource(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -20894,7 +20894,7 @@ func schema_k8sio_api_core_v1_CinderPersistentVolumeSource(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -20938,7 +20938,7 @@ func schema_k8sio_api_core_v1_CinderVolumeSource(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -21009,7 +21009,7 @@ func schema_k8sio_api_core_v1_ClusterTrustBundleProjection(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -21113,7 +21113,7 @@ func schema_k8sio_api_core_v1_ComponentStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ComponentCondition", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.ComponentCondition{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -21164,7 +21164,7 @@ func schema_k8sio_api_core_v1_ComponentStatusList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ComponentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.ComponentStatus{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -21238,7 +21238,7 @@ func schema_k8sio_api_core_v1_ConfigMap(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -21359,7 +21359,7 @@ func schema_k8sio_api_core_v1_ConfigMapList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ConfigMap", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.ConfigMap{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -21460,7 +21460,7 @@ func schema_k8sio_api_core_v1_ConfigMapProjection(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.KeyToPath"},
+			(&corev1.KeyToPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -21516,7 +21516,7 @@ func schema_k8sio_api_core_v1_ConfigMapVolumeSource(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.KeyToPath"},
+			(&corev1.KeyToPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -21817,7 +21817,7 @@ func schema_k8sio_api_core_v1_Container(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.ContainerResizePolicy", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			(&corev1.ContainerPort{}).OpenAPIModelName(), (&corev1.ContainerResizePolicy{}).OpenAPIModelName(), (&corev1.EnvFromSource{}).OpenAPIModelName(), (&corev1.EnvVar{}).OpenAPIModelName(), (&corev1.Lifecycle{}).OpenAPIModelName(), (&corev1.Probe{}).OpenAPIModelName(), (&corev1.ResourceRequirements{}).OpenAPIModelName(), (&corev1.SecurityContext{}).OpenAPIModelName(), (&corev1.VolumeDevice{}).OpenAPIModelName(), (&corev1.VolumeMount{}).OpenAPIModelName()},
 	}
 }
 
@@ -21972,7 +21972,7 @@ func schema_k8sio_api_core_v1_ContainerState(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerStateRunning", "k8s.io/api/core/v1.ContainerStateTerminated", "k8s.io/api/core/v1.ContainerStateWaiting"},
+			(&corev1.ContainerStateRunning{}).OpenAPIModelName(), (&corev1.ContainerStateTerminated{}).OpenAPIModelName(), (&corev1.ContainerStateWaiting{}).OpenAPIModelName()},
 	}
 }
 
@@ -21993,7 +21993,7 @@ func schema_k8sio_api_core_v1_ContainerStateRunning(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -22057,7 +22057,7 @@ func schema_k8sio_api_core_v1_ContainerStateTerminated(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -22250,7 +22250,7 @@ func schema_k8sio_api_core_v1_ContainerStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerState", "k8s.io/api/core/v1.ContainerUser", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.ResourceStatus", "k8s.io/api/core/v1.VolumeMountStatus", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.ContainerState{}).OpenAPIModelName(), (&corev1.ContainerUser{}).OpenAPIModelName(), (&corev1.ResourceRequirements{}).OpenAPIModelName(), (&corev1.ResourceStatus{}).OpenAPIModelName(), (&corev1.VolumeMountStatus{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -22271,7 +22271,7 @@ func schema_k8sio_api_core_v1_ContainerUser(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LinuxContainerUser"},
+			(&corev1.LinuxContainerUser{}).OpenAPIModelName()},
 	}
 }
 
@@ -22327,7 +22327,7 @@ func schema_k8sio_api_core_v1_DownwardAPIProjection(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.DownwardAPIVolumeFile"},
+			(&corev1.DownwardAPIVolumeFile{}).OpenAPIModelName()},
 	}
 }
 
@@ -22370,7 +22370,7 @@ func schema_k8sio_api_core_v1_DownwardAPIVolumeFile(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectFieldSelector", "k8s.io/api/core/v1.ResourceFieldSelector"},
+			(&corev1.ObjectFieldSelector{}).OpenAPIModelName(), (&corev1.ResourceFieldSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -22411,7 +22411,7 @@ func schema_k8sio_api_core_v1_DownwardAPIVolumeSource(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.DownwardAPIVolumeFile"},
+			(&corev1.DownwardAPIVolumeFile{}).OpenAPIModelName()},
 	}
 }
 
@@ -22439,7 +22439,7 @@ func schema_k8sio_api_core_v1_EmptyDirVolumeSource(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -22488,7 +22488,7 @@ func schema_k8sio_api_core_v1_EndpointAddress(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference"},
+			(&corev1.ObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -22609,7 +22609,7 @@ func schema_k8sio_api_core_v1_EndpointSubset(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EndpointAddress", "k8s.io/api/core/v1.EndpointPort"},
+			(&corev1.EndpointAddress{}).OpenAPIModelName(), (&corev1.EndpointPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -22664,7 +22664,7 @@ func schema_k8sio_api_core_v1_Endpoints(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EndpointSubset", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.EndpointSubset{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -22715,7 +22715,7 @@ func schema_k8sio_api_core_v1_EndpointsList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Endpoints", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Endpoints{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -22749,7 +22749,7 @@ func schema_k8sio_api_core_v1_EnvFromSource(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ConfigMapEnvSource", "k8s.io/api/core/v1.SecretEnvSource"},
+			(&corev1.ConfigMapEnvSource{}).OpenAPIModelName(), (&corev1.SecretEnvSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -22786,7 +22786,7 @@ func schema_k8sio_api_core_v1_EnvVar(ref common.ReferenceCallback) common.OpenAP
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EnvVarSource"},
+			(&corev1.EnvVarSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -22825,7 +22825,7 @@ func schema_k8sio_api_core_v1_EnvVarSource(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ConfigMapKeySelector", "k8s.io/api/core/v1.ObjectFieldSelector", "k8s.io/api/core/v1.ResourceFieldSelector", "k8s.io/api/core/v1.SecretKeySelector"},
+			(&corev1.ConfigMapKeySelector{}).OpenAPIModelName(), (&corev1.ObjectFieldSelector{}).OpenAPIModelName(), (&corev1.ResourceFieldSelector{}).OpenAPIModelName(), (&corev1.SecretKeySelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -23133,7 +23133,7 @@ func schema_k8sio_api_core_v1_EphemeralContainer(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.ContainerResizePolicy", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			(&corev1.ContainerPort{}).OpenAPIModelName(), (&corev1.ContainerResizePolicy{}).OpenAPIModelName(), (&corev1.EnvFromSource{}).OpenAPIModelName(), (&corev1.EnvVar{}).OpenAPIModelName(), (&corev1.Lifecycle{}).OpenAPIModelName(), (&corev1.Probe{}).OpenAPIModelName(), (&corev1.ResourceRequirements{}).OpenAPIModelName(), (&corev1.SecurityContext{}).OpenAPIModelName(), (&corev1.VolumeDevice{}).OpenAPIModelName(), (&corev1.VolumeMount{}).OpenAPIModelName()},
 	}
 }
 
@@ -23434,7 +23434,7 @@ func schema_k8sio_api_core_v1_EphemeralContainerCommon(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.ContainerResizePolicy", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			(&corev1.ContainerPort{}).OpenAPIModelName(), (&corev1.ContainerResizePolicy{}).OpenAPIModelName(), (&corev1.EnvFromSource{}).OpenAPIModelName(), (&corev1.EnvVar{}).OpenAPIModelName(), (&corev1.Lifecycle{}).OpenAPIModelName(), (&corev1.Probe{}).OpenAPIModelName(), (&corev1.ResourceRequirements{}).OpenAPIModelName(), (&corev1.SecurityContext{}).OpenAPIModelName(), (&corev1.VolumeDevice{}).OpenAPIModelName(), (&corev1.VolumeMount{}).OpenAPIModelName()},
 	}
 }
 
@@ -23455,7 +23455,7 @@ func schema_k8sio_api_core_v1_EphemeralVolumeSource(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeClaimTemplate"},
+			(&corev1.PersistentVolumeClaimTemplate{}).OpenAPIModelName()},
 	}
 }
 
@@ -23587,7 +23587,7 @@ func schema_k8sio_api_core_v1_Event(ref common.ReferenceCallback) common.OpenAPI
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EventSeries", "k8s.io/api/core/v1.EventSource", "k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.EventSeries{}).OpenAPIModelName(), (&corev1.EventSource{}).OpenAPIModelName(), (&corev1.ObjectReference{}).OpenAPIModelName(), (&metav1.MicroTime{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -23638,7 +23638,7 @@ func schema_k8sio_api_core_v1_EventList(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Event", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Event{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -23666,7 +23666,7 @@ func schema_k8sio_api_core_v1_EventSeries(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -23860,7 +23860,7 @@ func schema_k8sio_api_core_v1_FlexPersistentVolumeSource(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -23920,7 +23920,7 @@ func schema_k8sio_api_core_v1_FlexVolumeSource(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -24200,7 +24200,7 @@ func schema_k8sio_api_core_v1_HTTPGetAction(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.HTTPHeader", "k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&corev1.HTTPHeader{}).OpenAPIModelName(), (&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -24433,7 +24433,7 @@ func schema_k8sio_api_core_v1_ISCSIPersistentVolumeSource(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -24542,7 +24542,7 @@ func schema_k8sio_api_core_v1_ISCSIVolumeSource(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -24642,7 +24642,7 @@ func schema_k8sio_api_core_v1_Lifecycle(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LifecycleHandler"},
+			(&corev1.LifecycleHandler{}).OpenAPIModelName()},
 	}
 }
 
@@ -24681,7 +24681,7 @@ func schema_k8sio_api_core_v1_LifecycleHandler(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ExecAction", "k8s.io/api/core/v1.HTTPGetAction", "k8s.io/api/core/v1.SleepAction", "k8s.io/api/core/v1.TCPSocketAction"},
+			(&corev1.ExecAction{}).OpenAPIModelName(), (&corev1.HTTPGetAction{}).OpenAPIModelName(), (&corev1.SleepAction{}).OpenAPIModelName(), (&corev1.TCPSocketAction{}).OpenAPIModelName()},
 	}
 }
 
@@ -24724,7 +24724,7 @@ func schema_k8sio_api_core_v1_LimitRange(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LimitRangeSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.LimitRangeSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -24818,7 +24818,7 @@ func schema_k8sio_api_core_v1_LimitRangeItem(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -24869,7 +24869,7 @@ func schema_k8sio_api_core_v1_LimitRangeList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LimitRange", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.LimitRange{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -24904,7 +24904,7 @@ func schema_k8sio_api_core_v1_LimitRangeSpec(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LimitRangeItem"},
+			(&corev1.LimitRangeItem{}).OpenAPIModelName()},
 	}
 }
 
@@ -25004,7 +25004,7 @@ func schema_k8sio_api_core_v1_List(ref common.ReferenceCallback) common.OpenAPID
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -25059,7 +25059,7 @@ func schema_k8sio_api_core_v1_LoadBalancerIngress(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PortStatus"},
+			(&corev1.PortStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -25093,7 +25093,7 @@ func schema_k8sio_api_core_v1_LoadBalancerStatus(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LoadBalancerIngress"},
+			(&corev1.LoadBalancerIngress{}).OpenAPIModelName()},
 	}
 }
 
@@ -25265,7 +25265,7 @@ func schema_k8sio_api_core_v1_Namespace(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NamespaceSpec", "k8s.io/api/core/v1.NamespaceStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.NamespaceSpec{}).OpenAPIModelName(), (&corev1.NamespaceStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -25317,7 +25317,7 @@ func schema_k8sio_api_core_v1_NamespaceCondition(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -25368,7 +25368,7 @@ func schema_k8sio_api_core_v1_NamespaceList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Namespace", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Namespace{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -25448,7 +25448,7 @@ func schema_k8sio_api_core_v1_NamespaceStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NamespaceCondition"},
+			(&corev1.NamespaceCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -25498,7 +25498,7 @@ func schema_k8sio_api_core_v1_Node(ref common.ReferenceCallback) common.OpenAPID
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSpec", "k8s.io/api/core/v1.NodeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.NodeSpec{}).OpenAPIModelName(), (&corev1.NodeStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -25568,7 +25568,7 @@ func schema_k8sio_api_core_v1_NodeAffinity(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/core/v1.PreferredSchedulingTerm"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&corev1.PreferredSchedulingTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -25626,7 +25626,7 @@ func schema_k8sio_api_core_v1_NodeCondition(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -25647,7 +25647,7 @@ func schema_k8sio_api_core_v1_NodeConfigSource(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ConfigMapNodeConfigSource"},
+			(&corev1.ConfigMapNodeConfigSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -25687,7 +25687,7 @@ func schema_k8sio_api_core_v1_NodeConfigStatus(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeConfigSource"},
+			(&corev1.NodeConfigSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -25709,7 +25709,7 @@ func schema_k8sio_api_core_v1_NodeDaemonEndpoints(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.DaemonEndpoint"},
+			(&corev1.DaemonEndpoint{}).OpenAPIModelName()},
 	}
 }
 
@@ -25780,7 +25780,7 @@ func schema_k8sio_api_core_v1_NodeList(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Node", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Node{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -25843,7 +25843,7 @@ func schema_k8sio_api_core_v1_NodeRuntimeHandler(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeRuntimeHandlerFeatures"},
+			(&corev1.NodeRuntimeHandlerFeatures{}).OpenAPIModelName()},
 	}
 }
 
@@ -25910,7 +25910,7 @@ func schema_k8sio_api_core_v1_NodeSelector(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelectorTerm"},
+			(&corev1.NodeSelectorTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -26019,7 +26019,7 @@ func schema_k8sio_api_core_v1_NodeSelectorTerm(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelectorRequirement"},
+			(&corev1.NodeSelectorRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -26108,7 +26108,7 @@ func schema_k8sio_api_core_v1_NodeSpec(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeConfigSource", "k8s.io/api/core/v1.Taint"},
+			(&corev1.NodeConfigSource{}).OpenAPIModelName(), (&corev1.Taint{}).OpenAPIModelName()},
 	}
 }
 
@@ -26310,7 +26310,7 @@ func schema_k8sio_api_core_v1_NodeStatus(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AttachedVolume", "k8s.io/api/core/v1.ContainerImage", "k8s.io/api/core/v1.NodeAddress", "k8s.io/api/core/v1.NodeCondition", "k8s.io/api/core/v1.NodeConfigStatus", "k8s.io/api/core/v1.NodeDaemonEndpoints", "k8s.io/api/core/v1.NodeFeatures", "k8s.io/api/core/v1.NodeRuntimeHandler", "k8s.io/api/core/v1.NodeSystemInfo", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.AttachedVolume{}).OpenAPIModelName(), (&corev1.ContainerImage{}).OpenAPIModelName(), (&corev1.NodeAddress{}).OpenAPIModelName(), (&corev1.NodeCondition{}).OpenAPIModelName(), (&corev1.NodeConfigStatus{}).OpenAPIModelName(), (&corev1.NodeDaemonEndpoints{}).OpenAPIModelName(), (&corev1.NodeFeatures{}).OpenAPIModelName(), (&corev1.NodeRuntimeHandler{}).OpenAPIModelName(), (&corev1.NodeSystemInfo{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -26432,7 +26432,7 @@ func schema_k8sio_api_core_v1_NodeSystemInfo(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSwapStatus"},
+			(&corev1.NodeSwapStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -26583,7 +26583,7 @@ func schema_k8sio_api_core_v1_PersistentVolume(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeSpec", "k8s.io/api/core/v1.PersistentVolumeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PersistentVolumeSpec{}).OpenAPIModelName(), (&corev1.PersistentVolumeStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -26633,7 +26633,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaim(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeClaimSpec", "k8s.io/api/core/v1.PersistentVolumeClaimStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PersistentVolumeClaimSpec{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaimStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -26691,7 +26691,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaimCondition(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -26742,7 +26742,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaimList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.PersistentVolumeClaim{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -26832,7 +26832,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaimSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TypedLocalObjectReference", "k8s.io/api/core/v1.TypedObjectReference", "k8s.io/api/core/v1.VolumeResourceRequirements", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.TypedLocalObjectReference{}).OpenAPIModelName(), (&corev1.TypedObjectReference{}).OpenAPIModelName(), (&corev1.VolumeResourceRequirements{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -26963,7 +26963,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaimStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ModifyVolumeStatus", "k8s.io/api/core/v1.PersistentVolumeClaimCondition", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.ModifyVolumeStatus{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaimCondition{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -26993,7 +26993,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeClaimTemplate(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeClaimSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PersistentVolumeClaimSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -27073,7 +27073,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolume", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.PersistentVolume{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -27220,7 +27220,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeSource(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AWSElasticBlockStoreVolumeSource", "k8s.io/api/core/v1.AzureDiskVolumeSource", "k8s.io/api/core/v1.AzureFilePersistentVolumeSource", "k8s.io/api/core/v1.CSIPersistentVolumeSource", "k8s.io/api/core/v1.CephFSPersistentVolumeSource", "k8s.io/api/core/v1.CinderPersistentVolumeSource", "k8s.io/api/core/v1.FCVolumeSource", "k8s.io/api/core/v1.FlexPersistentVolumeSource", "k8s.io/api/core/v1.FlockerVolumeSource", "k8s.io/api/core/v1.GCEPersistentDiskVolumeSource", "k8s.io/api/core/v1.GlusterfsPersistentVolumeSource", "k8s.io/api/core/v1.HostPathVolumeSource", "k8s.io/api/core/v1.ISCSIPersistentVolumeSource", "k8s.io/api/core/v1.LocalVolumeSource", "k8s.io/api/core/v1.NFSVolumeSource", "k8s.io/api/core/v1.PhotonPersistentDiskVolumeSource", "k8s.io/api/core/v1.PortworxVolumeSource", "k8s.io/api/core/v1.QuobyteVolumeSource", "k8s.io/api/core/v1.RBDPersistentVolumeSource", "k8s.io/api/core/v1.ScaleIOPersistentVolumeSource", "k8s.io/api/core/v1.StorageOSPersistentVolumeSource", "k8s.io/api/core/v1.VsphereVirtualDiskVolumeSource"},
+			(&corev1.AWSElasticBlockStoreVolumeSource{}).OpenAPIModelName(), (&corev1.AzureDiskVolumeSource{}).OpenAPIModelName(), (&corev1.AzureFilePersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CSIPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CephFSPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CinderPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.FCVolumeSource{}).OpenAPIModelName(), (&corev1.FlexPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.FlockerVolumeSource{}).OpenAPIModelName(), (&corev1.GCEPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.GlusterfsPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.HostPathVolumeSource{}).OpenAPIModelName(), (&corev1.ISCSIPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.LocalVolumeSource{}).OpenAPIModelName(), (&corev1.NFSVolumeSource{}).OpenAPIModelName(), (&corev1.PhotonPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.PortworxVolumeSource{}).OpenAPIModelName(), (&corev1.QuobyteVolumeSource{}).OpenAPIModelName(), (&corev1.RBDPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.ScaleIOPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.StorageOSPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.VsphereVirtualDiskVolumeSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -27469,7 +27469,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeSpec(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AWSElasticBlockStoreVolumeSource", "k8s.io/api/core/v1.AzureDiskVolumeSource", "k8s.io/api/core/v1.AzureFilePersistentVolumeSource", "k8s.io/api/core/v1.CSIPersistentVolumeSource", "k8s.io/api/core/v1.CephFSPersistentVolumeSource", "k8s.io/api/core/v1.CinderPersistentVolumeSource", "k8s.io/api/core/v1.FCVolumeSource", "k8s.io/api/core/v1.FlexPersistentVolumeSource", "k8s.io/api/core/v1.FlockerVolumeSource", "k8s.io/api/core/v1.GCEPersistentDiskVolumeSource", "k8s.io/api/core/v1.GlusterfsPersistentVolumeSource", "k8s.io/api/core/v1.HostPathVolumeSource", "k8s.io/api/core/v1.ISCSIPersistentVolumeSource", "k8s.io/api/core/v1.LocalVolumeSource", "k8s.io/api/core/v1.NFSVolumeSource", "k8s.io/api/core/v1.ObjectReference", "k8s.io/api/core/v1.PhotonPersistentDiskVolumeSource", "k8s.io/api/core/v1.PortworxVolumeSource", "k8s.io/api/core/v1.QuobyteVolumeSource", "k8s.io/api/core/v1.RBDPersistentVolumeSource", "k8s.io/api/core/v1.ScaleIOPersistentVolumeSource", "k8s.io/api/core/v1.StorageOSPersistentVolumeSource", "k8s.io/api/core/v1.VolumeNodeAffinity", "k8s.io/api/core/v1.VsphereVirtualDiskVolumeSource", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.AWSElasticBlockStoreVolumeSource{}).OpenAPIModelName(), (&corev1.AzureDiskVolumeSource{}).OpenAPIModelName(), (&corev1.AzureFilePersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CSIPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CephFSPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.CinderPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.FCVolumeSource{}).OpenAPIModelName(), (&corev1.FlexPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.FlockerVolumeSource{}).OpenAPIModelName(), (&corev1.GCEPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.GlusterfsPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.HostPathVolumeSource{}).OpenAPIModelName(), (&corev1.ISCSIPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.LocalVolumeSource{}).OpenAPIModelName(), (&corev1.NFSVolumeSource{}).OpenAPIModelName(), (&corev1.ObjectReference{}).OpenAPIModelName(), (&corev1.PhotonPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.PortworxVolumeSource{}).OpenAPIModelName(), (&corev1.QuobyteVolumeSource{}).OpenAPIModelName(), (&corev1.RBDPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.ScaleIOPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.StorageOSPersistentVolumeSource{}).OpenAPIModelName(), (&corev1.VolumeNodeAffinity{}).OpenAPIModelName(), (&corev1.VsphereVirtualDiskVolumeSource{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -27512,7 +27512,7 @@ func schema_k8sio_api_core_v1_PersistentVolumeStatus(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -27591,7 +27591,7 @@ func schema_k8sio_api_core_v1_Pod(ref common.ReferenceCallback) common.OpenAPIDe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodSpec", "k8s.io/api/core/v1.PodStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PodSpec{}).OpenAPIModelName(), (&corev1.PodStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -27644,7 +27644,7 @@ func schema_k8sio_api_core_v1_PodAffinity(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodAffinityTerm", "k8s.io/api/core/v1.WeightedPodAffinityTerm"},
+			(&corev1.PodAffinityTerm{}).OpenAPIModelName(), (&corev1.WeightedPodAffinityTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -27740,7 +27740,7 @@ func schema_k8sio_api_core_v1_PodAffinityTerm(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -27793,7 +27793,7 @@ func schema_k8sio_api_core_v1_PodAntiAffinity(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodAffinityTerm", "k8s.io/api/core/v1.WeightedPodAffinityTerm"},
+			(&corev1.PodAffinityTerm{}).OpenAPIModelName(), (&corev1.WeightedPodAffinityTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -27920,7 +27920,7 @@ func schema_k8sio_api_core_v1_PodCondition(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -27994,7 +27994,7 @@ func schema_k8sio_api_core_v1_PodDNSConfig(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodDNSConfigOption"},
+			(&corev1.PodDNSConfigOption{}).OpenAPIModelName()},
 	}
 }
 
@@ -28177,7 +28177,7 @@ func schema_k8sio_api_core_v1_PodList(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Pod", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Pod{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -28275,7 +28275,7 @@ func schema_k8sio_api_core_v1_PodLogOptions(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -28616,7 +28616,7 @@ func schema_k8sio_api_core_v1_PodSecurityContext(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AppArmorProfile", "k8s.io/api/core/v1.SELinuxOptions", "k8s.io/api/core/v1.SeccompProfile", "k8s.io/api/core/v1.Sysctl", "k8s.io/api/core/v1.WindowsSecurityContextOptions"},
+			(&corev1.AppArmorProfile{}).OpenAPIModelName(), (&corev1.SELinuxOptions{}).OpenAPIModelName(), (&corev1.SeccompProfile{}).OpenAPIModelName(), (&corev1.Sysctl{}).OpenAPIModelName(), (&corev1.WindowsSecurityContextOptions{}).OpenAPIModelName()},
 	}
 }
 
@@ -28637,7 +28637,7 @@ func schema_k8sio_api_core_v1_PodSignature(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.OwnerReference"},
+			(&metav1.OwnerReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -29130,7 +29130,7 @@ func schema_k8sio_api_core_v1_PodSpec(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodOS", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodResourceClaim", "k8s.io/api/core/v1.PodSchedulingGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.Affinity{}).OpenAPIModelName(), (&corev1.Container{}).OpenAPIModelName(), (&corev1.EphemeralContainer{}).OpenAPIModelName(), (&corev1.HostAlias{}).OpenAPIModelName(), (&corev1.LocalObjectReference{}).OpenAPIModelName(), (&corev1.PodDNSConfig{}).OpenAPIModelName(), (&corev1.PodOS{}).OpenAPIModelName(), (&corev1.PodReadinessGate{}).OpenAPIModelName(), (&corev1.PodResourceClaim{}).OpenAPIModelName(), (&corev1.PodSchedulingGate{}).OpenAPIModelName(), (&corev1.PodSecurityContext{}).OpenAPIModelName(), (&corev1.ResourceRequirements{}).OpenAPIModelName(), (&corev1.Toleration{}).OpenAPIModelName(), (&corev1.TopologySpreadConstraint{}).OpenAPIModelName(), (&corev1.Volume{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -29366,7 +29366,7 @@ func schema_k8sio_api_core_v1_PodStatus(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ContainerStatus", "k8s.io/api/core/v1.HostIP", "k8s.io/api/core/v1.PodCondition", "k8s.io/api/core/v1.PodIP", "k8s.io/api/core/v1.PodResourceClaimStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.ContainerStatus{}).OpenAPIModelName(), (&corev1.HostIP{}).OpenAPIModelName(), (&corev1.PodCondition{}).OpenAPIModelName(), (&corev1.PodIP{}).OpenAPIModelName(), (&corev1.PodResourceClaimStatus{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -29409,7 +29409,7 @@ func schema_k8sio_api_core_v1_PodStatusResult(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PodStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -29452,7 +29452,7 @@ func schema_k8sio_api_core_v1_PodTemplate(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -29503,7 +29503,7 @@ func schema_k8sio_api_core_v1_PodTemplateList(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.PodTemplate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -29532,7 +29532,7 @@ func schema_k8sio_api_core_v1_PodTemplateSpec(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.PodSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -29649,7 +29649,7 @@ func schema_k8sio_api_core_v1_PreferAvoidPodsEntry(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodSignature", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.PodSignature{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -29680,7 +29680,7 @@ func schema_k8sio_api_core_v1_PreferredSchedulingTerm(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelectorTerm"},
+			(&corev1.NodeSelectorTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -29761,7 +29761,7 @@ func schema_k8sio_api_core_v1_Probe(ref common.ReferenceCallback) common.OpenAPI
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ExecAction", "k8s.io/api/core/v1.GRPCAction", "k8s.io/api/core/v1.HTTPGetAction", "k8s.io/api/core/v1.TCPSocketAction"},
+			(&corev1.ExecAction{}).OpenAPIModelName(), (&corev1.GRPCAction{}).OpenAPIModelName(), (&corev1.HTTPGetAction{}).OpenAPIModelName(), (&corev1.TCPSocketAction{}).OpenAPIModelName()},
 	}
 }
 
@@ -29800,7 +29800,7 @@ func schema_k8sio_api_core_v1_ProbeHandler(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ExecAction", "k8s.io/api/core/v1.GRPCAction", "k8s.io/api/core/v1.HTTPGetAction", "k8s.io/api/core/v1.TCPSocketAction"},
+			(&corev1.ExecAction{}).OpenAPIModelName(), (&corev1.GRPCAction{}).OpenAPIModelName(), (&corev1.HTTPGetAction{}).OpenAPIModelName(), (&corev1.TCPSocketAction{}).OpenAPIModelName()},
 	}
 }
 
@@ -29841,7 +29841,7 @@ func schema_k8sio_api_core_v1_ProjectedVolumeSource(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.VolumeProjection"},
+			(&corev1.VolumeProjection{}).OpenAPIModelName()},
 	}
 }
 
@@ -29987,7 +29987,7 @@ func schema_k8sio_api_core_v1_RBDPersistentVolumeSource(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -30075,7 +30075,7 @@ func schema_k8sio_api_core_v1_RBDVolumeSource(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -30127,7 +30127,7 @@ func schema_k8sio_api_core_v1_RangeAllocation(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -30177,7 +30177,7 @@ func schema_k8sio_api_core_v1_ReplicationController(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ReplicationControllerSpec", "k8s.io/api/core/v1.ReplicationControllerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.ReplicationControllerSpec{}).OpenAPIModelName(), (&corev1.ReplicationControllerStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -30229,7 +30229,7 @@ func schema_k8sio_api_core_v1_ReplicationControllerCondition(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -30280,7 +30280,7 @@ func schema_k8sio_api_core_v1_ReplicationControllerList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ReplicationController", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.ReplicationController{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -30338,7 +30338,7 @@ func schema_k8sio_api_core_v1_ReplicationControllerSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -30414,7 +30414,7 @@ func schema_k8sio_api_core_v1_ReplicationControllerStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ReplicationControllerCondition"},
+			(&corev1.ReplicationControllerCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -30485,7 +30485,7 @@ func schema_k8sio_api_core_v1_ResourceFieldSelector(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -30564,7 +30564,7 @@ func schema_k8sio_api_core_v1_ResourceQuota(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ResourceQuotaSpec", "k8s.io/api/core/v1.ResourceQuotaStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.ResourceQuotaSpec{}).OpenAPIModelName(), (&corev1.ResourceQuotaStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -30615,7 +30615,7 @@ func schema_k8sio_api_core_v1_ResourceQuotaList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ResourceQuota", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.ResourceQuota{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -30671,7 +30671,7 @@ func schema_k8sio_api_core_v1_ResourceQuotaSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ScopeSelector", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.ScopeSelector{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -30714,7 +30714,7 @@ func schema_k8sio_api_core_v1_ResourceQuotaStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -30779,7 +30779,7 @@ func schema_k8sio_api_core_v1_ResourceRequirements(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ResourceClaim", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.ResourceClaim{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -30825,7 +30825,7 @@ func schema_k8sio_api_core_v1_ResourceStatus(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ResourceHealth"},
+			(&corev1.ResourceHealth{}).OpenAPIModelName()},
 	}
 }
 
@@ -30955,7 +30955,7 @@ func schema_k8sio_api_core_v1_ScaleIOPersistentVolumeSource(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretReference"},
+			(&corev1.SecretReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -31044,7 +31044,7 @@ func schema_k8sio_api_core_v1_ScaleIOVolumeSource(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -31083,7 +31083,7 @@ func schema_k8sio_api_core_v1_ScopeSelector(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ScopedResourceSelectorRequirement"},
+			(&corev1.ScopedResourceSelectorRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -31258,7 +31258,7 @@ func schema_k8sio_api_core_v1_Secret(ref common.ReferenceCallback) common.OpenAP
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31379,7 +31379,7 @@ func schema_k8sio_api_core_v1_SecretList(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Secret", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Secret{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31428,7 +31428,7 @@ func schema_k8sio_api_core_v1_SecretProjection(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.KeyToPath"},
+			(&corev1.KeyToPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -31515,7 +31515,7 @@ func schema_k8sio_api_core_v1_SecretVolumeSource(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.KeyToPath"},
+			(&corev1.KeyToPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -31610,7 +31610,7 @@ func schema_k8sio_api_core_v1_SecurityContext(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AppArmorProfile", "k8s.io/api/core/v1.Capabilities", "k8s.io/api/core/v1.SELinuxOptions", "k8s.io/api/core/v1.SeccompProfile", "k8s.io/api/core/v1.WindowsSecurityContextOptions"},
+			(&corev1.AppArmorProfile{}).OpenAPIModelName(), (&corev1.Capabilities{}).OpenAPIModelName(), (&corev1.SELinuxOptions{}).OpenAPIModelName(), (&corev1.SeccompProfile{}).OpenAPIModelName(), (&corev1.WindowsSecurityContextOptions{}).OpenAPIModelName()},
 	}
 }
 
@@ -31646,7 +31646,7 @@ func schema_k8sio_api_core_v1_SerializedReference(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference"},
+			(&corev1.ObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -31696,7 +31696,7 @@ func schema_k8sio_api_core_v1_Service(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ServiceSpec", "k8s.io/api/core/v1.ServiceStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.ServiceSpec{}).OpenAPIModelName(), (&corev1.ServiceStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31782,7 +31782,7 @@ func schema_k8sio_api_core_v1_ServiceAccount(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName(), (&corev1.ObjectReference{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31833,7 +31833,7 @@ func schema_k8sio_api_core_v1_ServiceAccountList(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ServiceAccount", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.ServiceAccount{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31920,7 +31920,7 @@ func schema_k8sio_api_core_v1_ServiceList(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Service", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&corev1.Service{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -31980,7 +31980,7 @@ func schema_k8sio_api_core_v1_ServicePort(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -32258,7 +32258,7 @@ func schema_k8sio_api_core_v1_ServiceSpec(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ServicePort", "k8s.io/api/core/v1.SessionAffinityConfig"},
+			(&corev1.ServicePort{}).OpenAPIModelName(), (&corev1.SessionAffinityConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -32304,7 +32304,7 @@ func schema_k8sio_api_core_v1_ServiceStatus(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LoadBalancerStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&corev1.LoadBalancerStatus{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -32325,7 +32325,7 @@ func schema_k8sio_api_core_v1_SessionAffinityConfig(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ClientIPConfig"},
+			(&corev1.ClientIPConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -32396,7 +32396,7 @@ func schema_k8sio_api_core_v1_StorageOSPersistentVolumeSource(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference"},
+			(&corev1.ObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -32445,7 +32445,7 @@ func schema_k8sio_api_core_v1_StorageOSVolumeSource(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.LocalObjectReference"},
+			(&corev1.LocalObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -32504,7 +32504,7 @@ func schema_k8sio_api_core_v1_TCPSocketAction(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -32550,7 +32550,7 @@ func schema_k8sio_api_core_v1_Taint(ref common.ReferenceCallback) common.OpenAPI
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -32681,7 +32681,7 @@ func schema_k8sio_api_core_v1_TopologySelectorTerm(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TopologySelectorLabelRequirement"},
+			(&corev1.TopologySelectorLabelRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -32771,7 +32771,7 @@ func schema_k8sio_api_core_v1_TopologySpreadConstraint(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -33061,7 +33061,7 @@ func schema_k8sio_api_core_v1_Volume(ref common.ReferenceCallback) common.OpenAP
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AWSElasticBlockStoreVolumeSource", "k8s.io/api/core/v1.AzureDiskVolumeSource", "k8s.io/api/core/v1.AzureFileVolumeSource", "k8s.io/api/core/v1.CSIVolumeSource", "k8s.io/api/core/v1.CephFSVolumeSource", "k8s.io/api/core/v1.CinderVolumeSource", "k8s.io/api/core/v1.ConfigMapVolumeSource", "k8s.io/api/core/v1.DownwardAPIVolumeSource", "k8s.io/api/core/v1.EmptyDirVolumeSource", "k8s.io/api/core/v1.EphemeralVolumeSource", "k8s.io/api/core/v1.FCVolumeSource", "k8s.io/api/core/v1.FlexVolumeSource", "k8s.io/api/core/v1.FlockerVolumeSource", "k8s.io/api/core/v1.GCEPersistentDiskVolumeSource", "k8s.io/api/core/v1.GitRepoVolumeSource", "k8s.io/api/core/v1.GlusterfsVolumeSource", "k8s.io/api/core/v1.HostPathVolumeSource", "k8s.io/api/core/v1.ISCSIVolumeSource", "k8s.io/api/core/v1.ImageVolumeSource", "k8s.io/api/core/v1.NFSVolumeSource", "k8s.io/api/core/v1.PersistentVolumeClaimVolumeSource", "k8s.io/api/core/v1.PhotonPersistentDiskVolumeSource", "k8s.io/api/core/v1.PortworxVolumeSource", "k8s.io/api/core/v1.ProjectedVolumeSource", "k8s.io/api/core/v1.QuobyteVolumeSource", "k8s.io/api/core/v1.RBDVolumeSource", "k8s.io/api/core/v1.ScaleIOVolumeSource", "k8s.io/api/core/v1.SecretVolumeSource", "k8s.io/api/core/v1.StorageOSVolumeSource", "k8s.io/api/core/v1.VsphereVirtualDiskVolumeSource"},
+			(&corev1.AWSElasticBlockStoreVolumeSource{}).OpenAPIModelName(), (&corev1.AzureDiskVolumeSource{}).OpenAPIModelName(), (&corev1.AzureFileVolumeSource{}).OpenAPIModelName(), (&corev1.CSIVolumeSource{}).OpenAPIModelName(), (&corev1.CephFSVolumeSource{}).OpenAPIModelName(), (&corev1.CinderVolumeSource{}).OpenAPIModelName(), (&corev1.ConfigMapVolumeSource{}).OpenAPIModelName(), (&corev1.DownwardAPIVolumeSource{}).OpenAPIModelName(), (&corev1.EmptyDirVolumeSource{}).OpenAPIModelName(), (&corev1.EphemeralVolumeSource{}).OpenAPIModelName(), (&corev1.FCVolumeSource{}).OpenAPIModelName(), (&corev1.FlexVolumeSource{}).OpenAPIModelName(), (&corev1.FlockerVolumeSource{}).OpenAPIModelName(), (&corev1.GCEPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.GitRepoVolumeSource{}).OpenAPIModelName(), (&corev1.GlusterfsVolumeSource{}).OpenAPIModelName(), (&corev1.HostPathVolumeSource{}).OpenAPIModelName(), (&corev1.ISCSIVolumeSource{}).OpenAPIModelName(), (&corev1.ImageVolumeSource{}).OpenAPIModelName(), (&corev1.NFSVolumeSource{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaimVolumeSource{}).OpenAPIModelName(), (&corev1.PhotonPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.PortworxVolumeSource{}).OpenAPIModelName(), (&corev1.ProjectedVolumeSource{}).OpenAPIModelName(), (&corev1.QuobyteVolumeSource{}).OpenAPIModelName(), (&corev1.RBDVolumeSource{}).OpenAPIModelName(), (&corev1.ScaleIOVolumeSource{}).OpenAPIModelName(), (&corev1.SecretVolumeSource{}).OpenAPIModelName(), (&corev1.StorageOSVolumeSource{}).OpenAPIModelName(), (&corev1.VsphereVirtualDiskVolumeSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -33222,7 +33222,7 @@ func schema_k8sio_api_core_v1_VolumeNodeAffinity(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector"},
+			(&corev1.NodeSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -33267,7 +33267,7 @@ func schema_k8sio_api_core_v1_VolumeProjection(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ClusterTrustBundleProjection", "k8s.io/api/core/v1.ConfigMapProjection", "k8s.io/api/core/v1.DownwardAPIProjection", "k8s.io/api/core/v1.SecretProjection", "k8s.io/api/core/v1.ServiceAccountTokenProjection"},
+			(&corev1.ClusterTrustBundleProjection{}).OpenAPIModelName(), (&corev1.ConfigMapProjection{}).OpenAPIModelName(), (&corev1.DownwardAPIProjection{}).OpenAPIModelName(), (&corev1.SecretProjection{}).OpenAPIModelName(), (&corev1.ServiceAccountTokenProjection{}).OpenAPIModelName()},
 	}
 }
 
@@ -33310,7 +33310,7 @@ func schema_k8sio_api_core_v1_VolumeResourceRequirements(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -33505,7 +33505,7 @@ func schema_k8sio_api_core_v1_VolumeSource(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.AWSElasticBlockStoreVolumeSource", "k8s.io/api/core/v1.AzureDiskVolumeSource", "k8s.io/api/core/v1.AzureFileVolumeSource", "k8s.io/api/core/v1.CSIVolumeSource", "k8s.io/api/core/v1.CephFSVolumeSource", "k8s.io/api/core/v1.CinderVolumeSource", "k8s.io/api/core/v1.ConfigMapVolumeSource", "k8s.io/api/core/v1.DownwardAPIVolumeSource", "k8s.io/api/core/v1.EmptyDirVolumeSource", "k8s.io/api/core/v1.EphemeralVolumeSource", "k8s.io/api/core/v1.FCVolumeSource", "k8s.io/api/core/v1.FlexVolumeSource", "k8s.io/api/core/v1.FlockerVolumeSource", "k8s.io/api/core/v1.GCEPersistentDiskVolumeSource", "k8s.io/api/core/v1.GitRepoVolumeSource", "k8s.io/api/core/v1.GlusterfsVolumeSource", "k8s.io/api/core/v1.HostPathVolumeSource", "k8s.io/api/core/v1.ISCSIVolumeSource", "k8s.io/api/core/v1.ImageVolumeSource", "k8s.io/api/core/v1.NFSVolumeSource", "k8s.io/api/core/v1.PersistentVolumeClaimVolumeSource", "k8s.io/api/core/v1.PhotonPersistentDiskVolumeSource", "k8s.io/api/core/v1.PortworxVolumeSource", "k8s.io/api/core/v1.ProjectedVolumeSource", "k8s.io/api/core/v1.QuobyteVolumeSource", "k8s.io/api/core/v1.RBDVolumeSource", "k8s.io/api/core/v1.ScaleIOVolumeSource", "k8s.io/api/core/v1.SecretVolumeSource", "k8s.io/api/core/v1.StorageOSVolumeSource", "k8s.io/api/core/v1.VsphereVirtualDiskVolumeSource"},
+			(&corev1.AWSElasticBlockStoreVolumeSource{}).OpenAPIModelName(), (&corev1.AzureDiskVolumeSource{}).OpenAPIModelName(), (&corev1.AzureFileVolumeSource{}).OpenAPIModelName(), (&corev1.CSIVolumeSource{}).OpenAPIModelName(), (&corev1.CephFSVolumeSource{}).OpenAPIModelName(), (&corev1.CinderVolumeSource{}).OpenAPIModelName(), (&corev1.ConfigMapVolumeSource{}).OpenAPIModelName(), (&corev1.DownwardAPIVolumeSource{}).OpenAPIModelName(), (&corev1.EmptyDirVolumeSource{}).OpenAPIModelName(), (&corev1.EphemeralVolumeSource{}).OpenAPIModelName(), (&corev1.FCVolumeSource{}).OpenAPIModelName(), (&corev1.FlexVolumeSource{}).OpenAPIModelName(), (&corev1.FlockerVolumeSource{}).OpenAPIModelName(), (&corev1.GCEPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.GitRepoVolumeSource{}).OpenAPIModelName(), (&corev1.GlusterfsVolumeSource{}).OpenAPIModelName(), (&corev1.HostPathVolumeSource{}).OpenAPIModelName(), (&corev1.ISCSIVolumeSource{}).OpenAPIModelName(), (&corev1.ImageVolumeSource{}).OpenAPIModelName(), (&corev1.NFSVolumeSource{}).OpenAPIModelName(), (&corev1.PersistentVolumeClaimVolumeSource{}).OpenAPIModelName(), (&corev1.PhotonPersistentDiskVolumeSource{}).OpenAPIModelName(), (&corev1.PortworxVolumeSource{}).OpenAPIModelName(), (&corev1.ProjectedVolumeSource{}).OpenAPIModelName(), (&corev1.QuobyteVolumeSource{}).OpenAPIModelName(), (&corev1.RBDVolumeSource{}).OpenAPIModelName(), (&corev1.ScaleIOVolumeSource{}).OpenAPIModelName(), (&corev1.SecretVolumeSource{}).OpenAPIModelName(), (&corev1.StorageOSVolumeSource{}).OpenAPIModelName(), (&corev1.VsphereVirtualDiskVolumeSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -33579,7 +33579,7 @@ func schema_k8sio_api_core_v1_WeightedPodAffinityTerm(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodAffinityTerm"},
+			(&corev1.PodAffinityTerm{}).OpenAPIModelName()},
 	}
 }
 
@@ -33712,7 +33712,7 @@ func schema_k8sio_api_discovery_v1_Endpoint(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/api/discovery/v1.EndpointConditions", "k8s.io/api/discovery/v1.EndpointHints"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&discoveryv1.EndpointConditions{}).OpenAPIModelName(), (&discoveryv1.EndpointHints{}).OpenAPIModelName()},
 	}
 }
 
@@ -33799,7 +33799,7 @@ func schema_k8sio_api_discovery_v1_EndpointHints(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1.ForNode", "k8s.io/api/discovery/v1.ForZone"},
+			(&discoveryv1.ForNode{}).OpenAPIModelName(), (&discoveryv1.ForZone{}).OpenAPIModelName()},
 	}
 }
 
@@ -33930,7 +33930,7 @@ func schema_k8sio_api_discovery_v1_EndpointSlice(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1.Endpoint", "k8s.io/api/discovery/v1.EndpointPort", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&discoveryv1.Endpoint{}).OpenAPIModelName(), (&discoveryv1.EndpointPort{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -33981,7 +33981,7 @@ func schema_k8sio_api_discovery_v1_EndpointSliceList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1.EndpointSlice", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&discoveryv1.EndpointSlice{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34110,7 +34110,7 @@ func schema_k8sio_api_discovery_v1beta1_Endpoint(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/api/discovery/v1beta1.EndpointConditions", "k8s.io/api/discovery/v1beta1.EndpointHints"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&discoveryv1beta1.EndpointConditions{}).OpenAPIModelName(), (&discoveryv1beta1.EndpointHints{}).OpenAPIModelName()},
 	}
 }
 
@@ -34197,7 +34197,7 @@ func schema_k8sio_api_discovery_v1beta1_EndpointHints(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1beta1.ForNode", "k8s.io/api/discovery/v1beta1.ForZone"},
+			(&discoveryv1beta1.ForNode{}).OpenAPIModelName(), (&discoveryv1beta1.ForZone{}).OpenAPIModelName()},
 	}
 }
 
@@ -34322,7 +34322,7 @@ func schema_k8sio_api_discovery_v1beta1_EndpointSlice(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1beta1.Endpoint", "k8s.io/api/discovery/v1beta1.EndpointPort", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&discoveryv1beta1.Endpoint{}).OpenAPIModelName(), (&discoveryv1beta1.EndpointPort{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34373,7 +34373,7 @@ func schema_k8sio_api_discovery_v1beta1_EndpointSliceList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/discovery/v1beta1.EndpointSlice", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&discoveryv1beta1.EndpointSlice{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34547,7 +34547,7 @@ func schema_k8sio_api_events_v1_Event(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EventSource", "k8s.io/api/core/v1.ObjectReference", "k8s.io/api/events/v1.EventSeries", "k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.EventSource{}).OpenAPIModelName(), (&corev1.ObjectReference{}).OpenAPIModelName(), (&eventsv1.EventSeries{}).OpenAPIModelName(), (&metav1.MicroTime{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -34598,7 +34598,7 @@ func schema_k8sio_api_events_v1_EventList(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/events/v1.Event", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&eventsv1.Event{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34628,7 +34628,7 @@ func schema_k8sio_api_events_v1_EventSeries(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -34758,7 +34758,7 @@ func schema_k8sio_api_events_v1beta1_Event(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.EventSource", "k8s.io/api/core/v1.ObjectReference", "k8s.io/api/events/v1beta1.EventSeries", "k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.EventSource{}).OpenAPIModelName(), (&corev1.ObjectReference{}).OpenAPIModelName(), (&eventsv1beta1.EventSeries{}).OpenAPIModelName(), (&metav1.MicroTime{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -34809,7 +34809,7 @@ func schema_k8sio_api_events_v1beta1_EventList(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/events/v1beta1.Event", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&eventsv1beta1.Event{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34839,7 +34839,7 @@ func schema_k8sio_api_events_v1beta1_EventSeries(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime"},
+			(&metav1.MicroTime{}).OpenAPIModelName()},
 	}
 }
 
@@ -34889,7 +34889,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSet(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.DaemonSetSpec", "k8s.io/api/extensions/v1beta1.DaemonSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.DaemonSetSpec{}).OpenAPIModelName(), (&extensionsv1beta1.DaemonSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -34941,7 +34941,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSetCondition(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -34992,7 +34992,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSetList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.DaemonSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&extensionsv1beta1.DaemonSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -35049,7 +35049,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSetSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/api/extensions/v1beta1.DaemonSetUpdateStrategy", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&extensionsv1beta1.DaemonSetUpdateStrategy{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -35156,7 +35156,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSetStatus(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.DaemonSetCondition"},
+			(&extensionsv1beta1.DaemonSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -35184,7 +35184,7 @@ func schema_k8sio_api_extensions_v1beta1_DaemonSetUpdateStrategy(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.RollingUpdateDaemonSet"},
+			(&extensionsv1beta1.RollingUpdateDaemonSet{}).OpenAPIModelName()},
 	}
 }
 
@@ -35234,7 +35234,7 @@ func schema_k8sio_api_extensions_v1beta1_Deployment(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.DeploymentSpec", "k8s.io/api/extensions/v1beta1.DeploymentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.DeploymentSpec{}).OpenAPIModelName(), (&extensionsv1beta1.DeploymentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -35292,7 +35292,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentCondition(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -35343,7 +35343,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.Deployment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&extensionsv1beta1.Deployment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -35404,7 +35404,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentRollback(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.RollbackConfig"},
+			(&extensionsv1beta1.RollbackConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -35486,7 +35486,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/api/extensions/v1beta1.DeploymentStrategy", "k8s.io/api/extensions/v1beta1.RollbackConfig", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&extensionsv1beta1.DeploymentStrategy{}).OpenAPIModelName(), (&extensionsv1beta1.RollbackConfig{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -35581,7 +35581,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.DeploymentCondition"},
+			(&extensionsv1beta1.DeploymentCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -35609,7 +35609,7 @@ func schema_k8sio_api_extensions_v1beta1_DeploymentStrategy(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.RollingUpdateDeployment"},
+			(&extensionsv1beta1.RollingUpdateDeployment{}).OpenAPIModelName()},
 	}
 }
 
@@ -35646,7 +35646,7 @@ func schema_k8sio_api_extensions_v1beta1_HTTPIngressPath(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressBackend"},
+			(&extensionsv1beta1.IngressBackend{}).OpenAPIModelName()},
 	}
 }
 
@@ -35681,7 +35681,7 @@ func schema_k8sio_api_extensions_v1beta1_HTTPIngressRuleValue(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.HTTPIngressPath"},
+			(&extensionsv1beta1.HTTPIngressPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -35773,7 +35773,7 @@ func schema_k8sio_api_extensions_v1beta1_Ingress(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressSpec", "k8s.io/api/extensions/v1beta1.IngressStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.IngressSpec{}).OpenAPIModelName(), (&extensionsv1beta1.IngressStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -35807,7 +35807,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressBackend(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TypedLocalObjectReference", "k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&corev1.TypedLocalObjectReference{}).OpenAPIModelName(), (&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -35858,7 +35858,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.Ingress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&extensionsv1beta1.Ingress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -35906,7 +35906,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressLoadBalancerIngress(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressPortStatus"},
+			(&extensionsv1beta1.IngressPortStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -35940,7 +35940,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressLoadBalancerStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressLoadBalancerIngress"},
+			(&extensionsv1beta1.IngressLoadBalancerIngress{}).OpenAPIModelName()},
 	}
 }
 
@@ -36006,7 +36006,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressRule(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.HTTPIngressRuleValue"},
+			(&extensionsv1beta1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -36027,7 +36027,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressRuleValue(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.HTTPIngressRuleValue"},
+			(&extensionsv1beta1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -36093,7 +36093,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressBackend", "k8s.io/api/extensions/v1beta1.IngressRule", "k8s.io/api/extensions/v1beta1.IngressTLS"},
+			(&extensionsv1beta1.IngressBackend{}).OpenAPIModelName(), (&extensionsv1beta1.IngressRule{}).OpenAPIModelName(), (&extensionsv1beta1.IngressTLS{}).OpenAPIModelName()},
 	}
 }
 
@@ -36115,7 +36115,7 @@ func schema_k8sio_api_extensions_v1beta1_IngressStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IngressLoadBalancerStatus"},
+			(&extensionsv1beta1.IngressLoadBalancerStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -36198,7 +36198,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicy(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.NetworkPolicySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.NetworkPolicySpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -36251,7 +36251,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicyEgressRule(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.NetworkPolicyPeer", "k8s.io/api/extensions/v1beta1.NetworkPolicyPort"},
+			(&extensionsv1beta1.NetworkPolicyPeer{}).OpenAPIModelName(), (&extensionsv1beta1.NetworkPolicyPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -36304,7 +36304,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicyIngressRule(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.NetworkPolicyPeer", "k8s.io/api/extensions/v1beta1.NetworkPolicyPort"},
+			(&extensionsv1beta1.NetworkPolicyPeer{}).OpenAPIModelName(), (&extensionsv1beta1.NetworkPolicyPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -36355,7 +36355,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicyList(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.NetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&extensionsv1beta1.NetworkPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -36388,7 +36388,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicyPeer(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.IPBlock", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&extensionsv1beta1.IPBlock{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -36424,7 +36424,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicyPort(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -36505,7 +36505,7 @@ func schema_k8sio_api_extensions_v1beta1_NetworkPolicySpec(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.NetworkPolicyEgressRule", "k8s.io/api/extensions/v1beta1.NetworkPolicyIngressRule", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&extensionsv1beta1.NetworkPolicyEgressRule{}).OpenAPIModelName(), (&extensionsv1beta1.NetworkPolicyIngressRule{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -36555,7 +36555,7 @@ func schema_k8sio_api_extensions_v1beta1_ReplicaSet(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.ReplicaSetSpec", "k8s.io/api/extensions/v1beta1.ReplicaSetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.ReplicaSetSpec{}).OpenAPIModelName(), (&extensionsv1beta1.ReplicaSetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -36607,7 +36607,7 @@ func schema_k8sio_api_extensions_v1beta1_ReplicaSetCondition(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -36658,7 +36658,7 @@ func schema_k8sio_api_extensions_v1beta1_ReplicaSetList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.ReplicaSet", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&extensionsv1beta1.ReplicaSet{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -36700,7 +36700,7 @@ func schema_k8sio_api_extensions_v1beta1_ReplicaSetSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PodTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&corev1.PodTemplateSpec{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -36783,7 +36783,7 @@ func schema_k8sio_api_extensions_v1beta1_ReplicaSetStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.ReplicaSetCondition"},
+			(&extensionsv1beta1.ReplicaSetCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -36830,7 +36830,7 @@ func schema_k8sio_api_extensions_v1beta1_RollingUpdateDaemonSet(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -36857,7 +36857,7 @@ func schema_k8sio_api_extensions_v1beta1_RollingUpdateDeployment(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -36907,7 +36907,7 @@ func schema_k8sio_api_extensions_v1beta1_Scale(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/extensions/v1beta1.ScaleSpec", "k8s.io/api/extensions/v1beta1.ScaleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&extensionsv1beta1.ScaleSpec{}).OpenAPIModelName(), (&extensionsv1beta1.ScaleStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -37076,7 +37076,7 @@ func schema_k8sio_api_flowcontrol_v1_FlowSchema(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.FlowSchemaSpec", "k8s.io/api/flowcontrol/v1.FlowSchemaStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1.FlowSchemaSpec{}).OpenAPIModelName(), (&flowcontrolv1.FlowSchemaStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -37125,7 +37125,7 @@ func schema_k8sio_api_flowcontrol_v1_FlowSchemaCondition(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -37176,7 +37176,7 @@ func schema_k8sio_api_flowcontrol_v1_FlowSchemaList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.FlowSchema", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1.FlowSchema{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -37232,7 +37232,7 @@ func schema_k8sio_api_flowcontrol_v1_FlowSchemaSpec(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.FlowDistinguisherMethod", "k8s.io/api/flowcontrol/v1.PolicyRulesWithSubjects", "k8s.io/api/flowcontrol/v1.PriorityLevelConfigurationReference"},
+			(&flowcontrolv1.FlowDistinguisherMethod{}).OpenAPIModelName(), (&flowcontrolv1.PolicyRulesWithSubjects{}).OpenAPIModelName(), (&flowcontrolv1.PriorityLevelConfigurationReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -37271,7 +37271,7 @@ func schema_k8sio_api_flowcontrol_v1_FlowSchemaStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.FlowSchemaCondition"},
+			(&flowcontrolv1.FlowSchemaCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -37335,7 +37335,7 @@ func schema_k8sio_api_flowcontrol_v1_LimitResponse(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.QueuingConfiguration"},
+			(&flowcontrolv1.QueuingConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -37378,7 +37378,7 @@ func schema_k8sio_api_flowcontrol_v1_LimitedPriorityLevelConfiguration(ref commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.LimitResponse"},
+			(&flowcontrolv1.LimitResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -37505,7 +37505,7 @@ func schema_k8sio_api_flowcontrol_v1_PolicyRulesWithSubjects(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.NonResourcePolicyRule", "k8s.io/api/flowcontrol/v1.ResourcePolicyRule", "k8s.io/api/flowcontrol/v1.Subject"},
+			(&flowcontrolv1.NonResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1.ResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1.Subject{}).OpenAPIModelName()},
 	}
 }
 
@@ -37555,7 +37555,7 @@ func schema_k8sio_api_flowcontrol_v1_PriorityLevelConfiguration(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.PriorityLevelConfigurationSpec", "k8s.io/api/flowcontrol/v1.PriorityLevelConfigurationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1.PriorityLevelConfigurationSpec{}).OpenAPIModelName(), (&flowcontrolv1.PriorityLevelConfigurationStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -37604,7 +37604,7 @@ func schema_k8sio_api_flowcontrol_v1_PriorityLevelConfigurationCondition(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -37655,7 +37655,7 @@ func schema_k8sio_api_flowcontrol_v1_PriorityLevelConfigurationList(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.PriorityLevelConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1.PriorityLevelConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -37726,7 +37726,7 @@ func schema_k8sio_api_flowcontrol_v1_PriorityLevelConfigurationSpec(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.ExemptPriorityLevelConfiguration", "k8s.io/api/flowcontrol/v1.LimitedPriorityLevelConfiguration"},
+			(&flowcontrolv1.ExemptPriorityLevelConfiguration{}).OpenAPIModelName(), (&flowcontrolv1.LimitedPriorityLevelConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -37765,7 +37765,7 @@ func schema_k8sio_api_flowcontrol_v1_PriorityLevelConfigurationStatus(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.PriorityLevelConfigurationCondition"},
+			(&flowcontrolv1.PriorityLevelConfigurationCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -37989,7 +37989,7 @@ func schema_k8sio_api_flowcontrol_v1_Subject(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1.GroupSubject", "k8s.io/api/flowcontrol/v1.ServiceAccountSubject", "k8s.io/api/flowcontrol/v1.UserSubject"},
+			(&flowcontrolv1.GroupSubject{}).OpenAPIModelName(), (&flowcontrolv1.ServiceAccountSubject{}).OpenAPIModelName(), (&flowcontrolv1.UserSubject{}).OpenAPIModelName()},
 	}
 }
 
@@ -38110,7 +38110,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_FlowSchema(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.FlowSchemaSpec", "k8s.io/api/flowcontrol/v1beta1.FlowSchemaStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1beta1.FlowSchemaSpec{}).OpenAPIModelName(), (&flowcontrolv1beta1.FlowSchemaStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -38159,7 +38159,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_FlowSchemaCondition(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -38210,7 +38210,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_FlowSchemaList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.FlowSchema", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1beta1.FlowSchema{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -38266,7 +38266,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_FlowSchemaSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.FlowDistinguisherMethod", "k8s.io/api/flowcontrol/v1beta1.PolicyRulesWithSubjects", "k8s.io/api/flowcontrol/v1beta1.PriorityLevelConfigurationReference"},
+			(&flowcontrolv1beta1.FlowDistinguisherMethod{}).OpenAPIModelName(), (&flowcontrolv1beta1.PolicyRulesWithSubjects{}).OpenAPIModelName(), (&flowcontrolv1beta1.PriorityLevelConfigurationReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -38303,7 +38303,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_FlowSchemaStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.FlowSchemaCondition"},
+			(&flowcontrolv1beta1.FlowSchemaCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -38367,7 +38367,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_LimitResponse(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.QueuingConfiguration"},
+			(&flowcontrolv1beta1.QueuingConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -38411,7 +38411,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_LimitedPriorityLevelConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.LimitResponse"},
+			(&flowcontrolv1beta1.LimitResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -38538,7 +38538,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PolicyRulesWithSubjects(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.NonResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta1.ResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta1.Subject"},
+			(&flowcontrolv1beta1.NonResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1beta1.ResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1beta1.Subject{}).OpenAPIModelName()},
 	}
 }
 
@@ -38588,7 +38588,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PriorityLevelConfiguration(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.PriorityLevelConfigurationSpec", "k8s.io/api/flowcontrol/v1beta1.PriorityLevelConfigurationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1beta1.PriorityLevelConfigurationSpec{}).OpenAPIModelName(), (&flowcontrolv1beta1.PriorityLevelConfigurationStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -38637,7 +38637,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PriorityLevelConfigurationCondition(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -38688,7 +38688,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PriorityLevelConfigurationList(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.PriorityLevelConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1beta1.PriorityLevelConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -38759,7 +38759,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PriorityLevelConfigurationSpec(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.ExemptPriorityLevelConfiguration", "k8s.io/api/flowcontrol/v1beta1.LimitedPriorityLevelConfiguration"},
+			(&flowcontrolv1beta1.ExemptPriorityLevelConfiguration{}).OpenAPIModelName(), (&flowcontrolv1beta1.LimitedPriorityLevelConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -38796,7 +38796,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_PriorityLevelConfigurationStatus(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.PriorityLevelConfigurationCondition"},
+			(&flowcontrolv1beta1.PriorityLevelConfigurationCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -39020,7 +39020,7 @@ func schema_k8sio_api_flowcontrol_v1beta1_Subject(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta1.GroupSubject", "k8s.io/api/flowcontrol/v1beta1.ServiceAccountSubject", "k8s.io/api/flowcontrol/v1beta1.UserSubject"},
+			(&flowcontrolv1beta1.GroupSubject{}).OpenAPIModelName(), (&flowcontrolv1beta1.ServiceAccountSubject{}).OpenAPIModelName(), (&flowcontrolv1beta1.UserSubject{}).OpenAPIModelName()},
 	}
 }
 
@@ -39141,7 +39141,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_FlowSchema(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.FlowSchemaSpec", "k8s.io/api/flowcontrol/v1beta2.FlowSchemaStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1beta2.FlowSchemaSpec{}).OpenAPIModelName(), (&flowcontrolv1beta2.FlowSchemaStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -39190,7 +39190,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_FlowSchemaCondition(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -39241,7 +39241,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_FlowSchemaList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.FlowSchema", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1beta2.FlowSchema{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -39297,7 +39297,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_FlowSchemaSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.FlowDistinguisherMethod", "k8s.io/api/flowcontrol/v1beta2.PolicyRulesWithSubjects", "k8s.io/api/flowcontrol/v1beta2.PriorityLevelConfigurationReference"},
+			(&flowcontrolv1beta2.FlowDistinguisherMethod{}).OpenAPIModelName(), (&flowcontrolv1beta2.PolicyRulesWithSubjects{}).OpenAPIModelName(), (&flowcontrolv1beta2.PriorityLevelConfigurationReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -39334,7 +39334,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_FlowSchemaStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.FlowSchemaCondition"},
+			(&flowcontrolv1beta2.FlowSchemaCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -39398,7 +39398,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_LimitResponse(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.QueuingConfiguration"},
+			(&flowcontrolv1beta2.QueuingConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -39442,7 +39442,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_LimitedPriorityLevelConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.LimitResponse"},
+			(&flowcontrolv1beta2.LimitResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -39569,7 +39569,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PolicyRulesWithSubjects(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.NonResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta2.ResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta2.Subject"},
+			(&flowcontrolv1beta2.NonResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1beta2.ResourcePolicyRule{}).OpenAPIModelName(), (&flowcontrolv1beta2.Subject{}).OpenAPIModelName()},
 	}
 }
 
@@ -39619,7 +39619,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PriorityLevelConfiguration(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.PriorityLevelConfigurationSpec", "k8s.io/api/flowcontrol/v1beta2.PriorityLevelConfigurationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&flowcontrolv1beta2.PriorityLevelConfigurationSpec{}).OpenAPIModelName(), (&flowcontrolv1beta2.PriorityLevelConfigurationStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -39668,7 +39668,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PriorityLevelConfigurationCondition(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -39719,7 +39719,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PriorityLevelConfigurationList(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.PriorityLevelConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&flowcontrolv1beta2.PriorityLevelConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -39790,7 +39790,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PriorityLevelConfigurationSpec(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.ExemptPriorityLevelConfiguration", "k8s.io/api/flowcontrol/v1beta2.LimitedPriorityLevelConfiguration"},
+			(&flowcontrolv1beta2.ExemptPriorityLevelConfiguration{}).OpenAPIModelName(), (&flowcontrolv1beta2.LimitedPriorityLevelConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -39827,7 +39827,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_PriorityLevelConfigurationStatus(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.PriorityLevelConfigurationCondition"},
+			(&flowcontrolv1beta2.PriorityLevelConfigurationCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -40051,7 +40051,7 @@ func schema_k8sio_api_flowcontrol_v1beta2_Subject(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta2.GroupSubject", "k8s.io/api/flowcontrol/v1beta2.ServiceAccountSubject", "k8s.io/api/flowcontrol/v1beta2.UserSubject"},
+			(&flowcontrolv1beta2.GroupSubject{}).OpenAPIModelName(), (&flowcontrolv1beta2.ServiceAccountSubject{}).OpenAPIModelName(), (&flowcontrolv1beta2.UserSubject{}).OpenAPIModelName()},
 	}
 }
 
@@ -40172,7 +40172,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_FlowSchema(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.FlowSchemaSpec", "k8s.io/api/flowcontrol/v1beta3.FlowSchemaStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta3.FlowSchemaSpec{}).OpenAPIModelName(), (&v1beta3.FlowSchemaStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -40221,7 +40221,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_FlowSchemaCondition(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -40272,7 +40272,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_FlowSchemaList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.FlowSchema", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta3.FlowSchema{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -40328,7 +40328,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_FlowSchemaSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.FlowDistinguisherMethod", "k8s.io/api/flowcontrol/v1beta3.PolicyRulesWithSubjects", "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationReference"},
+			(&v1beta3.FlowDistinguisherMethod{}).OpenAPIModelName(), (&v1beta3.PolicyRulesWithSubjects{}).OpenAPIModelName(), (&v1beta3.PriorityLevelConfigurationReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -40367,7 +40367,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_FlowSchemaStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.FlowSchemaCondition"},
+			(&v1beta3.FlowSchemaCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -40431,7 +40431,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_LimitResponse(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.QueuingConfiguration"},
+			(&v1beta3.QueuingConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -40475,7 +40475,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_LimitedPriorityLevelConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.LimitResponse"},
+			(&v1beta3.LimitResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -40602,7 +40602,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PolicyRulesWithSubjects(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.NonResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta3.ResourcePolicyRule", "k8s.io/api/flowcontrol/v1beta3.Subject"},
+			(&v1beta3.NonResourcePolicyRule{}).OpenAPIModelName(), (&v1beta3.ResourcePolicyRule{}).OpenAPIModelName(), (&v1beta3.Subject{}).OpenAPIModelName()},
 	}
 }
 
@@ -40652,7 +40652,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PriorityLevelConfiguration(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationSpec", "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1beta3.PriorityLevelConfigurationSpec{}).OpenAPIModelName(), (&v1beta3.PriorityLevelConfigurationStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -40701,7 +40701,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PriorityLevelConfigurationCondition(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -40752,7 +40752,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PriorityLevelConfigurationList(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfiguration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1beta3.PriorityLevelConfiguration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -40823,7 +40823,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PriorityLevelConfigurationSpec(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.ExemptPriorityLevelConfiguration", "k8s.io/api/flowcontrol/v1beta3.LimitedPriorityLevelConfiguration"},
+			(&v1beta3.ExemptPriorityLevelConfiguration{}).OpenAPIModelName(), (&v1beta3.LimitedPriorityLevelConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -40862,7 +40862,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_PriorityLevelConfigurationStatus(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationCondition"},
+			(&v1beta3.PriorityLevelConfigurationCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -41086,7 +41086,7 @@ func schema_k8sio_api_flowcontrol_v1beta3_Subject(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/flowcontrol/v1beta3.GroupSubject", "k8s.io/api/flowcontrol/v1beta3.ServiceAccountSubject", "k8s.io/api/flowcontrol/v1beta3.UserSubject"},
+			(&v1beta3.GroupSubject{}).OpenAPIModelName(), (&v1beta3.ServiceAccountSubject{}).OpenAPIModelName(), (&v1beta3.UserSubject{}).OpenAPIModelName()},
 	}
 }
 
@@ -41159,7 +41159,7 @@ func schema_k8sio_api_imagepolicy_v1alpha1_ImageReview(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/imagepolicy/v1alpha1.ImageReviewSpec", "k8s.io/api/imagepolicy/v1alpha1.ImageReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&imagepolicyv1alpha1.ImageReviewSpec{}).OpenAPIModelName(), (&imagepolicyv1alpha1.ImageReviewStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41236,7 +41236,7 @@ func schema_k8sio_api_imagepolicy_v1alpha1_ImageReviewSpec(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/imagepolicy/v1alpha1.ImageReviewContainerSpec"},
+			(&imagepolicyv1alpha1.ImageReviewContainerSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -41319,7 +41319,7 @@ func schema_k8sio_api_networking_v1_HTTPIngressPath(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressBackend"},
+			(&networkingv1.IngressBackend{}).OpenAPIModelName()},
 	}
 }
 
@@ -41354,7 +41354,7 @@ func schema_k8sio_api_networking_v1_HTTPIngressRuleValue(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.HTTPIngressPath"},
+			(&networkingv1.HTTPIngressPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -41397,7 +41397,7 @@ func schema_k8sio_api_networking_v1_IPAddress(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IPAddressSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1.IPAddressSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41448,7 +41448,7 @@ func schema_k8sio_api_networking_v1_IPAddressList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IPAddress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1.IPAddress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41470,7 +41470,7 @@ func schema_k8sio_api_networking_v1_IPAddressSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.ParentReference"},
+			(&networkingv1.ParentReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -41562,7 +41562,7 @@ func schema_k8sio_api_networking_v1_Ingress(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressSpec", "k8s.io/api/networking/v1.IngressStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1.IngressSpec{}).OpenAPIModelName(), (&networkingv1.IngressStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41589,7 +41589,7 @@ func schema_k8sio_api_networking_v1_IngressBackend(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TypedLocalObjectReference", "k8s.io/api/networking/v1.IngressServiceBackend"},
+			(&corev1.TypedLocalObjectReference{}).OpenAPIModelName(), (&networkingv1.IngressServiceBackend{}).OpenAPIModelName()},
 	}
 }
 
@@ -41632,7 +41632,7 @@ func schema_k8sio_api_networking_v1_IngressClass(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1.IngressClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41683,7 +41683,7 @@ func schema_k8sio_api_networking_v1_IngressClassList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1.IngressClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41762,7 +41762,7 @@ func schema_k8sio_api_networking_v1_IngressClassSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressClassParametersReference"},
+			(&networkingv1.IngressClassParametersReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -41813,7 +41813,7 @@ func schema_k8sio_api_networking_v1_IngressList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.Ingress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1.Ingress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -41861,7 +41861,7 @@ func schema_k8sio_api_networking_v1_IngressLoadBalancerIngress(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressPortStatus"},
+			(&networkingv1.IngressPortStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -41895,7 +41895,7 @@ func schema_k8sio_api_networking_v1_IngressLoadBalancerStatus(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressLoadBalancerIngress"},
+			(&networkingv1.IngressLoadBalancerIngress{}).OpenAPIModelName()},
 	}
 }
 
@@ -41960,7 +41960,7 @@ func schema_k8sio_api_networking_v1_IngressRule(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.HTTPIngressRuleValue"},
+			(&networkingv1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -41980,7 +41980,7 @@ func schema_k8sio_api_networking_v1_IngressRuleValue(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.HTTPIngressRuleValue"},
+			(&networkingv1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -42011,7 +42011,7 @@ func schema_k8sio_api_networking_v1_IngressServiceBackend(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.ServiceBackendPort"},
+			(&networkingv1.ServiceBackendPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -42077,7 +42077,7 @@ func schema_k8sio_api_networking_v1_IngressSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressBackend", "k8s.io/api/networking/v1.IngressRule", "k8s.io/api/networking/v1.IngressTLS"},
+			(&networkingv1.IngressBackend{}).OpenAPIModelName(), (&networkingv1.IngressRule{}).OpenAPIModelName(), (&networkingv1.IngressTLS{}).OpenAPIModelName()},
 	}
 }
 
@@ -42099,7 +42099,7 @@ func schema_k8sio_api_networking_v1_IngressStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IngressLoadBalancerStatus"},
+			(&networkingv1.IngressLoadBalancerStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -42182,7 +42182,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicy(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1.NetworkPolicySpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42235,7 +42235,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicyEgressRule(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicyPeer", "k8s.io/api/networking/v1.NetworkPolicyPort"},
+			(&networkingv1.NetworkPolicyPeer{}).OpenAPIModelName(), (&networkingv1.NetworkPolicyPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -42288,7 +42288,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicyIngressRule(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicyPeer", "k8s.io/api/networking/v1.NetworkPolicyPort"},
+			(&networkingv1.NetworkPolicyPeer{}).OpenAPIModelName(), (&networkingv1.NetworkPolicyPort{}).OpenAPIModelName()},
 	}
 }
 
@@ -42339,7 +42339,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicyList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1.NetworkPolicy{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42372,7 +42372,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicyPeer(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.IPBlock", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&networkingv1.IPBlock{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -42408,7 +42408,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicyPort(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -42490,7 +42490,7 @@ func schema_k8sio_api_networking_v1_NetworkPolicySpec(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.NetworkPolicyEgressRule", "k8s.io/api/networking/v1.NetworkPolicyIngressRule", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&networkingv1.NetworkPolicyEgressRule{}).OpenAPIModelName(), (&networkingv1.NetworkPolicyIngressRule{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -42614,7 +42614,7 @@ func schema_k8sio_api_networking_v1_ServiceCIDR(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.ServiceCIDRSpec", "k8s.io/api/networking/v1.ServiceCIDRStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1.ServiceCIDRSpec{}).OpenAPIModelName(), (&networkingv1.ServiceCIDRStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42665,7 +42665,7 @@ func schema_k8sio_api_networking_v1_ServiceCIDRList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1.ServiceCIDR", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1.ServiceCIDR{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42737,7 +42737,7 @@ func schema_k8sio_api_networking_v1_ServiceCIDRStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -42780,7 +42780,7 @@ func schema_k8sio_api_networking_v1alpha1_IPAddress(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1alpha1.IPAddressSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1alpha1.IPAddressSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42831,7 +42831,7 @@ func schema_k8sio_api_networking_v1alpha1_IPAddressList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1alpha1.IPAddress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1alpha1.IPAddress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42853,7 +42853,7 @@ func schema_k8sio_api_networking_v1alpha1_IPAddressSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1alpha1.ParentReference"},
+			(&networkingv1alpha1.ParentReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -42945,7 +42945,7 @@ func schema_k8sio_api_networking_v1alpha1_ServiceCIDR(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1alpha1.ServiceCIDRSpec", "k8s.io/api/networking/v1alpha1.ServiceCIDRStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1alpha1.ServiceCIDRSpec{}).OpenAPIModelName(), (&networkingv1alpha1.ServiceCIDRStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -42996,7 +42996,7 @@ func schema_k8sio_api_networking_v1alpha1_ServiceCIDRList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1alpha1.ServiceCIDR", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1alpha1.ServiceCIDR{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43068,7 +43068,7 @@ func schema_k8sio_api_networking_v1alpha1_ServiceCIDRStatus(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -43105,7 +43105,7 @@ func schema_k8sio_api_networking_v1beta1_HTTPIngressPath(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressBackend"},
+			(&networkingv1beta1.IngressBackend{}).OpenAPIModelName()},
 	}
 }
 
@@ -43140,7 +43140,7 @@ func schema_k8sio_api_networking_v1beta1_HTTPIngressRuleValue(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.HTTPIngressPath"},
+			(&networkingv1beta1.HTTPIngressPath{}).OpenAPIModelName()},
 	}
 }
 
@@ -43183,7 +43183,7 @@ func schema_k8sio_api_networking_v1beta1_IPAddress(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IPAddressSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1beta1.IPAddressSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43234,7 +43234,7 @@ func schema_k8sio_api_networking_v1beta1_IPAddressList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IPAddress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1beta1.IPAddress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43256,7 +43256,7 @@ func schema_k8sio_api_networking_v1beta1_IPAddressSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.ParentReference"},
+			(&networkingv1beta1.ParentReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -43306,7 +43306,7 @@ func schema_k8sio_api_networking_v1beta1_Ingress(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressSpec", "k8s.io/api/networking/v1beta1.IngressStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1beta1.IngressSpec{}).OpenAPIModelName(), (&networkingv1beta1.IngressStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43340,7 +43340,7 @@ func schema_k8sio_api_networking_v1beta1_IngressBackend(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TypedLocalObjectReference", "k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&corev1.TypedLocalObjectReference{}).OpenAPIModelName(), (&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -43383,7 +43383,7 @@ func schema_k8sio_api_networking_v1beta1_IngressClass(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1beta1.IngressClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43434,7 +43434,7 @@ func schema_k8sio_api_networking_v1beta1_IngressClassList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1beta1.IngressClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43513,7 +43513,7 @@ func schema_k8sio_api_networking_v1beta1_IngressClassSpec(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressClassParametersReference"},
+			(&networkingv1beta1.IngressClassParametersReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -43564,7 +43564,7 @@ func schema_k8sio_api_networking_v1beta1_IngressList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.Ingress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1beta1.Ingress{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -43612,7 +43612,7 @@ func schema_k8sio_api_networking_v1beta1_IngressLoadBalancerIngress(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressPortStatus"},
+			(&networkingv1beta1.IngressPortStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -43646,7 +43646,7 @@ func schema_k8sio_api_networking_v1beta1_IngressLoadBalancerStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressLoadBalancerIngress"},
+			(&networkingv1beta1.IngressLoadBalancerIngress{}).OpenAPIModelName()},
 	}
 }
 
@@ -43711,7 +43711,7 @@ func schema_k8sio_api_networking_v1beta1_IngressRule(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.HTTPIngressRuleValue"},
+			(&networkingv1beta1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -43731,7 +43731,7 @@ func schema_k8sio_api_networking_v1beta1_IngressRuleValue(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.HTTPIngressRuleValue"},
+			(&networkingv1beta1.HTTPIngressRuleValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -43797,7 +43797,7 @@ func schema_k8sio_api_networking_v1beta1_IngressSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressBackend", "k8s.io/api/networking/v1beta1.IngressRule", "k8s.io/api/networking/v1beta1.IngressTLS"},
+			(&networkingv1beta1.IngressBackend{}).OpenAPIModelName(), (&networkingv1beta1.IngressRule{}).OpenAPIModelName(), (&networkingv1beta1.IngressTLS{}).OpenAPIModelName()},
 	}
 }
 
@@ -43819,7 +43819,7 @@ func schema_k8sio_api_networking_v1beta1_IngressStatus(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.IngressLoadBalancerStatus"},
+			(&networkingv1beta1.IngressLoadBalancerStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -43951,7 +43951,7 @@ func schema_k8sio_api_networking_v1beta1_ServiceCIDR(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.ServiceCIDRSpec", "k8s.io/api/networking/v1beta1.ServiceCIDRStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&networkingv1beta1.ServiceCIDRSpec{}).OpenAPIModelName(), (&networkingv1beta1.ServiceCIDRStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44002,7 +44002,7 @@ func schema_k8sio_api_networking_v1beta1_ServiceCIDRList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/networking/v1beta1.ServiceCIDR", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&networkingv1beta1.ServiceCIDR{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44074,7 +44074,7 @@ func schema_k8sio_api_networking_v1beta1_ServiceCIDRStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Condition"},
+			(&metav1.Condition{}).OpenAPIModelName()},
 	}
 }
 
@@ -44103,7 +44103,7 @@ func schema_k8sio_api_node_v1_Overhead(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -44160,7 +44160,7 @@ func schema_k8sio_api_node_v1_RuntimeClass(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1.Overhead", "k8s.io/api/node/v1.Scheduling", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&nodev1.Overhead{}).OpenAPIModelName(), (&nodev1.Scheduling{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44211,7 +44211,7 @@ func schema_k8sio_api_node_v1_RuntimeClassList(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1.RuntimeClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&nodev1.RuntimeClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44266,7 +44266,7 @@ func schema_k8sio_api_node_v1_Scheduling(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Toleration"},
+			(&corev1.Toleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -44295,7 +44295,7 @@ func schema_k8sio_api_node_v1alpha1_Overhead(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -44339,7 +44339,7 @@ func schema_k8sio_api_node_v1alpha1_RuntimeClass(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1alpha1.RuntimeClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&nodev1alpha1.RuntimeClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44390,7 +44390,7 @@ func schema_k8sio_api_node_v1alpha1_RuntimeClassList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1alpha1.RuntimeClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&nodev1alpha1.RuntimeClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44426,7 +44426,7 @@ func schema_k8sio_api_node_v1alpha1_RuntimeClassSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1alpha1.Overhead", "k8s.io/api/node/v1alpha1.Scheduling"},
+			(&nodev1alpha1.Overhead{}).OpenAPIModelName(), (&nodev1alpha1.Scheduling{}).OpenAPIModelName()},
 	}
 }
 
@@ -44481,7 +44481,7 @@ func schema_k8sio_api_node_v1alpha1_Scheduling(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Toleration"},
+			(&corev1.Toleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -44510,7 +44510,7 @@ func schema_k8sio_api_node_v1beta1_Overhead(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -44567,7 +44567,7 @@ func schema_k8sio_api_node_v1beta1_RuntimeClass(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1beta1.Overhead", "k8s.io/api/node/v1beta1.Scheduling", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&nodev1beta1.Overhead{}).OpenAPIModelName(), (&nodev1beta1.Scheduling{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44618,7 +44618,7 @@ func schema_k8sio_api_node_v1beta1_RuntimeClassList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/node/v1beta1.RuntimeClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&nodev1beta1.RuntimeClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44673,7 +44673,7 @@ func schema_k8sio_api_node_v1beta1_Scheduling(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Toleration"},
+			(&corev1.Toleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -44715,7 +44715,7 @@ func schema_k8sio_api_policy_v1_Eviction(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.DeleteOptions", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.DeleteOptions{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44765,7 +44765,7 @@ func schema_k8sio_api_policy_v1_PodDisruptionBudget(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/policy/v1.PodDisruptionBudgetSpec", "k8s.io/api/policy/v1.PodDisruptionBudgetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&policyv1.PodDisruptionBudgetSpec{}).OpenAPIModelName(), (&policyv1.PodDisruptionBudgetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44816,7 +44816,7 @@ func schema_k8sio_api_policy_v1_PodDisruptionBudgetList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/policy/v1.PodDisruptionBudget", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&policyv1.PodDisruptionBudget{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -44862,7 +44862,7 @@ func schema_k8sio_api_policy_v1_PodDisruptionBudgetSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&metav1.LabelSelector{}).OpenAPIModelName(), (&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -44955,7 +44955,7 @@ func schema_k8sio_api_policy_v1_PodDisruptionBudgetStatus(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Condition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Condition{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -44997,7 +44997,7 @@ func schema_k8sio_api_policy_v1beta1_Eviction(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.DeleteOptions", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.DeleteOptions{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45047,7 +45047,7 @@ func schema_k8sio_api_policy_v1beta1_PodDisruptionBudget(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/policy/v1beta1.PodDisruptionBudgetSpec", "k8s.io/api/policy/v1beta1.PodDisruptionBudgetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&policyv1beta1.PodDisruptionBudgetSpec{}).OpenAPIModelName(), (&policyv1beta1.PodDisruptionBudgetStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45098,7 +45098,7 @@ func schema_k8sio_api_policy_v1beta1_PodDisruptionBudgetList(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/policy/v1beta1.PodDisruptionBudget", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&policyv1beta1.PodDisruptionBudget{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45139,7 +45139,7 @@ func schema_k8sio_api_policy_v1beta1_PodDisruptionBudgetSpec(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/util/intstr.IntOrString"},
+			(&metav1.LabelSelector{}).OpenAPIModelName(), (&intstr.IntOrString{}).OpenAPIModelName()},
 	}
 }
 
@@ -45232,7 +45232,7 @@ func schema_k8sio_api_policy_v1beta1_PodDisruptionBudgetStatus(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Condition", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Condition{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -45266,7 +45266,7 @@ func schema_k8sio_api_rbac_v1_AggregationRule(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -45327,7 +45327,7 @@ func schema_k8sio_api_rbac_v1_ClusterRole(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.AggregationRule", "k8s.io/api/rbac/v1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1.AggregationRule{}).OpenAPIModelName(), (&rbacv1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45390,7 +45390,7 @@ func schema_k8sio_api_rbac_v1_ClusterRoleBinding(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.RoleRef", "k8s.io/api/rbac/v1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1.RoleRef{}).OpenAPIModelName(), (&rbacv1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45441,7 +45441,7 @@ func schema_k8sio_api_rbac_v1_ClusterRoleBindingList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.ClusterRoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1.ClusterRoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45492,7 +45492,7 @@ func schema_k8sio_api_rbac_v1_ClusterRoleList(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.ClusterRole", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1.ClusterRole{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45661,7 +45661,7 @@ func schema_k8sio_api_rbac_v1_Role(ref common.ReferenceCallback) common.OpenAPID
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45724,7 +45724,7 @@ func schema_k8sio_api_rbac_v1_RoleBinding(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.RoleRef", "k8s.io/api/rbac/v1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1.RoleRef{}).OpenAPIModelName(), (&rbacv1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45775,7 +45775,7 @@ func schema_k8sio_api_rbac_v1_RoleBindingList(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.RoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1.RoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45826,7 +45826,7 @@ func schema_k8sio_api_rbac_v1_RoleList(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1.Role", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1.Role{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -45952,7 +45952,7 @@ func schema_k8sio_api_rbac_v1alpha1_AggregationRule(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -46013,7 +46013,7 @@ func schema_k8sio_api_rbac_v1alpha1_ClusterRole(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.AggregationRule", "k8s.io/api/rbac/v1alpha1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1alpha1.AggregationRule{}).OpenAPIModelName(), (&rbacv1alpha1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46076,7 +46076,7 @@ func schema_k8sio_api_rbac_v1alpha1_ClusterRoleBinding(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.RoleRef", "k8s.io/api/rbac/v1alpha1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1alpha1.RoleRef{}).OpenAPIModelName(), (&rbacv1alpha1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46127,7 +46127,7 @@ func schema_k8sio_api_rbac_v1alpha1_ClusterRoleBindingList(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.ClusterRoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1alpha1.ClusterRoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46178,7 +46178,7 @@ func schema_k8sio_api_rbac_v1alpha1_ClusterRoleList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.ClusterRole", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1alpha1.ClusterRole{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46347,7 +46347,7 @@ func schema_k8sio_api_rbac_v1alpha1_Role(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1alpha1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46410,7 +46410,7 @@ func schema_k8sio_api_rbac_v1alpha1_RoleBinding(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.RoleRef", "k8s.io/api/rbac/v1alpha1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1alpha1.RoleRef{}).OpenAPIModelName(), (&rbacv1alpha1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46461,7 +46461,7 @@ func schema_k8sio_api_rbac_v1alpha1_RoleBindingList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.RoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1alpha1.RoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46512,7 +46512,7 @@ func schema_k8sio_api_rbac_v1alpha1_RoleList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1alpha1.Role", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1alpha1.Role{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46628,7 +46628,7 @@ func schema_k8sio_api_rbac_v1beta1_AggregationRule(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -46689,7 +46689,7 @@ func schema_k8sio_api_rbac_v1beta1_ClusterRole(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.AggregationRule", "k8s.io/api/rbac/v1beta1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1beta1.AggregationRule{}).OpenAPIModelName(), (&rbacv1beta1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46752,7 +46752,7 @@ func schema_k8sio_api_rbac_v1beta1_ClusterRoleBinding(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.RoleRef", "k8s.io/api/rbac/v1beta1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1beta1.RoleRef{}).OpenAPIModelName(), (&rbacv1beta1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46803,7 +46803,7 @@ func schema_k8sio_api_rbac_v1beta1_ClusterRoleBindingList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.ClusterRoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1beta1.ClusterRoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -46854,7 +46854,7 @@ func schema_k8sio_api_rbac_v1beta1_ClusterRoleList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.ClusterRole", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1beta1.ClusterRole{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47023,7 +47023,7 @@ func schema_k8sio_api_rbac_v1beta1_Role(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.PolicyRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1beta1.PolicyRule{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47086,7 +47086,7 @@ func schema_k8sio_api_rbac_v1beta1_RoleBinding(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.RoleRef", "k8s.io/api/rbac/v1beta1.Subject", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&rbacv1beta1.RoleRef{}).OpenAPIModelName(), (&rbacv1beta1.Subject{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47137,7 +47137,7 @@ func schema_k8sio_api_rbac_v1beta1_RoleBindingList(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.RoleBinding", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1beta1.RoleBinding{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47188,7 +47188,7 @@ func schema_k8sio_api_rbac_v1beta1_RoleList(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/rbac/v1beta1.Role", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&rbacv1beta1.Role{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47344,7 +47344,7 @@ func schema_k8sio_api_resource_v1alpha3_AllocatedDeviceStatus(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.NetworkDeviceData", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&v1alpha3.NetworkDeviceData{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -47372,7 +47372,7 @@ func schema_k8sio_api_resource_v1alpha3_AllocationResult(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1alpha3.DeviceAllocationResult"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&v1alpha3.DeviceAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -47474,7 +47474,7 @@ func schema_k8sio_api_resource_v1alpha3_BasicDevice(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1alpha3.DeviceAttribute", "k8s.io/api/resource/v1alpha3.DeviceCounterConsumption", "k8s.io/api/resource/v1alpha3.DeviceTaint", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&v1alpha3.DeviceAttribute{}).OpenAPIModelName(), (&v1alpha3.DeviceCounterConsumption{}).OpenAPIModelName(), (&v1alpha3.DeviceTaint{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -47518,7 +47518,7 @@ func schema_k8sio_api_resource_v1alpha3_Counter(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -47557,7 +47557,7 @@ func schema_k8sio_api_resource_v1alpha3_CounterSet(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.Counter"},
+			(&v1alpha3.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -47587,7 +47587,7 @@ func schema_k8sio_api_resource_v1alpha3_Device(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.BasicDevice"},
+			(&v1alpha3.BasicDevice{}).OpenAPIModelName()},
 	}
 }
 
@@ -47637,7 +47637,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceAllocationConfiguration(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.OpaqueDeviceConfiguration"},
+			(&v1alpha3.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -47690,7 +47690,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceAllocationResult(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceAllocationConfiguration", "k8s.io/api/resource/v1alpha3.DeviceRequestAllocationResult"},
+			(&v1alpha3.DeviceAllocationConfiguration{}).OpenAPIModelName(), (&v1alpha3.DeviceRequestAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -47803,7 +47803,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClaim(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceClaimConfiguration", "k8s.io/api/resource/v1alpha3.DeviceConstraint", "k8s.io/api/resource/v1alpha3.DeviceRequest"},
+			(&v1alpha3.DeviceClaimConfiguration{}).OpenAPIModelName(), (&v1alpha3.DeviceConstraint{}).OpenAPIModelName(), (&v1alpha3.DeviceRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -47844,7 +47844,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClaimConfiguration(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.OpaqueDeviceConfiguration"},
+			(&v1alpha3.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -47888,7 +47888,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClass(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.DeviceClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -47909,7 +47909,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClassConfiguration(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.OpaqueDeviceConfiguration"},
+			(&v1alpha3.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -47960,7 +47960,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClassList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha3.DeviceClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -48013,7 +48013,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceClassSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceClassConfiguration", "k8s.io/api/resource/v1alpha3.DeviceSelector"},
+			(&v1alpha3.DeviceClassConfiguration{}).OpenAPIModelName(), (&v1alpha3.DeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -48034,7 +48034,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceConfiguration(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.OpaqueDeviceConfiguration"},
+			(&v1alpha3.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -48113,7 +48113,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceCounterConsumption(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.Counter"},
+			(&v1alpha3.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -48223,7 +48223,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceRequest(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceSelector", "k8s.io/api/resource/v1alpha3.DeviceSubRequest", "k8s.io/api/resource/v1alpha3.DeviceToleration"},
+			(&v1alpha3.DeviceSelector{}).OpenAPIModelName(), (&v1alpha3.DeviceSubRequest{}).OpenAPIModelName(), (&v1alpha3.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -48297,7 +48297,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceRequestAllocationResult(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceToleration"},
+			(&v1alpha3.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -48318,7 +48318,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceSelector(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.CELDeviceSelector"},
+			(&v1alpha3.CELDeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -48402,7 +48402,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceSubRequest(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceSelector", "k8s.io/api/resource/v1alpha3.DeviceToleration"},
+			(&v1alpha3.DeviceSelector{}).OpenAPIModelName(), (&v1alpha3.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -48448,7 +48448,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceTaint(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -48492,7 +48492,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceTaintRule(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceTaintRuleSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.DeviceTaintRuleSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -48543,7 +48543,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceTaintRuleList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceTaintRule", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha3.DeviceTaintRule{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -48572,7 +48572,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceTaintRuleSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceTaint", "k8s.io/api/resource/v1alpha3.DeviceTaintSelector"},
+			(&v1alpha3.DeviceTaint{}).OpenAPIModelName(), (&v1alpha3.DeviceTaintSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -48634,7 +48634,7 @@ func schema_k8sio_api_resource_v1alpha3_DeviceTaintSelector(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceSelector"},
+			(&v1alpha3.DeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -48762,7 +48762,7 @@ func schema_k8sio_api_resource_v1alpha3_OpaqueDeviceConfiguration(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -48813,7 +48813,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaim(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceClaimSpec", "k8s.io/api/resource/v1alpha3.ResourceClaimStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.ResourceClaimSpec{}).OpenAPIModelName(), (&v1alpha3.ResourceClaimStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -48909,7 +48909,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceClaim", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha3.ResourceClaim{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -48931,7 +48931,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimSpec(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.DeviceClaim"},
+			(&v1alpha3.DeviceClaim{}).OpenAPIModelName()},
 	}
 }
 
@@ -49000,7 +49000,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimStatus(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.AllocatedDeviceStatus", "k8s.io/api/resource/v1alpha3.AllocationResult", "k8s.io/api/resource/v1alpha3.ResourceClaimConsumerReference"},
+			(&v1alpha3.AllocatedDeviceStatus{}).OpenAPIModelName(), (&v1alpha3.AllocationResult{}).OpenAPIModelName(), (&v1alpha3.ResourceClaimConsumerReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -49044,7 +49044,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimTemplate(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceClaimTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.ResourceClaimTemplateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -49095,7 +49095,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimTemplateList(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceClaimTemplate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha3.ResourceClaimTemplate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -49125,7 +49125,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceClaimTemplateSpec(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceClaimSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.ResourceClaimSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -49207,7 +49207,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceSlice(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceSliceSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&v1alpha3.ResourceSliceSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -49258,7 +49258,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceSliceList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1alpha3.ResourceSlice", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&v1alpha3.ResourceSlice{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -49354,7 +49354,7 @@ func schema_k8sio_api_resource_v1alpha3_ResourceSliceSpec(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1alpha3.CounterSet", "k8s.io/api/resource/v1alpha3.Device", "k8s.io/api/resource/v1alpha3.ResourcePool"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&v1alpha3.CounterSet{}).OpenAPIModelName(), (&v1alpha3.Device{}).OpenAPIModelName(), (&v1alpha3.ResourcePool{}).OpenAPIModelName()},
 	}
 }
 
@@ -49428,7 +49428,7 @@ func schema_k8sio_api_resource_v1beta1_AllocatedDeviceStatus(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.NetworkDeviceData", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&resourcev1beta1.NetworkDeviceData{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -49456,7 +49456,7 @@ func schema_k8sio_api_resource_v1beta1_AllocationResult(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta1.DeviceAllocationResult"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta1.DeviceAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -49559,7 +49559,7 @@ func schema_k8sio_api_resource_v1beta1_BasicDevice(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta1.DeviceAttribute", "k8s.io/api/resource/v1beta1.DeviceCapacity", "k8s.io/api/resource/v1beta1.DeviceCounterConsumption", "k8s.io/api/resource/v1beta1.DeviceTaint"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta1.DeviceAttribute{}).OpenAPIModelName(), (&resourcev1beta1.DeviceCapacity{}).OpenAPIModelName(), (&resourcev1beta1.DeviceCounterConsumption{}).OpenAPIModelName(), (&resourcev1beta1.DeviceTaint{}).OpenAPIModelName()},
 	}
 }
 
@@ -49603,7 +49603,7 @@ func schema_k8sio_api_resource_v1beta1_Counter(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -49642,7 +49642,7 @@ func schema_k8sio_api_resource_v1beta1_CounterSet(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.Counter"},
+			(&resourcev1beta1.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -49672,7 +49672,7 @@ func schema_k8sio_api_resource_v1beta1_Device(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.BasicDevice"},
+			(&resourcev1beta1.BasicDevice{}).OpenAPIModelName()},
 	}
 }
 
@@ -49722,7 +49722,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceAllocationConfiguration(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.OpaqueDeviceConfiguration"},
+			(&resourcev1beta1.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -49775,7 +49775,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceAllocationResult(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceAllocationConfiguration", "k8s.io/api/resource/v1beta1.DeviceRequestAllocationResult"},
+			(&resourcev1beta1.DeviceAllocationConfiguration{}).OpenAPIModelName(), (&resourcev1beta1.DeviceRequestAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -49838,7 +49838,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceCapacity(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -49910,7 +49910,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClaim(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceClaimConfiguration", "k8s.io/api/resource/v1beta1.DeviceConstraint", "k8s.io/api/resource/v1beta1.DeviceRequest"},
+			(&resourcev1beta1.DeviceClaimConfiguration{}).OpenAPIModelName(), (&resourcev1beta1.DeviceConstraint{}).OpenAPIModelName(), (&resourcev1beta1.DeviceRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -49951,7 +49951,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClaimConfiguration(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.OpaqueDeviceConfiguration"},
+			(&resourcev1beta1.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -49995,7 +49995,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClass(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta1.DeviceClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -50016,7 +50016,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClassConfiguration(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.OpaqueDeviceConfiguration"},
+			(&resourcev1beta1.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -50067,7 +50067,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClassList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta1.DeviceClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -50120,7 +50120,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceClassSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceClassConfiguration", "k8s.io/api/resource/v1beta1.DeviceSelector"},
+			(&resourcev1beta1.DeviceClassConfiguration{}).OpenAPIModelName(), (&resourcev1beta1.DeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -50141,7 +50141,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceConfiguration(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.OpaqueDeviceConfiguration"},
+			(&resourcev1beta1.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -50220,7 +50220,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceCounterConsumption(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.Counter"},
+			(&resourcev1beta1.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -50330,7 +50330,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceRequest(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceSelector", "k8s.io/api/resource/v1beta1.DeviceSubRequest", "k8s.io/api/resource/v1beta1.DeviceToleration"},
+			(&resourcev1beta1.DeviceSelector{}).OpenAPIModelName(), (&resourcev1beta1.DeviceSubRequest{}).OpenAPIModelName(), (&resourcev1beta1.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -50404,7 +50404,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceRequestAllocationResult(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceToleration"},
+			(&resourcev1beta1.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -50425,7 +50425,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceSelector(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.CELDeviceSelector"},
+			(&resourcev1beta1.CELDeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -50509,7 +50509,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceSubRequest(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceSelector", "k8s.io/api/resource/v1beta1.DeviceToleration"},
+			(&resourcev1beta1.DeviceSelector{}).OpenAPIModelName(), (&resourcev1beta1.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -50555,7 +50555,7 @@ func schema_k8sio_api_resource_v1beta1_DeviceTaint(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -50683,7 +50683,7 @@ func schema_k8sio_api_resource_v1beta1_OpaqueDeviceConfiguration(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -50734,7 +50734,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaim(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceClaimSpec", "k8s.io/api/resource/v1beta1.ResourceClaimStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta1.ResourceClaimSpec{}).OpenAPIModelName(), (&resourcev1beta1.ResourceClaimStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -50830,7 +50830,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceClaim", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta1.ResourceClaim{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -50852,7 +50852,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.DeviceClaim"},
+			(&resourcev1beta1.DeviceClaim{}).OpenAPIModelName()},
 	}
 }
 
@@ -50921,7 +50921,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.AllocatedDeviceStatus", "k8s.io/api/resource/v1beta1.AllocationResult", "k8s.io/api/resource/v1beta1.ResourceClaimConsumerReference"},
+			(&resourcev1beta1.AllocatedDeviceStatus{}).OpenAPIModelName(), (&resourcev1beta1.AllocationResult{}).OpenAPIModelName(), (&resourcev1beta1.ResourceClaimConsumerReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -50965,7 +50965,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimTemplate(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceClaimTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta1.ResourceClaimTemplateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51016,7 +51016,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimTemplateList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceClaimTemplate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta1.ResourceClaimTemplate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51046,7 +51046,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceClaimTemplateSpec(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceClaimSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta1.ResourceClaimSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51128,7 +51128,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceSlice(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceSliceSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta1.ResourceSliceSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51179,7 +51179,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceSliceList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta1.ResourceSlice", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta1.ResourceSlice{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51275,7 +51275,7 @@ func schema_k8sio_api_resource_v1beta1_ResourceSliceSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta1.CounterSet", "k8s.io/api/resource/v1beta1.Device", "k8s.io/api/resource/v1beta1.ResourcePool"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta1.CounterSet{}).OpenAPIModelName(), (&resourcev1beta1.Device{}).OpenAPIModelName(), (&resourcev1beta1.ResourcePool{}).OpenAPIModelName()},
 	}
 }
 
@@ -51349,7 +51349,7 @@ func schema_k8sio_api_resource_v1beta2_AllocatedDeviceStatus(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.NetworkDeviceData", "k8s.io/apimachinery/pkg/apis/meta/v1.Condition", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&resourcev1beta2.NetworkDeviceData{}).OpenAPIModelName(), (&metav1.Condition{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -51377,7 +51377,7 @@ func schema_k8sio_api_resource_v1beta2_AllocationResult(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta2.DeviceAllocationResult"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta2.DeviceAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -51421,7 +51421,7 @@ func schema_k8sio_api_resource_v1beta2_Counter(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -51460,7 +51460,7 @@ func schema_k8sio_api_resource_v1beta2_CounterSet(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.Counter"},
+			(&resourcev1beta2.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -51572,7 +51572,7 @@ func schema_k8sio_api_resource_v1beta2_Device(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta2.DeviceAttribute", "k8s.io/api/resource/v1beta2.DeviceCapacity", "k8s.io/api/resource/v1beta2.DeviceCounterConsumption", "k8s.io/api/resource/v1beta2.DeviceTaint"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta2.DeviceAttribute{}).OpenAPIModelName(), (&resourcev1beta2.DeviceCapacity{}).OpenAPIModelName(), (&resourcev1beta2.DeviceCounterConsumption{}).OpenAPIModelName(), (&resourcev1beta2.DeviceTaint{}).OpenAPIModelName()},
 	}
 }
 
@@ -51622,7 +51622,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceAllocationConfiguration(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.OpaqueDeviceConfiguration"},
+			(&resourcev1beta2.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -51675,7 +51675,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceAllocationResult(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceAllocationConfiguration", "k8s.io/api/resource/v1beta2.DeviceRequestAllocationResult"},
+			(&resourcev1beta2.DeviceAllocationConfiguration{}).OpenAPIModelName(), (&resourcev1beta2.DeviceRequestAllocationResult{}).OpenAPIModelName()},
 	}
 }
 
@@ -51738,7 +51738,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceCapacity(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -51810,7 +51810,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClaim(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceClaimConfiguration", "k8s.io/api/resource/v1beta2.DeviceConstraint", "k8s.io/api/resource/v1beta2.DeviceRequest"},
+			(&resourcev1beta2.DeviceClaimConfiguration{}).OpenAPIModelName(), (&resourcev1beta2.DeviceConstraint{}).OpenAPIModelName(), (&resourcev1beta2.DeviceRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -51851,7 +51851,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClaimConfiguration(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.OpaqueDeviceConfiguration"},
+			(&resourcev1beta2.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -51895,7 +51895,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClass(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta2.DeviceClassSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -51916,7 +51916,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClassConfiguration(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.OpaqueDeviceConfiguration"},
+			(&resourcev1beta2.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -51967,7 +51967,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClassList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta2.DeviceClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -52020,7 +52020,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceClassSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceClassConfiguration", "k8s.io/api/resource/v1beta2.DeviceSelector"},
+			(&resourcev1beta2.DeviceClassConfiguration{}).OpenAPIModelName(), (&resourcev1beta2.DeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -52041,7 +52041,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceConfiguration(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.OpaqueDeviceConfiguration"},
+			(&resourcev1beta2.OpaqueDeviceConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -52120,7 +52120,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceCounterConsumption(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.Counter"},
+			(&resourcev1beta2.Counter{}).OpenAPIModelName()},
 	}
 }
 
@@ -52169,7 +52169,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceRequest(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceSubRequest", "k8s.io/api/resource/v1beta2.ExactDeviceRequest"},
+			(&resourcev1beta2.DeviceSubRequest{}).OpenAPIModelName(), (&resourcev1beta2.ExactDeviceRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -52243,7 +52243,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceRequestAllocationResult(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceToleration"},
+			(&resourcev1beta2.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -52264,7 +52264,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceSelector(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.CELDeviceSelector"},
+			(&resourcev1beta2.CELDeviceSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -52348,7 +52348,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceSubRequest(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceSelector", "k8s.io/api/resource/v1beta2.DeviceToleration"},
+			(&resourcev1beta2.DeviceSelector{}).OpenAPIModelName(), (&resourcev1beta2.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -52394,7 +52394,7 @@ func schema_k8sio_api_resource_v1beta2_DeviceTaint(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -52528,7 +52528,7 @@ func schema_k8sio_api_resource_v1beta2_ExactDeviceRequest(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceSelector", "k8s.io/api/resource/v1beta2.DeviceToleration"},
+			(&resourcev1beta2.DeviceSelector{}).OpenAPIModelName(), (&resourcev1beta2.DeviceToleration{}).OpenAPIModelName()},
 	}
 }
 
@@ -52605,7 +52605,7 @@ func schema_k8sio_api_resource_v1beta2_OpaqueDeviceConfiguration(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -52656,7 +52656,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaim(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceClaimSpec", "k8s.io/api/resource/v1beta2.ResourceClaimStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta2.ResourceClaimSpec{}).OpenAPIModelName(), (&resourcev1beta2.ResourceClaimStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -52752,7 +52752,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceClaim", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta2.ResourceClaim{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -52774,7 +52774,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.DeviceClaim"},
+			(&resourcev1beta2.DeviceClaim{}).OpenAPIModelName()},
 	}
 }
 
@@ -52843,7 +52843,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimStatus(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.AllocatedDeviceStatus", "k8s.io/api/resource/v1beta2.AllocationResult", "k8s.io/api/resource/v1beta2.ResourceClaimConsumerReference"},
+			(&resourcev1beta2.AllocatedDeviceStatus{}).OpenAPIModelName(), (&resourcev1beta2.AllocationResult{}).OpenAPIModelName(), (&resourcev1beta2.ResourceClaimConsumerReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -52887,7 +52887,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimTemplate(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceClaimTemplateSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta2.ResourceClaimTemplateSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -52938,7 +52938,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimTemplateList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceClaimTemplate", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta2.ResourceClaimTemplate{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -52968,7 +52968,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceClaimTemplateSpec(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceClaimSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta2.ResourceClaimSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53050,7 +53050,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceSlice(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceSliceSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resourcev1beta2.ResourceSliceSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53101,7 +53101,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceSliceList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/resource/v1beta2.ResourceSlice", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&resourcev1beta2.ResourceSlice{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53197,7 +53197,7 @@ func schema_k8sio_api_resource_v1beta2_ResourceSliceSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeSelector", "k8s.io/api/resource/v1beta2.CounterSet", "k8s.io/api/resource/v1beta2.Device", "k8s.io/api/resource/v1beta2.ResourcePool"},
+			(&corev1.NodeSelector{}).OpenAPIModelName(), (&resourcev1beta2.CounterSet{}).OpenAPIModelName(), (&resourcev1beta2.Device{}).OpenAPIModelName(), (&resourcev1beta2.ResourcePool{}).OpenAPIModelName()},
 	}
 }
 
@@ -53264,7 +53264,7 @@ func schema_k8sio_api_scheduling_v1_PriorityClass(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53315,7 +53315,7 @@ func schema_k8sio_api_scheduling_v1_PriorityClassList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/scheduling/v1.PriorityClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&schedulingv1.PriorityClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53382,7 +53382,7 @@ func schema_k8sio_api_scheduling_v1alpha1_PriorityClass(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53433,7 +53433,7 @@ func schema_k8sio_api_scheduling_v1alpha1_PriorityClassList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/scheduling/v1alpha1.PriorityClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&schedulingv1alpha1.PriorityClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53500,7 +53500,7 @@ func schema_k8sio_api_scheduling_v1beta1_PriorityClass(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53551,7 +53551,7 @@ func schema_k8sio_api_scheduling_v1beta1_PriorityClassList(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/scheduling/v1beta1.PriorityClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&schedulingv1beta1.PriorityClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53595,7 +53595,7 @@ func schema_k8sio_api_storage_v1_CSIDriver(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSIDriverSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1.CSIDriverSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53646,7 +53646,7 @@ func schema_k8sio_api_storage_v1_CSIDriverList(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSIDriver", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1.CSIDriver{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53749,7 +53749,7 @@ func schema_k8sio_api_storage_v1_CSIDriverSpec(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.TokenRequest"},
+			(&storagev1.TokenRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -53793,7 +53793,7 @@ func schema_k8sio_api_storage_v1_CSINode(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSINodeSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1.CSINodeSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53851,7 +53851,7 @@ func schema_k8sio_api_storage_v1_CSINodeDriver(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.VolumeNodeResources"},
+			(&storagev1.VolumeNodeResources{}).OpenAPIModelName()},
 	}
 }
 
@@ -53902,7 +53902,7 @@ func schema_k8sio_api_storage_v1_CSINodeList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSINode", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1.CSINode{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -53942,7 +53942,7 @@ func schema_k8sio_api_storage_v1_CSINodeSpec(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSINodeDriver"},
+			(&storagev1.CSINodeDriver{}).OpenAPIModelName()},
 	}
 }
 
@@ -54005,7 +54005,7 @@ func schema_k8sio_api_storage_v1_CSIStorageCapacity(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54056,7 +54056,7 @@ func schema_k8sio_api_storage_v1_CSIStorageCapacityList(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.CSIStorageCapacity", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1.CSIStorageCapacity{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54179,7 +54179,7 @@ func schema_k8sio_api_storage_v1_StorageClass(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TopologySelectorTerm", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.TopologySelectorTerm{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54230,7 +54230,7 @@ func schema_k8sio_api_storage_v1_StorageClassList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.StorageClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1.StorageClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54310,7 +54310,7 @@ func schema_k8sio_api_storage_v1_VolumeAttachment(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.VolumeAttachmentSpec", "k8s.io/api/storage/v1.VolumeAttachmentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1.VolumeAttachmentSpec{}).OpenAPIModelName(), (&storagev1.VolumeAttachmentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54361,7 +54361,7 @@ func schema_k8sio_api_storage_v1_VolumeAttachmentList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.VolumeAttachment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1.VolumeAttachment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54389,7 +54389,7 @@ func schema_k8sio_api_storage_v1_VolumeAttachmentSource(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeSpec"},
+			(&corev1.PersistentVolumeSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -54428,7 +54428,7 @@ func schema_k8sio_api_storage_v1_VolumeAttachmentSpec(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.VolumeAttachmentSource"},
+			(&storagev1.VolumeAttachmentSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -54480,7 +54480,7 @@ func schema_k8sio_api_storage_v1_VolumeAttachmentStatus(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1.VolumeError"},
+			(&storagev1.VolumeError{}).OpenAPIModelName()},
 	}
 }
 
@@ -54515,7 +54515,7 @@ func schema_k8sio_api_storage_v1_VolumeError(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -54598,7 +54598,7 @@ func schema_k8sio_api_storage_v1alpha1_CSIStorageCapacity(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54649,7 +54649,7 @@ func schema_k8sio_api_storage_v1alpha1_CSIStorageCapacityList(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.CSIStorageCapacity", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1alpha1.CSIStorageCapacity{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54700,7 +54700,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttachment(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.VolumeAttachmentSpec", "k8s.io/api/storage/v1alpha1.VolumeAttachmentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1alpha1.VolumeAttachmentSpec{}).OpenAPIModelName(), (&storagev1alpha1.VolumeAttachmentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54751,7 +54751,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttachmentList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.VolumeAttachment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1alpha1.VolumeAttachment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54779,7 +54779,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttachmentSource(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeSpec"},
+			(&corev1.PersistentVolumeSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -54818,7 +54818,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttachmentSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.VolumeAttachmentSource"},
+			(&storagev1alpha1.VolumeAttachmentSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -54870,7 +54870,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttachmentStatus(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.VolumeError"},
+			(&storagev1alpha1.VolumeError{}).OpenAPIModelName()},
 	}
 }
 
@@ -54931,7 +54931,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttributesClass(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -54982,7 +54982,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeAttributesClassList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1alpha1.VolumeAttributesClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1alpha1.VolumeAttributesClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55017,7 +55017,7 @@ func schema_k8sio_api_storage_v1alpha1_VolumeError(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -55061,7 +55061,7 @@ func schema_k8sio_api_storage_v1beta1_CSIDriver(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSIDriverSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1beta1.CSIDriverSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55112,7 +55112,7 @@ func schema_k8sio_api_storage_v1beta1_CSIDriverList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSIDriver", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.CSIDriver{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55215,7 +55215,7 @@ func schema_k8sio_api_storage_v1beta1_CSIDriverSpec(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.TokenRequest"},
+			(&storagev1beta1.TokenRequest{}).OpenAPIModelName()},
 	}
 }
 
@@ -55259,7 +55259,7 @@ func schema_k8sio_api_storage_v1beta1_CSINode(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSINodeSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1beta1.CSINodeSpec{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55317,7 +55317,7 @@ func schema_k8sio_api_storage_v1beta1_CSINodeDriver(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeNodeResources"},
+			(&storagev1beta1.VolumeNodeResources{}).OpenAPIModelName()},
 	}
 }
 
@@ -55368,7 +55368,7 @@ func schema_k8sio_api_storage_v1beta1_CSINodeList(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSINode", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.CSINode{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55408,7 +55408,7 @@ func schema_k8sio_api_storage_v1beta1_CSINodeSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSINodeDriver"},
+			(&storagev1beta1.CSINodeDriver{}).OpenAPIModelName()},
 	}
 }
 
@@ -55471,7 +55471,7 @@ func schema_k8sio_api_storage_v1beta1_CSIStorageCapacity(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55522,7 +55522,7 @@ func schema_k8sio_api_storage_v1beta1_CSIStorageCapacityList(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.CSIStorageCapacity", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.CSIStorageCapacity{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55644,7 +55644,7 @@ func schema_k8sio_api_storage_v1beta1_StorageClass(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TopologySelectorTerm", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&corev1.TopologySelectorTerm{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55695,7 +55695,7 @@ func schema_k8sio_api_storage_v1beta1_StorageClassList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.StorageClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.StorageClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55775,7 +55775,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttachment(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeAttachmentSpec", "k8s.io/api/storage/v1beta1.VolumeAttachmentStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagev1beta1.VolumeAttachmentSpec{}).OpenAPIModelName(), (&storagev1beta1.VolumeAttachmentStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55826,7 +55826,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttachmentList(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeAttachment", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.VolumeAttachment{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -55854,7 +55854,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttachmentSource(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.PersistentVolumeSpec"},
+			(&corev1.PersistentVolumeSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -55893,7 +55893,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttachmentSpec(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeAttachmentSource"},
+			(&storagev1beta1.VolumeAttachmentSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -55945,7 +55945,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttachmentStatus(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeError"},
+			(&storagev1beta1.VolumeError{}).OpenAPIModelName()},
 	}
 }
 
@@ -56006,7 +56006,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttributesClass(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56057,7 +56057,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeAttributesClassList(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storage/v1beta1.VolumeAttributesClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagev1beta1.VolumeAttributesClass{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56092,7 +56092,7 @@ func schema_k8sio_api_storage_v1beta1_VolumeError(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -56198,7 +56198,7 @@ func schema_k8sio_api_storagemigration_v1alpha1_MigrationCondition(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -56248,7 +56248,7 @@ func schema_k8sio_api_storagemigration_v1alpha1_StorageVersionMigration(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storagemigration/v1alpha1.StorageVersionMigrationSpec", "k8s.io/api/storagemigration/v1alpha1.StorageVersionMigrationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&storagemigrationv1alpha1.StorageVersionMigrationSpec{}).OpenAPIModelName(), (&storagemigrationv1alpha1.StorageVersionMigrationStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56309,7 +56309,7 @@ func schema_k8sio_api_storagemigration_v1alpha1_StorageVersionMigrationList(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storagemigration/v1alpha1.StorageVersionMigration", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&storagemigrationv1alpha1.StorageVersionMigration{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56339,7 +56339,7 @@ func schema_k8sio_api_storagemigration_v1alpha1_StorageVersionMigrationSpec(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storagemigration/v1alpha1.GroupVersionResource"},
+			(&storagemigrationv1alpha1.GroupVersionResource{}).OpenAPIModelName()},
 	}
 }
 
@@ -56385,7 +56385,7 @@ func schema_k8sio_api_storagemigration_v1alpha1_StorageVersionMigrationStatus(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/storagemigration/v1alpha1.MigrationCondition"},
+			(&storagemigrationv1alpha1.MigrationCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -56435,7 +56435,7 @@ func schema_pkg_apis_apiextensions_v1_ConversionRequest(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -56484,7 +56484,7 @@ func schema_pkg_apis_apiextensions_v1_ConversionResponse(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Status", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.Status{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -56525,7 +56525,7 @@ func schema_pkg_apis_apiextensions_v1_ConversionReview(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ConversionRequest", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ConversionResponse"},
+			(&apiextensionsv1.ConversionRequest{}).OpenAPIModelName(), (&apiextensionsv1.ConversionResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -56614,7 +56614,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceConversion(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.WebhookConversion"},
+			(&apiextensionsv1.WebhookConversion{}).OpenAPIModelName()},
 	}
 }
 
@@ -56665,7 +56665,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinition(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionSpec", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&apiextensionsv1.CustomResourceDefinitionSpec{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceDefinitionStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56717,7 +56717,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionCondition(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -56768,7 +56768,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionList(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinition", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&apiextensionsv1.CustomResourceDefinition{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -56923,7 +56923,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionSpec(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceConversion", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionNames", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionVersion"},
+			(&apiextensionsv1.CustomResourceConversion{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceDefinitionNames{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceDefinitionVersion{}).OpenAPIModelName()},
 	}
 }
 
@@ -56987,7 +56987,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionStatus(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionCondition", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionNames"},
+			(&apiextensionsv1.CustomResourceDefinitionCondition{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceDefinitionNames{}).OpenAPIModelName()},
 	}
 }
 
@@ -57091,7 +57091,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceDefinitionVersion(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceColumnDefinition", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresources", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceValidation", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.SelectableField"},
+			(&apiextensionsv1.CustomResourceColumnDefinition{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceSubresources{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceValidation{}).OpenAPIModelName(), (&apiextensionsv1.SelectableField{}).OpenAPIModelName()},
 	}
 }
 
@@ -57166,7 +57166,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceSubresources(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresourceScale", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresourceStatus"},
+			(&apiextensionsv1.CustomResourceSubresourceScale{}).OpenAPIModelName(), (&apiextensionsv1.CustomResourceSubresourceStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -57187,7 +57187,7 @@ func schema_pkg_apis_apiextensions_v1_CustomResourceValidation(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaProps"},
+			(&apiextensionsv1.JSONSchemaProps{}).OpenAPIModelName()},
 	}
 }
 
@@ -57626,7 +57626,7 @@ func schema_pkg_apis_apiextensions_v1_JSONSchemaProps(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ExternalDocumentation", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSON", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaProps", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrArray", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrBool", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrStringArray", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ValidationRule"},
+			(&apiextensionsv1.ExternalDocumentation{}).OpenAPIModelName(), (&apiextensionsv1.JSON{}).OpenAPIModelName(), (&apiextensionsv1.JSONSchemaProps{}).OpenAPIModelName(), (&apiextensionsv1.JSONSchemaPropsOrArray{}).OpenAPIModelName(), (&apiextensionsv1.JSONSchemaPropsOrBool{}).OpenAPIModelName(), (&apiextensionsv1.JSONSchemaPropsOrStringArray{}).OpenAPIModelName(), (&apiextensionsv1.ValidationRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -57821,7 +57821,7 @@ func schema_pkg_apis_apiextensions_v1_WebhookClientConfig(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ServiceReference"},
+			(&apiextensionsv1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -57863,7 +57863,7 @@ func schema_pkg_apis_apiextensions_v1_WebhookConversion(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.WebhookClientConfig"},
+			(&apiextensionsv1.WebhookClientConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -57913,7 +57913,7 @@ func schema_pkg_apis_apiextensions_v1beta1_ConversionRequest(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -57962,7 +57962,7 @@ func schema_pkg_apis_apiextensions_v1beta1_ConversionResponse(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Status", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.Status{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -58003,7 +58003,7 @@ func schema_pkg_apis_apiextensions_v1beta1_ConversionReview(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.ConversionRequest", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.ConversionResponse"},
+			(&apiextensionsv1beta1.ConversionRequest{}).OpenAPIModelName(), (&apiextensionsv1beta1.ConversionResponse{}).OpenAPIModelName()},
 	}
 }
 
@@ -58112,7 +58112,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceConversion(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.WebhookClientConfig"},
+			(&apiextensionsv1beta1.WebhookClientConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -58163,7 +58163,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinition(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionSpec", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&apiextensionsv1beta1.CustomResourceDefinitionSpec{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceDefinitionStatus{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -58215,7 +58215,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinitionCondition(ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -58266,7 +58266,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinitionList(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinition", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			(&apiextensionsv1beta1.CustomResourceDefinition{}).OpenAPIModelName(), (&metav1.ListMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -58478,7 +58478,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinitionSpec(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceColumnDefinition", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceConversion", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionNames", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionVersion", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceSubresources", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceValidation", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.SelectableField"},
+			(&apiextensionsv1beta1.CustomResourceColumnDefinition{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceConversion{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceDefinitionNames{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceDefinitionVersion{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceSubresources{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceValidation{}).OpenAPIModelName(), (&apiextensionsv1beta1.SelectableField{}).OpenAPIModelName()},
 	}
 }
 
@@ -58542,7 +58542,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinitionStatus(ref co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionCondition", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceDefinitionNames"},
+			(&apiextensionsv1beta1.CustomResourceDefinitionCondition{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceDefinitionNames{}).OpenAPIModelName()},
 	}
 }
 
@@ -58646,7 +58646,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceDefinitionVersion(ref c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceColumnDefinition", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceSubresources", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceValidation", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.SelectableField"},
+			(&apiextensionsv1beta1.CustomResourceColumnDefinition{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceSubresources{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceValidation{}).OpenAPIModelName(), (&apiextensionsv1beta1.SelectableField{}).OpenAPIModelName()},
 	}
 }
 
@@ -58721,7 +58721,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceSubresources(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceSubresourceScale", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.CustomResourceSubresourceStatus"},
+			(&apiextensionsv1beta1.CustomResourceSubresourceScale{}).OpenAPIModelName(), (&apiextensionsv1beta1.CustomResourceSubresourceStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -58742,7 +58742,7 @@ func schema_pkg_apis_apiextensions_v1beta1_CustomResourceValidation(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSONSchemaProps"},
+			(&apiextensionsv1beta1.JSONSchemaProps{}).OpenAPIModelName()},
 	}
 }
 
@@ -59181,7 +59181,7 @@ func schema_pkg_apis_apiextensions_v1beta1_JSONSchemaProps(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.ExternalDocumentation", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSON", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSONSchemaProps", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSONSchemaPropsOrArray", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSONSchemaPropsOrBool", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.JSONSchemaPropsOrStringArray", "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.ValidationRule"},
+			(&apiextensionsv1beta1.ExternalDocumentation{}).OpenAPIModelName(), (&apiextensionsv1beta1.JSON{}).OpenAPIModelName(), (&apiextensionsv1beta1.JSONSchemaProps{}).OpenAPIModelName(), (&apiextensionsv1beta1.JSONSchemaPropsOrArray{}).OpenAPIModelName(), (&apiextensionsv1beta1.JSONSchemaPropsOrBool{}).OpenAPIModelName(), (&apiextensionsv1beta1.JSONSchemaPropsOrStringArray{}).OpenAPIModelName(), (&apiextensionsv1beta1.ValidationRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -59376,7 +59376,7 @@ func schema_pkg_apis_apiextensions_v1beta1_WebhookClientConfig(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1.ServiceReference"},
+			(&apiextensionsv1beta1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -59507,7 +59507,7 @@ func schema_pkg_apis_meta_v1_APIGroup(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.GroupVersionForDiscovery", "k8s.io/apimachinery/pkg/apis/meta/v1.ServerAddressByClientCIDR"},
+			(&metav1.GroupVersionForDiscovery{}).OpenAPIModelName(), (&metav1.ServerAddressByClientCIDR{}).OpenAPIModelName()},
 	}
 }
 
@@ -59556,7 +59556,7 @@ func schema_pkg_apis_meta_v1_APIGroupList(ref common.ReferenceCallback) common.O
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.APIGroup"},
+			(&metav1.APIGroup{}).OpenAPIModelName()},
 	}
 }
 
@@ -59735,7 +59735,7 @@ func schema_pkg_apis_meta_v1_APIResourceList(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.APIResource"},
+			(&metav1.APIResource{}).OpenAPIModelName()},
 	}
 }
 
@@ -59804,7 +59804,7 @@ func schema_pkg_apis_meta_v1_APIVersions(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ServerAddressByClientCIDR"},
+			(&metav1.ServerAddressByClientCIDR{}).OpenAPIModelName()},
 	}
 }
 
@@ -59929,7 +59929,7 @@ func schema_pkg_apis_meta_v1_Condition(ref common.ReferenceCallback) common.Open
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -60073,7 +60073,7 @@ func schema_pkg_apis_meta_v1_DeleteOptions(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Preconditions"},
+			(&metav1.Preconditions{}).OpenAPIModelName()},
 	}
 }
 
@@ -60419,7 +60419,7 @@ func schema_pkg_apis_meta_v1_LabelSelector(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"},
+			(&metav1.LabelSelectorRequirement{}).OpenAPIModelName()},
 	}
 }
 
@@ -60519,7 +60519,7 @@ func schema_pkg_apis_meta_v1_List(ref common.ReferenceCallback) common.OpenAPIDe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -60719,7 +60719,7 @@ func schema_pkg_apis_meta_v1_ManagedFieldsEntry(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.FieldsV1", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.FieldsV1{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -60910,7 +60910,7 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ManagedFieldsEntry", "k8s.io/apimachinery/pkg/apis/meta/v1.OwnerReference", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.ManagedFieldsEntry{}).OpenAPIModelName(), (&metav1.OwnerReference{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -61011,7 +61011,7 @@ func schema_pkg_apis_meta_v1_PartialObjectMetadata(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName()},
 	}
 }
 
@@ -61062,7 +61062,7 @@ func schema_pkg_apis_meta_v1_PartialObjectMetadataList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.PartialObjectMetadata"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metav1.PartialObjectMetadata{}).OpenAPIModelName()},
 	}
 }
 
@@ -61307,7 +61307,7 @@ func schema_pkg_apis_meta_v1_Status(ref common.ReferenceCallback) common.OpenAPI
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.StatusDetails"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metav1.StatusDetails{}).OpenAPIModelName()},
 	}
 }
 
@@ -61410,7 +61410,7 @@ func schema_pkg_apis_meta_v1_StatusDetails(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.StatusCause"},
+			(&metav1.StatusCause{}).OpenAPIModelName()},
 	}
 }
 
@@ -61485,7 +61485,7 @@ func schema_pkg_apis_meta_v1_Table(ref common.ReferenceCallback) common.OpenAPID
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.TableColumnDefinition", "k8s.io/apimachinery/pkg/apis/meta/v1.TableRow"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metav1.TableColumnDefinition{}).OpenAPIModelName(), (&metav1.TableRow{}).OpenAPIModelName()},
 	}
 }
 
@@ -61633,7 +61633,7 @@ func schema_pkg_apis_meta_v1_TableRow(ref common.ReferenceCallback) common.OpenA
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.TableRowCondition", "k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&metav1.TableRowCondition{}).OpenAPIModelName(), (&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -61836,7 +61836,7 @@ func schema_pkg_apis_meta_v1_WatchEvent(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -61887,7 +61887,7 @@ func schema_pkg_apis_meta_v1beta1_PartialObjectMetadataList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.PartialObjectMetadata"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metav1.PartialObjectMetadata{}).OpenAPIModelName()},
 	}
 }
 
@@ -62254,7 +62254,7 @@ func schema_pkg_apis_audit_v1_Event(ref common.ReferenceCallback) common.OpenAPI
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/authentication/v1.UserInfo", "k8s.io/apimachinery/pkg/apis/meta/v1.MicroTime", "k8s.io/apimachinery/pkg/apis/meta/v1.Status", "k8s.io/apimachinery/pkg/runtime.Unknown", "k8s.io/apiserver/pkg/apis/audit/v1.ObjectReference"},
+			(&authenticationv1.UserInfo{}).OpenAPIModelName(), (&metav1.MicroTime{}).OpenAPIModelName(), (&metav1.Status{}).OpenAPIModelName(), (&runtime.Unknown{}).OpenAPIModelName(), (&auditv1.ObjectReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -62303,7 +62303,7 @@ func schema_pkg_apis_audit_v1_EventList(ref common.ReferenceCallback) common.Ope
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apiserver/pkg/apis/audit/v1.Event"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&auditv1.Event{}).OpenAPIModelName()},
 	}
 }
 
@@ -62509,7 +62509,7 @@ func schema_pkg_apis_audit_v1_Policy(ref common.ReferenceCallback) common.OpenAP
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apiserver/pkg/apis/audit/v1.PolicyRule"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&auditv1.PolicyRule{}).OpenAPIModelName()},
 	}
 }
 
@@ -62558,7 +62558,7 @@ func schema_pkg_apis_audit_v1_PolicyList(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/apiserver/pkg/apis/audit/v1.Policy"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&auditv1.Policy{}).OpenAPIModelName()},
 	}
 }
 
@@ -62728,7 +62728,7 @@ func schema_pkg_apis_audit_v1_PolicyRule(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apiserver/pkg/apis/audit/v1.GroupResources"},
+			(&auditv1.GroupResources{}).OpenAPIModelName()},
 	}
 }
 
@@ -62798,7 +62798,7 @@ func schema_pkg_apis_clientauthentication_v1_Cluster(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -62840,7 +62840,7 @@ func schema_pkg_apis_clientauthentication_v1_ExecCredential(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/client-go/pkg/apis/clientauthentication/v1.ExecCredentialSpec", "k8s.io/client-go/pkg/apis/clientauthentication/v1.ExecCredentialStatus"},
+			(&clientauthenticationv1.ExecCredentialSpec{}).OpenAPIModelName(), (&clientauthenticationv1.ExecCredentialStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -62870,7 +62870,7 @@ func schema_pkg_apis_clientauthentication_v1_ExecCredentialSpec(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/client-go/pkg/apis/clientauthentication/v1.Cluster"},
+			(&clientauthenticationv1.Cluster{}).OpenAPIModelName()},
 	}
 }
 
@@ -62912,7 +62912,7 @@ func schema_pkg_apis_clientauthentication_v1_ExecCredentialStatus(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -62982,7 +62982,7 @@ func schema_pkg_apis_clientauthentication_v1beta1_Cluster(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -63024,7 +63024,7 @@ func schema_pkg_apis_clientauthentication_v1beta1_ExecCredential(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/client-go/pkg/apis/clientauthentication/v1beta1.ExecCredentialSpec", "k8s.io/client-go/pkg/apis/clientauthentication/v1beta1.ExecCredentialStatus"},
+			(&clientauthenticationv1beta1.ExecCredentialSpec{}).OpenAPIModelName(), (&clientauthenticationv1beta1.ExecCredentialStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -63054,7 +63054,7 @@ func schema_pkg_apis_clientauthentication_v1beta1_ExecCredentialSpec(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/client-go/pkg/apis/clientauthentication/v1beta1.Cluster"},
+			(&clientauthenticationv1beta1.Cluster{}).OpenAPIModelName()},
 	}
 }
 
@@ -63096,7 +63096,7 @@ func schema_pkg_apis_clientauthentication_v1beta1_ExecCredentialStatus(ref commo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -63167,7 +63167,7 @@ func schema_k8sio_cloud_provider_config_v1alpha1_CloudControllerManagerConfigura
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/cloud-provider/config/v1alpha1.KubeCloudSharedConfiguration", "k8s.io/cloud-provider/config/v1alpha1.WebhookConfiguration", "k8s.io/cloud-provider/controllers/node/config/v1alpha1.NodeControllerConfiguration", "k8s.io/cloud-provider/controllers/service/config/v1alpha1.ServiceControllerConfiguration", "k8s.io/controller-manager/config/v1alpha1.GenericControllerManagerConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&configv1alpha1.KubeCloudSharedConfiguration{}).OpenAPIModelName(), (&configv1alpha1.WebhookConfiguration{}).OpenAPIModelName(), (&nodeconfigv1alpha1.NodeControllerConfiguration{}).OpenAPIModelName(), (&serviceconfigv1alpha1.ServiceControllerConfiguration{}).OpenAPIModelName(), (&controllermanagerconfigv1alpha1.GenericControllerManagerConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -63301,7 +63301,7 @@ func schema_k8sio_cloud_provider_config_v1alpha1_KubeCloudSharedConfiguration(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/cloud-provider/config/v1alpha1.CloudProviderConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&configv1alpha1.CloudProviderConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -63455,7 +63455,7 @@ func schema_k8sio_controller_manager_config_v1alpha1_GenericControllerManagerCon
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/component-base/config/v1alpha1.ClientConnectionConfiguration", "k8s.io/component-base/config/v1alpha1.DebuggingConfiguration", "k8s.io/component-base/config/v1alpha1.LeaderElectionConfiguration", "k8s.io/controller-manager/config/v1alpha1.LeaderMigrationConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&componentbaseconfigv1alpha1.ClientConnectionConfiguration{}).OpenAPIModelName(), (&componentbaseconfigv1alpha1.DebuggingConfiguration{}).OpenAPIModelName(), (&componentbaseconfigv1alpha1.LeaderElectionConfiguration{}).OpenAPIModelName(), (&controllermanagerconfigv1alpha1.LeaderMigrationConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -63515,7 +63515,7 @@ func schema_k8sio_controller_manager_config_v1alpha1_LeaderMigrationConfiguratio
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/controller-manager/config/v1alpha1.ControllerLeaderConfiguration"},
+			(&controllermanagerconfigv1alpha1.ControllerLeaderConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -63610,7 +63610,7 @@ func schema_k8sio_controller_manager_config_v1beta1_LeaderMigrationConfiguration
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/controller-manager/config/v1beta1.ControllerLeaderConfiguration"},
+			(&configv1beta1.ControllerLeaderConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -63660,7 +63660,7 @@ func schema_pkg_apis_apiregistration_v1_APIService(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1.APIServiceSpec", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1.APIServiceStatus"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&apiregistrationv1.APIServiceSpec{}).OpenAPIModelName(), (&apiregistrationv1.APIServiceStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -63712,7 +63712,7 @@ func schema_pkg_apis_apiregistration_v1_APIServiceCondition(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -63763,7 +63763,7 @@ func schema_pkg_apis_apiregistration_v1_APIServiceList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1.APIService"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&apiregistrationv1.APIService{}).OpenAPIModelName()},
 	}
 }
 
@@ -63834,7 +63834,7 @@ func schema_pkg_apis_apiregistration_v1_APIServiceSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-aggregator/pkg/apis/apiregistration/v1.ServiceReference"},
+			(&apiregistrationv1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -63873,7 +63873,7 @@ func schema_pkg_apis_apiregistration_v1_APIServiceStatus(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-aggregator/pkg/apis/apiregistration/v1.APIServiceCondition"},
+			(&apiregistrationv1.APIServiceCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -63957,7 +63957,7 @@ func schema_pkg_apis_apiregistration_v1beta1_APIService(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceSpec", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceStatus"},
+			(&metav1.ObjectMeta{}).OpenAPIModelName(), (&apiregistrationv1beta1.APIServiceSpec{}).OpenAPIModelName(), (&apiregistrationv1beta1.APIServiceStatus{}).OpenAPIModelName()},
 	}
 }
 
@@ -64009,7 +64009,7 @@ func schema_pkg_apis_apiregistration_v1beta1_APIServiceCondition(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -64060,7 +64060,7 @@ func schema_pkg_apis_apiregistration_v1beta1_APIServiceList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIService"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&apiregistrationv1beta1.APIService{}).OpenAPIModelName()},
 	}
 }
 
@@ -64131,7 +64131,7 @@ func schema_pkg_apis_apiregistration_v1beta1_APIServiceSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.ServiceReference"},
+			(&apiregistrationv1beta1.ServiceReference{}).OpenAPIModelName()},
 	}
 }
 
@@ -64170,7 +64170,7 @@ func schema_pkg_apis_apiregistration_v1beta1_APIServiceStatus(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1.APIServiceCondition"},
+			(&apiregistrationv1beta1.APIServiceCondition{}).OpenAPIModelName()},
 	}
 }
 
@@ -64242,7 +64242,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_AttachDetachController
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64338,7 +64338,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_CSRSigningControllerCo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kube-controller-manager/config/v1alpha1.CSRSigningConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.CSRSigningConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64445,7 +64445,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_EndpointControllerConf
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64483,7 +64483,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_EndpointSliceControlle
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64521,7 +64521,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_EndpointSliceMirroring
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64588,7 +64588,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_GarbageCollectorContro
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-controller-manager/config/v1alpha1.GroupResource"},
+			(&kubecontrollermanagerconfigv1alpha1.GroupResource{}).OpenAPIModelName()},
 	}
 }
 
@@ -64674,7 +64674,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_HPAControllerConfigura
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64929,7 +64929,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_KubeControllerManagerC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/cloud-provider/config/v1alpha1.KubeCloudSharedConfiguration", "k8s.io/cloud-provider/controllers/service/config/v1alpha1.ServiceControllerConfiguration", "k8s.io/controller-manager/config/v1alpha1.GenericControllerManagerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.AttachDetachControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.CSRSigningControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.CronJobControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.DaemonSetControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.DeploymentControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.DeprecatedControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.EndpointControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.EndpointSliceControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.EndpointSliceMirroringControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.EphemeralVolumeControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.GarbageCollectorControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.HPAControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.JobControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.LegacySATokenCleanerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.NamespaceControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.NodeIPAMControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.NodeLifecycleControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.PersistentVolumeBinderControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.PodGCControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.ReplicaSetControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.ReplicationControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.ResourceQuotaControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.SAControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.StatefulSetControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.TTLAfterFinishedControllerConfiguration", "k8s.io/kube-controller-manager/config/v1alpha1.ValidatingAdmissionPolicyStatusControllerConfiguration"},
+			(&configv1alpha1.KubeCloudSharedConfiguration{}).OpenAPIModelName(), (&serviceconfigv1alpha1.ServiceControllerConfiguration{}).OpenAPIModelName(), (&controllermanagerconfigv1alpha1.GenericControllerManagerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.AttachDetachControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.CSRSigningControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.CronJobControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.DaemonSetControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.DeploymentControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.DeprecatedControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.EndpointControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.EndpointSliceControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.EndpointSliceMirroringControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.EphemeralVolumeControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.GarbageCollectorControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.HPAControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.JobControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.LegacySATokenCleanerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.NamespaceControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.NodeIPAMControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.NodeLifecycleControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.PersistentVolumeBinderControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.PodGCControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.ReplicaSetControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.ReplicationControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.ResourceQuotaControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.SAControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.StatefulSetControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.TTLAfterFinishedControllerConfiguration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.ValidatingAdmissionPolicyStatusControllerConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64951,7 +64951,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_LegacySATokenCleanerCo
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -64981,7 +64981,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_NamespaceControllerCon
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65101,7 +65101,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_NodeLifecycleControlle
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65130,7 +65130,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_PersistentVolumeBinder
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kube-controller-manager/config/v1alpha1.VolumeConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&kubecontrollermanagerconfigv1alpha1.VolumeConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65296,7 +65296,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_ResourceQuotaControlle
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65445,7 +65445,7 @@ func schema_k8sio_kube_controller_manager_config_v1alpha1_VolumeConfiguration(re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-controller-manager/config/v1alpha1.PersistentVolumeRecyclerConfiguration"},
+			(&kubecontrollermanagerconfigv1alpha1.PersistentVolumeRecyclerConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65700,7 +65700,7 @@ func schema_k8sio_kube_proxy_config_v1alpha1_KubeProxyConfiguration(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/component-base/config/v1alpha1.ClientConnectionConfiguration", "k8s.io/component-base/logs/api/v1.LoggingConfiguration", "k8s.io/kube-proxy/config/v1alpha1.DetectLocalConfiguration", "k8s.io/kube-proxy/config/v1alpha1.KubeProxyConntrackConfiguration", "k8s.io/kube-proxy/config/v1alpha1.KubeProxyIPTablesConfiguration", "k8s.io/kube-proxy/config/v1alpha1.KubeProxyIPVSConfiguration", "k8s.io/kube-proxy/config/v1alpha1.KubeProxyNFTablesConfiguration", "k8s.io/kube-proxy/config/v1alpha1.KubeProxyWinkernelConfiguration"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&componentbaseconfigv1alpha1.ClientConnectionConfiguration{}).OpenAPIModelName(), (&apiv1.LoggingConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.DetectLocalConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.KubeProxyConntrackConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.KubeProxyIPTablesConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.KubeProxyIPVSConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.KubeProxyNFTablesConfiguration{}).OpenAPIModelName(), (&kubeproxyconfigv1alpha1.KubeProxyWinkernelConfiguration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65762,7 +65762,7 @@ func schema_k8sio_kube_proxy_config_v1alpha1_KubeProxyConntrackConfiguration(ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65812,7 +65812,7 @@ func schema_k8sio_kube_proxy_config_v1alpha1_KubeProxyIPTablesConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65889,7 +65889,7 @@ func schema_k8sio_kube_proxy_config_v1alpha1_KubeProxyIPVSConfiguration(ref comm
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -65932,7 +65932,7 @@ func schema_k8sio_kube_proxy_config_v1alpha1_KubeProxyNFTablesConfiguration(ref 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -66138,7 +66138,7 @@ func schema_k8sio_kube_scheduler_config_v1_Extender(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kube-scheduler/config/v1.ExtenderManagedResource", "k8s.io/kube-scheduler/config/v1.ExtenderTLSConfig"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&configv1.ExtenderManagedResource{}).OpenAPIModelName(), (&configv1.ExtenderTLSConfig{}).OpenAPIModelName()},
 	}
 }
 
@@ -66428,7 +66428,7 @@ func schema_k8sio_kube_scheduler_config_v1_KubeSchedulerConfiguration(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/component-base/config/v1alpha1.ClientConnectionConfiguration", "k8s.io/component-base/config/v1alpha1.LeaderElectionConfiguration", "k8s.io/kube-scheduler/config/v1.Extender", "k8s.io/kube-scheduler/config/v1.KubeSchedulerProfile"},
+			(&componentbaseconfigv1alpha1.ClientConnectionConfiguration{}).OpenAPIModelName(), (&componentbaseconfigv1alpha1.LeaderElectionConfiguration{}).OpenAPIModelName(), (&configv1.Extender{}).OpenAPIModelName(), (&configv1.KubeSchedulerProfile{}).OpenAPIModelName()},
 	}
 }
 
@@ -66485,7 +66485,7 @@ func schema_k8sio_kube_scheduler_config_v1_KubeSchedulerProfile(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.PluginConfig", "k8s.io/kube-scheduler/config/v1.Plugins"},
+			(&configv1.PluginConfig{}).OpenAPIModelName(), (&configv1.Plugins{}).OpenAPIModelName()},
 	}
 }
 
@@ -66520,7 +66520,7 @@ func schema_k8sio_kube_scheduler_config_v1_NodeAffinityArgs(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeAffinity"},
+			(&corev1.NodeAffinity{}).OpenAPIModelName()},
 	}
 }
 
@@ -66571,7 +66571,7 @@ func schema_k8sio_kube_scheduler_config_v1_NodeResourcesBalancedAllocationArgs(r
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.ResourceSpec"},
+			(&configv1.ResourceSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -66646,7 +66646,7 @@ func schema_k8sio_kube_scheduler_config_v1_NodeResourcesFitArgs(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.ScoringStrategy"},
+			(&configv1.ScoringStrategy{}).OpenAPIModelName()},
 	}
 }
 
@@ -66705,7 +66705,7 @@ func schema_k8sio_kube_scheduler_config_v1_PluginConfig(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/runtime.RawExtension"},
+			(&runtime.RawExtension{}).OpenAPIModelName()},
 	}
 }
 
@@ -66761,7 +66761,7 @@ func schema_k8sio_kube_scheduler_config_v1_PluginSet(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.Plugin"},
+			(&configv1.Plugin{}).OpenAPIModelName()},
 	}
 }
 
@@ -66867,7 +66867,7 @@ func schema_k8sio_kube_scheduler_config_v1_Plugins(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.PluginSet"},
+			(&configv1.PluginSet{}).OpenAPIModelName()},
 	}
 }
 
@@ -66922,7 +66922,7 @@ func schema_k8sio_kube_scheduler_config_v1_PodTopologySpreadArgs(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.TopologySpreadConstraint"},
+			(&corev1.TopologySpreadConstraint{}).OpenAPIModelName()},
 	}
 }
 
@@ -66956,7 +66956,7 @@ func schema_k8sio_kube_scheduler_config_v1_RequestedToCapacityRatioParam(ref com
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.UtilizationShapePoint"},
+			(&configv1.UtilizationShapePoint{}).OpenAPIModelName()},
 	}
 }
 
@@ -67035,7 +67035,7 @@ func schema_k8sio_kube_scheduler_config_v1_ScoringStrategy(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.RequestedToCapacityRatioParam", "k8s.io/kube-scheduler/config/v1.ResourceSpec"},
+			(&configv1.RequestedToCapacityRatioParam{}).OpenAPIModelName(), (&configv1.ResourceSpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -67120,7 +67120,7 @@ func schema_k8sio_kube_scheduler_config_v1_VolumeBindingArgs(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kube-scheduler/config/v1.UtilizationShapePoint"},
+			(&configv1.UtilizationShapePoint{}).OpenAPIModelName()},
 	}
 }
 
@@ -67211,7 +67211,7 @@ func schema_kubectl_pkg_config_v1alpha1_AliasOverride(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubectl/pkg/config/v1alpha1.CommandOverrideFlag"},
+			(&pkgconfigv1alpha1.CommandOverrideFlag{}).OpenAPIModelName()},
 	}
 }
 
@@ -67254,7 +67254,7 @@ func schema_kubectl_pkg_config_v1alpha1_CommandOverride(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubectl/pkg/config/v1alpha1.CommandOverrideFlag"},
+			(&pkgconfigv1alpha1.CommandOverrideFlag{}).OpenAPIModelName()},
 	}
 }
 
@@ -67352,7 +67352,7 @@ func schema_kubectl_pkg_config_v1alpha1_Preference(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubectl/pkg/config/v1alpha1.AliasOverride", "k8s.io/kubectl/pkg/config/v1alpha1.CommandOverride"},
+			(&pkgconfigv1alpha1.AliasOverride{}).OpenAPIModelName(), (&pkgconfigv1alpha1.CommandOverride{}).OpenAPIModelName()},
 	}
 }
 
@@ -67440,7 +67440,7 @@ func schema_k8sio_kubelet_config_v1_CredentialProvider(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kubelet/config/v1.ExecEnvVar", "k8s.io/kubelet/config/v1.ServiceAccountTokenAttributes"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&kubeletconfigv1.ExecEnvVar{}).OpenAPIModelName(), (&kubeletconfigv1.ServiceAccountTokenAttributes{}).OpenAPIModelName()},
 	}
 }
 
@@ -67484,7 +67484,7 @@ func schema_k8sio_kubelet_config_v1_CredentialProviderConfig(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1.CredentialProvider"},
+			(&kubeletconfigv1.CredentialProvider{}).OpenAPIModelName()},
 	}
 }
 
@@ -67663,7 +67663,7 @@ func schema_k8sio_kubelet_config_v1alpha1_CredentialProvider(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kubelet/config/v1alpha1.ExecEnvVar"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&kubeletconfigv1alpha1.ExecEnvVar{}).OpenAPIModelName()},
 	}
 }
 
@@ -67707,7 +67707,7 @@ func schema_k8sio_kubelet_config_v1alpha1_CredentialProviderConfig(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1alpha1.CredentialProvider"},
+			(&kubeletconfigv1alpha1.CredentialProvider{}).OpenAPIModelName()},
 	}
 }
 
@@ -67776,7 +67776,7 @@ func schema_k8sio_kubelet_config_v1alpha1_ImagePullCredentials(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1alpha1.ImagePullSecret"},
+			(&kubeletconfigv1alpha1.ImagePullSecret{}).OpenAPIModelName()},
 	}
 }
 
@@ -67914,7 +67914,7 @@ func schema_k8sio_kubelet_config_v1alpha1_ImagePulledRecord(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Time", "k8s.io/kubelet/config/v1alpha1.ImagePullCredentials"},
+			(&metav1.Time{}).OpenAPIModelName(), (&kubeletconfigv1alpha1.ImagePullCredentials{}).OpenAPIModelName()},
 	}
 }
 
@@ -67934,7 +67934,7 @@ func schema_k8sio_kubelet_config_v1beta1_CrashLoopBackOffConfig(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -68016,7 +68016,7 @@ func schema_k8sio_kubelet_config_v1beta1_CredentialProvider(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/kubelet/config/v1beta1.ExecEnvVar"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&kubeletconfigv1beta1.ExecEnvVar{}).OpenAPIModelName()},
 	}
 }
 
@@ -68060,7 +68060,7 @@ func schema_k8sio_kubelet_config_v1beta1_CredentialProviderConfig(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1beta1.CredentialProvider"},
+			(&kubeletconfigv1beta1.CredentialProvider{}).OpenAPIModelName()},
 	}
 }
 
@@ -68142,7 +68142,7 @@ func schema_k8sio_kubelet_config_v1beta1_KubeletAuthentication(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1beta1.KubeletAnonymousAuthentication", "k8s.io/kubelet/config/v1beta1.KubeletWebhookAuthentication", "k8s.io/kubelet/config/v1beta1.KubeletX509Authentication"},
+			(&kubeletconfigv1beta1.KubeletAnonymousAuthentication{}).OpenAPIModelName(), (&kubeletconfigv1beta1.KubeletWebhookAuthentication{}).OpenAPIModelName(), (&kubeletconfigv1beta1.KubeletX509Authentication{}).OpenAPIModelName()},
 	}
 }
 
@@ -68170,7 +68170,7 @@ func schema_k8sio_kubelet_config_v1beta1_KubeletAuthorization(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubelet/config/v1beta1.KubeletWebhookAuthorization"},
+			(&kubeletconfigv1beta1.KubeletWebhookAuthorization{}).OpenAPIModelName()},
 	}
 }
 
@@ -69216,7 +69216,7 @@ func schema_k8sio_kubelet_config_v1beta1_KubeletConfiguration(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.Taint", "k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/component-base/logs/api/v1.LoggingConfiguration", "k8s.io/component-base/tracing/api/v1.TracingConfiguration", "k8s.io/kubelet/config/v1beta1.CrashLoopBackOffConfig", "k8s.io/kubelet/config/v1beta1.KubeletAuthentication", "k8s.io/kubelet/config/v1beta1.KubeletAuthorization", "k8s.io/kubelet/config/v1beta1.MemoryReservation", "k8s.io/kubelet/config/v1beta1.MemorySwapConfiguration", "k8s.io/kubelet/config/v1beta1.ShutdownGracePeriodByPodPriority", "k8s.io/kubelet/config/v1beta1.UserNamespaces"},
+			(&corev1.Taint{}).OpenAPIModelName(), (&metav1.Duration{}).OpenAPIModelName(), (&apiv1.LoggingConfiguration{}).OpenAPIModelName(), (&tracingapiv1.TracingConfiguration{}).OpenAPIModelName(), (&kubeletconfigv1beta1.CrashLoopBackOffConfig{}).OpenAPIModelName(), (&kubeletconfigv1beta1.KubeletAuthentication{}).OpenAPIModelName(), (&kubeletconfigv1beta1.KubeletAuthorization{}).OpenAPIModelName(), (&kubeletconfigv1beta1.MemoryReservation{}).OpenAPIModelName(), (&kubeletconfigv1beta1.MemorySwapConfiguration{}).OpenAPIModelName(), (&kubeletconfigv1beta1.ShutdownGracePeriodByPodPriority{}).OpenAPIModelName(), (&kubeletconfigv1beta1.UserNamespaces{}).OpenAPIModelName()},
 	}
 }
 
@@ -69243,7 +69243,7 @@ func schema_k8sio_kubelet_config_v1beta1_KubeletWebhookAuthentication(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -69269,7 +69269,7 @@ func schema_k8sio_kubelet_config_v1beta1_KubeletWebhookAuthorization(ref common.
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration"},
+			(&metav1.Duration{}).OpenAPIModelName()},
 	}
 }
 
@@ -69324,7 +69324,7 @@ func schema_k8sio_kubelet_config_v1beta1_MemoryReservation(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -69379,7 +69379,7 @@ func schema_k8sio_kubelet_config_v1beta1_SerializedNodeConfigSource(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.NodeConfigSource"},
+			(&corev1.NodeConfigSource{}).OpenAPIModelName()},
 	}
 }
 
@@ -69466,7 +69466,7 @@ func schema_pkg_apis_abac_v1beta1_Policy(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/kubernetes/pkg/apis/abac/v1beta1.PolicySpec"},
+			(&abacv1beta1.PolicySpec{}).OpenAPIModelName()},
 	}
 }
 
@@ -69639,7 +69639,7 @@ func schema_pkg_apis_custom_metrics_v1beta1_MetricValue(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.LabelSelector{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -69689,7 +69689,7 @@ func schema_pkg_apis_custom_metrics_v1beta1_MetricValueList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/custom_metrics/v1beta1.MetricValue"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&custommetricsv1beta1.MetricValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -69719,7 +69719,7 @@ func schema_pkg_apis_custom_metrics_v1beta2_MetricIdentifier(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			(&metav1.LabelSelector{}).OpenAPIModelName()},
 	}
 }
 
@@ -69822,7 +69822,7 @@ func schema_pkg_apis_custom_metrics_v1beta2_MetricValue(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/api/core/v1.ObjectReference", "k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.Time", "k8s.io/metrics/pkg/apis/custom_metrics/v1beta2.MetricIdentifier"},
+			(&corev1.ObjectReference{}).OpenAPIModelName(), (&resource.Quantity{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName(), (&custommetricsv1beta2.MetricIdentifier{}).OpenAPIModelName()},
 	}
 }
 
@@ -69872,7 +69872,7 @@ func schema_pkg_apis_custom_metrics_v1beta2_MetricValueList(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/custom_metrics/v1beta2.MetricValue"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&custommetricsv1beta2.MetricValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -69945,7 +69945,7 @@ func schema_pkg_apis_external_metrics_v1beta1_ExternalMetricValue(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -69995,7 +69995,7 @@ func schema_pkg_apis_external_metrics_v1beta1_ExternalMetricValueList(ref common
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/external_metrics/v1beta1.ExternalMetricValue"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&externalmetricsv1beta1.ExternalMetricValue{}).OpenAPIModelName()},
 	}
 }
 
@@ -70033,7 +70033,7 @@ func schema_pkg_apis_metrics_v1alpha1_ContainerMetrics(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -70095,7 +70095,7 @@ func schema_pkg_apis_metrics_v1alpha1_NodeMetrics(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.Duration{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -70146,7 +70146,7 @@ func schema_pkg_apis_metrics_v1alpha1_NodeMetricsList(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.NodeMetrics"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metricsv1alpha1.NodeMetrics{}).OpenAPIModelName()},
 	}
 }
 
@@ -70213,7 +70213,7 @@ func schema_pkg_apis_metrics_v1alpha1_PodMetrics(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.ContainerMetrics"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName(), (&metricsv1alpha1.ContainerMetrics{}).OpenAPIModelName()},
 	}
 }
 
@@ -70264,7 +70264,7 @@ func schema_pkg_apis_metrics_v1alpha1_PodMetricsList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1alpha1.PodMetrics"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metricsv1alpha1.PodMetrics{}).OpenAPIModelName()},
 	}
 }
 
@@ -70302,7 +70302,7 @@ func schema_pkg_apis_metrics_v1beta1_ContainerMetrics(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			(&resource.Quantity{}).OpenAPIModelName()},
 	}
 }
 
@@ -70364,7 +70364,7 @@ func schema_pkg_apis_metrics_v1beta1_NodeMetrics(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/api/resource.Quantity", "k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time"},
+			(&resource.Quantity{}).OpenAPIModelName(), (&metav1.Duration{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName()},
 	}
 }
 
@@ -70415,7 +70415,7 @@ func schema_pkg_apis_metrics_v1beta1_NodeMetricsList(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1beta1.NodeMetrics"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metricsv1beta1.NodeMetrics{}).OpenAPIModelName()},
 	}
 }
 
@@ -70482,7 +70482,7 @@ func schema_pkg_apis_metrics_v1beta1_PodMetrics(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.Duration", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta", "k8s.io/apimachinery/pkg/apis/meta/v1.Time", "k8s.io/metrics/pkg/apis/metrics/v1beta1.ContainerMetrics"},
+			(&metav1.Duration{}).OpenAPIModelName(), (&metav1.ObjectMeta{}).OpenAPIModelName(), (&metav1.Time{}).OpenAPIModelName(), (&metricsv1beta1.ContainerMetrics{}).OpenAPIModelName()},
 	}
 }
 
@@ -70533,6 +70533,6 @@ func schema_pkg_apis_metrics_v1beta1_PodMetricsList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta", "k8s.io/metrics/pkg/apis/metrics/v1beta1.PodMetrics"},
+			(&metav1.ListMeta{}).OpenAPIModelName(), (&metricsv1beta1.PodMetrics{}).OpenAPIModelName()},
 	}
 }
