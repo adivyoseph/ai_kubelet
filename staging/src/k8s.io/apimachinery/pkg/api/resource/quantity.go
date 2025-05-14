@@ -100,7 +100,7 @@ import (
 // +k8s:deepcopy-gen=true
 // +k8s:openapi-gen=true
 // +k8s:openapi-model-gen=true
-// +modelName=io.k8s.apimachinery.pk.api.resource.Quantity
+// +modelName=io.k8s.apimachinery.pkg.api.resource.Quantity
 type Quantity struct {
 	// i is the quantity in int64 scaled form, if d.Dec == nil
 	i int64Amount
