@@ -14,21 +14,24 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// openapi-model-gen is a tool for auto-generating ???.
+// openapi-model-gen is a tool for auto-generating openapi model name functions.
 //
 // Given a list of input directories, it will create a zz_generated.openapi_model.go file for all beta APIs which indicates the kinds,
 // the release it was introduced, the release it will be deprecated, and the release it will be removed.
 //
 // Generation is governed by comment tags in the source.  Any package may
-// request Status generation by including a comment in the file-comments of
+// request model name generation by including a comment in the file-comments of
 // one file, of the form:
 //
-//	// +k8s:prerelease-lifecycle-gen=true
+//	// +k8s:openapi-model-gen=true
+//	// +modelPackageName=io.k8s.api.core.v1
 //
-// // +k8s:prerelease-lifecycle-gen:introduced=1.19
-// // +k8s:prerelease-lifecycle-gen:deprecated=1.22
-// // +k8s:prerelease-lifecycle-gen:removed=1.25
-// // +k8s:prerelease-lifecycle-gen:replacement=wardle.example.com,v1,Flunder
+// Additionally, individual types may request a exact model name generation by including a comment above the type
+// declaration:
+//
+//	// +modelName=io.k8s.api.core.v1.Example
+//	type Example struct {
+//	}
 //
 // Note that registration is a whole-package option, and is not available for
 // individual types.
