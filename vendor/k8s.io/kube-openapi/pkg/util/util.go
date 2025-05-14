@@ -92,11 +92,18 @@ type OpenAPICanonicalTypeNamer interface {
 	OpenAPICanonicalTypeName() string
 }
 
+type OpenAPIModelNamer interface {
+	OpenAPIModelName() string
+}
+
 // GetCanonicalTypeName will find the canonical type name of a sample object, removing
 // the "vendor" part of the path
 func GetCanonicalTypeName(model interface{}) string {
-	if namer, ok := model.(OpenAPICanonicalTypeNamer); ok {
+	switch namer := model.(type) {
+	case OpenAPICanonicalTypeNamer:
 		return namer.OpenAPICanonicalTypeName()
+	case OpenAPIModelNamer:
+		return toCanonicalTypeName(namer.OpenAPIModelName())
 	}
 	t := reflect.TypeOf(model)
 	if t.Kind() == reflect.Ptr {
@@ -112,4 +119,18 @@ func GetCanonicalTypeName(model interface{}) string {
 		path = strings.TrimPrefix(path, "vendor/")
 	}
 	return path + "." + t.Name()
+}
+
+func toCanonicalTypeName(restFriendlyName string) string {
+	if strings.HasPrefix(restFriendlyName, "io.k8s.") {
+		rest := strings.TrimPrefix(restFriendlyName, "io.k8s.")
+		return "k8s.io/" + toPathDotType(rest)
+	}
+	return toPathDotType(restFriendlyName)
+}
+
+func toPathDotType(dotString string) string {
+	parts := strings.Split(dotString, ".")
+	head, last := parts[0:len(parts)-1], parts[len(parts)-1]
+	return strings.Join(head, "/") + "." + last
 }
