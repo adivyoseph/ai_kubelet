@@ -346,6 +346,7 @@ func (g openAPITypeWriter) generateCall(t *types.Type) error {
 		if namer.IsPrivateGoName(t.Name.Name) { // skip private types
 			return nil
 		}
+
 		args := argsFromType(t)
 
 		// Use the actual model name here...
