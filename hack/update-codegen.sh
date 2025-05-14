@@ -514,19 +514,19 @@ function codegen::validation() {
 
 # OpenAPI model generation
 #
-# Any package that wants openapi model functions generated must include a
+# Any package that wants openapi model name functions generated must include a
 # comment-tag in column 0 of one file of the form:
 #     // +k8s:openapi-model-gen=<VALUE>
 #
 # The <VALUE> depends on context:
 #     on packages:
-#       *: all exported types are candidates for having openapi model functions generated
+#       *: all exported types are candidates for having openapi model name functions generated
 #       FIELDNAME: any type with a field of this name is a candidate for
-#                  having openapi model generated
+#                  having openapi model name functions generated
 #     on types:
-#       true:  always generate openapi model functions for this type
-#       false: never generate openapi model functions for this type
-function codegen::openapimodels() {
+#       true:  always generate openapi model name functions for this type
+#       false: never generate openapi model name functions for this type
+function codegen::apimodels() {
     # Build the tool.
     GOPROXY=off go install \
         k8s.io/code-generator/cmd/openapi-model-gen
@@ -553,7 +553,7 @@ function codegen::openapimodels() {
         tag_pkgs+=("./$dir")
     done
 
-    kube::log::status "openapi-model: ${#tag_pkgs[@]} targets"
+    kube::log::status "apimodels: ${#tag_pkgs[@]} targets"
     if [[ "${DBG_CODEGEN}" == 1 ]]; then
         kube::log::status "DBG: running openapi-model-gen for:"
         for dir in "${tag_dirs[@]}"; do
