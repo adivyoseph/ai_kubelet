@@ -29,6 +29,7 @@ import (
 	systemd "github.com/coreos/go-systemd/v22/daemon"
 
 	"golang.org/x/time/rate"
+
 	apidiscoveryv2 "k8s.io/api/apidiscovery/v2"
 	"k8s.io/apimachinery/pkg/api/meta"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -841,6 +842,7 @@ func (s *GenericAPIServer) InstallLegacyAPIGroup(apiPrefix string, apiGroupInfo 
 		return fmt.Errorf("%q is not in the allowed legacy API prefixes: %v", apiPrefix, s.legacyAPIGroupPrefixes.List())
 	}
 
+	fmt.Printf("Installing legacy API group %q\n", apiPrefix)
 	openAPIModels, err := s.getOpenAPIModels(apiPrefix, apiGroupInfo)
 	if err != nil {
 		return fmt.Errorf("unable to get openapi models: %v", err)
@@ -878,6 +880,7 @@ func (s *GenericAPIServer) InstallAPIGroups(apiGroupInfos ...*APIGroupInfo) erro
 		}
 	}
 
+	fmt.Printf("Installing legacy API group %+#v\n", apiGroupInfos)
 	openAPIModels, err := s.getOpenAPIModels(APIGroupPrefix, apiGroupInfos...)
 	if err != nil {
 		return fmt.Errorf("unable to get openapi models: %v", err)
@@ -1038,6 +1041,7 @@ func (s *GenericAPIServer) getOpenAPIModels(apiPrefix string, apiGroupInfos ...*
 	}
 
 	// Build the openapi definitions for those resources and convert it to proto models
+	fmt.Printf("Generating OpenAPI (GetOpenAPIDefinitions, types %v)\n", resourceNames)
 	openAPISpec, err := openapibuilder3.BuildOpenAPIDefinitionsForResources(s.openAPIV3Config, resourceNames...)
 	if err != nil {
 		return nil, err

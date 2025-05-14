@@ -29,7 +29,6 @@ import (
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	"k8s.io/kube-openapi/pkg/util"
 )
 
 // Scheme defines methods for serializing and deserializing API objects, a type
@@ -770,8 +769,8 @@ func (s *Scheme) ToOpenAPIDefinitionName(groupVersionKind schema.GroupVersionKin
 	}
 
 	// Use a namer if provided
-	if namer, ok := example.(util.OpenAPICanonicalTypeNamer); ok {
-		return namer.OpenAPICanonicalTypeName(), nil
+	if namer, ok := example.(modelNamer); ok {
+		return namer.ModelName(), nil
 	}
 
 	if _, ok := example.(Unstructured); ok {
@@ -783,6 +782,10 @@ func (s *Scheme) ToOpenAPIDefinitionName(groupVersionKind schema.GroupVersionKin
 	rtype := reflect.TypeOf(example).Elem()
 	name := toOpenAPIDefinitionName(rtype.PkgPath() + "." + rtype.Name())
 	return name, nil
+}
+
+type modelNamer interface {
+	ModelName() string
 }
 
 // toOpenAPIDefinitionName converts Golang package/type canonical name into REST friendly OpenAPI name.
