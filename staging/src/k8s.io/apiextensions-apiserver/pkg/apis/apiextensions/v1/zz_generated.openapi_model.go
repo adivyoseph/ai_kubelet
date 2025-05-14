@@ -21,272 +21,137 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConversionRequest) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ConversionRequest"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConversionRequest) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConversionRequest) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConversionResponse) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ConversionResponse"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConversionResponse) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConversionResponse) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionResponse"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConversionReview) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ConversionReview"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConversionReview) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConversionReview) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ConversionReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceColumnDefinition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceColumnDefinition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceColumnDefinition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceColumnDefinition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceColumnDefinition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceConversion) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceConversion"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceConversion) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceConversion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceConversion"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionCondition) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionList) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionNames) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionNames"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionNames) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionNames) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionNames"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionSpec) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionStatus) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceDefinitionVersion) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceDefinitionVersion"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceDefinitionVersion) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceDefinitionVersion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionVersion"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceSubresourceScale) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresourceScale"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresourceScale) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceSubresourceScale) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresourceScale"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceSubresourceStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresourceStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresourceStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceSubresourceStatus) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresourceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceSubresources) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceSubresources"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceSubresources) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceSubresources) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresources"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CustomResourceValidation) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.CustomResourceValidation"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CustomResourceValidation) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CustomResourceValidation) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceValidation"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ExternalDocumentation) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ExternalDocumentation"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ExternalDocumentation) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ExternalDocumentation) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ExternalDocumentation"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *JSON) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSON"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *JSON) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *JSON) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSON"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *JSONSchemaProps) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaProps"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaProps) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *JSONSchemaProps) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaProps"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *JSONSchemaPropsOrArray) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrArray"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrArray) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *JSONSchemaPropsOrArray) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrArray"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *JSONSchemaPropsOrBool) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrBool"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrBool) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *JSONSchemaPropsOrBool) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrBool"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *JSONSchemaPropsOrStringArray) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.JSONSchemaPropsOrStringArray"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *JSONSchemaPropsOrStringArray) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *JSONSchemaPropsOrStringArray) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaPropsOrStringArray"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SelectableField) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.SelectableField"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SelectableField) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SelectableField) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.SelectableField"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ServiceReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceReference) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ServiceReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ValidationRule) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.ValidationRule"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ValidationRule) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ValidationRule) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ValidationRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *WebhookClientConfig) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.WebhookClientConfig"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *WebhookClientConfig) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *WebhookClientConfig) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.WebhookClientConfig"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *WebhookConversion) OpenAPICanonicalTypeName() string {
-	return "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1.WebhookConversion"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *WebhookConversion) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *WebhookConversion) OpenAPIModelName() string {
 	return "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.WebhookConversion"
 }

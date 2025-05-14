@@ -21,62 +21,32 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Lease) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.Lease"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Lease) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Lease) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.Lease"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseCandidate) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.LeaseCandidate"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidate) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseCandidate) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.LeaseCandidate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseCandidateList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.LeaseCandidateList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidateList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseCandidateList) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.LeaseCandidateList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseCandidateSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.LeaseCandidateSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseCandidateSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseCandidateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.LeaseCandidateSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.LeaseList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseList) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.LeaseList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1beta1.LeaseSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseSpec) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1beta1.LeaseSpec"
 }

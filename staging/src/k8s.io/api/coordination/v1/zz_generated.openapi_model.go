@@ -21,32 +21,17 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Lease) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1.Lease"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Lease) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Lease) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1.Lease"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1.LeaseList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseList) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1.LeaseList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LeaseSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/coordination/v1.LeaseSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LeaseSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LeaseSpec) OpenAPIModelName() string {
 	return "io.k8s.api.coordination.v1.LeaseSpec"
 }

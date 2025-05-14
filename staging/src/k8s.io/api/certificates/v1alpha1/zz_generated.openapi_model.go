@@ -21,32 +21,17 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundle) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1alpha1.ClusterTrustBundle"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundle) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundle) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundle"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundleList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1alpha1.ClusterTrustBundleList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundleSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1alpha1.ClusterTrustBundleSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1alpha1.ClusterTrustBundleSpec"
 }

@@ -21,82 +21,42 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Endpoint) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.Endpoint"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Endpoint) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Endpoint) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.Endpoint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointConditions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.EndpointConditions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointConditions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointConditions) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.EndpointConditions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointHints) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.EndpointHints"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointHints) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointHints) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.EndpointHints"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointPort) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.EndpointPort"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointPort) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointPort) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.EndpointPort"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointSlice) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.EndpointSlice"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointSlice) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointSlice) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.EndpointSlice"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointSliceList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.EndpointSliceList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointSliceList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointSliceList) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.EndpointSliceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ForNode) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.ForNode"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ForNode) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ForNode) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.ForNode"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ForZone) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/discovery/v1.ForZone"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ForZone) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ForZone) OpenAPIModelName() string {
 	return "io.k8s.api.discovery.v1.ForZone"
 }

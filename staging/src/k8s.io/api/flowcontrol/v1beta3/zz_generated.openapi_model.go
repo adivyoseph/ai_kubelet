@@ -21,232 +21,117 @@ limitations under the License.
 
 package v1beta3
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ExemptPriorityLevelConfiguration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.ExemptPriorityLevelConfiguration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ExemptPriorityLevelConfiguration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ExemptPriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ExemptPriorityLevelConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowDistinguisherMethod) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowDistinguisherMethod"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowDistinguisherMethod) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowDistinguisherMethod) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowDistinguisherMethod"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowSchema) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowSchema"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowSchema) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowSchema) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchema"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowSchemaCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowSchemaCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowSchemaCondition) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowSchemaList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowSchemaList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowSchemaList) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowSchemaSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowSchemaSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowSchemaSpec) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlowSchemaStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.FlowSchemaStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlowSchemaStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlowSchemaStatus) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.FlowSchemaStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GroupSubject) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.GroupSubject"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GroupSubject) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GroupSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.GroupSubject"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitResponse) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.LimitResponse"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitResponse) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitResponse) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.LimitResponse"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitedPriorityLevelConfiguration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.LimitedPriorityLevelConfiguration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitedPriorityLevelConfiguration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitedPriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.LimitedPriorityLevelConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NonResourcePolicyRule) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.NonResourcePolicyRule"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NonResourcePolicyRule) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NonResourcePolicyRule) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.NonResourcePolicyRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PolicyRulesWithSubjects) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PolicyRulesWithSubjects"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PolicyRulesWithSubjects) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PolicyRulesWithSubjects) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PolicyRulesWithSubjects"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfiguration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfiguration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfiguration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfigurationCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfigurationCondition) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfigurationList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfigurationList) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfigurationReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfigurationReference) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfigurationSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfigurationSpec) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PriorityLevelConfigurationStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.PriorityLevelConfigurationStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PriorityLevelConfigurationStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PriorityLevelConfigurationStatus) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.PriorityLevelConfigurationStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *QueuingConfiguration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.QueuingConfiguration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *QueuingConfiguration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *QueuingConfiguration) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.QueuingConfiguration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourcePolicyRule) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.ResourcePolicyRule"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourcePolicyRule) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourcePolicyRule) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ResourcePolicyRule"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceAccountSubject) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.ServiceAccountSubject"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountSubject) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceAccountSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.ServiceAccountSubject"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Subject) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.Subject"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Subject) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Subject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.Subject"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *UserSubject) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/flowcontrol/v1beta3.UserSubject"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *UserSubject) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *UserSubject) OpenAPIModelName() string {
 	return "io.k8s.api.flowcontrol.v1beta3.UserSubject"
 }

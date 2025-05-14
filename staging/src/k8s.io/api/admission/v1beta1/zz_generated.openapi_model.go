@@ -21,32 +21,17 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AdmissionRequest) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/admission/v1beta1.AdmissionRequest"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AdmissionRequest) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AdmissionRequest) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1beta1.AdmissionRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AdmissionResponse) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/admission/v1beta1.AdmissionResponse"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AdmissionResponse) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AdmissionResponse) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1beta1.AdmissionResponse"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AdmissionReview) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/admission/v1beta1.AdmissionReview"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AdmissionReview) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AdmissionReview) OpenAPIModelName() string {
 	return "io.k8s.api.admission.v1beta1.AdmissionReview"
 }

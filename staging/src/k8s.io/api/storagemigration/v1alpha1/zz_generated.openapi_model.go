@@ -21,62 +21,32 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GroupVersionResource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.GroupVersionResource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GroupVersionResource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GroupVersionResource) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.GroupVersionResource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *MigrationCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.MigrationCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *MigrationCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *MigrationCondition) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.MigrationCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageVersionMigration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.StorageVersionMigration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionMigration) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageVersionMigrationList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.StorageVersionMigrationList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionMigrationList) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageVersionMigrationSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.StorageVersionMigrationSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionMigrationSpec) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageVersionMigrationStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storagemigration/v1alpha1.StorageVersionMigrationStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageVersionMigrationStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageVersionMigrationStatus) OpenAPIModelName() string {
 	return "io.k8s.api.storagemigration.v1alpha1.StorageVersionMigrationStatus"
 }

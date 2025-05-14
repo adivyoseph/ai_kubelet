@@ -21,42 +21,22 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ImageReview) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/imagepolicy/v1alpha1.ImageReview"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ImageReview) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ImageReview) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReview"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ImageReviewContainerSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/imagepolicy/v1alpha1.ImageReviewContainerSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewContainerSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ImageReviewContainerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewContainerSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ImageReviewSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/imagepolicy/v1alpha1.ImageReviewSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ImageReviewSpec) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ImageReviewStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/imagepolicy/v1alpha1.ImageReviewStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ImageReviewStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ImageReviewStatus) OpenAPIModelName() string {
 	return "io.k8s.api.imagepolicy.v1alpha1.ImageReviewStatus"
 }

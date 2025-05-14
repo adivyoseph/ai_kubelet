@@ -21,332 +21,167 @@ limitations under the License.
 
 package v1beta2
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ControllerRevision) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ControllerRevision"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ControllerRevision) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ControllerRevision) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ControllerRevision"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ControllerRevisionList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ControllerRevisionList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ControllerRevisionList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ControllerRevisionList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ControllerRevisionList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSet) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSet"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSet) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSet"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSetCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSetCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSetCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSetList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSetList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSetList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSetSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSetSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSetSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSetStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSetStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSetStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonSetUpdateStrategy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DaemonSetUpdateStrategy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonSetUpdateStrategy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonSetUpdateStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DaemonSetUpdateStrategy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Deployment) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.Deployment"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Deployment) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Deployment) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.Deployment"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DeploymentCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DeploymentCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DeploymentCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DeploymentCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DeploymentCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DeploymentList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DeploymentList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DeploymentList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DeploymentList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DeploymentList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DeploymentSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DeploymentSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DeploymentSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DeploymentSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DeploymentSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DeploymentStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DeploymentStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DeploymentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DeploymentStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DeploymentStrategy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.DeploymentStrategy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DeploymentStrategy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DeploymentStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.DeploymentStrategy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicaSet) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ReplicaSet"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSet) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicaSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ReplicaSet"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicaSetCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ReplicaSetCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicaSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ReplicaSetCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicaSetList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ReplicaSetList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicaSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ReplicaSetList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicaSetSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ReplicaSetSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicaSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ReplicaSetSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicaSetStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ReplicaSetStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicaSetStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicaSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ReplicaSetStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RollingUpdateDaemonSet) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.RollingUpdateDaemonSet"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDaemonSet) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RollingUpdateDaemonSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.RollingUpdateDaemonSet"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RollingUpdateDeployment) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.RollingUpdateDeployment"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateDeployment) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RollingUpdateDeployment) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.RollingUpdateDeployment"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RollingUpdateStatefulSetStrategy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.RollingUpdateStatefulSetStrategy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RollingUpdateStatefulSetStrategy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RollingUpdateStatefulSetStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.RollingUpdateStatefulSetStrategy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Scale) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.Scale"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Scale) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Scale) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.Scale"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScaleSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ScaleSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScaleSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScaleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ScaleSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScaleStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.ScaleStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScaleStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScaleStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.ScaleStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSet) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSet"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSet) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSet) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSet"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetCondition) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetList) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetOrdinals) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetOrdinals"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetOrdinals) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetOrdinals) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetOrdinals"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetPersistentVolumeClaimRetentionPolicy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetPersistentVolumeClaimRetentionPolicy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetPersistentVolumeClaimRetentionPolicy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetPersistentVolumeClaimRetentionPolicy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetPersistentVolumeClaimRetentionPolicy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetSpec) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetStatus) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StatefulSetUpdateStrategy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apps/v1beta2.StatefulSetUpdateStrategy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StatefulSetUpdateStrategy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StatefulSetUpdateStrategy) OpenAPIModelName() string {
 	return "io.k8s.api.apps.v1beta2.StatefulSetUpdateStrategy"
 }

@@ -21,82 +21,42 @@ limitations under the License.
 
 package v1beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CertificateSigningRequest) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequest"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequest) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequest) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequest"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CertificateSigningRequestCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestCondition) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CertificateSigningRequestList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CertificateSigningRequestSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CertificateSigningRequestStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.CertificateSigningRequestStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CertificateSigningRequestStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CertificateSigningRequestStatus) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundle) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundle"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundle) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundle) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundle"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundleList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundleList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleList) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundleSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/certificates/v1beta1.ClusterTrustBundleSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleSpec) OpenAPIModelName() string {
 	return "io.k8s.api.certificates.v1beta1.ClusterTrustBundleSpec"
 }

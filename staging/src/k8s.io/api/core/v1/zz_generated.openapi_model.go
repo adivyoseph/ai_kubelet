@@ -21,2312 +21,1157 @@ limitations under the License.
 
 package v1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AWSElasticBlockStoreVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AWSElasticBlockStoreVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AWSElasticBlockStoreVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AWSElasticBlockStoreVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AWSElasticBlockStoreVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Affinity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Affinity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Affinity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Affinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Affinity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AppArmorProfile) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AppArmorProfile"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AppArmorProfile) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AppArmorProfile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AppArmorProfile"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AttachedVolume) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AttachedVolume"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AttachedVolume) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AttachedVolume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AttachedVolume"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AvoidPods) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AvoidPods"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AvoidPods) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AvoidPods) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AvoidPods"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AzureDiskVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AzureDiskVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AzureDiskVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AzureDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureDiskVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AzureFilePersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AzureFilePersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AzureFilePersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AzureFilePersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureFilePersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *AzureFileVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.AzureFileVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *AzureFileVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *AzureFileVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.AzureFileVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Binding) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Binding"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Binding) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Binding) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Binding"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CSIPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CSIPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CSIPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CSIPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CSIPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CSIVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CSIVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CSIVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CSIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CSIVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Capabilities) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Capabilities"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Capabilities) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Capabilities) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Capabilities"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CephFSPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CephFSPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CephFSPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CephFSPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CephFSPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CephFSVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CephFSVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CephFSVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CephFSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CephFSVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CinderPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CinderPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CinderPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CinderPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CinderPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CinderVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.CinderVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CinderVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CinderVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.CinderVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClientIPConfig) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ClientIPConfig"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClientIPConfig) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClientIPConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ClientIPConfig"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ClusterTrustBundleProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ClusterTrustBundleProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ClusterTrustBundleProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ClusterTrustBundleProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ClusterTrustBundleProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ComponentCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ComponentCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ComponentCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ComponentCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ComponentStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ComponentStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ComponentStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ComponentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ComponentStatusList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ComponentStatusList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ComponentStatusList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ComponentStatusList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ComponentStatusList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMap) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMap"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMap) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMap) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMap"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapEnvSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapEnvSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapEnvSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapEnvSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapEnvSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapKeySelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapKeySelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapKeySelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapKeySelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapKeySelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapNodeConfigSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapNodeConfigSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapNodeConfigSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapNodeConfigSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapNodeConfigSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ConfigMapVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ConfigMapVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ConfigMapVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ConfigMapVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ConfigMapVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Container) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Container"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Container) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Container) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Container"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerImage) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerImage"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerImage) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerImage) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerImage"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerPort) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerPort"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerPort) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerPort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerPort"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerResizePolicy) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerResizePolicy"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerResizePolicy) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerResizePolicy) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerResizePolicy"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerState) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerState"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerState) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerState) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerState"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerStateRunning) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerStateRunning"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateRunning) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerStateRunning) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateRunning"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerStateTerminated) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerStateTerminated"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateTerminated) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerStateTerminated) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateTerminated"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerStateWaiting) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerStateWaiting"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerStateWaiting) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerStateWaiting) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStateWaiting"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ContainerUser) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ContainerUser"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ContainerUser) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ContainerUser) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ContainerUser"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DaemonEndpoint) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.DaemonEndpoint"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DaemonEndpoint) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DaemonEndpoint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DaemonEndpoint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DownwardAPIProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.DownwardAPIProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DownwardAPIProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DownwardAPIVolumeFile) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.DownwardAPIVolumeFile"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIVolumeFile) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DownwardAPIVolumeFile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIVolumeFile"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *DownwardAPIVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.DownwardAPIVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *DownwardAPIVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *DownwardAPIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.DownwardAPIVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EmptyDirVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EmptyDirVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EmptyDirVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EmptyDirVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EmptyDirVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointAddress) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EndpointAddress"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointAddress) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointAddress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointAddress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointPort) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EndpointPort"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointPort) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointPort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointPort"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointSubset) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EndpointSubset"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointSubset) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointSubset) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointSubset"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Endpoints) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Endpoints"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Endpoints) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Endpoints) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Endpoints"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EndpointsList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EndpointsList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EndpointsList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EndpointsList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EndpointsList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EnvFromSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EnvFromSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EnvFromSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EnvFromSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvFromSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EnvVar) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EnvVar"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EnvVar) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EnvVar) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvVar"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EnvVarSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EnvVarSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EnvVarSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EnvVarSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EnvVarSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EphemeralContainer) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EphemeralContainer"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EphemeralContainer) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EphemeralContainer) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralContainer"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EphemeralContainerCommon) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EphemeralContainerCommon"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EphemeralContainerCommon) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EphemeralContainerCommon) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralContainerCommon"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EphemeralVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EphemeralVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EphemeralVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EphemeralVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EphemeralVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Event) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Event"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Event) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Event) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Event"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EventList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EventList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EventList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EventList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EventSeries) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EventSeries"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EventSeries) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EventSeries) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventSeries"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *EventSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.EventSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *EventSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *EventSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.EventSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ExecAction) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ExecAction"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ExecAction) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ExecAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ExecAction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FCVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.FCVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FCVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FCVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FCVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlexPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.FlexPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlexPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlexPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlexPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlexVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.FlexVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlexVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlexVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlexVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *FlockerVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.FlockerVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *FlockerVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *FlockerVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.FlockerVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GCEPersistentDiskVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.GCEPersistentDiskVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GCEPersistentDiskVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GCEPersistentDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GCEPersistentDiskVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GRPCAction) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.GRPCAction"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GRPCAction) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GRPCAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GRPCAction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GitRepoVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.GitRepoVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GitRepoVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GitRepoVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GitRepoVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GlusterfsPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.GlusterfsPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GlusterfsPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GlusterfsPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GlusterfsPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *GlusterfsVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.GlusterfsVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *GlusterfsVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *GlusterfsVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.GlusterfsVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *HTTPGetAction) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.HTTPGetAction"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *HTTPGetAction) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *HTTPGetAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HTTPGetAction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *HTTPHeader) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.HTTPHeader"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *HTTPHeader) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *HTTPHeader) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HTTPHeader"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *HostAlias) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.HostAlias"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *HostAlias) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *HostAlias) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostAlias"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *HostIP) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.HostIP"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *HostIP) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *HostIP) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostIP"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *HostPathVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.HostPathVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *HostPathVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *HostPathVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.HostPathVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ISCSIPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ISCSIPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ISCSIPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ISCSIPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ISCSIPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ISCSIVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ISCSIVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ISCSIVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ISCSIVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ISCSIVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ImageVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ImageVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ImageVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ImageVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ImageVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *KeyToPath) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.KeyToPath"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *KeyToPath) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *KeyToPath) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.KeyToPath"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Lifecycle) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Lifecycle"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Lifecycle) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Lifecycle) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Lifecycle"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LifecycleHandler) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LifecycleHandler"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LifecycleHandler) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LifecycleHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LifecycleHandler"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitRange) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LimitRange"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitRange) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitRange) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRange"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitRangeItem) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LimitRangeItem"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeItem) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitRangeItem) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeItem"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitRangeList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LimitRangeList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitRangeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LimitRangeSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LimitRangeSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LimitRangeSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LimitRangeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LimitRangeSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LinuxContainerUser) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LinuxContainerUser"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LinuxContainerUser) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LinuxContainerUser) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LinuxContainerUser"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *List) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.List"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *List) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *List) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.List"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LoadBalancerIngress) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LoadBalancerIngress"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LoadBalancerIngress) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LoadBalancerIngress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LoadBalancerIngress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LoadBalancerStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LoadBalancerStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LoadBalancerStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LoadBalancerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LoadBalancerStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LocalObjectReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LocalObjectReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LocalObjectReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LocalObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LocalObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *LocalVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.LocalVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *LocalVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *LocalVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.LocalVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ModifyVolumeStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ModifyVolumeStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ModifyVolumeStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ModifyVolumeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ModifyVolumeStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NFSVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NFSVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NFSVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NFSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NFSVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Namespace) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Namespace"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Namespace) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Namespace) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Namespace"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NamespaceCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NamespaceCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NamespaceCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NamespaceCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NamespaceList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NamespaceList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NamespaceList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NamespaceList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NamespaceSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NamespaceSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NamespaceSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NamespaceSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NamespaceStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NamespaceStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NamespaceStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NamespaceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NamespaceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Node) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Node"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Node) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Node) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Node"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeAddress) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeAddress"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeAddress) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeAddress) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeAddress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeAffinity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeAffinity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeAffinity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeAffinity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeConfigSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeConfigSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeConfigSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeConfigSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeConfigSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeConfigStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeConfigStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeConfigStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeConfigStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeConfigStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeDaemonEndpoints) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeDaemonEndpoints"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeDaemonEndpoints) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeDaemonEndpoints) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeDaemonEndpoints"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeFeatures) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeFeatures"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeFeatures) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeFeatures) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeFeatures"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeProxyOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeProxyOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeProxyOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeProxyOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeRuntimeHandler) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeRuntimeHandler"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeRuntimeHandler) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeRuntimeHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeRuntimeHandler"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeRuntimeHandlerFeatures) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeRuntimeHandlerFeatures"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeRuntimeHandlerFeatures) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeRuntimeHandlerFeatures) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeRuntimeHandlerFeatures"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSelectorRequirement) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSelectorRequirement"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSelectorRequirement) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSelectorRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelectorRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSelectorTerm) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSelectorTerm"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSelectorTerm) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSelectorTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSelectorTerm"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSwapStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSwapStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSwapStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSwapStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSwapStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *NodeSystemInfo) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.NodeSystemInfo"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *NodeSystemInfo) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *NodeSystemInfo) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.NodeSystemInfo"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ObjectFieldSelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ObjectFieldSelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ObjectFieldSelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ObjectFieldSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ObjectFieldSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ObjectReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ObjectReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ObjectReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolume) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolume"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolume) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolume"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaim) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaim"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaim) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaim"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimTemplate) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimTemplate"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimTemplate) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimTemplate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimTemplate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeClaimVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeClaimVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeClaimVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeClaimVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeClaimVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PersistentVolumeStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PersistentVolumeStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PersistentVolumeStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PersistentVolumeStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PersistentVolumeStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PhotonPersistentDiskVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PhotonPersistentDiskVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PhotonPersistentDiskVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PhotonPersistentDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PhotonPersistentDiskVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Pod) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Pod"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Pod) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Pod) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Pod"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodAffinity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodAffinity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodAffinity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAffinity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodAffinityTerm) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodAffinityTerm"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodAffinityTerm) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodAffinityTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAffinityTerm"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodAntiAffinity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodAntiAffinity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodAntiAffinity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodAntiAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAntiAffinity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodAttachOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodAttachOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodAttachOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodAttachOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodAttachOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodDNSConfig) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodDNSConfig"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodDNSConfig) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodDNSConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodDNSConfig"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodDNSConfigOption) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodDNSConfigOption"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodDNSConfigOption) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodDNSConfigOption) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodDNSConfigOption"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodExecOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodExecOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodExecOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodExecOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodExecOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodIP) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodIP"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodIP) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodIP) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodIP"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodLogOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodLogOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodLogOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodLogOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodLogOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodOS) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodOS"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodOS) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodOS) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodOS"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodPortForwardOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodPortForwardOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodPortForwardOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodPortForwardOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodPortForwardOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodProxyOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodProxyOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodProxyOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodProxyOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodReadinessGate) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodReadinessGate"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodReadinessGate) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodReadinessGate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodReadinessGate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodResourceClaim) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodResourceClaim"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodResourceClaim) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodResourceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodResourceClaim"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodResourceClaimStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodResourceClaimStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodResourceClaimStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodResourceClaimStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodResourceClaimStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodSchedulingGate) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodSchedulingGate"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodSchedulingGate) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodSchedulingGate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSchedulingGate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodSecurityContext) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodSecurityContext"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodSecurityContext) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodSecurityContext) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSecurityContext"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodSignature) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodSignature"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodSignature) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodSignature) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSignature"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodStatusResult) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodStatusResult"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodStatusResult) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodStatusResult) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodStatusResult"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodTemplate) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodTemplate"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodTemplate) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodTemplate) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplate"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodTemplateList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodTemplateList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodTemplateList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodTemplateList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplateList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PodTemplateSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PodTemplateSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PodTemplateSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PodTemplateSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PodTemplateSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PortStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PortStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PortStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PortStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PortStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PortworxVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PortworxVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PortworxVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PortworxVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PortworxVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Preconditions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Preconditions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Preconditions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Preconditions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Preconditions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PreferAvoidPodsEntry) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PreferAvoidPodsEntry"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PreferAvoidPodsEntry) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PreferAvoidPodsEntry) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PreferAvoidPodsEntry"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *PreferredSchedulingTerm) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.PreferredSchedulingTerm"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *PreferredSchedulingTerm) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *PreferredSchedulingTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.PreferredSchedulingTerm"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Probe) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Probe"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Probe) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Probe) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Probe"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ProbeHandler) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ProbeHandler"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ProbeHandler) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ProbeHandler) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ProbeHandler"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ProjectedVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ProjectedVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ProjectedVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ProjectedVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ProjectedVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *QuobyteVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.QuobyteVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *QuobyteVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *QuobyteVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.QuobyteVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RBDPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.RBDPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RBDPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RBDPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RBDPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RBDVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.RBDVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RBDVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RBDVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RBDVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RangeAllocation) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.RangeAllocation"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RangeAllocation) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RangeAllocation) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.RangeAllocation"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicationController) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ReplicationController"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicationController) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicationController) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationController"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicationControllerCondition) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ReplicationControllerCondition"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerCondition) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicationControllerCondition) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerCondition"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicationControllerList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ReplicationControllerList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicationControllerList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicationControllerSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ReplicationControllerSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicationControllerSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ReplicationControllerStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ReplicationControllerStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ReplicationControllerStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ReplicationControllerStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ReplicationControllerStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceClaim) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceClaim"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceClaim) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceClaim) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceClaim"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceFieldSelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceFieldSelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceFieldSelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceFieldSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceFieldSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceHealth) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceHealth"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceHealth) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceHealth) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceHealth"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceQuota) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceQuota"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuota) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceQuota) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuota"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceQuotaList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceQuotaList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceQuotaList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceQuotaSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceQuotaSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceQuotaSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceQuotaStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceQuotaStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceQuotaStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceQuotaStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceQuotaStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceRequirements) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceRequirements"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceRequirements) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceRequirements) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceRequirements"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ResourceStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ResourceStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ResourceStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ResourceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ResourceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SELinuxOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SELinuxOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SELinuxOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SELinuxOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SELinuxOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScaleIOPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ScaleIOPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScaleIOPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScaleIOPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScaleIOPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScaleIOVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ScaleIOVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScaleIOVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScaleIOVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScaleIOVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScopeSelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ScopeSelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScopeSelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScopeSelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScopeSelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ScopedResourceSelectorRequirement) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ScopedResourceSelectorRequirement"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ScopedResourceSelectorRequirement) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ScopedResourceSelectorRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ScopedResourceSelectorRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SeccompProfile) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SeccompProfile"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SeccompProfile) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SeccompProfile) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SeccompProfile"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Secret) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Secret"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Secret) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Secret) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Secret"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretEnvSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretEnvSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretEnvSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretEnvSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretEnvSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretKeySelector) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretKeySelector"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretKeySelector) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretKeySelector) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretKeySelector"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecretVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecretVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecretVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecretVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecretVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SecurityContext) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SecurityContext"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SecurityContext) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SecurityContext) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SecurityContext"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SerializedReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SerializedReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SerializedReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SerializedReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SerializedReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Service) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Service"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Service) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Service) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Service"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceAccount) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceAccount"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccount) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceAccount) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccount"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceAccountList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceAccountList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceAccountList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccountList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceAccountTokenProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceAccountTokenProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceAccountTokenProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceAccountTokenProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceAccountTokenProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceList) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServicePort) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServicePort"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServicePort) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServicePort) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServicePort"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceProxyOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceProxyOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceProxyOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceProxyOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceProxyOptions"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceSpec) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.ServiceStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.ServiceStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SessionAffinityConfig) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SessionAffinityConfig"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SessionAffinityConfig) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SessionAffinityConfig) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SessionAffinityConfig"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *SleepAction) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.SleepAction"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *SleepAction) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *SleepAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.SleepAction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageOSPersistentVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.StorageOSPersistentVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageOSPersistentVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageOSPersistentVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.StorageOSPersistentVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *StorageOSVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.StorageOSVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *StorageOSVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *StorageOSVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.StorageOSVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Sysctl) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Sysctl"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Sysctl) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Sysctl) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Sysctl"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TCPSocketAction) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TCPSocketAction"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TCPSocketAction) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TCPSocketAction) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TCPSocketAction"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Taint) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Taint"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Taint) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Taint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Taint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Toleration) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Toleration"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Toleration) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Toleration) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Toleration"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TopologySelectorLabelRequirement) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TopologySelectorLabelRequirement"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TopologySelectorLabelRequirement) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TopologySelectorLabelRequirement) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySelectorLabelRequirement"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TopologySelectorTerm) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TopologySelectorTerm"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TopologySelectorTerm) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TopologySelectorTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySelectorTerm"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TopologySpreadConstraint) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TopologySpreadConstraint"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TopologySpreadConstraint) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TopologySpreadConstraint) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TopologySpreadConstraint"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TypedLocalObjectReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TypedLocalObjectReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TypedLocalObjectReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TypedLocalObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TypedLocalObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *TypedObjectReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.TypedObjectReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *TypedObjectReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *TypedObjectReference) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.TypedObjectReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Volume) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.Volume"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Volume) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Volume) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.Volume"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeDevice) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeDevice"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeDevice) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeDevice) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeDevice"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeMount) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeMount"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeMount) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeMount) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeMount"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeMountStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeMountStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeMountStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeMountStatus) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeMountStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeNodeAffinity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeNodeAffinity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeNodeAffinity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeNodeAffinity) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeNodeAffinity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeProjection) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeProjection"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeProjection) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeProjection) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeProjection"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeResourceRequirements) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeResourceRequirements"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeResourceRequirements) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeResourceRequirements) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeResourceRequirements"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VsphereVirtualDiskVolumeSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.VsphereVirtualDiskVolumeSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VsphereVirtualDiskVolumeSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VsphereVirtualDiskVolumeSource) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *WeightedPodAffinityTerm) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.WeightedPodAffinityTerm"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *WeightedPodAffinityTerm) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *WeightedPodAffinityTerm) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.WeightedPodAffinityTerm"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *WindowsSecurityContextOptions) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/core/v1.WindowsSecurityContextOptions"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *WindowsSecurityContextOptions) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *WindowsSecurityContextOptions) OpenAPIModelName() string {
 	return "io.k8s.api.core.v1.WindowsSecurityContextOptions"
 }

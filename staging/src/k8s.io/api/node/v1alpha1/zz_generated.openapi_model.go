@@ -21,52 +21,27 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Overhead) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/node/v1alpha1.Overhead"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Overhead) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Overhead) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1alpha1.Overhead"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RuntimeClass) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/node/v1alpha1.RuntimeClass"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RuntimeClass) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RuntimeClass) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1alpha1.RuntimeClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RuntimeClassList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/node/v1alpha1.RuntimeClassList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RuntimeClassList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RuntimeClassList) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1alpha1.RuntimeClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *RuntimeClassSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/node/v1alpha1.RuntimeClassSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *RuntimeClassSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *RuntimeClassSpec) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1alpha1.RuntimeClassSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *Scheduling) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/node/v1alpha1.Scheduling"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *Scheduling) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *Scheduling) OpenAPIModelName() string {
 	return "io.k8s.api.node.v1alpha1.Scheduling"
 }

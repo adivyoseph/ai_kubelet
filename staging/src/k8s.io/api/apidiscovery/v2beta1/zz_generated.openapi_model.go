@@ -21,52 +21,27 @@ limitations under the License.
 
 package v2beta1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *APIGroupDiscovery) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apidiscovery/v2beta1.APIGroupDiscovery"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *APIGroupDiscovery) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *APIGroupDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIGroupDiscovery"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *APIGroupDiscoveryList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apidiscovery/v2beta1.APIGroupDiscoveryList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *APIGroupDiscoveryList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *APIGroupDiscoveryList) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIGroupDiscoveryList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *APIResourceDiscovery) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apidiscovery/v2beta1.APIResourceDiscovery"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *APIResourceDiscovery) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *APIResourceDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIResourceDiscovery"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *APISubresourceDiscovery) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apidiscovery/v2beta1.APISubresourceDiscovery"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *APISubresourceDiscovery) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *APISubresourceDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APISubresourceDiscovery"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *APIVersionDiscovery) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/apidiscovery/v2beta1.APIVersionDiscovery"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *APIVersionDiscovery) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *APIVersionDiscovery) OpenAPIModelName() string {
 	return "io.k8s.api.apidiscovery.v2beta1.APIVersionDiscovery"
 }

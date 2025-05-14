@@ -21,102 +21,52 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CSIStorageCapacity) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.CSIStorageCapacity"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CSIStorageCapacity) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CSIStorageCapacity) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.CSIStorageCapacity"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *CSIStorageCapacityList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.CSIStorageCapacityList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *CSIStorageCapacityList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *CSIStorageCapacityList) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.CSIStorageCapacityList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttachment) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttachment"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttachment) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachment) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttachment"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttachmentList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttachmentList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttachmentList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentList) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttachmentList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttachmentSource) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttachmentSource"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttachmentSource) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentSource) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttachmentSource"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttachmentSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttachmentSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttachmentSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentSpec) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttachmentSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttachmentStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttachmentStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttachmentStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttachmentStatus) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttachmentStatus"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttributesClass) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttributesClass"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttributesClass) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttributesClass) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttributesClass"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeAttributesClassList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeAttributesClassList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeAttributesClassList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeAttributesClassList) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeAttributesClassList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *VolumeError) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/storage/v1alpha1.VolumeError"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *VolumeError) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *VolumeError) OpenAPIModelName() string {
 	return "io.k8s.api.storage.v1alpha1.VolumeError"
 }

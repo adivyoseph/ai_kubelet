@@ -21,82 +21,42 @@ limitations under the License.
 
 package v1alpha1
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *IPAddress) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.IPAddress"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *IPAddress) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *IPAddress) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddress"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *IPAddressList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.IPAddressList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *IPAddressList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *IPAddressList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddressList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *IPAddressSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.IPAddressSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *IPAddressSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *IPAddressSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.IPAddressSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ParentReference) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.ParentReference"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ParentReference) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ParentReference) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ParentReference"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceCIDR) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.ServiceCIDR"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDR) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDR) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDR"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceCIDRList) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.ServiceCIDRList"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRList) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRList) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRList"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceCIDRSpec) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.ServiceCIDRSpec"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRSpec) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRSpec) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRSpec"
 }
 
-// OpenAPICanonicalTypeName returns the OpenAPI canonical type name for this type.
-func (in *ServiceCIDRStatus) OpenAPICanonicalTypeName() string {
-	return "k8s.io/api/networking/v1alpha1.ServiceCIDRStatus"
-}
-
-// ModelName returns the OpenAPI model name for this type.
-func (in *ServiceCIDRStatus) ModelName() string {
+// OpenAPIModelName returns the OpenAPI model name for this type.
+func (in *ServiceCIDRStatus) OpenAPIModelName() string {
 	return "io.k8s.api.networking.v1alpha1.ServiceCIDRStatus"
 }
