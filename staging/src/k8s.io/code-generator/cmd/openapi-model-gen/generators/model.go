@@ -285,7 +285,7 @@ func (g *genOpenAPIModel) GenerateType(c *generator.Context, t *types.Type, w io
 	sw := generator.NewSnippetWriter(w, c, "$", "$")
 
 	sw.Do("// OpenAPIModelName returns the OpenAPI model name for this type.\n", a)
-	sw.Do("func (in *$.type|intrapackage$) OpenAPIModelName() string {\n", a)
+	sw.Do("func (in $.type|intrapackage$) OpenAPIModelName() string {\n", a)
 	sw.Do("    return \"$.modelName$\"\n", a)
 	sw.Do("}\n\n", nil)
 
