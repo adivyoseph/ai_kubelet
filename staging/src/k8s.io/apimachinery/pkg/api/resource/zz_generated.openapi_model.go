@@ -23,7 +23,7 @@ package resource
 
 // OpenAPIModelName returns the OpenAPI model name for this type.
 func (in Quantity) OpenAPIModelName() string {
-	return "io.k8s.apimachinery.pk.api.resource.Quantity"
+	return "io.k8s.apimachinery.pkg.api.resource.Quantity"
 }
 
 // OpenAPIModelName returns the OpenAPI model name for this type.

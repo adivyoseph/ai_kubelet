@@ -148,7 +148,7 @@ func NewDefinitionNamer(schemes ...*runtime.Scheme) *DefinitionNamer {
 		typeGroupVersionKinds: map[string]groupVersionKinds{},
 	}
 	for _, s := range schemes {
-		for gvk, rtype := range s.AllKnownTypes() {
+		for gvk, _ := range s.AllKnownTypes() {
 			newGVK := gvkConvert(gvk)
 			exists := false
 			name, err := s.ToOpenAPIDefinitionName(gvk)
@@ -163,7 +163,7 @@ func NewDefinitionNamer(schemes ...*runtime.Scheme) *DefinitionNamer {
 				}
 			}
 			if !exists {
-				ret.typeGroupVersionKinds[typeName(rtype)] = append(ret.typeGroupVersionKinds[typeName(rtype)], newGVK)
+				ret.typeGroupVersionKinds[name] = append(ret.typeGroupVersionKinds[name], newGVK)
 			}
 		}
 	}
