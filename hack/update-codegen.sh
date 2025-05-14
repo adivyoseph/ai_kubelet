@@ -817,6 +817,7 @@ function codegen::openapi() {
         --output-dir "${output_dir}" \
         --output-pkg "${output_pkg}" \
         --report-filename "${report_file}" \
+        --use-openapi-model-names \
         "${tag_pkgs[@]}" \
         "$@"
 
