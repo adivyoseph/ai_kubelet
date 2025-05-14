@@ -22,7 +22,7 @@ require (
 	k8s.io/apimachinery v0.0.0
 	k8s.io/client-go v0.0.0
 	k8s.io/klog/v2 v2.130.1
-	k8s.io/kube-openapi v0.0.0-20250514031809-4424e5fb552f
+	k8s.io/kube-openapi v0.0.0-20250514123443-9a3d502d19a0
 	k8s.io/utils v0.0.0-20250502105355-0f33e8f1c979
 	sigs.k8s.io/kustomize/api v0.19.0
 	sigs.k8s.io/kustomize/kyaml v0.19.0
@@ -74,5 +74,5 @@ replace (
 	k8s.io/api => ../api
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/client-go => ../client-go
-	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514031809-4424e5fb552f
+	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514123443-9a3d502d19a0
 )
