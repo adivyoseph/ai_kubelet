@@ -94,7 +94,7 @@ option go_package = "k8s.io/apimachinery/pkg/api/resource";
 // +k8s:deepcopy-gen=true
 // +k8s:openapi-gen=true
 // +k8s:openapi-model-gen=true
-// +modelName=io.k8s.apimachinery.pk.api.resource.Quantity
+// +modelName=io.k8s.apimachinery.pkg.api.resource.Quantity
 message Quantity {
   optional string string = 1;
 }
