@@ -99,7 +99,7 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/kms v0.0.0 // indirect
-	k8s.io/kube-openapi v0.0.0-20250514173254-c920ef5551a2 // indirect
+	k8s.io/kube-openapi v0.0.0-20250514184904-ab9df5f9d6c8 // indirect
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.31.2 // indirect
 	sigs.k8s.io/json v0.0.0-20241010143419-9aa6b5e7a4b3 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
@@ -113,5 +113,5 @@ replace (
 	k8s.io/client-go => ../client-go
 	k8s.io/component-base => ../component-base
 	k8s.io/kms => ../kms
-	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514173254-c920ef5551a2
+	k8s.io/kube-openapi => github.com/jpbetz/kube-openapi v0.0.0-20250514184904-ab9df5f9d6c8
 )

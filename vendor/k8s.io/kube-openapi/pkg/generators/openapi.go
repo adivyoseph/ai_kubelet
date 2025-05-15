@@ -349,9 +349,8 @@ func (g openAPITypeWriter) generateCall(t *types.Type) error {
 
 		args := argsFromType(t)
 
-		// Use the actual model name here...
 		if g.useOpenAPIModelNames {
-			g.Do("(&$.|raw${}).OpenAPIModelName(): ", t)
+			g.Do("$.|raw${}.OpenAPIModelName(): ", t)
 		} else {
 			// Legacy case: use the "canonical type name"
 			g.Do("\"$.$\": ", t.Name)
@@ -684,7 +683,7 @@ func (g openAPITypeWriter) generate(t *types.Type) error {
 			for _, k := range deps {
 				t := g.refTypes[k]
 				if g.useOpenAPIModelNames {
-					g.Do("(&$.|raw${}).OpenAPIModelName(),", t)
+					g.Do("$.|raw${}.OpenAPIModelName(),", t)
 				} else {
 					g.Do("\"$.$\",", k)
 				}
@@ -1048,7 +1047,7 @@ func (g openAPITypeWriter) generateSimpleProperty(typeString, format string) {
 func (g openAPITypeWriter) generateReferenceProperty(t *types.Type) {
 	g.refTypes[t.Name.String()] = t
 	if g.useOpenAPIModelNames {
-		g.Do("Ref: ref((&$.|raw${}).OpenAPIModelName()),\n", t)
+		g.Do("Ref: ref($.|raw${}.OpenAPIModelName()),\n", t)
 	} else {
 		g.Do("Ref: ref(\"$.$\"),\n", t.Name.String())
 	}
