@@ -38,7 +38,7 @@ import (
 	testutils "k8s.io/kubernetes/test/utils"
 )
 
-var _ = SIGDescribe(feature.Windows, func() {
+var _ = SIGWindowsDescribe(feature.Windows, feature.StandaloneMode, func() {
 	f := framework.NewDefaultFramework("static-pod")
 	f.NamespacePodSecurityLevel = admissionapi.LevelBaseline
 	ginkgo.Context("when creating a windows static pod", func() {
