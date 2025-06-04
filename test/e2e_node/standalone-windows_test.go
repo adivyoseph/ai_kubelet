@@ -139,7 +139,9 @@ func createWindowsBasicStaticPod(dir, name, namespace string) error {
 	defer f.Close()
 
 	y := printers.YAMLPrinter{}
-	y.PrintObj(podSpec, f)
+	if err := y.PrintObj(podSpec, f); err != nil {
+		return err
+	}
 
 	return nil
 }
