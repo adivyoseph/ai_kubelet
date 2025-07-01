@@ -255,6 +255,73 @@ func TestGRPCMethods(t *testing.T) {
 	}
 }
 
+func TestGRPCWithTimeoutEnforced(t *testing.T) {
+	tCtx := ktesting.Init(t)
+
+	service := drapbv1beta1.DRAPluginService
+	addr := path.Join(t.TempDir(), "dra.sock")
+
+	// we force NodePrepareResources to block indefinitely, this causes the timeout to elapse
+	blocked, done := make(chan struct{}), make(chan struct{})
+	handler := func() (*drapbv1beta1.NodePrepareResourcesResponse, error) {
+		defer close(done)
+		t.Logf("NodePrepareResources: blocking indefinitely, so the client times out before the server sends a reply")
+		now := time.Now()
+		<-blocked
+		t.Logf("NodePrepareResources: blocked for: %s", time.Since(now))
+		return &drapbv1beta1.NodePrepareResourcesResponse{}, nil
+	}
+
+	teardown, err := setupFakeGRPCServer(service, addr, &fakeGRPCServer{prepare: handler})
+	require.NoError(t, err, "failed to setup grpc server")
+	defer teardown()
+
+	driverName := "dummy-driver"
+	timeout := 3 * time.Second
+	draPlugins := NewDRAPluginManager(tCtx, nil, nil, 0)
+	err = draPlugins.add(driverName, addr, service, timeout)
+	require.NoError(t, err, "unexpected error while adding the plugin")
+
+	plugin, err := draPlugins.GetPlugin(driverName)
+	require.NoError(t, err, "unexpected error while retrieving the plugin")
+
+	// we will invoke the method on a new gorouinte, in case there
+	// is no timeout enforced it might block forever
+	result := make(chan error, 1)
+	go func() {
+		req := &drapbv1beta1.NodePrepareResourcesRequest{
+			Claims: []*drapbv1beta1.Claim{
+				{
+					Namespace: "dummy-namespace",
+					UID:       "dummy-uid",
+					Name:      "dummy-claim",
+				},
+			},
+		}
+		_, err := plugin.NodePrepareResources(tCtx, req)
+		result <- err
+	}()
+
+	// wait for the method call to return
+	select {
+	case err = <-result:
+		require.Error(t, err, "expected the grpc method to return an error")
+	case <-time.After(wait.ForeverTestTimeout):
+		t.Fatalf("expected the method invocation to return in time")
+	}
+
+	status, ok := grpcstatus.FromError(err)
+	require.True(t, ok, "expected an error of type: %T, but got: %T", &grpcstatus.Status{}, err)
+	assert.Equal(t, status.Code(), grpccodes.DeadlineExceeded, "expected status code to match")
+
+	close(blocked)
+	select {
+	case <-done:
+	case <-time.After(wait.ForeverTestTimeout):
+		t.Errorf("expected the grpc method to have been invoked")
+	}
+}
+
 func assertError(t *testing.T, expectError string, err error) {
 	t.Helper()
 	switch {
