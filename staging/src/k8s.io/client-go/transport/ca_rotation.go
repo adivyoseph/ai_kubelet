@@ -32,7 +32,7 @@ import (
 const caRotationWorkItemKey = "ca-rotation"
 
 // CARotationRefreshDuration is exposed so that integration tests can crank up the reload speed.
-var CARotationRefreshDuration = 5 * time.Minute
+const CARotationRefreshDuration = 5 * time.Minute
 
 // atomicTransportHolder holds a transport that can be atomically updated
 // when CA files change, enabling graceful CA rotation without cache complexity
@@ -41,6 +41,7 @@ type atomicTransportHolder struct {
 	caFile       string
 	config       *Config
 	logger       klog.Logger
+	currentCAData []byte  // Track the actual CA data currently in use
 	
 	// queue only ever has one item, but it has nice error handling backoff/retry semantics
 	queue workqueue.RateLimitingInterface
@@ -64,11 +65,21 @@ func newAtomicTransportHolder(config *Config, initialTransport *http.Transport) 
 	}
 	holder.transport.Store(initialTransport)
 	
+	// Initialize currentCAData with the CA data that was actually loaded into the transport
+	if len(config.TLS.CAData) > 0 {
+		holder.currentCAData = config.TLS.CAData
+	} else if len(config.TLS.CAFile) > 0 {
+		// Read the initial CA data from file
+		if caData, err := os.ReadFile(config.TLS.CAFile); err == nil {
+			holder.currentCAData = caData
+		}
+	}
+	
 	return holder
 }
 
 // run starts the controller and blocks until stopCh is closed.
-func (h *atomicTransportHolder) run(stopCh <-chan struct{}) {
+func (h *atomicTransportHolder) run(stopCh <-chan struct{}, rotationRefreshDuration time.Duration) {
 	defer utilruntime.HandleCrashWithLogger(h.logger)
 	defer h.queue.ShutDown()
 
@@ -77,7 +88,7 @@ func (h *atomicTransportHolder) run(stopCh <-chan struct{}) {
 
 	go wait.Until(h.runWorker, time.Second, stopCh)
 
-	go wait.PollImmediateUntil(CARotationRefreshDuration, func() (bool, error) {
+	go wait.PollImmediateUntil(rotationRefreshDuration, func() (bool, error) {
 		h.queue.Add(caRotationWorkItemKey)
 		return false, nil
 	}, stopCh)
@@ -113,9 +124,6 @@ func (h *atomicTransportHolder) processNextWorkItem() bool {
 func (h *atomicTransportHolder) checkCAFileAndRotate() error {
 	h.logger.V(2).Info("Checking CA file content", "caFile", h.caFile)
 	
-	// Get current CA data from config
-	currentCAData := h.config.TLS.CAData
-	
 	// Load new CA data from file
 	newCAData, err := os.ReadFile(h.caFile)
 	if err != nil {
@@ -123,19 +131,21 @@ func (h *atomicTransportHolder) checkCAFileAndRotate() error {
 		return err
 	}
 
-    if len(currentCAData) == 0 {
-        h.logger.Info("No CA data in config, using CA data from file", "caFile", h.caFile)
+	// Skip rotation if CA data is empty (file might be in the middle of being written)
+	if len(newCAData) == 0 {
+		h.logger.V(2).Info("CA file is empty, skipping rotation", "caFile", h.caFile)
 		return nil
-    }
+	}
 
-	if bytes.Equal(currentCAData, newCAData) {
+	// Compare with current CA data actually in use
+	if bytes.Equal(h.currentCAData, newCAData) {
 		h.logger.V(2).Info("CA content unchanged, skipping transport rotation", "caFile", h.caFile)
 		return nil
 	}
 
 	h.logger.V(2).Info("CA content changed, updating transport", "caFile", h.caFile)
 	
-	// Load new CA pool from updated config
+	// Load new CA pool
 	newCAs, err := rootCertPool(newCAData)
 	if err != nil {
 		h.logger.Error(err, "Failed to load CA pool from CA file", "caFile", h.caFile)
@@ -146,6 +156,10 @@ func (h *atomicTransportHolder) checkCAFileAndRotate() error {
 	newTransport := h.transport.Load().Clone()
 	newTransport.TLSClientConfig.RootCAs = newCAs
 	oldTransport := h.transport.Swap(newTransport)
+	
+	// Update our tracking of current CA data
+	h.currentCAData = newCAData
+	
 	if oldTransport != nil {
 		// Close idle connections on the old transport to encourage migration
 		oldTransport.CloseIdleConnections()

@@ -147,7 +147,7 @@ func (c *tlsTransportCache) get(config *Config) (http.RoundTripper, error) {
 		// For CA rotation, wrap the transport in an atomicTransportHolder
 		holder := newAtomicTransportHolder(config, httpTransport)
 		// Start the CA rotation controller
-		go holder.run(DialerStopCh)
+		go holder.run(DialerStopCh, CARotationRefreshDuration)
 		transport = holder
 	} else {
 		transport = httpTransport

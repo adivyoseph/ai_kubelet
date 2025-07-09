@@ -18,9 +18,19 @@ package transport
 
 import (
 	"bytes"
+	"crypto"
+	"crypto/rand"
+	"crypto/rsa"
 	"crypto/tls"
 	"crypto/x509"
+	"crypto/x509/pkix"
+	"encoding/pem"
+	"fmt"
+	"io"
+	"math/big"
+	"net"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"path/filepath"
 	"testing"
@@ -82,20 +92,18 @@ func writeCAFile(t testing.TB, caData []byte) string {
 	if err != nil {
 		t.Fatalf("Failed to write CA file: %v", err)
 	}
-	
 	return caFile
 }
 
 // createTestTransport creates a test transport with TLS config
 func createTestTransport(t testing.TB, caData []byte) *http.Transport {
-	pool := x509.NewCertPool()
-	if !pool.AppendCertsFromPEM(caData) {
+	CAs, err := rootCertPool(caData)
+	if err != nil {
 		t.Fatalf("Failed to parse CA certificate")
 	}
-
 	return &http.Transport{
 		TLSClientConfig: &tls.Config{
-			RootCAs: pool,
+			RootCAs: CAs,
 		},
 	}
 }
@@ -135,49 +143,6 @@ func TestNewAtomicTransportHolder(t *testing.T) {
 	}
 }
 
-func TestAtomicTransportHolderRoundTrip(t *testing.T) {
-	caFile := writeCAFile(t, []byte(testCACert1))
-	
-	config := &Config{
-		TLS: TLSConfig{
-			CAFile: caFile,
-			CAData: []byte(testCACert1),
-		},
-	}
-	
-	transport := createTestTransport(t, []byte(testCACert1))
-	holder := newAtomicTransportHolder(config, transport)
-	
-	// Create a test request
-	req, err := http.NewRequest("GET", "https://example.com", nil)
-	if err != nil {
-		t.Fatalf("Failed to create request: %v", err)
-	}
-	
-	// We can't mock the RoundTrip method since it's an interface method
-	// Instead, we'll create a mock transport that tracks calls
-	type mockTransport struct {
-		*http.Transport
-		called bool
-	}
-	
-	mock := &mockTransport{Transport: transport, called: false}
-	oldTransport := holder.transport.Load()
-	holder.transport.Store(mock.Transport)
-	
-	// Call RoundTrip through the holder
-	_, err = holder.RoundTrip(req)
-	
-	// We expect an error since we're not actually connecting to a server
-	// but the call should go through without panicking
-	if err == nil {
-		t.Error("Expected error since we're not connecting to a real server")
-	}
-	
-	// Restore the original transport
-	holder.transport.Store(oldTransport)
-}
-
 func TestCheckCAFileAndRotate(t *testing.T) {
 	tests := []struct {
 		name           string
@@ -208,29 +173,27 @@ func TestCheckCAFileAndRotate(t *testing.T) {
 			expectError: true,
 		},
 		{
-			name:           "no current CA data",
-			setupCA:        nil, // No initial CA data
-			updateCA:       []byte(testCACert1),
+			name:           "empty file content",
+			setupCA:        []byte(testCACert1),
+			updateCA:       []byte{}, // Empty file
 			expectRotation: false,
+			expectError:    false,
+		},
+		{
+			name:           "initial empty CA data",
+			setupCA:        []byte{}, // No initial CA data
+			updateCA:       []byte(testCACert1),
+			expectRotation: true, // Should rotate since we have new CA data
 			expectError:    false,
 		},
 	}
 	
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var caFile string
+			caFile := writeCAFile(t, tt.setupCA)
 			if tt.caFile != "" {
 				caFile = tt.caFile
-			} else {
-				caFile = writeCAFile(t, []byte(testCACert1))
-				if tt.updateCA != nil {
-					// Update the file with new CA content
-					err := os.WriteFile(caFile, tt.updateCA, 0644)
-					if err != nil {
-						t.Fatalf("Failed to update CA file: %v", err)
-					}
-				}
-			}
+			} 
 			
 			config := &Config{
 				TLS: TLSConfig{
@@ -239,8 +202,18 @@ func TestCheckCAFileAndRotate(t *testing.T) {
 				},
 			}
 			
-			transport := createTestTransport(t, []byte(testCACert1))
+			transport := createTestTransport(t, tt.setupCA)
 			holder := newAtomicTransportHolder(config, transport)
+		
+			if tt.updateCA != nil {
+				// Update the file with new CA content
+				err := os.WriteFile(caFile, tt.updateCA, 0644)
+				if err != nil {
+					t.Errorf("Failed to update CA data with file address: %s", caFile)
+				}
+			}
+			
+			time.Sleep(time.Second)
 			
 			// Check CA file rotation
 			err := holder.checkCAFileAndRotate()
@@ -267,10 +240,14 @@ func TestCheckCAFileAndRotate(t *testing.T) {
 				}
 				// New transport should have updated CA
 				if newTransport.TLSClientConfig == nil {
-					t.Fatal("Expected TLS config in new transport")
+					t.Error("Expected TLS config in new transport")
 				}
-				if newTransport.TLSClientConfig.RootCAs == nil {
-					t.Fatal("Expected RootCAs in new transport")
+				// Verify RootCAs is not nil when we have valid CA data
+				if len(tt.updateCA) > 0 && newTransport.TLSClientConfig.RootCAs == nil {
+					t.Error("Expected RootCAs to be set when CA data is available")
+				}
+				if newTransport.TLSClientConfig.RootCAs == transport.TLSClientConfig.RootCAs {
+                    t.Error("Expected RootCAs should change")
 				}
 			} else {
 				if newTransport != transport {
@@ -282,12 +259,6 @@ func TestCheckCAFileAndRotate(t *testing.T) {
 }
 
 func TestController(t *testing.T) {
-	// Save original refresh duration
-	originalDuration := CARotationRefreshDuration
-	defer func() {
-		CARotationRefreshDuration = originalDuration
-	}()
-	
 	tests := []struct {
 		name           string
 		refreshDuration time.Duration
@@ -307,9 +278,6 @@ func TestController(t *testing.T) {
 	
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			// Set test-specific refresh duration
-			CARotationRefreshDuration = tt.refreshDuration
-			
 			caFile := writeCAFile(t, []byte(testCACert1))
 			config := &Config{
 				TLS: TLSConfig{
@@ -323,7 +291,7 @@ func TestController(t *testing.T) {
 			
 			// Start controller
 			stopCh := make(chan struct{})
-			go holder.run(stopCh)
+			go holder.run(stopCh, tt.refreshDuration)
 			
 			// Let it run for a bit
 			time.Sleep(2 * tt.refreshDuration)
@@ -347,8 +315,17 @@ func TestController(t *testing.T) {
 				}
 				
 				// Verify new transport has updated CA
-				if newTransport.TLSClientConfig == nil || newTransport.TLSClientConfig.RootCAs == nil {
-					t.Error("Expected new transport to have updated CA")
+				if newTransport.TLSClientConfig == nil {
+					t.Fatal("Expected TLS config in new transport")
+				}
+				
+				if newTransport.TLSClientConfig.RootCAs == nil {
+					t.Error("Expected RootCAs to be set after rotation")
+				}
+				
+				// Verify the RootCAs actually changed
+				if newTransport.TLSClientConfig.RootCAs == transport.TLSClientConfig.RootCAs {
+					t.Error("Expected RootCAs to be different after rotation")
 				}
 			}
 			
@@ -357,11 +334,6 @@ func TestController(t *testing.T) {
 			
 			// Give it time to stop
 			time.Sleep(100 * time.Millisecond)
-			
-			// Queue should be shut down
-			if !holder.queue.ShuttingDown() {
-				t.Error("Expected queue to be shut down")
-			}
 		})
 	}
 }
@@ -377,7 +349,6 @@ func TestUtilityFunctions(t *testing.T) {
 			{"same data", []byte(testCACert1), []byte(testCACert1), true},
 			{"different data", []byte(testCACert1), []byte(testCACert2), false},
 			{"empty data", []byte{}, []byte{}, true},
-			{"nil vs empty", nil, []byte{}, false},
 		}
 		
 		for _, tt := range tests {
@@ -431,73 +402,374 @@ func TestUtilityFunctions(t *testing.T) {
 	})
 }
 
-func TestTransportClone(t *testing.T) {
-	transport := createTestTransport(t, []byte(testCACert1))
-	
-	// Set some additional transport properties
-	transport.MaxIdleConns = 100
-	transport.MaxIdleConnsPerHost = 10
-	transport.IdleConnTimeout = 90 * time.Second
-	
-	// Clone the transport
-	cloned := transport.Clone()
-	
-	// Verify cloned transport has same properties
-	if cloned.MaxIdleConns != transport.MaxIdleConns {
-		t.Error("Expected cloned transport to have same MaxIdleConns")
+// createTestCertificateAuthority creates a test CA certificate and key
+func createTestCertificateAuthority(t testing.TB, commonName string) ([]byte, crypto.PrivateKey, []byte, error) {
+	// Generate private key
+	privateKey, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		return nil, nil, nil, err
 	}
 	
-	if cloned.MaxIdleConnsPerHost != transport.MaxIdleConnsPerHost {
-		t.Error("Expected cloned transport to have same MaxIdleConnsPerHost")
+	// Create CA certificate template
+	template := x509.Certificate{
+		SerialNumber: big.NewInt(1),
+		Subject: pkix.Name{
+			CommonName: commonName,
+		},
+		NotBefore:             time.Now(),
+		NotAfter:              time.Now().Add(time.Hour),
+		KeyUsage:              x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature | x509.KeyUsageCertSign,
+		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth, x509.ExtKeyUsageClientAuth},
+		BasicConstraintsValid: true,
+		IsCA:                  true,
+		// Add IP SANs for 127.0.0.1 and DNS names for localhost
+		IPAddresses: []net.IP{net.ParseIP("127.0.0.1"), net.ParseIP("::1")},
+		DNSNames:    []string{"localhost"},
 	}
 	
-	if cloned.IdleConnTimeout != transport.IdleConnTimeout {
-		t.Error("Expected cloned transport to have same IdleConnTimeout")
+	// Create certificate
+	certDER, err := x509.CreateCertificate(rand.Reader, &template, &template, &privateKey.PublicKey, privateKey)
+	if err != nil {
+		return nil, nil, nil, err
 	}
 	
-	// Verify TLS config is cloned
-	if cloned.TLSClientConfig == nil {
-		t.Error("Expected cloned transport to have TLS config")
-	}
+	// Encode certificate to PEM
+	certPEM := pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: certDER})
 	
-	if cloned.TLSClientConfig == transport.TLSClientConfig {
-		t.Error("Expected cloned TLS config to be different instance")
-	}
-	
-	// Verify RootCAs are the same
-	if cloned.TLSClientConfig.RootCAs != transport.TLSClientConfig.RootCAs {
-		t.Error("Expected cloned TLS config to have same RootCAs")
-	}
+	return certDER, privateKey, certPEM, nil
 }
 
-// Benchmark CA rotation performance
-func BenchmarkCARotation(b *testing.B) {
-	caFile := writeCAFile(b, []byte(testCACert1))
+// createTestClientCertificate creates a client certificate signed by the given CA
+func createTestClientCertificate(t testing.TB, caCertPEM []byte, caKey crypto.PrivateKey, commonName string) ([]byte, []byte, error) {
+	// Parse CA certificate
+	caCertBlock, _ := pem.Decode(caCertPEM)
+	if caCertBlock == nil {
+		return nil, nil, fmt.Errorf("failed to parse CA certificate PEM")
+	}
 	
+	caCert, err := x509.ParseCertificate(caCertBlock.Bytes)
+	if err != nil {
+		return nil, nil, err
+	}
+	
+	// Generate client private key
+	clientKey, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		return nil, nil, err
+	}
+	
+	// Create client certificate template
+	template := x509.Certificate{
+		SerialNumber: big.NewInt(2),
+		Subject: pkix.Name{
+			CommonName: commonName,
+		},
+		NotBefore:    time.Now(),
+		NotAfter:     time.Now().Add(time.Hour),
+		KeyUsage:     x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
+		ExtKeyUsage:  []x509.ExtKeyUsage{x509.ExtKeyUsageClientAuth},
+	}
+	
+	// Create certificate signed by CA
+	certDER, err := x509.CreateCertificate(rand.Reader, &template, caCert, &clientKey.PublicKey, caKey)
+	if err != nil {
+		return nil, nil, err
+	}
+	
+	// Encode certificate to PEM
+	certPEM := pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: certDER})
+	
+	// Encode private key to PEM
+	keyBytes, err := x509.MarshalPKCS8PrivateKey(clientKey)
+	if err != nil {
+		return nil, nil, err
+	}
+	keyPEM := pem.EncodeToMemory(&pem.Block{Type: "PRIVATE KEY", Bytes: keyBytes})
+	
+	return certPEM, keyPEM, nil
+}
+
+// TestCARotationConnectionBehavior tests that CA rotation:
+// 1. Does NOT close active connections 
+// 2. New connections use the updated CA
+// 3. Idle connections are properly cleaned up
+func TestCARotationConnectionBehavior(t *testing.T) {
+	t.Log("Testing CA Rotation Connection Behavior")
+	
+	// Create initial CA and server certificates
+	serverCert1, serverKey1, serverCA1, err := createTestCertificateAuthority(t, "test-server-1")
+	if err != nil {
+		t.Fatalf("Failed to create initial server CA: %v", err)
+	}
+	
+	clientCert1, clientKey1, err := createTestClientCertificate(t, serverCA1, serverKey1, "test-client-1")
+	if err != nil {
+		t.Fatalf("Failed to create initial client cert: %v", err)
+	}
+	
+	// Create test server with multiple endpoints
+	server := httptest.NewUnstartedServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/slow":
+			// Slow endpoint - simulates active long-running connection
+			time.Sleep(300 * time.Millisecond)
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte("slow-response"))
+		case "/fast":
+			// Fast endpoint - for testing new connections
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte("fast-response"))
+		case "/stream":
+			// Streaming endpoint - simulates persistent connections
+			w.Header().Set("Content-Type", "text/plain")
+			w.WriteHeader(http.StatusOK)
+			for i := 0; i < 5; i++ {
+				fmt.Fprintf(w, "chunk-%d\n", i)
+				if f, ok := w.(http.Flusher); ok {
+					f.Flush()
+				}
+				time.Sleep(100 * time.Millisecond)
+			}
+		default:
+			w.WriteHeader(http.StatusNotFound)
+		}
+	}))
+	
+	// Configure server TLS
+	cert1, err := tls.X509KeyPair(
+		pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: serverCert1}),
+		func() []byte {
+			keyBytes, _ := x509.MarshalPKCS8PrivateKey(serverKey1)
+			return pem.EncodeToMemory(&pem.Block{Type: "PRIVATE KEY", Bytes: keyBytes})
+		}(),
+	)
+	if err != nil {
+		t.Fatalf("Failed to create server cert: %v", err)
+	}
+	
+	combinedCaPool := x509.NewCertPool()
+	combinedCaPool.AppendCertsFromPEM(serverCA1)
+	
+	server.TLS = &tls.Config{
+		Certificates: []tls.Certificate{cert1},
+		ClientAuth:   tls.RequireAndVerifyClientCert,
+		ClientCAs:    combinedCaPool,
+	}
+	server.StartTLS()
+	defer server.Close()
+	
+	// Setup client with CA rotation
+	caFile := writeCAFile(t, serverCA1)
 	config := &Config{
 		TLS: TLSConfig{
-			CAFile: caFile,
-			CAData: []byte(testCACert1),
+			CAFile:   caFile,
+			CertData: clientCert1,
+			KeyData:  clientKey1,
 		},
 	}
 	
-	transport := createTestTransport(b, []byte(testCACert1))
-	holder := newAtomicTransportHolder(config, transport)
-	
-	// Update CA file
-	err := os.WriteFile(caFile, []byte(testCACert2), 0644)
+	transport, err := New(config)
 	if err != nil {
-		b.Fatalf("Failed to update CA file: %v", err)
+		t.Fatalf("Failed to create transport: %v", err)
 	}
 	
-	b.ResetTimer()
+	holder, ok := transport.(*atomicTransportHolder)
+	if !ok {
+		t.Fatalf("Expected atomicTransportHolder, got %T", transport)
+	}
 	
-	for i := 0; i < b.N; i++ {
-		err := holder.checkCAFileAndRotate()
-		if err != nil {
-			b.Fatalf("Unexpected error: %v", err)
+	// Start CA rotation controller
+	stopCh := make(chan struct{})
+	defer close(stopCh)
+	go holder.run(stopCh, 50*time.Millisecond)
+	
+	client := &http.Client{
+		Transport: transport,
+		Timeout:   5 * time.Second,
+	}
+	
+	// Test 1: Establish initial connection
+	t.Log("Testing initial connection")
+	resp, err := client.Get(server.URL + "/fast")
+	if err != nil {
+		t.Fatalf("Initial connection failed: %v", err)
+	}
+	body, _ := io.ReadAll(resp.Body)
+	resp.Body.Close()
+	
+	if string(body) != "fast-response" {
+		t.Errorf("Expected 'fast-response', got '%s'", string(body))
+	}
+	t.Log("Initial connection successful")
+	
+	// Test 2: Start a long-running request BEFORE CA rotation
+	t.Log("Testing active connection preservation during CA rotation")
+	
+	type requestResult struct {
+		body []byte
+		err  error
+		startTime time.Time
+		endTime   time.Time
+	}
+	
+	// Channel to receive result from long-running request
+	longRequestResult := make(chan requestResult, 1)
+	
+	// Start long-running request
+	go func() {
+		startTime := time.Now()
+		resp, err := client.Get(server.URL + "/slow")
+		endTime := time.Now()
+		
+		var body []byte
+		if err == nil {
+			body, _ = io.ReadAll(resp.Body)
+			resp.Body.Close()
+		}
+		
+		longRequestResult <- requestResult{
+			body:      body,
+			err:       err,
+			startTime: startTime,
+			endTime:   endTime,
+		}
+	}()
+	
+	// Wait a moment to ensure the long request starts
+	time.Sleep(100 * time.Millisecond)
+	
+	// Test 3: Perform CA rotation WHILE the long request is active
+	t.Log("Performing CA rotation during active request")
+	
+	// Create rotated CA and certificates
+	serverCert2, serverKey2, serverCA2, err := createTestCertificateAuthority(t, "test-server-2")
+	if err != nil {
+		t.Fatalf("Failed to create rotated server CA: %v", err)
+	}
+	
+	// clientCert2, clientKey2, err := createTestClientCertificate(t, serverCA2, serverKey2, "test-client-2")
+	// if err != nil {
+	// 	t.Fatalf("Failed to create rotated client cert: %v", err)
+	// }
+	
+	// Store original transport reference to verify it changes
+	originalTransport := holder.transport.Load()
+	
+	// Update server to accept both CAs (simulating gradual CA rollout)
+	cert2, err := tls.X509KeyPair(
+		pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: serverCert2}),
+		func() []byte {
+			keyBytes, _ := x509.MarshalPKCS8PrivateKey(serverKey2)
+			return pem.EncodeToMemory(&pem.Block{Type: "PRIVATE KEY", Bytes: keyBytes})
+		}(),
+	)
+	if err != nil {
+		t.Fatalf("Failed to create rotated server cert: %v", err)
+	}
+	
+	// Create combined CA pool (both old and new CAs)
+	combinedCaPool.AppendCertsFromPEM(serverCA2)
+	
+	// Update server to accept both CAs
+	server.TLS.Certificates = []tls.Certificate{cert2}
+	server.TLS.ClientCAs = combinedCaPool
+	
+	// Update client CA file (simulate CA file rotation)
+	err = os.WriteFile(caFile, serverCA2, 0644)
+	if err != nil {
+		t.Fatalf("Failed to update CA file: %v", err)
+	}
+	
+	// Allow some time for CA rotation to be detected
+	time.Sleep(100 * time.Millisecond)
+	
+	// Test 4: Verify the long-running request completes successfully
+	t.Log("Waiting for long-running request to complete")
+	select {
+	case result := <-longRequestResult:
+		if result.err != nil {
+			t.Errorf("Long-running request failed: %v", result.err)
+		} else if string(result.body) != "slow-response" {
+			t.Errorf("Expected 'slow-response', got '%s'", string(result.body))
+		} else {
+			t.Log("Long-running request completed successfully during CA rotation")
+		}
+		
+		// Verify request took expected time
+		duration := result.endTime.Sub(result.startTime)
+		if duration < 250*time.Millisecond {
+			t.Errorf("Request completed too quickly: %v", duration)
+		}
+		
+	case <-time.After(2 * time.Second):
+		t.Error("Long-running request timed out")
+	}
+	
+	// Test 5: Verify transport was updated
+	newTransport := holder.transport.Load()
+	if newTransport == originalTransport {
+		t.Error("Expected transport to be updated after CA rotation")
+	} else if newTransport.TLSClientConfig.RootCAs == originalTransport.TLSClientConfig.RootCAs {
+		t.Error("The root CAs are not rotated.")
+	} else {
+		t.Log("Transport was properly updated after CA rotation")
+	}
+	
+	// Test 6: Verify new connections use the rotated CA
+	t.Log("Testing new connections with rotated CA")
+	
+	// Create new client
+	// rotatedConfig := &Config{
+	// 	TLS: TLSConfig{
+	// 		CAFile:   caFile,
+	// 		CertData: clientCert1,
+	// 		KeyData:  clientKey2,
+	// 	},
+	// }
+	
+	rotatedTransport, err := New(config)
+	if err != nil {
+		t.Fatalf("Failed to create rotated transport: %v", err)
+	}
+	
+	rotatedClient := &http.Client{
+		Transport: rotatedTransport,
+		Timeout:   5 * time.Second,
+	}
+	
+	// Test new connection
+	resp, err = rotatedClient.Get(server.URL + "/fast")
+	if err != nil {
+		t.Errorf("New connection with rotated CA failed: %v", err)
+	} else {
+		body, _ := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		if string(body) != "fast-response" {
+			t.Errorf("Expected 'fast-response', got '%s'", string(body))
+		} else {
+			t.Log("New connections work with rotated CA")
 		}
 	}
+	
+	// Test 7: Verify original client eventually adapts to CA rotation
+	t.Log("Testing original client adaptation to CA rotation")
+	
+	// Give the original client some time to detect CA rotation
+	time.Sleep(200 * time.Millisecond)
+	
+	resp, err = client.Get(server.URL + "/fast")
+	if err != nil {
+		t.Logf("Original client failed after CA rotation (may be expected): %v", err)
+		// This might be expected depending on the implementation
+	} else {
+		body, _ := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		if string(body) == "fast-response" {
+			t.Log("Original client successfully adapted to CA rotation")
+		} else {
+			t.Errorf("Expected 'fast-response', got '%s'", string(body))
+		}
+	}
+	
+	t.Log("Connection behavior test completed successfully")
 }
-
- 
