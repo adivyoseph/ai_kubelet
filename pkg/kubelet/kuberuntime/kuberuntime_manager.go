@@ -1601,11 +1601,12 @@ func (m *kubeGenericRuntimeManager) killPodWithSyncResult(ctx context.Context, p
 }
 
 func (m *kubeGenericRuntimeManager) GeneratePodStatus(event *runtimeapi.ContainerEventResponse) (*kubecontainer.PodStatus, error) {
+	podUID := kubetypes.UID(event.PodSandboxStatus.Metadata.Uid)
 	podIPs := m.determinePodSandboxIPs(event.PodSandboxStatus.Metadata.Namespace, event.PodSandboxStatus.Metadata.Name, event.PodSandboxStatus)
 
 	kubeContainerStatuses := []*kubecontainer.Status{}
 	for _, status := range event.ContainersStatuses {
-		kubeContainerStatuses = append(kubeContainerStatuses, m.convertToKubeContainerStatus(status))
+		kubeContainerStatuses = append(kubeContainerStatuses, m.convertToKubeContainerStatus(podUID, status))
 	}
 
 	sort.Sort(containerStatusByCreated(kubeContainerStatuses))
@@ -1704,7 +1705,7 @@ func (m *kubeGenericRuntimeManager) GetPodStatus(ctx context.Context, uid kubety
 				// timestamp from sandboxStatus.
 				timestamp = time.Unix(0, resp.Timestamp)
 				for _, cs := range resp.ContainersStatuses {
-					cStatus := m.convertToKubeContainerStatus(cs)
+					cStatus := m.convertToKubeContainerStatus(uid, cs)
 					containerStatuses = append(containerStatuses, cStatus)
 				}
 			}
@@ -1740,7 +1741,7 @@ func (m *kubeGenericRuntimeManager) GetContainerStatus(ctx context.Context, id k
 	if err != nil {
 		return nil, fmt.Errorf("runtime container status: %w", err)
 	}
-	return m.convertToKubeContainerStatus(resp.GetStatus()), nil
+	return m.convertToKubeContainerStatus(podUID, resp.GetStatus()), nil
 }
 
 // GarbageCollect removes dead containers using the specified container gc policy.
