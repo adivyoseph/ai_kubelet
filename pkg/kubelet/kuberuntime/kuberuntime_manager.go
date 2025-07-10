@@ -702,10 +702,6 @@ func (m *kubeGenericRuntimeManager) computePodResizeAction(pod *v1.Pod, containe
 	return true
 }
 
-func (m *kubeGenericRuntimeManager) GetActuatedResources(podUID kubetypes.UID, containerName string) (v1.ResourceRequirements, bool) {
-	return m.actuatedState.GetContainerResources(podUID, containerName)
-}
-
 func (m *kubeGenericRuntimeManager) doPodResizeAction(pod *v1.Pod, podContainerChanges podActions) *kubecontainer.SyncResult {
 	resizeResult := kubecontainer.NewSyncResult(kubecontainer.ResizePodInPlace, format.Pod(pod))
 	pcm := m.containerManager.NewPodContainerManager()
@@ -1736,7 +1732,7 @@ func (m *kubeGenericRuntimeManager) GetPodStatus(ctx context.Context, uid kubety
 	}, nil
 }
 
-func (m *kubeGenericRuntimeManager) GetContainerStatus(ctx context.Context, id kubecontainer.ContainerID) (*kubecontainer.Status, error) {
+func (m *kubeGenericRuntimeManager) GetContainerStatus(ctx context.Context, podUID kubetypes.UID, id kubecontainer.ContainerID) (*kubecontainer.Status, error) {
 	resp, err := m.runtimeService.ContainerStatus(ctx, id.ID, false)
 	if err != nil {
 		return nil, fmt.Errorf("runtime container status: %w", err)

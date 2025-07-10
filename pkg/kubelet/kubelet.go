@@ -69,6 +69,7 @@ import (
 	cloudprovider "k8s.io/cloud-provider"
 	"k8s.io/component-base/zpages/flagz"
 	"k8s.io/component-helpers/apimachinery/lease"
+	"k8s.io/component-helpers/resource"
 	internalapi "k8s.io/cri-api/pkg/apis"
 	runtimeapi "k8s.io/cri-api/pkg/apis/runtime/v1"
 	remote "k8s.io/cri-client/pkg"
@@ -1897,16 +1898,11 @@ func (kl *Kubelet) SyncPod(ctx context.Context, updateType kubetypes.SyncPodType
 			kl.statusManager.SetPodResizeInProgressCondition(pod.UID, "", "", false)
 		} else {
 			// (Allocated == Actual) => clear the resize in-progress status.
-			conditionCleared := kl.statusManager.ClearPodResizeInProgressCondition(pod.UID)
-			if conditionCleared {
-				// TODO(natasha41575): We only need to make this call if any of the resources were decreased.
-				kl.allocationManager.RetryPendingResizes()
-			}
+			// TODO(#132851): There is a race condition here, where the goroutine in the
+			// allocation manager may allocate a new resize and unconditionally set the
+			// PodResizeInProgressCondition before we clear the status below.
+			kl.statusManager.ClearPodResizeInProgressCondition(pod.UID)
 		}
-		// TODO(natasha41575): There is a race condition here, where the goroutine in the
-		// allocation manager may allocate a new resize and unconditionally set the
-		// PodResizeInProgressCondition before we set the status below.
-		// See https://github.com/kubernetes/kubernetes/issues/132851.
 	}
 
 	// Generate final API pod status with pod and status manager status
@@ -2739,9 +2735,12 @@ func (kl *Kubelet) HandlePodRemoves(pods []*v1.Pod) {
 // pod is updated in the API.
 func (kl *Kubelet) HandlePodReconcile(pods []*v1.Pod) {
 	start := kl.clock.Now()
+	retryPendingResizes := false
+	hasPendingResizes := kl.allocationManager.HasPendingResizes()
 	for _, pod := range pods {
 		// Update the pod in pod manager, status manager will do periodically reconcile according
 		// to the pod manager.
+		oldPod, _ := kl.podManager.GetPodByUID(pod.UID)
 		kl.podManager.UpdatePod(pod)
 
 		pod, mirrorPod, wasMirror := kl.podManager.GetPodAndMirrorPod(pod)
@@ -2751,6 +2750,22 @@ func (kl *Kubelet) HandlePodReconcile(pods []*v1.Pod) {
 				continue
 			}
 			// Static pods should be reconciled the same way as regular pods
+		}
+
+		// If there are pending resizes, check whether the requests shrank as a result of the status
+		// resources changing.
+		if hasPendingResizes && !retryPendingResizes && oldPod != nil &&
+			utilfeature.DefaultFeatureGate.Enabled(features.InPlacePodVerticalScaling) {
+			opts := resource.PodResourcesOptions{
+				UseStatusResources:    true,
+				SkipPodLevelResources: !utilfeature.DefaultFeatureGate.Enabled(features.PodLevelResources),
+			}
+			oldRequest := resource.PodRequests(oldPod, opts)
+			newRequest := resource.PodRequests(pod, opts)
+
+			// If memory requests or limits shrank, then retry the pending resizes.
+			retryPendingResizes = newRequest.Memory().Cmp(*oldRequest.Memory()) < 1 ||
+				newRequest.Cpu().Cmp(*oldRequest.Cpu()) < 1
 		}
 
 		// TODO: reconcile being calculated in the config manager is questionable, and avoiding
@@ -2780,6 +2795,10 @@ func (kl *Kubelet) HandlePodReconcile(pods []*v1.Pod) {
 				kl.containerDeletor.deleteContainersInPod("", podStatus, true)
 			}
 		}
+	}
+
+	if retryPendingResizes {
+		kl.allocationManager.RetryPendingResizes()
 	}
 }
 

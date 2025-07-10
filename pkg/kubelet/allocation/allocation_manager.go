@@ -94,6 +94,9 @@ type Manager interface {
 	// PushPendingResize queues a pod with a pending resize request for later reevaluation.
 	PushPendingResize(uid types.UID)
 
+	// HasPendingResizes returns whether there are currently any pending resizes.
+	HasPendingResizes() bool
+
 	// RetryPendingResizes retries all pending resizes. It returns a list of successful resizes.
 	RetryPendingResizes() []*v1.Pod
 }
@@ -265,6 +268,13 @@ func (m *manager) PushPendingResize(uid types.UID) {
 
 	// TODO (natasha41575): Sort the pending resizes list by priority.
 	// See https://github.com/kubernetes/enhancements/pull/5266.
+}
+
+func (m *manager) HasPendingResizes() bool {
+	m.allocationMutex.Lock()
+	defer m.allocationMutex.Unlock()
+
+	return len(m.podsWithPendingResizes) > 0
 }
 
 // GetContainerResourceAllocation returns the last checkpointed AllocatedResources values
@@ -525,18 +535,6 @@ func (m *manager) canResizePod(allocatedPods []*v1.Pod, pod *v1.Pod) (bool, stri
 		msg = "Node didn't have enough capacity: " + msg
 		klog.V(3).InfoS(msg, "pod", klog.KObj(pod))
 		return false, v1.PodReasonInfeasible, msg
-	}
-
-	for i := range allocatedPods {
-		for j, c := range allocatedPods[i].Status.ContainerStatuses {
-			actuatedResources, exists := m.containerRuntime.GetActuatedResources(allocatedPods[i].UID, c.Name)
-			if exists {
-				// Overwrite the actual resources in the status with the actuated resources.
-				// This lets us reuse the existing scheduler libraries without having to wait
-				// for the actual resources in the status to be updated.
-				allocatedPods[i].Status.ContainerStatuses[j].Resources = &actuatedResources
-			}
-		}
 	}
 
 	if ok, failReason, failMessage := m.canAdmitPod(allocatedPods, pod); !ok {
