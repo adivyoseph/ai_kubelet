@@ -213,6 +213,11 @@ template:
           fieldRef:
             apiVersion: apiVersionValue
             fieldPath: fieldPathValue
+          fileKeyRef:
+            key: keyValue
+            optional: true
+            path: pathValue
+            volumeName: volumeNameValue
           resourceFieldRef:
             containerName: containerNameValue
             divisor: "0"
@@ -430,6 +435,11 @@ template:
           fieldRef:
             apiVersion: apiVersionValue
             fieldPath: fieldPathValue
+          fileKeyRef:
+            key: keyValue
+            optional: true
+            path: pathValue
+            volumeName: volumeNameValue
           resourceFieldRef:
             containerName: containerNameValue
             divisor: "0"
@@ -631,6 +641,7 @@ template:
     hostPID: true
     hostUsers: true
     hostname: hostnameValue
+    hostnameOverride: hostnameOverrideValue
     imagePullSecrets:
     - name: nameValue
     initContainers:
@@ -649,6 +660,11 @@ template:
           fieldRef:
             apiVersion: apiVersionValue
             fieldPath: fieldPathValue
+          fileKeyRef:
+            key: keyValue
+            optional: true
+            path: pathValue
+            volumeName: volumeNameValue
           resourceFieldRef:
             containerName: containerNameValue
             divisor: "0"
@@ -1154,6 +1170,13 @@ template:
                 containerName: containerNameValue
                 divisor: "0"
                 resource: resourceValue
+          podCertificate:
+            certificateChainPath: certificateChainPathValue
+            credentialBundlePath: credentialBundlePathValue
+            keyPath: keyPathValue
+            keyType: keyTypeValue
+            maxExpirationSeconds: 3
+            signerName: signerNameValue
           secret:
             items:
             - key: keyValue

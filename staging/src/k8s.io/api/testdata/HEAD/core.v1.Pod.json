@@ -302,6 +302,14 @@
                 },
                 "optional": true,
                 "path": "pathValue"
+              },
+              "podCertificate": {
+                "signerName": "signerNameValue",
+                "keyType": "keyTypeValue",
+                "maxExpirationSeconds": 3,
+                "credentialBundlePath": "credentialBundlePathValue",
+                "keyPath": "keyPathValue",
+                "certificateChainPath": "certificateChainPathValue"
               }
             }
           ],
@@ -494,6 +502,12 @@
               },
               "secretKeyRef": {
                 "name": "nameValue",
+                "key": "keyValue",
+                "optional": true
+              },
+              "fileKeyRef": {
+                "volumeName": "volumeNameValue",
+                "path": "pathValue",
                 "key": "keyValue",
                 "optional": true
               }
@@ -793,6 +807,12 @@
                 "name": "nameValue",
                 "key": "keyValue",
                 "optional": true
+              },
+              "fileKeyRef": {
+                "volumeName": "volumeNameValue",
+                "path": "pathValue",
+                "key": "keyValue",
+                "optional": true
               }
             }
           }
@@ -1088,6 +1108,12 @@
               },
               "secretKeyRef": {
                 "name": "nameValue",
+                "key": "keyValue",
+                "optional": true
+              },
+              "fileKeyRef": {
+                "volumeName": "volumeNameValue",
+                "path": "pathValue",
                 "key": "keyValue",
                 "optional": true
               }
@@ -1725,7 +1751,8 @@
           "request": "requestValue"
         }
       ]
-    }
+    },
+    "hostnameOverride": "hostnameOverrideValue"
   },
   "status": {
     "observedGeneration": 17,

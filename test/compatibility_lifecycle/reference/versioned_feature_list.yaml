@@ -125,6 +125,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.27"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"
 - name: APIServingWithRoutine
   versionedSpecs:
   - default: false
@@ -407,20 +411,6 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.34"
-- name: DevicePluginCDIDevices
-  versionedSpecs:
-  - default: false
-    lockToDefault: false
-    preRelease: Alpha
-    version: "1.28"
-  - default: true
-    lockToDefault: false
-    preRelease: Beta
-    version: "1.29"
-  - default: true
-    lockToDefault: true
-    preRelease: GA
-    version: "1.31"
 - name: DisableAllocatorDualWrite
   versionedSpecs:
   - default: false
@@ -461,6 +451,10 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.32"
+  - default: true
+    lockToDefault: false
+    preRelease: Beta
+    version: "1.34"
 - name: DRADeviceTaints
   versionedSpecs:
   - default: false
@@ -505,6 +499,16 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.32"
+  - default: true
+    lockToDefault: false
+    preRelease: GA
+    version: "1.34"
+- name: EnvFiles
+  versionedSpecs:
+  - default: false
+    lockToDefault: false
+    preRelease: Alpha
+    version: "1.34"
 - name: EventedPLEG
   versionedSpecs:
   - default: false
@@ -571,6 +575,12 @@
     lockToDefault: true
     preRelease: GA
     version: "1.33"
+- name: HostnameOverride
+  versionedSpecs:
+  - default: false
+    lockToDefault: false
+    preRelease: Alpha
+    version: "1.34"
 - name: HPAConfigurableTolerance
   versionedSpecs:
   - default: false
@@ -629,6 +639,12 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.32"
+- name: InPlacePodVerticalScalingExclusiveMemory
+  versionedSpecs:
+  - default: false
+    lockToDefault: false
+    preRelease: Alpha
+    version: "1.34"
 - name: InTreePluginPortworxUnregister
   versionedSpecs:
   - default: false
@@ -793,6 +809,10 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.33"
+  - default: true
+    lockToDefault: false
+    preRelease: Beta
+    version: "1.34"
 - name: KubeletTracing
   versionedSpecs:
   - default: false
@@ -807,16 +827,6 @@
     lockToDefault: true
     preRelease: GA
     version: "1.34"
-- name: LegacySidecarContainers
-  versionedSpecs:
-  - default: true
-    lockToDefault: false
-    preRelease: GA
-    version: "1.0"
-  - default: false
-    lockToDefault: false
-    preRelease: Deprecated
-    version: "1.33"
 - name: ListFromCacheSnapshot
   versionedSpecs:
   - default: false
@@ -957,6 +967,10 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.33"
+  - default: false
+    lockToDefault: false
+    preRelease: Beta
+    version: "1.34"
 - name: MutatingAdmissionPolicy
   versionedSpecs:
   - default: false
@@ -1019,6 +1033,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.30"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"
 - name: NominatedNodeNameForExpectation
   versionedSpecs:
   - default: true
@@ -1055,6 +1073,12 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.23"
+- name: PodCertificateRequest
+  versionedSpecs:
+  - default: false
+    lockToDefault: false
+    preRelease: Alpha
+    version: "1.34"
 - name: PodDeletionCost
   versionedSpecs:
   - default: false
@@ -1091,6 +1115,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.30"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"
 - name: PodLifecycleSleepActionAllowZero
   versionedSpecs:
   - default: false
@@ -1101,6 +1129,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.33"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"
 - name: PodLogsQuerySplitStreams
   versionedSpecs:
   - default: false
@@ -1113,6 +1145,10 @@
     lockToDefault: false
     preRelease: Alpha
     version: "1.33"
+  - default: true
+    lockToDefault: false
+    preRelease: Beta
+    version: "1.34"
 - name: PodReadyToStartContainersCondition
   versionedSpecs:
   - default: false
@@ -1811,6 +1847,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.33"
+  - default: true
+    lockToDefault: false
+    preRelease: Beta
+    version: "1.34"
 - name: WindowsCPUAndMemoryAffinity
   versionedSpecs:
   - default: false
@@ -1843,6 +1883,10 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.33"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"
 - name: WinOverlay
   versionedSpecs:
   - default: false
@@ -1853,3 +1897,7 @@
     lockToDefault: false
     preRelease: Beta
     version: "1.20"
+  - default: true
+    lockToDefault: true
+    preRelease: GA
+    version: "1.34"

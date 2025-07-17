@@ -432,6 +432,7 @@ func GetValidationOptionsFromPodSpecAndMeta(podSpec, oldPodSpec *api.PodSpec, po
 	// we must allow it
 	opts.AllowRelaxedEnvironmentVariableValidation = useRelaxedEnvironmentVariableValidation(podSpec, oldPodSpec)
 	opts.AllowRelaxedDNSSearchValidation = useRelaxedDNSSearchValidation(oldPodSpec)
+	opts.AllowEnvFilesValidation = useAllowEnvFilesValidation(oldPodSpec)
 
 	opts.AllowOnlyRecursiveSELinuxChangePolicy = useOnlyRecursiveSELinuxChangePolicy(oldPodSpec)
 
@@ -520,6 +521,44 @@ func useRelaxedDNSSearchValidation(oldPodSpec *api.PodSpec) bool {
 func hasDotOrUnderscore(searches []string) bool {
 	for _, domain := range searches {
 		if domain == "." || strings.Contains(domain, "_") {
+			return true
+		}
+	}
+	return false
+}
+
+func useAllowEnvFilesValidation(oldPodSpec *api.PodSpec) bool {
+	// Return true early if feature gate is enabled
+	if utilfeature.DefaultFeatureGate.Enabled(features.EnvFiles) {
+		return true
+	}
+
+	if oldPodSpec == nil {
+		return false
+	}
+
+	for _, container := range oldPodSpec.Containers {
+		if hasEnvFileKeyRef(container.Env) {
+			return true
+		}
+	}
+	for _, container := range oldPodSpec.InitContainers {
+		if hasEnvFileKeyRef(container.Env) {
+			return true
+		}
+	}
+	for _, container := range oldPodSpec.EphemeralContainers {
+		if hasEnvFileKeyRef(container.Env) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func hasEnvFileKeyRef(envs []api.EnvVar) bool {
+	for _, env := range envs {
+		if env.ValueFrom != nil && env.ValueFrom.FileKeyRef != nil {
 			return true
 		}
 	}
@@ -683,6 +722,7 @@ func dropDisabledFields(
 	dropDisabledMatchLabelKeysFieldInPodAffinity(podSpec, oldPodSpec)
 	dropDisabledDynamicResourceAllocationFields(podSpec, oldPodSpec)
 	dropDisabledClusterTrustBundleProjection(podSpec, oldPodSpec)
+	dropDisabledPodCertificateProjection(podSpec, oldPodSpec)
 
 	if !utilfeature.DefaultFeatureGate.Enabled(features.InPlacePodVerticalScaling) && !inPlacePodVerticalScalingInUse(oldPodSpec) {
 		// Drop ResizePolicy fields. Don't drop updates to Resources field as template.spec.resources
@@ -724,10 +764,57 @@ func dropDisabledFields(
 		}
 	}
 
+	if !utilfeature.DefaultFeatureGate.Enabled(features.HostnameOverride) && !setHostnameOverrideInUse(oldPodSpec) {
+		// Set HostnameOverride to nil only if feature is disabled and it is not used
+		podSpec.HostnameOverride = nil
+	}
+
+	dropFileKeyRefInUse(podSpec, oldPodSpec)
 	dropPodLifecycleSleepAction(podSpec, oldPodSpec)
 	dropImageVolumes(podSpec, oldPodSpec)
 	dropSELinuxChangePolicy(podSpec, oldPodSpec)
 	dropContainerStopSignals(podSpec, oldPodSpec)
+}
+
+// setHostnameOverrideInUse returns true if any pod's spec defines HostnameOverride field.
+func setHostnameOverrideInUse(podSpec *api.PodSpec) bool {
+	if podSpec == nil || podSpec.HostnameOverride == nil {
+		return false
+	}
+	return true
+}
+
+func dropFileKeyRefInUse(podSpec, oldPodSpec *api.PodSpec) {
+	if utilfeature.DefaultFeatureGate.Enabled(features.EnvFiles) || podFileKeyRefInUse(oldPodSpec) {
+		return
+	}
+
+	VisitContainers(podSpec, AllContainers, func(c *api.Container, _ ContainerType) bool {
+		for i := range c.Env {
+			if c.Env[i].ValueFrom != nil && c.Env[i].ValueFrom.FileKeyRef != nil {
+				c.Env[i].ValueFrom.FileKeyRef = nil
+			}
+		}
+		return true
+	})
+}
+
+func podFileKeyRefInUse(podSpec *api.PodSpec) bool {
+	if podSpec == nil {
+		return false
+	}
+
+	var inUse bool
+	VisitContainers(podSpec, AllContainers, func(c *api.Container, _ ContainerType) bool {
+		for _, env := range c.Env {
+			if env.ValueFrom != nil && env.ValueFrom.FileKeyRef != nil {
+				inUse = true
+				return false
+			}
+		}
+		return true
+	})
+	return inUse
 }
 
 func dropContainerStopSignals(podSpec, oldPodSpec *api.PodSpec) {
@@ -1232,35 +1319,6 @@ func procMountInUse(podSpec *api.PodSpec) bool {
 	return inUse
 }
 
-// appArmorAnnotationsInUse returns true if the pod has apparmor annotations
-func appArmorAnnotationsInUse(podAnnotations map[string]string) bool {
-	for k := range podAnnotations {
-		if strings.HasPrefix(k, api.DeprecatedAppArmorAnnotationKeyPrefix) {
-			return true
-		}
-	}
-	return false
-}
-
-// appArmorFieldsInUse returns true if the pod has apparmor fields set
-func appArmorFieldsInUse(podSpec *api.PodSpec) bool {
-	if podSpec == nil {
-		return false
-	}
-	if podSpec.SecurityContext != nil && podSpec.SecurityContext.AppArmorProfile != nil {
-		return true
-	}
-	hasAppArmorContainer := false
-	VisitContainers(podSpec, AllContainers, func(c *api.Container, _ ContainerType) bool {
-		if c.SecurityContext != nil && c.SecurityContext.AppArmorProfile != nil {
-			hasAppArmorContainer = true
-			return false
-		}
-		return true
-	})
-	return hasAppArmorContainer
-}
-
 // restartableInitContainersInUse returns true if the pod spec is non-nil and
 // it has any init container with ContainerRestartPolicyAlways.
 func restartableInitContainersInUse(podSpec *api.PodSpec) bool {
@@ -1334,6 +1392,49 @@ func dropDisabledClusterTrustBundleProjection(podSpec, oldPodSpec *api.PodSpec) 
 
 		for j := range podSpec.Volumes[i].Projected.Sources {
 			podSpec.Volumes[i].Projected.Sources[j].ClusterTrustBundle = nil
+		}
+	}
+}
+
+func podCertificateProjectionInUse(podSpec *api.PodSpec) bool {
+	if podSpec == nil {
+		return false
+	}
+	for _, v := range podSpec.Volumes {
+		if v.Projected == nil {
+			continue
+		}
+
+		for _, s := range v.Projected.Sources {
+			if s.PodCertificate != nil {
+				return true
+			}
+		}
+	}
+
+	return false
+}
+
+func dropDisabledPodCertificateProjection(podSpec, oldPodSpec *api.PodSpec) {
+	if utilfeature.DefaultFeatureGate.Enabled(features.PodCertificateRequest) {
+		return
+	}
+	if podSpec == nil {
+		return
+	}
+
+	// If the pod was already using it, it can keep using it.
+	if podCertificateProjectionInUse(oldPodSpec) {
+		return
+	}
+
+	for i := range podSpec.Volumes {
+		if podSpec.Volumes[i].Projected == nil {
+			continue
+		}
+
+		for j := range podSpec.Volumes[i].Projected.Sources {
+			podSpec.Volumes[i].Projected.Sources[j].PodCertificate = nil
 		}
 	}
 }
@@ -1546,6 +1647,8 @@ func HasAPIObjectReference(pod *api.Pod) (bool, string, error) {
 					return true, "serviceaccounts (via projected volumes)", nil
 				case s.ClusterTrustBundle != nil:
 					return true, "clustertrustbundles", nil
+				case s.PodCertificate != nil:
+					return true, "podcertificates", nil
 				case s.DownwardAPI != nil:
 					// Allow projected volume sources that don't require the Kubernetes API
 					continue
@@ -1560,4 +1663,30 @@ func HasAPIObjectReference(pod *api.Pod) (bool, string, error) {
 	}
 
 	return false, "", nil
+}
+
+// ApparmorFieldForAnnotation takes a pod annotation and returns the converted
+// apparmor profile field.
+func ApparmorFieldForAnnotation(annotation string) *api.AppArmorProfile {
+	if annotation == api.DeprecatedAppArmorAnnotationValueUnconfined {
+		return &api.AppArmorProfile{Type: api.AppArmorProfileTypeUnconfined}
+	}
+
+	if annotation == api.DeprecatedAppArmorAnnotationValueRuntimeDefault {
+		return &api.AppArmorProfile{Type: api.AppArmorProfileTypeRuntimeDefault}
+	}
+
+	if strings.HasPrefix(annotation, api.DeprecatedAppArmorAnnotationValueLocalhostPrefix) {
+		localhostProfile := strings.TrimPrefix(annotation, api.DeprecatedAppArmorAnnotationValueLocalhostPrefix)
+		if localhostProfile != "" {
+			return &api.AppArmorProfile{
+				Type:             api.AppArmorProfileTypeLocalhost,
+				LocalhostProfile: &localhostProfile,
+			}
+		}
+	}
+
+	// we can only reach this code path if the localhostProfile name has a zero
+	// length or if the annotation has an unrecognized value
+	return nil
 }
