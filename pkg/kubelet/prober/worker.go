@@ -254,7 +254,7 @@ func (w *worker) doProbe(ctx context.Context) (keepGoing bool) {
 		// Abort if the container will not be restarted.
 		return c.State.Terminated == nil ||
 			w.pod.Spec.RestartPolicy != v1.RestartPolicyNever ||
-			(w.container.RestartPolicy != nil && *w.container.RestartPolicy == v1.ContainerRestartPolicyAlways)
+			(podutil.IsRestartableInitContainer(&w.container) && w.container.RestartPolicy != nil && *w.container.RestartPolicy == v1.ContainerRestartPolicyAlways)
 
 	}
 

@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-startup-probe-bug-test
+  labels:
+    test: sidecar-probe-fix
+spec:
+  restartPolicy: Never  # Key condition that triggers the bug
+  volumes:
+  - name: workdir
+    emptyDir: {}
+  initContainers:
+  - name: buggy-sidecar-init
+    image: busybox
+    restartPolicy: Always  # Sidecar container with different restart policy
+    volumeMounts:
+    - name: workdir
+      mountPath: /work
+    command:
+    - sh
+    - -c
+    - |
+      if [ ! -f /work/first_run_done ]; then
+        echo "$(date): First run - creating marker and failing with exit 1"
+        touch /work/first_run_done
+        exit 1
+      else
+        echo "$(date): Second run - marker found, running successfully as sidecar"
+        sleep 120
+      fi
+    startupProbe:
+      initialDelaySeconds: 5
+      periodSeconds: 2
+      failureThreshold: 3
+      timeoutSeconds: 1
+      exec:
+        command: ["/bin/true"]
+  containers:
+  - name: main-container
+    image: registry.k8s.io/pause:3.9
+    startupProbe:
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      failureThreshold: 3
+      exec:
+        command: ["/bin/true"]

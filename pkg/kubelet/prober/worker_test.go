@@ -529,6 +529,7 @@ func TestResultRunOnStartupCheckFailure(t *testing.T) {
 		t.Errorf("Prober resultRun should be reset to 0")
 	}
 }
+
 func TestDoProbe_SidecarContainerWithRestartPolicy(t *testing.T) {
 	logger, ctx := ktesting.NewTestContext(t)
 	m := newTestManager()
