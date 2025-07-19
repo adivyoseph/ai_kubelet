@@ -37,6 +37,48 @@ import (
 func init() {
 }
 
+// newTestWorkerWithInitContainer creates a test worker with an init container setup
+func newTestWorkerWithInitContainer(m *manager, probeType probeType, probe v1.Probe) *worker {
+	pod := getTestPod()
+
+	// Set up init container with restart policy
+	initContainer := pod.Spec.Containers[0]
+	initContainer.Name = testContainerName
+	restartPolicy := v1.ContainerRestartPolicyAlways
+	initContainer.RestartPolicy = &restartPolicy
+
+	// Move container to init containers and add a regular container
+	pod.Spec.InitContainers = []v1.Container{initContainer}
+	pod.Spec.Containers = []v1.Container{{
+		Name:  "main-container",
+		Image: "registry.k8s.io/pause:3.9",
+	}}
+
+	return &worker{
+		pod:            pod,
+		container:      initContainer,
+		probeType:      probeType,
+		spec:           &probe,
+		probeManager:   m,
+		resultsManager: resultsManager(m, probeType),
+		initialValue:   getInitialResult(probeType),
+	}
+}
+
+// Helper function to get initial result based on probe type
+func getInitialResult(probeType probeType) results.Result {
+	switch probeType {
+	case readiness:
+		return results.Failure
+	case liveness:
+		return results.Success
+	case startup:
+		return results.Unknown
+	default:
+		return results.Unknown
+	}
+}
+
 func TestDoProbe(t *testing.T) {
 	logger, ctx := ktesting.NewTestContext(t)
 	m := newTestManager()
@@ -530,40 +572,42 @@ func TestResultRunOnStartupCheckFailure(t *testing.T) {
 	}
 }
 
-func TestDoProbe_SidecarContainerWithRestartPolicy(t *testing.T) {
+func TestDoProbe_TerminatedRestartableInitContainerWithRestartPolicyNone(t *testing.T) {
 	logger, ctx := ktesting.NewTestContext(t)
 	m := newTestManager()
 
-	// Test sidecar container (init container with restartPolicy=Always) behavior
-	w := newTestWorker(m, startup, v1.Probe{})
-
-	// Set container restart policy to Always (sidecar behavior)
-	restartPolicy := v1.ContainerRestartPolicyAlways
-	w.container.RestartPolicy = &restartPolicy
+	// Test restartable init container (sidecar) behavior
+	w := newTestWorkerWithInitContainer(m, startup, v1.Probe{})
 
 	// Set pod restart policy to Never
 	w.pod.Spec.RestartPolicy = v1.RestartPolicyNever
 
-	// Create terminated status for sidecar container
+	// Create terminated status for init container
 	terminatedStatus := getTestRunningStatus()
+	terminatedStatus.InitContainerStatuses = []v1.ContainerStatus{{
+		Name:        testContainerName,
+		ContainerID: "test://test_container_id",
+		State: v1.ContainerState{
+			Terminated: &v1.ContainerStateTerminated{
+				StartedAt: metav1.Now(),
+			},
+		},
+	}}
 	terminatedStatus.ContainerStatuses[0].State.Running = nil
-	terminatedStatus.ContainerStatuses[0].State.Terminated = &v1.ContainerStateTerminated{
-		StartedAt: metav1.Now(),
-	}
 
 	m.statusManager.SetPodStatus(logger, w.pod, terminatedStatus)
 
-	// Test: Terminated sidecar container with restartPolicy=Always should continue probing
+	// Test: Terminated restartable init container with restartPolicy=Always should continue probing
 	// even when pod has restartPolicy=Never
 	if !w.doProbe(ctx) {
-		t.Error("Expected to continue probing for terminated sidecar container with restart policy Always")
+		t.Error("Expected to continue probing for terminated restartable init container with restart policy Always")
 	}
 
 	// Verify result is set to Failure for terminated container
-	expectResult(t, w, results.Failure, "terminated sidecar with restart policy Always")
+	expectResult(t, w, results.Failure, "terminated restartable init container with restart policy Always")
 }
 
-func TestDoProbe_RegularContainerBehaviorUnchanged(t *testing.T) {
+func TestDoProbe_TerminatedContainerWithRestartPolicyNever(t *testing.T) {
 	logger, ctx := ktesting.NewTestContext(t)
 	m := newTestManager()
 
