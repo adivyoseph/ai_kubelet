@@ -90,7 +90,7 @@ type frameworkImpl struct {
 	apiDispatcher *apidispatcher.APIDispatcher
 	apiCacher     fwk.APICacher
 
-	parallelizer parallelize.Parallelizer
+	parallelizer fwk.Parallelizer
 }
 
 // extensionPoint encapsulates desired and applied set of plugins at a specific extension
@@ -1754,7 +1754,7 @@ func (f *frameworkImpl) PercentageOfNodesToScore() *int32 {
 }
 
 // Parallelizer returns a parallelizer holding parallelism for scheduler.
-func (f *frameworkImpl) Parallelizer() parallelize.Parallelizer {
+func (f *frameworkImpl) Parallelizer() fwk.Parallelizer {
 	return f.parallelizer
 }
 

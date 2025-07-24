@@ -34,9 +34,8 @@ import (
 	clientset "k8s.io/client-go/kubernetes"
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/events"
+	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog/v2"
-
-	"k8s.io/kubernetes/pkg/scheduler/framework/parallelize"
 )
 
 // Code is the Status code/type which is returned from plugins.
@@ -680,7 +679,7 @@ type Handle interface {
 	Extenders() []Extender
 
 	// Parallelizer returns a parallelizer holding parallelism for scheduler.
-	Parallelizer() parallelize.Parallelizer
+	Parallelizer() Parallelizer
 
 	// APIDispatcher returns a fwk.APIDispatcher that can be used to dispatch API calls directly.
 	// This is non-nil if the SchedulerAsyncAPICalls feature gate is enabled.
@@ -690,6 +689,11 @@ type Handle interface {
 	// Use this to ensure the scheduler's view of the cluster remains consistent.
 	// This is non-nil if the SchedulerAsyncAPICalls feature gate is enabled.
 	APICacher() APICacher
+}
+
+// Parallelizer holds the parallelism for scheduler.
+type Parallelizer interface {
+	Until(ctx context.Context, pieces int, doWorkPiece workqueue.DoWorkPieceFunc, operation string)
 }
 
 // PodActivator abstracts operations in the scheduling queue.
