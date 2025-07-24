@@ -5908,130 +5908,209 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 
 	})
 
-	ginkgo.When("A restartable init container with startup probe fails initially", func() {
-		ginkgo.It("should continue probing and allow regular container to start after restartable init recovers", func(ctx context.Context) {
-			restartableInit := "buggy-restartable-init"
-			regularContainer := "regular-container"
+	ginkgo.When("The restartable init containers have exceeded their termination-grace-period by PreStop hook", func() {
+		ginkgo.It("should mark the Pod Succeeded when any restartable init PreStop hook exceeds termination-grace-period", func(ctx context.Context) {
+			restartableInit1 := "restartable-init-1"
+			restartableInit2 := "restartable-init-2"
+			restartableInit3 := "restartable-init-3"
+			regular1 := "regular-1"
 
-			podSpec := &v1.Pod{
-				ObjectMeta: metav1.ObjectMeta{
-					Name: "restartable-init-startup-probe-bug-fix",
-				},
-				Spec: v1.PodSpec{
-					RestartPolicy: v1.RestartPolicyNever, // Key condition for the bug
-					Volumes: []v1.Volume{
-						{
-							Name: "workdir",
-							VolumeSource: v1.VolumeSource{
-								EmptyDir: &v1.EmptyDirVolumeSource{},
-							},
+			grace := int64(5)
+
+			makePreStop := func(name string, delay int) *v1.Lifecycle {
+				return &v1.Lifecycle{
+					PreStop: &v1.LifecycleHandler{
+						Exec: &v1.ExecAction{
+							Command: ExecCommand(name, execCommand{
+								Delay:    delay,
+								ExitCode: 0,
+							}),
 						},
 					},
+				}
+			}
+
+			pod := &v1.Pod{
+				ObjectMeta: metav1.ObjectMeta{
+					Name:       "restartable-init-prestop-exceeded-grace",
+					Finalizers: []string{testFinalizer},
+				},
+				Spec: v1.PodSpec{
+					RestartPolicy:                 v1.RestartPolicyNever,
+					TerminationGracePeriodSeconds: ptr.To(grace),
 					InitContainers: []v1.Container{
 						{
-							Name:          restartableInit,
-							Image:         busyboxImage,
+							Name:          restartableInit1,
+							Image:         defaultImage,
 							RestartPolicy: &containerRestartPolicyAlways,
-							VolumeMounts: []v1.VolumeMount{
-								{Name: "workdir", MountPath: "/work"},
-							},
-							Command: []string{"sh", "-c", `
-								if [ ! -f /work/first_run_done ]; then
-									echo "First run: creating marker and exiting with 1."
-									touch /work/first_run_done
-									exit 1
-								else
-									echo "Second run: marker found. Running as a restartable init."
-									sleep 60
-								fi
-							`},
-							StartupProbe: &v1.Probe{
-								InitialDelaySeconds: 5, // Must be long enough for first container to fail
-								PeriodSeconds:       2,
-								FailureThreshold:    3,
-								ProbeHandler: v1.ProbeHandler{
-									Exec: &v1.ExecAction{
-										Command: []string{"/bin/true"},
-									},
-								},
-							},
+							Command: ExecCommand(restartableInit1, execCommand{
+								Delay: 600, TerminationSeconds: 1, ExitCode: 0,
+							}),
+							Lifecycle: makePreStop(restartableInit1, 1),
+						},
+						{
+							Name:          restartableInit2,
+							Image:         defaultImage,
+							RestartPolicy: &containerRestartPolicyAlways,
+							Command: ExecCommand(restartableInit2, execCommand{
+								Delay: 600, TerminationSeconds: 20, ExitCode: 0,
+							}),
+							Lifecycle: makePreStop(restartableInit2, 10),
+						},
+						{
+							Name:          restartableInit3,
+							Image:         defaultImage,
+							RestartPolicy: &containerRestartPolicyAlways,
+							Command: ExecCommand(restartableInit3, execCommand{
+								Delay: 600, TerminationSeconds: 1, ExitCode: 0,
+							}),
+							Lifecycle: makePreStop(restartableInit3, 1),
 						},
 					},
 					Containers: []v1.Container{
 						{
-							Name:  regularContainer,
-							Image: imageutils.GetPauseImageName(),
-							StartupProbe: &v1.Probe{
-								InitialDelaySeconds: 5,
-								PeriodSeconds:       5,
-								ProbeHandler: v1.ProbeHandler{
-									Exec: &v1.ExecAction{
-										Command: []string{"/bin/true"},
-									},
-								},
-							},
+							Name:  regular1,
+							Image: defaultImage,
+							Command: ExecCommand(regular1, execCommand{
+								Delay: 600, TerminationSeconds: 1, ExitCode: 0,
+							}),
 						},
 					},
 				},
 			}
 
-			preparePod(podSpec)
-
+			preparePod(pod)
 			client := e2epod.NewPodClient(f)
-			podSpec = client.Create(ctx, podSpec)
 
-			ginkgo.By("Waiting for restartable init container to fail and restart")
-			err := e2epod.WaitForPodCondition(ctx, f.ClientSet, podSpec.Namespace, podSpec.Name, "restartable init restarted", 60*time.Second, func(pod *v1.Pod) (bool, error) {
-				// Look for the restartable init container in init containers
-				for _, status := range pod.Status.InitContainerStatuses {
-					if status.Name == restartableInit {
-						// Check if it has restarted at least once
-						if status.RestartCount > 0 {
-							return true, nil
-						}
-					}
-				}
-				return false, nil
-			})
-			framework.ExpectNoError(err, "restartable init container should have restarted")
+			pod = client.Create(ctx, pod)
+			defer client.RemoveFinalizer(ctx, pod.Name, testFinalizer)
 
-			ginkgo.By("Verifying restartable init container is running after restart")
-			err = e2epod.WaitForPodCondition(ctx, f.ClientSet, podSpec.Namespace, podSpec.Name, "restartable init running", 30*time.Second, func(pod *v1.Pod) (bool, error) {
-				for _, status := range pod.Status.InitContainerStatuses {
-					if status.Name == restartableInit && status.State.Running != nil {
-						return true, nil
-					}
-				}
-				return false, nil
-			})
-			framework.ExpectNoError(err, "restartable init container should be running")
+			framework.ExpectNoError(
+				e2epod.WaitForPodRunningInNamespace(ctx, f.ClientSet, pod),
+			)
 
-			ginkgo.By("Waiting for regular container to start (bug fix verification)")
-			err = e2epod.WaitForPodCondition(ctx, f.ClientSet, podSpec.Namespace, podSpec.Name, "regular container running", 45*time.Second, func(pod *v1.Pod) (bool, error) {
-				for _, status := range pod.Status.ContainerStatuses {
-					if status.Name == regularContainer && status.State.Running != nil {
-						return true, nil
-					}
-				}
-				return false, nil
-			})
-			framework.ExpectNoError(err, "regular container should eventually start - this verifies the bug fix")
+			framework.ExpectNoError(
+				client.Delete(ctx, pod.Name, metav1.DeleteOptions{GracePeriodSeconds: &grace}),
+			)
 
-			ginkgo.By("Final verification: pod is not stuck in Initializing state")
-			finalPod, err := client.Get(ctx, podSpec.Name, metav1.GetOptions{})
+			framework.ExpectNoError(
+				e2epod.WaitForPodSuccessInNamespace(ctx, f.ClientSet, pod.Name, f.Namespace.Name),
+			)
+
+			pod, err := client.Get(ctx, pod.Name, metav1.GetOptions{})
 			framework.ExpectNoError(err)
 
-			// Verify regular container is actually running
-			var regularContainerStatus *v1.ContainerStatus
+			expectPodTerminationContainerStatuses(pod.Status.ContainerStatuses, map[string]podTerminationContainerStatus{
+				regular1: {exitCode: 0, reason: "Completed"},
+			})
+			expectPodTerminationContainerStatuses(pod.Status.InitContainerStatuses, map[string]podTerminationContainerStatus{
+				restartableInit1: {exitCode: 0, reason: "Completed"},
+				restartableInit2: {exitCode: 137, reason: "Error"},
+				restartableInit3: {exitCode: 0, reason: "Completed"},
+			})
+		})
+	})
+
+	ginkgo.When("A restartable init container with startup probe fails initially", func() {
+		ginkgo.It("should continue probing and allow regular container to start after the restartable init recovers", func(ctx context.Context) {
+			restartableInit := "buggy-restartable-init"
+			regularContainer := "regular-container"
+
+			pod := &v1.Pod{
+				ObjectMeta: metav1.ObjectMeta{
+					Name: "restartable-init-startup-probe-fix",
+				},
+				Spec: v1.PodSpec{
+					RestartPolicy: v1.RestartPolicyNever,
+					Volumes: []v1.Volume{{
+						Name:         "workdir",
+						VolumeSource: v1.VolumeSource{EmptyDir: &v1.EmptyDirVolumeSource{}},
+					}},
+					InitContainers: []v1.Container{{
+						Name:          restartableInit,
+						Image:         busyboxImage,
+						RestartPolicy: &containerRestartPolicyAlways,
+						VolumeMounts:  []v1.VolumeMount{{Name: "workdir", MountPath: "/work"}},
+						Command: []string{"sh", "-c",
+							"if [ ! -f /work/first_run_done ]; then echo 'First run: exiting 1'; touch /work/first_run_done; exit 1; else echo 'Second run: running'; sleep 60; fi"},
+						StartupProbe: &v1.Probe{
+							InitialDelaySeconds: 10,
+							PeriodSeconds:       2,
+							FailureThreshold:    5,
+							ProbeHandler: v1.ProbeHandler{
+								Exec: &v1.ExecAction{Command: []string{"/bin/true"}},
+							},
+						},
+					}},
+					Containers: []v1.Container{{
+						Name:  regularContainer,
+						Image: imageutils.GetPauseImageName(),
+						StartupProbe: &v1.Probe{
+							InitialDelaySeconds: 5,
+							PeriodSeconds:       5,
+							ProbeHandler: v1.ProbeHandler{
+								Exec: &v1.ExecAction{Command: []string{"/bin/true"}},
+							},
+						},
+					}},
+				},
+			}
+
+			preparePod(pod)
+			client := e2epod.NewPodClient(f)
+			pod = client.Create(ctx, pod)
+
+			framework.ExpectNoError(
+				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
+					"restartable init restarted", 60*time.Second,
+					func(p *v1.Pod) (bool, error) {
+						for _, st := range p.Status.InitContainerStatuses {
+							if st.Name == restartableInit && st.RestartCount > 0 {
+								return true, nil
+							}
+						}
+						return false, nil
+					}),
+			)
+
+			framework.ExpectNoError(
+				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
+					"restartable init running", 30*time.Second,
+					func(p *v1.Pod) (bool, error) {
+						for _, st := range p.Status.InitContainerStatuses {
+							if st.Name == restartableInit && st.State.Running != nil {
+								return true, nil
+							}
+						}
+						return false, nil
+					}),
+			)
+
+			framework.ExpectNoError(
+				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
+					"regular container running", 45*time.Second,
+					func(p *v1.Pod) (bool, error) {
+						for _, st := range p.Status.ContainerStatuses {
+							if st.Name == regularContainer && st.State.Running != nil {
+								return true, nil
+							}
+						}
+						return false, nil
+					}),
+			)
+
+			finalPod, err := client.Get(ctx, pod.Name, metav1.GetOptions{})
+			framework.ExpectNoError(err)
+
+			var regularStatus *v1.ContainerStatus
 			for i := range finalPod.Status.ContainerStatuses {
 				if finalPod.Status.ContainerStatuses[i].Name == regularContainer {
-					regularContainerStatus = &finalPod.Status.ContainerStatuses[i]
+					regularStatus = &finalPod.Status.ContainerStatuses[i]
 					break
 				}
 			}
-
-			gomega.Expect(regularContainerStatus).NotTo(gomega.BeNil(), "regular container status should exist")
-			gomega.Expect(regularContainerStatus.State.Running).NotTo(gomega.BeNil(), "regular container should be in running state")
+			gomega.Expect(regularStatus).NotTo(gomega.BeNil())
+			gomega.Expect(regularStatus.State.Running).NotTo(gomega.BeNil())
 		})
 	})
 
