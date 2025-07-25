@@ -107,7 +107,7 @@ func (p *Preferences) Apply(rootCmd *cobra.Command, args []string, errOut io.Wri
 	if err != nil {
 		return args, kubercCommandExecuted, err
 	}
-	err = p.applyOverrides(rootCmd, kuberc, args, errOut)
+	kubercCommandExecuted, err = p.applyOverrides(rootCmd, kuberc, args, errOut)
 	if err != nil {
 		return args, kubercCommandExecuted, err
 	}
@@ -115,13 +115,14 @@ func (p *Preferences) Apply(rootCmd *cobra.Command, args []string, errOut io.Wri
 }
 
 // applyOverrides finds the command and sets the defaulted flag values in kuberc.
-func (p *Preferences) applyOverrides(rootCmd *cobra.Command, kuberc *config.Preference, args []string, errOut io.Writer) error {
+func (p *Preferences) applyOverrides(rootCmd *cobra.Command, kuberc *config.Preference, args []string, errOut io.Writer) (string, error) {
 	args = args[1:]
 	cmd, _, err := rootCmd.Find(args)
 	if err != nil {
-		return nil
+		return "", nil
 	}
 
+	var kubercCommandExecuted string
 	for _, c := range kuberc.Defaults {
 		parsedCmds := strings.Fields(c.Command)
 		overrideCmd, _, err := rootCmd.Find(parsedCmds)
@@ -134,7 +135,7 @@ func (p *Preferences) applyOverrides(rootCmd *cobra.Command, kuberc *config.Pref
 		}
 
 		if _, ok := p.aliases[cmd.Name()]; ok {
-			return fmt.Errorf("alias %s can not be overridden", cmd.Name())
+			return "", fmt.Errorf("alias %s can not be overridden", cmd.Name())
 		}
 
 		// This function triggers merging the persistent flags in the parent commands.
@@ -147,23 +148,27 @@ func (p *Preferences) applyOverrides(rootCmd *cobra.Command, kuberc *config.Pref
 			}
 		})
 
+		overrideNameValueFlags := make([]string, 0, len(c.Options))
 		for _, fl := range c.Options {
 			existingFlag := cmd.Flag(fl.Name)
 			if existingFlag == nil {
-				return fmt.Errorf("invalid flag %s for command %s", fl.Name, c.Command)
+				return "", fmt.Errorf("invalid flag %s for command %s", fl.Name, c.Command)
 			}
+
+			overrideNameValueFlags = append(overrideNameValueFlags, fmt.Sprintf("--%s=%s", fl.Name, fl.Default))
 			if searchInArgs(existingFlag.Name, existingFlag.Shorthand, allShorthands, args) {
 				// Don't modify the value implicitly, if it is passed in args explicitly
 				continue
 			}
 			err = cmd.Flags().Set(fl.Name, fl.Default)
 			if err != nil {
-				return fmt.Errorf("could not apply override value %s to flag %s in command %s err: %w", fl.Default, fl.Name, c.Command, err)
+				return "", fmt.Errorf("could not apply override value %s to flag %s in command %s err: %w", fl.Default, fl.Name, c.Command, err)
 			}
 		}
+		kubercCommandExecuted = fmt.Sprintf("%s %s", strings.Join(args, " "), strings.Join(overrideNameValueFlags, " "))
 	}
 
-	return nil
+	return kubercCommandExecuted, nil
 }
 
 // applyAliases firstly appends all defined aliases in kuberc file to the root command.
