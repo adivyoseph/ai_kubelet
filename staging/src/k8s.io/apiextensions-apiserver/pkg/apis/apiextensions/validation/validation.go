@@ -248,7 +248,7 @@ func ValidateCustomResourceDefinitionUpdate(ctx context.Context, obj, oldObj *ap
 		// strictCost is always true to enforce cost limits.
 		celEnvironmentSet:            environment.MustBaseEnvSet(environment.DefaultCompatibilityVersion(), true),
 		allowInvalidCABundle:         allowInvalidCABundle(oldObj),
-		allowTooManySelectableFields: allowTooManySelectableFields(obj, oldObj),
+		allowTooManySelectableFields: findTooManySelectableFieldsAllowed(obj, oldObj),
 	}
 	return validateCustomResourceDefinitionUpdate(ctx, obj, oldObj, opts)
 }
@@ -574,10 +574,10 @@ func allowInvalidCABundle(oldCRD *apiextensions.CustomResourceDefinition) bool {
 	return len(webhook.ValidateCABundle(field.NewPath("caBundle"), oldConversion.WebhookClientConfig.CABundle)) > 0
 }
 
-// allowTooManySelectableFields returns a struct indicating which selectable field sets are allowed to be invalid.
+// findTooManySelectableFieldsAllowed returns a struct indicating which selectable field sets are allowed to be invalid.
 // A set of selectable fields is allowed to be invalid if the existing custom resource definition has more
 // selectable fields than MaxSelectableFields and the selectable fields are unchanged.
-func allowTooManySelectableFields(obj *apiextensions.CustomResourceDefinition, oldCRD *apiextensions.CustomResourceDefinition) tooManySelectableFields {
+func findTooManySelectableFieldsAllowed(obj *apiextensions.CustomResourceDefinition, oldCRD *apiextensions.CustomResourceDefinition) tooManySelectableFields {
 	result := tooManySelectableFields{}
 
 	if len(oldCRD.Spec.SelectableFields) > MaxSelectableFields && apiequality.Semantic.DeepEqual(obj.Spec.SelectableFields, oldCRD.Spec.SelectableFields) {
@@ -586,7 +586,7 @@ func allowTooManySelectableFields(obj *apiextensions.CustomResourceDefinition, o
 
 	oldVersions := make(map[string]apiextensions.CustomResourceDefinitionVersion, len(oldCRD.Spec.Versions))
 	for _, v := range oldCRD.Spec.Versions {
-		oldVersions[v.Name] = v
+		oldVersions[v.Name] = v // +k8s:verify-mutation:reason=clone
 	}
 
 	for _, v := range obj.Spec.Versions {
