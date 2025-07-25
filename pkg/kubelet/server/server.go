@@ -126,6 +126,7 @@ type Server struct {
 	metricsMethodBuckets sets.Set[string]
 	resourceAnalyzer     stats.ResourceAnalyzer
 	extendedCheckers     []healthz.HealthChecker
+	listedPathProvider   routes.ListedPathProvider
 }
 
 // TLSOptions holds the TLS options.
@@ -133,6 +134,18 @@ type TLSOptions struct {
 	Config   *tls.Config
 	CertFile string
 	KeyFile  string
+}
+
+type kubeletServerListPathProvider struct {
+}
+
+func (k *kubeletServerListPathProvider) ListedPaths() []string {
+	return []string{
+		healthz.DefaultHealthzPath,
+		metricsPath,
+		statsPath,
+		podsPath,
+	}
 }
 
 // containerInterface defines the restful.Container functions used on the root container
@@ -301,6 +314,7 @@ func NewServer(
 		metricsBuckets:       sets.New[string](),
 		metricsMethodBuckets: sets.New[string]("OPTIONS", "GET", "HEAD", "POST", "PUT", "DELETE", "TRACE", "CONNECT"),
 		extendedCheckers:     checkers,
+		listedPathProvider:   &kubeletServerListPathProvider{},
 	}
 	if auth != nil {
 		server.InstallAuthFilter()
@@ -372,6 +386,10 @@ func (s *Server) InstallAuthFilter() {
 		// Continue
 		chain.ProcessFilter(req, resp)
 	})
+}
+
+func (s *Server) ListedPaths() []string {
+	return s.listedPathProvider.ListedPaths()
 }
 
 // InstallTracingFilter installs OpenTelemetry tracing filter with the restful Container.
@@ -576,7 +594,7 @@ func (s *Server) InstallAuthRequiredHandlers() {
 
 	if utilfeature.DefaultFeatureGate.Enabled(zpagesfeatures.ComponentStatusz) {
 		s.addMetricsBucketMatcher("statusz")
-		statusz.Install(s.restfulCont, ComponentKubelet, statusz.NewRegistry(compatibility.DefaultBuildEffectiveVersion()))
+		statusz.Install(s.restfulCont, ComponentKubelet, statusz.NewRegistry(compatibility.DefaultBuildEffectiveVersion(), statusz.WithListedPaths(s.ListedPaths())))
 	}
 
 	if utilfeature.DefaultFeatureGate.Enabled(zpagesfeatures.ComponentFlagz) {
