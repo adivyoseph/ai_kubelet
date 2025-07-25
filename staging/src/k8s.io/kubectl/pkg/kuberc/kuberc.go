@@ -47,7 +47,7 @@ var (
 // arguments based on user's kuberc configuration.
 type PreferencesHandler interface {
 	AddFlags(flags *pflag.FlagSet)
-	Apply(rootCmd *cobra.Command, args []string, errOut io.Writer) ([]string, error)
+	Apply(rootCmd *cobra.Command, args []string, errOut io.Writer) ([]string, string, error)
 }
 
 // Preferences stores the kuberc file coming either from environment variable
@@ -80,38 +80,38 @@ func (p *Preferences) AddFlags(flags *pflag.FlagSet) {
 
 // Apply firstly applies the aliases in the preferences file and secondly overrides
 // the default values of flags.
-func (p *Preferences) Apply(rootCmd *cobra.Command, args []string, errOut io.Writer) ([]string, error) {
+func (p *Preferences) Apply(rootCmd *cobra.Command, args []string, errOut io.Writer) ([]string, string, error) {
 	if len(args) <= 1 {
-		return args, nil
+		return args, "", nil
 	}
 
 	kubercPath, err := getExplicitKuberc(args)
 	if err != nil {
-		return args, err
+		return args, "", err
 	}
 	kuberc, err := p.getPreferencesFunc(kubercPath, errOut)
 	if err != nil {
-		return args, fmt.Errorf("kuberc error %w", err)
+		return args, "", fmt.Errorf("kuberc error %w", err)
 	}
 
 	if kuberc == nil {
-		return args, nil
+		return args, "", nil
 	}
 
 	err = validate(kuberc)
 	if err != nil {
-		return args, err
+		return args, "", err
 	}
 
-	args, err = p.applyAliases(rootCmd, kuberc, args, errOut)
+	args, kubercCommandExecuted, err := p.applyAliases(rootCmd, kuberc, args, errOut)
 	if err != nil {
-		return args, err
+		return args, kubercCommandExecuted, err
 	}
 	err = p.applyOverrides(rootCmd, kuberc, args, errOut)
 	if err != nil {
-		return args, err
+		return args, kubercCommandExecuted, err
 	}
-	return args, nil
+	return args, kubercCommandExecuted, nil
 }
 
 // applyOverrides finds the command and sets the defaulted flag values in kuberc.
@@ -171,16 +171,16 @@ func (p *Preferences) applyOverrides(rootCmd *cobra.Command, kuberc *config.Pref
 // alias that is currently executed from args. After that it sets the flag definitions in alias as default values
 // of the command. Lastly, others parameters (e.g. resources, etc.) that are passed as arguments in kuberc
 // is appended into the command args.
-func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Preference, args []string, errOut io.Writer) ([]string, error) {
+func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Preference, args []string, errOut io.Writer) ([]string, string, error) {
 	_, _, err := rootCmd.Find(args[1:])
 	if err == nil {
 		// Command is found, no need to continue for aliasing
-		return args, nil
+		return args, "", nil
 	}
 
 	var aliasArgs *aliasing
-
-	var commandName string // first "non-flag" arguments
+	var aliasCommandName string // command set to an alias
+	var commandName string      // first "non-flag" arguments
 	var commandIndex int
 	for index, arg := range args[1:] {
 		if !strings.HasPrefix(arg, "-") && !strings.HasPrefix(arg, cobra.ShellCompRequestCmd) {
@@ -205,13 +205,14 @@ func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Prefer
 		commands := strings.Fields(alias.Command)
 		existingCmd, flags, err := rootCmd.Find(commands)
 		if err != nil {
-			return args, fmt.Errorf("command %q not found to set alias %q: %v", alias.Command, alias.Name, flags)
+			return args, "", fmt.Errorf("command %q not found to set alias %q: %v", alias.Command, alias.Name, flags)
 		}
 
 		newCmd := *existingCmd
 		newCmd.Use = alias.Name
 		newCmd.Aliases = []string{}
 		aliasCmd := &newCmd
+		aliasCommandName = existingCmd.Name()
 
 		aliasArgs = &aliasing{
 			prependArgs: alias.PrependArgs,
@@ -225,14 +226,14 @@ func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Prefer
 	if aliasArgs == nil {
 		// pursue with the current behavior.
 		// This might be a built-in command, external plugin, etc.
-		return args, nil
+		return args, "", nil
 	}
 
 	rootCmd.AddCommand(aliasArgs.command)
 
 	foundAliasCmd, _, err := rootCmd.Find([]string{commandName})
 	if err != nil {
-		return args, nil
+		return args, "", nil
 	}
 
 	// This function triggers merging the persistent flags in the parent commands.
@@ -244,11 +245,11 @@ func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Prefer
 			allShorthands[flag.Shorthand] = struct{}{}
 		}
 	})
-
+	aliasNameValueFlags := make([]string, 0, len(aliasArgs.flags))
 	for _, fl := range aliasArgs.flags {
 		existingFlag := foundAliasCmd.Flag(fl.Name)
 		if existingFlag == nil {
-			return args, fmt.Errorf("invalid alias flag %s in alias %s", fl.Name, args[0])
+			return args, "", fmt.Errorf("invalid alias flag %s in alias %s", fl.Name, args[0])
 		}
 		if searchInArgs(existingFlag.Name, existingFlag.Shorthand, allShorthands, args) {
 			// Don't modify the value implicitly, if it is passed in args explicitly
@@ -256,10 +257,10 @@ func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Prefer
 		}
 		err = foundAliasCmd.Flags().Set(fl.Name, fl.Default)
 		if err != nil {
-			return args, fmt.Errorf("could not apply value %s to flag %s in alias %s err: %w", fl.Default, fl.Name, args[0], err)
+			return args, "", fmt.Errorf("could not apply value %s to flag %s in alias %s err: %w", fl.Default, fl.Name, args[0], err)
 		}
+		aliasNameValueFlags = append(aliasNameValueFlags, fmt.Sprintf("--%s=%s", fl.Name, fl.Default))
 	}
-
 	if len(aliasArgs.prependArgs) > 0 {
 		// prependArgs defined in kuberc should be inserted after the alias name.
 		if commandIndex+1 >= len(args) {
@@ -277,7 +278,8 @@ func (p *Preferences) applyAliases(rootCmd *cobra.Command, kuberc *config.Prefer
 	// We are appending the additional args defined in kuberc in here and
 	// expect that it will be passed along to the actual command.
 	rootCmd.SetArgs(args[1:])
-	return args, nil
+	kubercCommandExecuted := fmt.Sprintf("%s %s %s %s", aliasCommandName, strings.Join(aliasArgs.prependArgs, " "), strings.Join(aliasNameValueFlags, " "), strings.Join(aliasArgs.appendArgs, " "))
+	return args, kubercCommandExecuted, nil
 }
 
 // DefaultGetPreferences returns KubeRCConfiguration.
