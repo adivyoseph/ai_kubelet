@@ -156,24 +156,9 @@ func (pb *prober) runProbe(ctx context.Context, probeType probeType, p *v1.Probe
 		return pb.exec.Probe(pb.newExecInContainer(ctx, pod, container, containerID, command, timeout))
 
 	case p.HTTPGet != nil:
-		if req != nil {
-			// Use the provided request object
-			if klogV4 := klog.V(4); klogV4.Enabled() {
-				klogV4.InfoS("HTTP-Probe using cached request",
-					"scheme", req.URL.Scheme, "host", req.URL.Hostname(),
-					"port", req.URL.Port(), "path", req.URL.Path)
-			}
-			return pb.http.Probe(req, timeout)
-		}
-
-		// Fallback to creating new request if cached one isn't available
-		req, err := httpprobe.NewRequestForHTTPGetAction(p.HTTPGet, &container, status.PodIP, "probe")
-
-		if err != nil {
-			// Log and record event for Unknown result
-			klog.V(4).InfoS("HTTP-Probe failed to create request", "error", err)
-			return probe.Unknown, "", err
-		}
+		// Request object is impossible to be nil since the worker will only call the http probe fuction
+		// if the request object was successfully created.
+		// otherwise the worker will keep trying to create the request object.
 		if klogV4 := klog.V(4); klogV4.Enabled() {
 			port := req.URL.Port()
 			host := req.URL.Hostname()
