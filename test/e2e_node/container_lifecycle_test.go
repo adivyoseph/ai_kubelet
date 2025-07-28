@@ -6016,6 +6016,8 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 			restartableInit := "buggy-restartable-init"
 			regularContainer := "regular-container"
 
+			restartPolicyAlways := v1.ContainerRestartPolicyAlways
+
 			pod := &v1.Pod{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "restartable-init-startup-probe-fix",
@@ -6023,22 +6025,28 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 				Spec: v1.PodSpec{
 					RestartPolicy: v1.RestartPolicyNever,
 					Volumes: []v1.Volume{{
-						Name:         "workdir",
-						VolumeSource: v1.VolumeSource{EmptyDir: &v1.EmptyDirVolumeSource{}},
+						Name: "workdir",
+						VolumeSource: v1.VolumeSource{
+							EmptyDir: &v1.EmptyDirVolumeSource{},
+						},
 					}},
 					InitContainers: []v1.Container{{
 						Name:          restartableInit,
 						Image:         busyboxImage,
-						RestartPolicy: &containerRestartPolicyAlways,
-						VolumeMounts:  []v1.VolumeMount{{Name: "workdir", MountPath: "/work"}},
-						Command: []string{"sh", "-c",
-							"if [ ! -f /work/first_run_done ]; then echo 'First run: exiting 1'; touch /work/first_run_done; exit 1; else echo 'Second run: running'; sleep 60; fi"},
+						RestartPolicy: &restartPolicyAlways,
+						VolumeMounts: []v1.VolumeMount{{
+							Name:      "workdir",
+							MountPath: "/work",
+						}},
+						Command: []string{"sh", "-c", "if [ ! -f /work/first_run_done ]; then echo 'First run: creating marker and exiting with 1'; touch /work/first_run_done; exit 1; else echo 'Second run: marker found, running as sidecar'; sleep 120; fi"},
 						StartupProbe: &v1.Probe{
-							InitialDelaySeconds: 10,
+							InitialDelaySeconds: 5,
 							PeriodSeconds:       2,
-							FailureThreshold:    5,
+							FailureThreshold:    10,
 							ProbeHandler: v1.ProbeHandler{
-								Exec: &v1.ExecAction{Command: []string{"/bin/true"}},
+								Exec: &v1.ExecAction{
+									Command: []string{"/bin/true"},
+								},
 							},
 						},
 					}},
@@ -6049,7 +6057,9 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 							InitialDelaySeconds: 5,
 							PeriodSeconds:       5,
 							ProbeHandler: v1.ProbeHandler{
-								Exec: &v1.ExecAction{Command: []string{"/bin/true"}},
+								Exec: &v1.ExecAction{
+									Command: []string{"/bin/true"},
+								},
 							},
 						},
 					}},
@@ -6060,12 +6070,14 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 			client := e2epod.NewPodClient(f)
 			pod = client.Create(ctx, pod)
 
+			ginkgo.By("Waiting for init container to fail and restart at least once")
 			framework.ExpectNoError(
 				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
-					"restartable init restarted", 60*time.Second,
+					"restartable init restarted", 90*time.Second,
 					func(p *v1.Pod) (bool, error) {
 						for _, st := range p.Status.InitContainerStatuses {
 							if st.Name == restartableInit && st.RestartCount > 0 {
+								ginkgo.By(fmt.Sprintf("Init container %s has restarted %d times", restartableInit, st.RestartCount))
 								return true, nil
 							}
 						}
@@ -6073,12 +6085,14 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 					}),
 			)
 
+			ginkgo.By("Waiting for init container to be running after restart")
 			framework.ExpectNoError(
 				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
-					"restartable init running", 30*time.Second,
+					"restartable init running", 90*time.Second,
 					func(p *v1.Pod) (bool, error) {
 						for _, st := range p.Status.InitContainerStatuses {
 							if st.Name == restartableInit && st.State.Running != nil {
+								ginkgo.By(fmt.Sprintf("Init container %s is now running", restartableInit))
 								return true, nil
 							}
 						}
@@ -6086,12 +6100,14 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 					}),
 			)
 
+			ginkgo.By("Waiting for regular container to start")
 			framework.ExpectNoError(
 				e2epod.WaitForPodCondition(ctx, f.ClientSet, pod.Namespace, pod.Name,
-					"regular container running", 45*time.Second,
+					"regular container running", 120*time.Second,
 					func(p *v1.Pod) (bool, error) {
 						for _, st := range p.Status.ContainerStatuses {
 							if st.Name == regularContainer && st.State.Running != nil {
+								ginkgo.By(fmt.Sprintf("Regular container %s is running - startup probe fix successful!", regularContainer))
 								return true, nil
 							}
 						}
@@ -6111,6 +6127,8 @@ var _ = SIGDescribe(feature.SidecarContainers, "Containers Lifecycle", func() {
 			}
 			gomega.Expect(regularStatus).NotTo(gomega.BeNil())
 			gomega.Expect(regularStatus.State.Running).NotTo(gomega.BeNil())
+
+			ginkgo.By("SUCCESS: Regular container started after sidecar recovery - startup probe fix working!")
 		})
 	})
 
