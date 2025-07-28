@@ -74,8 +74,8 @@ type FakePostFilterPlugin struct {
 
 func (pl *FakePostFilterPlugin) SelectVictimsOnNode(
 	ctx context.Context, state fwk.CycleState, pod *v1.Pod,
-	nodeInfo *framework.NodeInfo, pdbs []*policy.PodDisruptionBudget) (victims []*v1.Pod, numViolatingVictim int, status *framework.Status) {
-	return append(victims, nodeInfo.Pods[0].Pod), pl.numViolatingVictim, nil
+	nodeInfo fwk.NodeInfo, pdbs []*policy.PodDisruptionBudget) (victims []*v1.Pod, numViolatingVictim int, status *fwk.Status) {
+	return append(victims, nodeInfo.GetPods()[0].GetPod()), pl.numViolatingVictim, nil
 }
 
 func (pl *FakePostFilterPlugin) GetOffsetAndNumCandidates(nodes int32) (int32, int32) {
@@ -86,7 +86,7 @@ func (pl *FakePostFilterPlugin) CandidatesToVictimsMap(candidates []Candidate) m
 	return nil
 }
 
-func (pl *FakePostFilterPlugin) PodEligibleToPreemptOthers(_ context.Context, pod *v1.Pod, nominatedNodeStatus *framework.Status) (bool, string) {
+func (pl *FakePostFilterPlugin) PodEligibleToPreemptOthers(_ context.Context, pod *v1.Pod, nominatedNodeStatus *fwk.Status) (bool, string) {
 	return true, ""
 }
 
@@ -111,8 +111,8 @@ type FakePreemptionScorePostFilterPlugin struct{}
 
 func (pl *FakePreemptionScorePostFilterPlugin) SelectVictimsOnNode(
 	ctx context.Context, state fwk.CycleState, pod *v1.Pod,
-	nodeInfo *framework.NodeInfo, pdbs []*policy.PodDisruptionBudget) (victims []*v1.Pod, numViolatingVictim int, status *framework.Status) {
-	return append(victims, nodeInfo.Pods[0].Pod), 1, nil
+	nodeInfo fwk.NodeInfo, pdbs []*policy.PodDisruptionBudget) (victims []*v1.Pod, numViolatingVictim int, status *fwk.Status) {
+	return append(victims, nodeInfo.GetPods()[0].GetPod()), 1, nil
 }
 
 func (pl *FakePreemptionScorePostFilterPlugin) GetOffsetAndNumCandidates(nodes int32) (int32, int32) {
@@ -127,7 +127,7 @@ func (pl *FakePreemptionScorePostFilterPlugin) CandidatesToVictimsMap(candidates
 	return m
 }
 
-func (pl *FakePreemptionScorePostFilterPlugin) PodEligibleToPreemptOthers(_ context.Context, pod *v1.Pod, nominatedNodeStatus *framework.Status) (bool, string) {
+func (pl *FakePreemptionScorePostFilterPlugin) PodEligibleToPreemptOthers(_ context.Context, pod *v1.Pod, nominatedNodeStatus *fwk.Status) (bool, string) {
 	return true, ""
 }
 
@@ -458,7 +458,7 @@ func TestPrepareCandidate(t *testing.T) {
 		expectedDeletionError bool
 		expectedPatchError    bool
 		// Only compared when async preemption is disabled.
-		expectedStatus *framework.Status
+		expectedStatus *fwk.Status
 		// Only compared when async preemption is enabled.
 		expectedPreemptingMap sets.Set[types.UID]
 		expectedActivatedPods map[string]*v1.Pod
@@ -549,7 +549,7 @@ func TestPrepareCandidate(t *testing.T) {
 			testPods:              []*v1.Pod{},
 			expectedDeletionError: true,
 			nodeNames:             []string{node1Name},
-			expectedStatus:        framework.AsStatus(errors.New("delete pod failed")),
+			expectedStatus:        fwk.AsStatus(errors.New("delete pod failed")),
 			expectedPreemptingMap: sets.New(types.UID("preemptor")),
 			expectedActivatedPods: map[string]*v1.Pod{preemptor.Name: preemptor},
 		},
@@ -586,7 +586,7 @@ func TestPrepareCandidate(t *testing.T) {
 			testPods:              []*v1.Pod{},
 			expectedPatchError:    true,
 			nodeNames:             []string{node1Name},
-			expectedStatus:        framework.AsStatus(errors.New("patch pod status failed")),
+			expectedStatus:        fwk.AsStatus(errors.New("patch pod status failed")),
 			expectedPreemptingMap: sets.New(types.UID("preemptor")),
 			expectedActivatedPods: map[string]*v1.Pod{preemptor.Name: preemptor},
 		},
@@ -614,7 +614,7 @@ func TestPrepareCandidate(t *testing.T) {
 				// which results in the second victim not being deleted.
 				"",
 			},
-			expectedStatus:        framework.AsStatus(errors.New("patch pod status failed")),
+			expectedStatus:        fwk.AsStatus(errors.New("patch pod status failed")),
 			expectedPreemptingMap: sets.New(types.UID("preemptor")),
 			expectedActivatedPods: map[string]*v1.Pod{preemptor.Name: preemptor},
 		},
@@ -812,7 +812,7 @@ type fakePodNominator struct {
 	requestStopper chan struct{}
 }
 
-func (f *fakePodNominator) NominatedPodsForNode(nodeName string) []*framework.PodInfo {
+func (f *fakePodNominator) NominatedPodsForNode(nodeName string) []fwk.PodInfo {
 	<-f.requestStopper
 	return nil
 }
@@ -881,13 +881,13 @@ func (f *fakeExtender) IsInterested(pod *v1.Pod) bool {
 	return pod != nil
 }
 
-func (f *fakeExtender) Filter(_ *v1.Pod, _ []*framework.NodeInfo) ([]*framework.NodeInfo, extenderv1.FailedNodesMap, extenderv1.FailedNodesMap, error) {
+func (f *fakeExtender) Filter(_ *v1.Pod, _ []fwk.NodeInfo) ([]fwk.NodeInfo, extenderv1.FailedNodesMap, extenderv1.FailedNodesMap, error) {
 	return nil, nil, nil, nil
 }
 
 func (f *fakeExtender) Prioritize(
 	_ *v1.Pod,
-	_ []*framework.NodeInfo,
+	_ []fwk.NodeInfo,
 ) (hostPriorities *extenderv1.HostPriorityList, weight int64, err error) {
 	return nil, 0, nil
 }
@@ -935,7 +935,7 @@ func TestCallExtenders(t *testing.T) {
 		name           string
 		extenders      []framework.Extender
 		candidates     []Candidate
-		wantStatus     *framework.Status
+		wantStatus     *fwk.Status
 		wantCandidates []Candidate
 	}{
 		{
@@ -960,7 +960,7 @@ func TestCallExtenders(t *testing.T) {
 				newFakeExtender().WithSupportsPreemption(true).WithReturnNoVictims(true),
 			},
 			candidates:     makeCandidates(node1Name, victim),
-			wantStatus:     framework.AsStatus(fmt.Errorf("expected at least one victim pod on node %q", node1Name)),
+			wantStatus:     fwk.AsStatus(fmt.Errorf("expected at least one victim pod on node %q", node1Name)),
 			wantCandidates: []Candidate{},
 		},
 		{
@@ -999,7 +999,7 @@ func TestCallExtenders(t *testing.T) {
 					WithSupportsPreemption(true),
 			},
 			candidates:     makeCandidates(node1Name, victim),
-			wantStatus:     framework.AsStatus(fmt.Errorf("extender preempt error")),
+			wantStatus:     fwk.AsStatus(fmt.Errorf("extender preempt error")),
 			wantCandidates: nil,
 		},
 		{

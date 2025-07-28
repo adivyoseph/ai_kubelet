@@ -23,7 +23,7 @@ import (
 	"sync"
 	"time"
 
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v6/fieldpath"
 
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/api/meta"
@@ -1668,17 +1668,20 @@ func (e *Store) startObservingCount(period time.Duration, objectCountTracker flo
 	stopCh := make(chan struct{})
 	go wait.JitterUntil(func() {
 		stats, err := e.Storage.Stats(ctx)
+		metrics.UpdateStoreStats(e.DefaultQualifiedResource, stats, err)
 		if err != nil {
 			klog.V(5).InfoS("Failed to update storage count metric", "err", err)
-			stats.ObjectCount = -1
+			return
 		}
 
-		metrics.UpdateObjectCount(e.DefaultQualifiedResource, stats.ObjectCount)
 		if objectCountTracker != nil {
 			objectCountTracker.Set(resourceName, stats)
 		}
 	}, period, resourceCountPollPeriodJitter, true, stopCh)
-	return func() { close(stopCh) }
+	return func() {
+		metrics.DeleteStoreStats(e.DefaultQualifiedResource)
+		close(stopCh)
+	}
 }
 
 func (e *Store) ConvertToTable(ctx context.Context, object runtime.Object, tableOptions runtime.Object) (*metav1.Table, error) {

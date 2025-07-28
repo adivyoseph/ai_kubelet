@@ -31,6 +31,7 @@ import (
 	"k8s.io/apimachinery/pkg/api/meta"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
+	metav1beta1 "k8s.io/apimachinery/pkg/apis/meta/v1beta1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/naming"
@@ -42,7 +43,7 @@ import (
 	"k8s.io/client-go/tools/pager"
 	"k8s.io/klog/v2"
 	"k8s.io/utils/clock"
-	"k8s.io/utils/pointer"
+	"k8s.io/utils/ptr"
 	"k8s.io/utils/trace"
 )
 
@@ -74,6 +75,13 @@ type ReflectorStore interface {
 	// meaning in some implementations that have non-trivial
 	// additional behavior (e.g., DeltaFIFO).
 	Resync() error
+}
+
+// TransformingStore is an optional interface that can be implemented by the provided store.
+// If implemented on the provided store reflector will use the same transformer in its internal stores.
+type TransformingStore interface {
+	Store
+	Transformer() TransformFunc
 }
 
 // Reflector watches a specified resource and causes all changes to be reflected in the given store.
@@ -718,6 +726,11 @@ func (r *Reflector) watchList(ctx context.Context) (watch.Interface, error) {
 		return false
 	}
 
+	storeOpts := []StoreOption{}
+	if tr, ok := r.store.(TransformingStore); ok && tr.Transformer() != nil {
+		storeOpts = append(storeOpts, WithTransformer(tr.Transformer()))
+	}
+
 	initTrace := trace.New("Reflector WatchList", trace.Field{Key: "name", Value: r.name})
 	defer initTrace.LogIfLong(10 * time.Second)
 	for {
@@ -729,7 +742,7 @@ func (r *Reflector) watchList(ctx context.Context) (watch.Interface, error) {
 
 		resourceVersion = ""
 		lastKnownRV := r.rewatchResourceVersion()
-		temporaryStore = NewStore(DeletionHandlingMetaNamespaceKeyFunc)
+		temporaryStore = NewStore(DeletionHandlingMetaNamespaceKeyFunc, storeOpts...)
 		// TODO(#115478): large "list", slow clients, slow network, p&f
 		//  might slow down streaming and eventually fail.
 		//  maybe in such a case we should retry with an increased timeout?
@@ -737,7 +750,7 @@ func (r *Reflector) watchList(ctx context.Context) (watch.Interface, error) {
 		options := metav1.ListOptions{
 			ResourceVersion:      lastKnownRV,
 			AllowWatchBookmarks:  true,
-			SendInitialEvents:    pointer.Bool(true),
+			SendInitialEvents:    ptr.To(true),
 			ResourceVersionMatch: metav1.ResourceVersionMatchNotOlderThan,
 			TimeoutSeconds:       &timeoutSeconds,
 		}
@@ -897,6 +910,15 @@ loop:
 			if expectedGVK != nil {
 				if e, a := *expectedGVK, event.Object.GetObjectKind().GroupVersionKind(); e != a {
 					utilruntime.HandleErrorWithContext(ctx, nil, "Unexpected watch event object gvk", "reflector", name, "expectedGVK", e, "actualGVK", a)
+					continue
+				}
+			}
+			// For now, let’s block unsupported Table
+			// resources for watchlist only
+			// see #132926 for more info
+			if exitOnWatchListBookmarkReceived {
+				if unsupportedGVK := isUnsupportedTableObject(event.Object); unsupportedGVK {
+					utilruntime.HandleErrorWithContext(ctx, nil, "Unsupported watch event object gvk", "reflector", name, "actualGVK", event.Object.GetObjectKind().GroupVersionKind())
 					continue
 				}
 			}
@@ -1166,4 +1188,23 @@ type VeryShortWatchError struct {
 func (e *VeryShortWatchError) Error() string {
 	return fmt.Sprintf("very short watch: %s: Unexpected watch close - "+
 		"watch lasted less than a second and no items received", e.Name)
+}
+
+var unsupportedTableGVK = map[schema.GroupVersionKind]bool{
+	metav1beta1.SchemeGroupVersion.WithKind("Table"): true,
+	metav1.SchemeGroupVersion.WithKind("Table"):      true,
+}
+
+// isUnsupportedTableObject checks whether the given runtime.Object
+// is a "Table" object that belongs to a set of well-known unsupported GroupVersionKinds.
+func isUnsupportedTableObject(rawObject runtime.Object) bool {
+	unstructuredObj, ok := rawObject.(*unstructured.Unstructured)
+	if !ok {
+		return false
+	}
+	if unstructuredObj.GetKind() != "Table" {
+		return false
+	}
+
+	return unsupportedTableGVK[rawObject.GetObjectKind().GroupVersionKind()]
 }

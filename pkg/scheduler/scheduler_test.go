@@ -20,6 +20,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
 	"sync"
@@ -312,13 +313,13 @@ func TestFailureHandler(t *testing.T) {
 				queue.Delete(testPod)
 			}
 
-			s, fwk, err := initScheduler(ctx, schedulerCache, queue, client, informerFactory)
+			s, schedFramework, err := initScheduler(ctx, schedulerCache, queue, client, informerFactory)
 			if err != nil {
 				t.Fatal(err)
 			}
 
 			testPodInfo := &framework.QueuedPodInfo{PodInfo: mustNewPodInfo(t, testPod)}
-			s.FailureHandler(ctx, fwk, testPodInfo, framework.NewStatus(framework.Unschedulable), nil, time.Now())
+			s.FailureHandler(ctx, schedFramework, testPodInfo, fwk.NewStatus(fwk.Unschedulable), nil, time.Now())
 
 			var got *v1.Pod
 			if tt.podUpdatedDuringScheduling {
@@ -358,13 +359,13 @@ func TestFailureHandler_PodAlreadyBound(t *testing.T) {
 	// Add node to schedulerCache no matter it's deleted in API server or not.
 	schedulerCache.AddNode(logger, &nodeFoo)
 
-	s, fwk, err := initScheduler(ctx, schedulerCache, queue, client, informerFactory)
+	s, schedFramework, err := initScheduler(ctx, schedulerCache, queue, client, informerFactory)
 	if err != nil {
 		t.Fatal(err)
 	}
 
 	testPodInfo := &framework.QueuedPodInfo{PodInfo: mustNewPodInfo(t, testPod)}
-	s.FailureHandler(ctx, fwk, testPodInfo, framework.NewStatus(framework.Unschedulable).WithError(fmt.Errorf("binding rejected: timeout")), nil, time.Now())
+	s.FailureHandler(ctx, schedFramework, testPodInfo, fwk.NewStatus(fwk.Unschedulable).WithError(fmt.Errorf("binding rejected: timeout")), nil, time.Now())
 
 	pod := getPodFromPriorityQueue(queue, testPod)
 	if pod != nil {
@@ -796,6 +797,7 @@ func Test_UnionedGVKs(t *testing.T) {
 		want                            map[fwk.EventResource]fwk.ActionType
 		enableInPlacePodVerticalScaling bool
 		enableSchedulerQueueingHints    bool
+		enableDynamicResourceAllocation bool
 	}{
 		{
 			name: "filter without EnqueueExtensions plugin",
@@ -924,13 +926,66 @@ func Test_UnionedGVKs(t *testing.T) {
 			enableInPlacePodVerticalScaling: true,
 			enableSchedulerQueueingHints:    true,
 		},
+		{
+			name:    "plugins with default profile (DynamicResourceAllocation: enabled)",
+			plugins: schedulerapi.PluginSet{Enabled: defaults.PluginsV1.MultiPoint.Enabled},
+			want: map[fwk.EventResource]fwk.ActionType{
+				fwk.Pod:                   fwk.Add | fwk.UpdatePodLabel | fwk.UpdatePodGeneratedResourceClaim | fwk.Delete,
+				fwk.Node:                  fwk.Add | fwk.UpdateNodeAllocatable | fwk.UpdateNodeLabel | fwk.UpdateNodeTaint | fwk.Delete,
+				fwk.CSINode:               fwk.All - fwk.Delete,
+				fwk.CSIDriver:             fwk.Update,
+				fwk.CSIStorageCapacity:    fwk.All - fwk.Delete,
+				fwk.PersistentVolume:      fwk.All - fwk.Delete,
+				fwk.PersistentVolumeClaim: fwk.All - fwk.Delete,
+				fwk.StorageClass:          fwk.All - fwk.Delete,
+				fwk.VolumeAttachment:      fwk.Delete,
+				fwk.DeviceClass:           fwk.All - fwk.Delete,
+				fwk.ResourceClaim:         fwk.All - fwk.Delete,
+				fwk.ResourceSlice:         fwk.All - fwk.Delete,
+			},
+			enableDynamicResourceAllocation: true,
+		},
+		{
+			name:    "plugins with default profile (queueingHint/DynamicResourceAllocation: enabled)",
+			plugins: schedulerapi.PluginSet{Enabled: defaults.PluginsV1.MultiPoint.Enabled},
+			want: map[fwk.EventResource]fwk.ActionType{
+				fwk.Pod:                   fwk.Add | fwk.UpdatePodLabel | fwk.UpdatePodGeneratedResourceClaim | fwk.UpdatePodToleration | fwk.UpdatePodSchedulingGatesEliminated | fwk.Delete,
+				fwk.Node:                  fwk.Add | fwk.UpdateNodeAllocatable | fwk.UpdateNodeLabel | fwk.UpdateNodeTaint | fwk.Delete,
+				fwk.CSINode:               fwk.All - fwk.Delete,
+				fwk.CSIDriver:             fwk.Update,
+				fwk.CSIStorageCapacity:    fwk.All - fwk.Delete,
+				fwk.PersistentVolume:      fwk.All - fwk.Delete,
+				fwk.PersistentVolumeClaim: fwk.All - fwk.Delete,
+				fwk.StorageClass:          fwk.All - fwk.Delete,
+				fwk.VolumeAttachment:      fwk.Delete,
+				fwk.DeviceClass:           fwk.All - fwk.Delete,
+				fwk.ResourceClaim:         fwk.All - fwk.Delete,
+				fwk.ResourceSlice:         fwk.All - fwk.Delete,
+			},
+			enableDynamicResourceAllocation: true,
+			enableSchedulerQueueingHints:    true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			pluginConfig := defaults.PluginConfigsV1
+
 			featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.InPlacePodVerticalScaling, tt.enableInPlacePodVerticalScaling)
+			featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.DynamicResourceAllocation, tt.enableDynamicResourceAllocation)
 			if !tt.enableSchedulerQueueingHints {
 				featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.33"))
 				featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.SchedulerQueueingHints, false)
+				// The test uses defaults.PluginConfigsV1, which contains the filter timeout.
+				// With emulation of 1.33, the DRASchedulerFilterTimeout feature gets disabled
+				// and also cannot be enabled ("pre-alpha"), which makes the config invalid.
+				// To avoid this, we have to patch the config.
+				pluginConfig = slices.Clone(pluginConfig)
+				for i := range pluginConfig {
+					if pluginConfig[i].Name == "DynamicResources" {
+						pluginConfig[i].Args = &schedulerapi.DynamicResourcesArgs{}
+						break
+					}
+				}
 			}
 
 			_, ctx := ktesting.NewTestContext(t)
@@ -949,7 +1004,7 @@ func Test_UnionedGVKs(t *testing.T) {
 				}
 			}
 
-			profile := schedulerapi.KubeSchedulerProfile{Plugins: cfgPls, PluginConfig: defaults.PluginConfigsV1}
+			profile := schedulerapi.KubeSchedulerProfile{Plugins: cfgPls, PluginConfig: pluginConfig}
 			fwk, err := newFramework(ctx, registry, profile)
 			if err != nil {
 				t.Fatal(err)
@@ -1138,7 +1193,7 @@ func (pl *fakeQueueSortPlugin) Name() string {
 	return queueSort
 }
 
-func (pl *fakeQueueSortPlugin) Less(_, _ *framework.QueuedPodInfo) bool {
+func (pl *fakeQueueSortPlugin) Less(_, _ fwk.QueuedPodInfo) bool {
 	return false
 }
 
@@ -1151,7 +1206,7 @@ func (t *fakebindPlugin) Name() string {
 	return fakeBind
 }
 
-func (t *fakebindPlugin) Bind(ctx context.Context, state fwk.CycleState, p *v1.Pod, nodeName string) *framework.Status {
+func (t *fakebindPlugin) Bind(ctx context.Context, state fwk.CycleState, p *v1.Pod, nodeName string) *fwk.Status {
 	return nil
 }
 
@@ -1160,7 +1215,7 @@ type filterWithoutEnqueueExtensionsPlugin struct{}
 
 func (*filterWithoutEnqueueExtensionsPlugin) Name() string { return filterWithoutEnqueueExtensions }
 
-func (*filterWithoutEnqueueExtensionsPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*filterWithoutEnqueueExtensionsPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1174,7 +1229,7 @@ var fakeNodePluginQueueingFn = func(_ klog.Logger, _ *v1.Pod, _, _ interface{}) 
 
 func (*fakeNodePlugin) Name() string { return fakeNode }
 
-func (*fakeNodePlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*fakeNodePlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1194,7 +1249,7 @@ var fakePodPluginQueueingFn = func(_ klog.Logger, _ *v1.Pod, _, _ interface{}) (
 
 func (*fakePodPlugin) Name() string { return fakePod }
 
-func (*fakePodPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*fakePodPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1208,7 +1263,7 @@ type emptyEventPlugin struct{}
 
 func (*emptyEventPlugin) Name() string { return emptyEventExtensions }
 
-func (*emptyEventPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*emptyEventPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1221,7 +1276,7 @@ type errorEventsToRegisterPlugin struct{}
 
 func (*errorEventsToRegisterPlugin) Name() string { return errorEventsToRegister }
 
-func (*errorEventsToRegisterPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*errorEventsToRegisterPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1236,7 +1291,7 @@ type emptyEventsToRegisterPlugin struct{}
 
 func (*emptyEventsToRegisterPlugin) Name() string { return emptyEventsToRegister }
 
-func (*emptyEventsToRegisterPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ *framework.NodeInfo) *framework.Status {
+func (*emptyEventsToRegisterPlugin) Filter(_ context.Context, _ fwk.CycleState, _ *v1.Pod, _ fwk.NodeInfo) *fwk.Status {
 	return nil
 }
 
@@ -1267,13 +1322,13 @@ const (
 	permitTimeout    = 10 * time.Second
 )
 
-func (f fakePermitPlugin) Permit(ctx context.Context, state fwk.CycleState, p *v1.Pod, nodeName string) (*framework.Status, time.Duration) {
+func (f fakePermitPlugin) Permit(ctx context.Context, state fwk.CycleState, p *v1.Pod, nodeName string) (*fwk.Status, time.Duration) {
 	defer func() {
 		// Send event with podWaiting reason to broadcast this pod is already waiting in the permit stage.
 		f.eventRecorder.Eventf(p, nil, v1.EventTypeWarning, podWaitingReason, "", "")
 	}()
 
-	return framework.NewStatus(framework.Wait), permitTimeout
+	return fwk.NewStatus(fwk.Wait), permitTimeout
 }
 
 var _ framework.PermitPlugin = &fakePermitPlugin{}

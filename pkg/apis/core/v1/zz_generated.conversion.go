@@ -362,6 +362,26 @@ func RegisterConversions(s *runtime.Scheme) error {
 	}); err != nil {
 		return err
 	}
+	if err := s.AddGeneratedConversionFunc((*corev1.ContainerRestartRule)(nil), (*core.ContainerRestartRule)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_v1_ContainerRestartRule_To_core_ContainerRestartRule(a.(*corev1.ContainerRestartRule), b.(*core.ContainerRestartRule), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*core.ContainerRestartRule)(nil), (*corev1.ContainerRestartRule)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_core_ContainerRestartRule_To_v1_ContainerRestartRule(a.(*core.ContainerRestartRule), b.(*corev1.ContainerRestartRule), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*corev1.ContainerRestartRuleOnExitCodes)(nil), (*core.ContainerRestartRuleOnExitCodes)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_v1_ContainerRestartRuleOnExitCodes_To_core_ContainerRestartRuleOnExitCodes(a.(*corev1.ContainerRestartRuleOnExitCodes), b.(*core.ContainerRestartRuleOnExitCodes), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*core.ContainerRestartRuleOnExitCodes)(nil), (*corev1.ContainerRestartRuleOnExitCodes)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_core_ContainerRestartRuleOnExitCodes_To_v1_ContainerRestartRuleOnExitCodes(a.(*core.ContainerRestartRuleOnExitCodes), b.(*corev1.ContainerRestartRuleOnExitCodes), scope)
+	}); err != nil {
+		return err
+	}
 	if err := s.AddGeneratedConversionFunc((*corev1.ContainerState)(nil), (*core.ContainerState)(nil), func(a, b interface{}, scope conversion.Scope) error {
 		return Convert_v1_ContainerState_To_core_ContainerState(a.(*corev1.ContainerState), b.(*core.ContainerState), scope)
 	}); err != nil {
@@ -639,6 +659,16 @@ func RegisterConversions(s *runtime.Scheme) error {
 	}
 	if err := s.AddGeneratedConversionFunc((*core.FCVolumeSource)(nil), (*corev1.FCVolumeSource)(nil), func(a, b interface{}, scope conversion.Scope) error {
 		return Convert_core_FCVolumeSource_To_v1_FCVolumeSource(a.(*core.FCVolumeSource), b.(*corev1.FCVolumeSource), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*corev1.FileKeySelector)(nil), (*core.FileKeySelector)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_v1_FileKeySelector_To_core_FileKeySelector(a.(*corev1.FileKeySelector), b.(*core.FileKeySelector), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*core.FileKeySelector)(nil), (*corev1.FileKeySelector)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_core_FileKeySelector_To_v1_FileKeySelector(a.(*core.FileKeySelector), b.(*corev1.FileKeySelector), scope)
 	}); err != nil {
 		return err
 	}
@@ -1359,6 +1389,16 @@ func RegisterConversions(s *runtime.Scheme) error {
 	}
 	if err := s.AddGeneratedConversionFunc((*core.PodAttachOptions)(nil), (*corev1.PodAttachOptions)(nil), func(a, b interface{}, scope conversion.Scope) error {
 		return Convert_core_PodAttachOptions_To_v1_PodAttachOptions(a.(*core.PodAttachOptions), b.(*corev1.PodAttachOptions), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*corev1.PodCertificateProjection)(nil), (*core.PodCertificateProjection)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_v1_PodCertificateProjection_To_core_PodCertificateProjection(a.(*corev1.PodCertificateProjection), b.(*core.PodCertificateProjection), scope)
+	}); err != nil {
+		return err
+	}
+	if err := s.AddGeneratedConversionFunc((*core.PodCertificateProjection)(nil), (*corev1.PodCertificateProjection)(nil), func(a, b interface{}, scope conversion.Scope) error {
+		return Convert_core_PodCertificateProjection_To_v1_PodCertificateProjection(a.(*core.PodCertificateProjection), b.(*corev1.PodCertificateProjection), scope)
 	}); err != nil {
 		return err
 	}
@@ -3170,6 +3210,7 @@ func autoConvert_v1_Container_To_core_Container(in *corev1.Container, out *core.
 	}
 	out.ResizePolicy = *(*[]core.ContainerResizePolicy)(unsafe.Pointer(&in.ResizePolicy))
 	out.RestartPolicy = (*core.ContainerRestartPolicy)(unsafe.Pointer(in.RestartPolicy))
+	out.RestartPolicyRules = *(*[]core.ContainerRestartRule)(unsafe.Pointer(&in.RestartPolicyRules))
 	out.VolumeMounts = *(*[]core.VolumeMount)(unsafe.Pointer(&in.VolumeMounts))
 	out.VolumeDevices = *(*[]core.VolumeDevice)(unsafe.Pointer(&in.VolumeDevices))
 	out.LivenessProbe = (*core.Probe)(unsafe.Pointer(in.LivenessProbe))
@@ -3205,6 +3246,7 @@ func autoConvert_core_Container_To_v1_Container(in *core.Container, out *corev1.
 	}
 	out.ResizePolicy = *(*[]corev1.ContainerResizePolicy)(unsafe.Pointer(&in.ResizePolicy))
 	out.RestartPolicy = (*corev1.ContainerRestartPolicy)(unsafe.Pointer(in.RestartPolicy))
+	out.RestartPolicyRules = *(*[]corev1.ContainerRestartRule)(unsafe.Pointer(&in.RestartPolicyRules))
 	out.VolumeMounts = *(*[]corev1.VolumeMount)(unsafe.Pointer(&in.VolumeMounts))
 	out.VolumeDevices = *(*[]corev1.VolumeDevice)(unsafe.Pointer(&in.VolumeDevices))
 	out.LivenessProbe = (*corev1.Probe)(unsafe.Pointer(in.LivenessProbe))
@@ -3296,6 +3338,50 @@ func autoConvert_core_ContainerResizePolicy_To_v1_ContainerResizePolicy(in *core
 // Convert_core_ContainerResizePolicy_To_v1_ContainerResizePolicy is an autogenerated conversion function.
 func Convert_core_ContainerResizePolicy_To_v1_ContainerResizePolicy(in *core.ContainerResizePolicy, out *corev1.ContainerResizePolicy, s conversion.Scope) error {
 	return autoConvert_core_ContainerResizePolicy_To_v1_ContainerResizePolicy(in, out, s)
+}
+
+func autoConvert_v1_ContainerRestartRule_To_core_ContainerRestartRule(in *corev1.ContainerRestartRule, out *core.ContainerRestartRule, s conversion.Scope) error {
+	out.Action = core.ContainerRestartRuleAction(in.Action)
+	out.ExitCodes = (*core.ContainerRestartRuleOnExitCodes)(unsafe.Pointer(in.ExitCodes))
+	return nil
+}
+
+// Convert_v1_ContainerRestartRule_To_core_ContainerRestartRule is an autogenerated conversion function.
+func Convert_v1_ContainerRestartRule_To_core_ContainerRestartRule(in *corev1.ContainerRestartRule, out *core.ContainerRestartRule, s conversion.Scope) error {
+	return autoConvert_v1_ContainerRestartRule_To_core_ContainerRestartRule(in, out, s)
+}
+
+func autoConvert_core_ContainerRestartRule_To_v1_ContainerRestartRule(in *core.ContainerRestartRule, out *corev1.ContainerRestartRule, s conversion.Scope) error {
+	out.Action = corev1.ContainerRestartRuleAction(in.Action)
+	out.ExitCodes = (*corev1.ContainerRestartRuleOnExitCodes)(unsafe.Pointer(in.ExitCodes))
+	return nil
+}
+
+// Convert_core_ContainerRestartRule_To_v1_ContainerRestartRule is an autogenerated conversion function.
+func Convert_core_ContainerRestartRule_To_v1_ContainerRestartRule(in *core.ContainerRestartRule, out *corev1.ContainerRestartRule, s conversion.Scope) error {
+	return autoConvert_core_ContainerRestartRule_To_v1_ContainerRestartRule(in, out, s)
+}
+
+func autoConvert_v1_ContainerRestartRuleOnExitCodes_To_core_ContainerRestartRuleOnExitCodes(in *corev1.ContainerRestartRuleOnExitCodes, out *core.ContainerRestartRuleOnExitCodes, s conversion.Scope) error {
+	out.Operator = core.ContainerRestartRuleOnExitCodesOperator(in.Operator)
+	out.Values = *(*[]int32)(unsafe.Pointer(&in.Values))
+	return nil
+}
+
+// Convert_v1_ContainerRestartRuleOnExitCodes_To_core_ContainerRestartRuleOnExitCodes is an autogenerated conversion function.
+func Convert_v1_ContainerRestartRuleOnExitCodes_To_core_ContainerRestartRuleOnExitCodes(in *corev1.ContainerRestartRuleOnExitCodes, out *core.ContainerRestartRuleOnExitCodes, s conversion.Scope) error {
+	return autoConvert_v1_ContainerRestartRuleOnExitCodes_To_core_ContainerRestartRuleOnExitCodes(in, out, s)
+}
+
+func autoConvert_core_ContainerRestartRuleOnExitCodes_To_v1_ContainerRestartRuleOnExitCodes(in *core.ContainerRestartRuleOnExitCodes, out *corev1.ContainerRestartRuleOnExitCodes, s conversion.Scope) error {
+	out.Operator = corev1.ContainerRestartRuleOnExitCodesOperator(in.Operator)
+	out.Values = *(*[]int32)(unsafe.Pointer(&in.Values))
+	return nil
+}
+
+// Convert_core_ContainerRestartRuleOnExitCodes_To_v1_ContainerRestartRuleOnExitCodes is an autogenerated conversion function.
+func Convert_core_ContainerRestartRuleOnExitCodes_To_v1_ContainerRestartRuleOnExitCodes(in *core.ContainerRestartRuleOnExitCodes, out *corev1.ContainerRestartRuleOnExitCodes, s conversion.Scope) error {
+	return autoConvert_core_ContainerRestartRuleOnExitCodes_To_v1_ContainerRestartRuleOnExitCodes(in, out, s)
 }
 
 func autoConvert_v1_ContainerState_To_core_ContainerState(in *corev1.ContainerState, out *core.ContainerState, s conversion.Scope) error {
@@ -3755,6 +3841,7 @@ func autoConvert_v1_EnvVarSource_To_core_EnvVarSource(in *corev1.EnvVarSource, o
 	out.ResourceFieldRef = (*core.ResourceFieldSelector)(unsafe.Pointer(in.ResourceFieldRef))
 	out.ConfigMapKeyRef = (*core.ConfigMapKeySelector)(unsafe.Pointer(in.ConfigMapKeyRef))
 	out.SecretKeyRef = (*core.SecretKeySelector)(unsafe.Pointer(in.SecretKeyRef))
+	out.FileKeyRef = (*core.FileKeySelector)(unsafe.Pointer(in.FileKeyRef))
 	return nil
 }
 
@@ -3768,6 +3855,7 @@ func autoConvert_core_EnvVarSource_To_v1_EnvVarSource(in *core.EnvVarSource, out
 	out.ResourceFieldRef = (*corev1.ResourceFieldSelector)(unsafe.Pointer(in.ResourceFieldRef))
 	out.ConfigMapKeyRef = (*corev1.ConfigMapKeySelector)(unsafe.Pointer(in.ConfigMapKeyRef))
 	out.SecretKeyRef = (*corev1.SecretKeySelector)(unsafe.Pointer(in.SecretKeyRef))
+	out.FileKeyRef = (*corev1.FileKeySelector)(unsafe.Pointer(in.FileKeyRef))
 	return nil
 }
 
@@ -3816,6 +3904,7 @@ func autoConvert_v1_EphemeralContainerCommon_To_core_EphemeralContainerCommon(in
 	}
 	out.ResizePolicy = *(*[]core.ContainerResizePolicy)(unsafe.Pointer(&in.ResizePolicy))
 	out.RestartPolicy = (*core.ContainerRestartPolicy)(unsafe.Pointer(in.RestartPolicy))
+	out.RestartPolicyRules = *(*[]core.ContainerRestartRule)(unsafe.Pointer(&in.RestartPolicyRules))
 	out.VolumeMounts = *(*[]core.VolumeMount)(unsafe.Pointer(&in.VolumeMounts))
 	out.VolumeDevices = *(*[]core.VolumeDevice)(unsafe.Pointer(&in.VolumeDevices))
 	out.LivenessProbe = (*core.Probe)(unsafe.Pointer(in.LivenessProbe))
@@ -3851,6 +3940,7 @@ func autoConvert_core_EphemeralContainerCommon_To_v1_EphemeralContainerCommon(in
 	}
 	out.ResizePolicy = *(*[]corev1.ContainerResizePolicy)(unsafe.Pointer(&in.ResizePolicy))
 	out.RestartPolicy = (*corev1.ContainerRestartPolicy)(unsafe.Pointer(in.RestartPolicy))
+	out.RestartPolicyRules = *(*[]corev1.ContainerRestartRule)(unsafe.Pointer(&in.RestartPolicyRules))
 	out.VolumeMounts = *(*[]corev1.VolumeMount)(unsafe.Pointer(&in.VolumeMounts))
 	out.VolumeDevices = *(*[]corev1.VolumeDevice)(unsafe.Pointer(&in.VolumeDevices))
 	out.LivenessProbe = (*corev1.Probe)(unsafe.Pointer(in.LivenessProbe))
@@ -4060,6 +4150,32 @@ func autoConvert_core_FCVolumeSource_To_v1_FCVolumeSource(in *core.FCVolumeSourc
 // Convert_core_FCVolumeSource_To_v1_FCVolumeSource is an autogenerated conversion function.
 func Convert_core_FCVolumeSource_To_v1_FCVolumeSource(in *core.FCVolumeSource, out *corev1.FCVolumeSource, s conversion.Scope) error {
 	return autoConvert_core_FCVolumeSource_To_v1_FCVolumeSource(in, out, s)
+}
+
+func autoConvert_v1_FileKeySelector_To_core_FileKeySelector(in *corev1.FileKeySelector, out *core.FileKeySelector, s conversion.Scope) error {
+	out.VolumeName = in.VolumeName
+	out.Path = in.Path
+	out.Key = in.Key
+	out.Optional = (*bool)(unsafe.Pointer(in.Optional))
+	return nil
+}
+
+// Convert_v1_FileKeySelector_To_core_FileKeySelector is an autogenerated conversion function.
+func Convert_v1_FileKeySelector_To_core_FileKeySelector(in *corev1.FileKeySelector, out *core.FileKeySelector, s conversion.Scope) error {
+	return autoConvert_v1_FileKeySelector_To_core_FileKeySelector(in, out, s)
+}
+
+func autoConvert_core_FileKeySelector_To_v1_FileKeySelector(in *core.FileKeySelector, out *corev1.FileKeySelector, s conversion.Scope) error {
+	out.VolumeName = in.VolumeName
+	out.Path = in.Path
+	out.Key = in.Key
+	out.Optional = (*bool)(unsafe.Pointer(in.Optional))
+	return nil
+}
+
+// Convert_core_FileKeySelector_To_v1_FileKeySelector is an autogenerated conversion function.
+func Convert_core_FileKeySelector_To_v1_FileKeySelector(in *core.FileKeySelector, out *corev1.FileKeySelector, s conversion.Scope) error {
+	return autoConvert_core_FileKeySelector_To_v1_FileKeySelector(in, out, s)
 }
 
 func autoConvert_v1_FlexPersistentVolumeSource_To_core_FlexPersistentVolumeSource(in *corev1.FlexPersistentVolumeSource, out *core.FlexPersistentVolumeSource, s conversion.Scope) error {
@@ -6139,6 +6255,36 @@ func Convert_url_Values_To_v1_PodAttachOptions(in *url.Values, out *corev1.PodAt
 	return autoConvert_url_Values_To_v1_PodAttachOptions(in, out, s)
 }
 
+func autoConvert_v1_PodCertificateProjection_To_core_PodCertificateProjection(in *corev1.PodCertificateProjection, out *core.PodCertificateProjection, s conversion.Scope) error {
+	out.SignerName = in.SignerName
+	out.KeyType = in.KeyType
+	out.MaxExpirationSeconds = (*int32)(unsafe.Pointer(in.MaxExpirationSeconds))
+	out.CredentialBundlePath = in.CredentialBundlePath
+	out.KeyPath = in.KeyPath
+	out.CertificateChainPath = in.CertificateChainPath
+	return nil
+}
+
+// Convert_v1_PodCertificateProjection_To_core_PodCertificateProjection is an autogenerated conversion function.
+func Convert_v1_PodCertificateProjection_To_core_PodCertificateProjection(in *corev1.PodCertificateProjection, out *core.PodCertificateProjection, s conversion.Scope) error {
+	return autoConvert_v1_PodCertificateProjection_To_core_PodCertificateProjection(in, out, s)
+}
+
+func autoConvert_core_PodCertificateProjection_To_v1_PodCertificateProjection(in *core.PodCertificateProjection, out *corev1.PodCertificateProjection, s conversion.Scope) error {
+	out.SignerName = in.SignerName
+	out.KeyType = in.KeyType
+	out.MaxExpirationSeconds = (*int32)(unsafe.Pointer(in.MaxExpirationSeconds))
+	out.CredentialBundlePath = in.CredentialBundlePath
+	out.KeyPath = in.KeyPath
+	out.CertificateChainPath = in.CertificateChainPath
+	return nil
+}
+
+// Convert_core_PodCertificateProjection_To_v1_PodCertificateProjection is an autogenerated conversion function.
+func Convert_core_PodCertificateProjection_To_v1_PodCertificateProjection(in *core.PodCertificateProjection, out *corev1.PodCertificateProjection, s conversion.Scope) error {
+	return autoConvert_core_PodCertificateProjection_To_v1_PodCertificateProjection(in, out, s)
+}
+
 func autoConvert_v1_PodCondition_To_core_PodCondition(in *corev1.PodCondition, out *core.PodCondition, s conversion.Scope) error {
 	out.Type = core.PodConditionType(in.Type)
 	out.ObservedGeneration = in.ObservedGeneration
@@ -6789,6 +6935,7 @@ func autoConvert_v1_PodSpec_To_core_PodSpec(in *corev1.PodSpec, out *core.PodSpe
 	out.SchedulingGates = *(*[]core.PodSchedulingGate)(unsafe.Pointer(&in.SchedulingGates))
 	out.ResourceClaims = *(*[]core.PodResourceClaim)(unsafe.Pointer(&in.ResourceClaims))
 	out.Resources = (*core.ResourceRequirements)(unsafe.Pointer(in.Resources))
+	out.HostnameOverride = (*string)(unsafe.Pointer(in.HostnameOverride))
 	return nil
 }
 
@@ -6845,6 +6992,7 @@ func autoConvert_core_PodSpec_To_v1_PodSpec(in *core.PodSpec, out *corev1.PodSpe
 	out.SchedulingGates = *(*[]corev1.PodSchedulingGate)(unsafe.Pointer(&in.SchedulingGates))
 	out.ResourceClaims = *(*[]corev1.PodResourceClaim)(unsafe.Pointer(&in.ResourceClaims))
 	out.Resources = (*corev1.ResourceRequirements)(unsafe.Pointer(in.Resources))
+	out.HostnameOverride = (*string)(unsafe.Pointer(in.HostnameOverride))
 	return nil
 }
 
@@ -8917,6 +9065,7 @@ func autoConvert_v1_VolumeProjection_To_core_VolumeProjection(in *corev1.VolumeP
 		out.ServiceAccountToken = nil
 	}
 	out.ClusterTrustBundle = (*core.ClusterTrustBundleProjection)(unsafe.Pointer(in.ClusterTrustBundle))
+	out.PodCertificate = (*core.PodCertificateProjection)(unsafe.Pointer(in.PodCertificate))
 	return nil
 }
 
@@ -8939,6 +9088,7 @@ func autoConvert_core_VolumeProjection_To_v1_VolumeProjection(in *core.VolumePro
 		out.ServiceAccountToken = nil
 	}
 	out.ClusterTrustBundle = (*corev1.ClusterTrustBundleProjection)(unsafe.Pointer(in.ClusterTrustBundle))
+	out.PodCertificate = (*corev1.PodCertificateProjection)(unsafe.Pointer(in.PodCertificate))
 	return nil
 }
 

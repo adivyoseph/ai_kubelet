@@ -30,14 +30,14 @@ import (
 	"k8s.io/apiserver/pkg/storage"
 	"k8s.io/apiserver/pkg/storage/names"
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
-	"k8s.io/client-go/kubernetes/typed/core/v1"
+	v1 "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/dynamic-resource-allocation/structured"
 	"k8s.io/kubernetes/pkg/api/legacyscheme"
 	"k8s.io/kubernetes/pkg/apis/resource"
 	"k8s.io/kubernetes/pkg/apis/resource/validation"
 	"k8s.io/kubernetes/pkg/features"
 	resourceutils "k8s.io/kubernetes/pkg/registry/resource"
-	"sigs.k8s.io/structured-merge-diff/v4/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v6/fieldpath"
 )
 
 // resourceclaimStrategy implements behavior for ResourceClaim objects
@@ -72,6 +72,9 @@ func (*resourceclaimStrategy) GetResetFields() map[fieldpath.APIVersion]*fieldpa
 			fieldpath.MakePathOrDie("status"),
 		),
 		"resource.k8s.io/v1beta2": fieldpath.NewSet(
+			fieldpath.MakePathOrDie("status"),
+		),
+		"resource.k8s.io/v1": fieldpath.NewSet(
 			fieldpath.MakePathOrDie("status"),
 		),
 	}
@@ -149,6 +152,9 @@ func (*resourceclaimStatusStrategy) GetResetFields() map[fieldpath.APIVersion]*f
 			fieldpath.MakePathOrDie("spec"),
 		),
 		"resource.k8s.io/v1beta2": fieldpath.NewSet(
+			fieldpath.MakePathOrDie("spec"),
+		),
+		"resource.k8s.io/v1": fieldpath.NewSet(
 			fieldpath.MakePathOrDie("spec"),
 		),
 	}

@@ -36,7 +36,6 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	clientscheme "k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/util/retry"
-	"k8s.io/kubernetes/pkg/features"
 	"k8s.io/kubernetes/test/e2e/feature"
 	"k8s.io/kubernetes/test/e2e/framework"
 	e2epod "k8s.io/kubernetes/test/e2e/framework/pod"
@@ -481,7 +480,12 @@ var _ = SIGDescribe("OrderedNamespaceDeletion", func() {
 	f := framework.NewDefaultFramework("namespacedeletion")
 	f.NamespacePodSecurityLevel = admissionapi.LevelBaseline
 
-	f.It("namespace deletion should delete pod first", framework.WithFeatureGate(features.OrderedNamespaceDeletion), func(ctx context.Context) {
+	/*
+		Release : v1.34
+		Testname: Ordered Namespace Deletion
+		Description: Pods must be deleted before other objects when deleting a namespace. See https://kep.k8s.io/5080
+	*/
+	f.It("namespace deletion should delete pod first", framework.WithConformance(), func(ctx context.Context) {
 		ensurePodsAreRemovedFirstInOrderedNamespaceDeletion(ctx, f)
 	})
 })
@@ -613,9 +617,11 @@ func ensurePodsAreRemovedFirstInOrderedNamespaceDeletion(ctx context.Context, f 
 	})
 	framework.ExpectNoError(err, "failed to update pod %q and remove finalizer in namespace %q", podName, nsName)
 
+	ginkgo.By("Waiting for the pod to not be present in the namespace")
+	framework.ExpectNoError(e2epod.WaitForPodNotFoundInNamespace(ctx, f.ClientSet, podName, nsName, f.Timeouts.PodDelete))
+
 	ginkgo.By("Waiting for the namespace to be removed.")
-	maxWaitSeconds := int64(60) + *pod.Spec.TerminationGracePeriodSeconds
-	framework.ExpectNoError(wait.PollUntilContextTimeout(ctx, 1*time.Second, time.Duration(maxWaitSeconds)*time.Second, true,
+	framework.ExpectNoError(wait.PollUntilContextTimeout(ctx, 1*time.Second, framework.DefaultNamespaceDeletionTimeout, true,
 		func(ctx context.Context) (bool, error) {
 			_, err = f.ClientSet.CoreV1().Namespaces().Get(ctx, namespace.Name, metav1.GetOptions{})
 			if err != nil && apierrors.IsNotFound(err) {

@@ -1094,7 +1094,10 @@ func setupTestCase(t testing.TB, tc *testCase, featureGates map[featuregate.Feat
 	framework.StartEtcd(logger, t, true)
 
 	// We need to set emulation version for QueueingHints feature gate, which is locked at 1.34.
-	featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.33"))
+	// Only emulate v1.33 when QueueingHints is explicitly disabled.
+	if qhEnabled, exists := featureGates[features.SchedulerQueueingHints]; exists && !qhEnabled {
+		featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.33"))
+	}
 	for feature, flag := range featureGates {
 		featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, feature, flag)
 	}
@@ -1943,6 +1946,7 @@ func getTestDataCollectors(podInformer coreinformers.PodInformer, name string, n
 	return []testDataCollector{
 		newThroughputCollector(podInformer, map[string]string{"Name": name}, labelSelector, namespaces, throughputErrorMargin),
 		newMetricsCollector(mcc, map[string]string{"Name": name}),
+		newMemoryCollector(map[string]string{"Name": name}, 500*time.Millisecond),
 	}
 }
 

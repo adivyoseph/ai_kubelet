@@ -41,4 +41,11 @@ import (
 
 	// used by go-to-protobuf
 	_ "golang.org/x/tools/cmd/goimports"
+
+	// protobuf generation
+	_ "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+	_ "google.golang.org/protobuf/cmd/protoc-gen-go"
+
+	// yamlfmt
+	_ "sigs.k8s.io/yaml/yamlfmt"
 )
