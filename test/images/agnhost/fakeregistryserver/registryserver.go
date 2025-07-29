@@ -35,7 +35,7 @@ var (
 
 func init() {
 	CmdFakeRegistryServer.Flags().IntVar(&port, "port", 5000, "Port number.")
-	CmdFakeRegistryServer.Flags().StringVar(&host, "host", "127.0.0.1", "Host address.")
+	CmdFakeRegistryServer.Flags().StringVar(&host, "host", "0.0.0.0", "Host address.")
 	CmdFakeRegistryServer.Flags().StringVar(&registryDir, "registry-dir", "/registry", "Directory containing the registry data.")
 	CmdFakeRegistryServer.Flags().BoolVar(&private, "private", false, "Enable basic authentication with static credentials (test:test)")
 }

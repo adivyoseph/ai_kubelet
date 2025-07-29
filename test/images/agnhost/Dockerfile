@@ -14,7 +14,8 @@
 
 # builder image
 # populate the fake registry with images
-FROM golang:1.24 AS preparer
+ARG GOLANG_VERSION
+FROM golang:$GOLANG_VERSION AS preparer
 
 RUN go install github.com/google/go-containerregistry/cmd/crane@latest && \
     apt-get update && apt-get install -y jq
@@ -22,8 +23,9 @@ RUN go install github.com/google/go-containerregistry/cmd/crane@latest && \
 COPY fakeregistryserver/prepare_image.sh /prepare_image.sh
 RUN chmod +x /prepare_image.sh
 
-# for now it's only pause:3.10.1, but we can download more images if needed
-RUN /prepare_image.sh pause 3.10.1 /registry
+# for now it's only pause:3.10.1 which available internally 
+# as "testing" tag, but we can download more images if needed
+RUN /prepare_image.sh pause 3.10.1 testing /registry
 
 # main image
 ARG BASEIMAGE
