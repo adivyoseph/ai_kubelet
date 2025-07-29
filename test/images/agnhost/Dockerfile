@@ -25,7 +25,8 @@ RUN chmod +x /prepare_image.sh
 
 # for now it's only pause:3.10.1 which available internally 
 # as "testing" tag, but we can download more images if needed
-RUN /prepare_image.sh pause 3.10.1 testing /registry
+ARG PAUSE_VERSION=3.10.1
+RUN /prepare_image.sh pause $PAUSE_VERSION testing /registry
 
 # main image
 ARG BASEIMAGE
