@@ -12,6 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# builder image
+# populate the fake registry with images
+FROM golang:1.24 AS preparer
+
+RUN go install github.com/google/go-containerregistry/cmd/crane@latest && \
+    apt-get update && apt-get install -y jq
+
+COPY fakeregistryserver/prepare_image.sh /prepare_image.sh
+RUN chmod +x /prepare_image.sh
+
+# for now it's only pause:3.10.1, but we can download more images if needed
+RUN /prepare_image.sh pause 3.10.1 /registry
+
+# main image
 ARG BASEIMAGE
 FROM $BASEIMAGE
 
@@ -38,7 +52,7 @@ RUN tar -xzvf /coredns.tgz && rm -f /coredns.tgz
 # PORT 8080 needed by: netexec, nettest, resource-consumer, resource-consumer-controller
 # PORT 8081 needed by: netexec
 # PORT 9376 needed by: serve-hostname
-# PORT 5000 needed by: grpc-health-checking
+# PORT 5000 needed by: grpc-health-checking, fake-registry-server
 EXPOSE 80 8080 8081 9376 5000
 
 # from netexec
@@ -49,6 +63,9 @@ ADD porter/localhost.crt localhost.crt
 ADD porter/localhost.key localhost.key
 
 ADD agnhost agnhost
+
+# Copy the registry data from the preparer stage
+COPY --from=preparer /registry /registry
 
 # needed for the entrypoint-tester related tests. Some of the entrypoint-tester related tests
 # overrides this image's entrypoint with agnhost-2 binary, and will verify that the correct
