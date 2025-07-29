@@ -681,7 +681,7 @@ type Handle interface {
 	// Parallelizer returns a parallelizer holding parallelism for scheduler.
 	Parallelizer() Parallelizer
 
-	// APIDispatcher returns a fwk.APIDispatcher that can be used to dispatch API calls directly.
+	// APIDispatcher returns a APIDispatcher that can be used to dispatch API calls directly.
 	// This is non-nil if the SchedulerAsyncAPICalls feature gate is enabled.
 	APIDispatcher() APIDispatcher
 
@@ -775,10 +775,10 @@ type APICacher interface {
 	WaitOnFinish(ctx context.Context, onFinish <-chan error) error
 }
 
-// APICallImplementations define constructors for each fwk.APICall that is used by the scheduler internally.
+// APICallImplementations define constructors for each APICall that is used by the scheduler internally.
 type APICallImplementations[T, K APICall] struct {
-	// PodStatusPatch is a constructor used to create fwk.APICall object for pod status patch.
+	// PodStatusPatch is a constructor used to create APICall object for pod status patch.
 	PodStatusPatch func(pod *v1.Pod, condition *v1.PodCondition, nominatingInfo *NominatingInfo) T
-	// PodBinding is a constructor used to create fwk.APICall object for pod binding.
+	// PodBinding is a constructor used to create APICall object for pod binding.
 	PodBinding func(binding *v1.Binding) K
 }
