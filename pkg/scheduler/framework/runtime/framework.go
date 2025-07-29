@@ -1356,7 +1356,7 @@ func (f *frameworkImpl) RunPreBindPreFlights(ctx context.Context, state fwk.Cycl
 	return returningStatus
 }
 
-func (f *frameworkImpl) runPreBindPreFlight(ctx context.Context, pl framework.PreBindPlugin, state fwk.CycleState, pod *v1.Pod, nodeName string) *fwk.Status {
+func (f *frameworkImpl) runPreBindPreFlight(ctx context.Context, pl fwk.PreBindPlugin, state fwk.CycleState, pod *v1.Pod, nodeName string) *fwk.Status {
 	if !state.ShouldRecordPluginMetrics() {
 		return pl.PreBindPreFlight(ctx, state, pod, nodeName)
 	}

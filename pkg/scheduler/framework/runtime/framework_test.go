@@ -2686,7 +2686,7 @@ func TestPreBindPreFlightPlugins(t *testing.T) {
 
 			for _, pl := range tt.plugins {
 				tmpPl := pl
-				if err := registry.Register(pl.name, func(_ context.Context, _ runtime.Object, _ framework.Handle) (framework.Plugin, error) {
+				if err := registry.Register(pl.name, func(_ context.Context, _ runtime.Object, _ fwk.Handle) (fwk.Plugin, error) {
 					return tmpPl, nil
 				}); err != nil {
 					t.Fatalf("Unable to register pre bind plugins: %s", pl.name)

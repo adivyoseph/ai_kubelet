@@ -1103,7 +1103,7 @@ func TestSchedulerScheduleOne(t *testing.T) {
 						sched.SchedulePod = func(ctx context.Context, fwk framework.Framework, state fwk.CycleState, pod *v1.Pod) (ScheduleResult, error) {
 							return item.mockScheduleResult, item.injectSchedulingError
 						}
-						sched.FailureHandler = func(ctx context.Context, fwk framework.Framework, p *framework.QueuedPodInfo, status *fwk.Status, ni *framework.NominatingInfo, start time.Time) {
+						sched.FailureHandler = func(ctx context.Context, fwk framework.Framework, p *framework.QueuedPodInfo, status *fwk.Status, ni *fwk.NominatingInfo, start time.Time) {
 							gotPod = p.Pod
 							gotError = status.AsError()
 							gotNominatingInfo = ni

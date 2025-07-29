@@ -229,7 +229,7 @@ func NewFakePreBindPlugin(preBindPreFlightStatus, preBindStatus *fwk.Status) fra
 
 // FakePermitPlugin is a test permit plugin.
 type FakePermitPlugin struct {
-	Handle  framework.Handle
+	Handle  fwk.Handle
 	Status  *fwk.Status
 	Timeout time.Duration
 }
