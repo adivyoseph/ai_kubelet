@@ -1169,11 +1169,21 @@ rules:
     dependencies:
     - repository: apimachinery
       branch: master
-    - repository: component-base
-      branch: master
     - repository: api
       branch: master
     - repository: client-go
+      branch: master
+    - repository: component-base
+      branch: master
+    - repository: apiserver
+      branch: master
+    - repository: component-helpers
+      branch: master
+    - repository: dynamic-resource-allocation
+      branch: master
+    - repository: kms
+      branch: master
+    - repository: kubelet
       branch: master
     source:
       branch: master
