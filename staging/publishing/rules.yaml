@@ -1230,6 +1230,16 @@ rules:
       branch: release-1.33
     - repository: client-go
       branch: release-1.33
+    - repository: apiserver
+      branch: release-1.33
+    - repository: component-helpers
+      branch: release-1.33
+    - repository: dynamic-resource-allocation
+      branch: release-1.33
+    - repository: kms
+      branch: release-1.33
+    - repository: kubelet
+      branch: release-1.33
     source:
       branch: release-1.33
       dirs:
