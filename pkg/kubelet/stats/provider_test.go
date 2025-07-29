@@ -30,13 +30,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"sigs.k8s.io/randfill"
 
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
 	statsapi "k8s.io/kubelet/pkg/apis/stats/v1alpha1"
 	"k8s.io/kubernetes/pkg/features"
 	cadvisortest "k8s.io/kubernetes/pkg/kubelet/cadvisor/testing"
-	kubecontainertest "k8s.io/kubernetes/pkg/kubelet/container/testing"
+	kubecontainer "k8s.io/kubernetes/pkg/kubelet/container"
 	kubepodtest "k8s.io/kubernetes/pkg/kubelet/pod/testing"
 	serverstats "k8s.io/kubernetes/pkg/kubelet/server/stats"
 	"k8s.io/kubernetes/pkg/volume"
@@ -82,9 +83,8 @@ func TestGetCgroupStats(t *testing.T) {
 	)
 
 	var (
-		mockCadvisor     = cadvisortest.NewMockInterface(t)
-		mockPodManager   = new(kubepodtest.MockManager)
-		mockRuntimeCache = new(kubecontainertest.MockRuntimeCache)
+		mockCadvisor   = cadvisortest.NewMockInterface(t)
+		mockPodManager = new(kubepodtest.MockManager)
 
 		assert  = assert.New(t)
 		options = cadvisorapiv2.RequestOptions{IdType: cadvisorapiv2.TypeName, Count: 2, Recursive: false}
@@ -95,7 +95,7 @@ func TestGetCgroupStats(t *testing.T) {
 
 	mockCadvisor.EXPECT().ContainerInfoV2(cgroupName, options).Return(containerInfoMap, nil)
 
-	provider := newStatsProvider(mockCadvisor, mockPodManager, mockRuntimeCache, fakeContainerStatsProvider{})
+	provider := newStatsProvider(mockCadvisor, mockPodManager, fakeContainerStatsProvider{})
 	cs, ns, err := provider.GetCgroupStats(cgroupName, updateStats)
 	assert.NoError(err)
 
@@ -116,9 +116,8 @@ func TestGetCgroupCPUAndMemoryStats(t *testing.T) {
 	)
 
 	var (
-		mockCadvisor     = cadvisortest.NewMockInterface(t)
-		mockPodManager   = new(kubepodtest.MockManager)
-		mockRuntimeCache = new(kubecontainertest.MockRuntimeCache)
+		mockCadvisor   = cadvisortest.NewMockInterface(t)
+		mockPodManager = new(kubepodtest.MockManager)
 
 		assert  = assert.New(t)
 		options = cadvisorapiv2.RequestOptions{IdType: cadvisorapiv2.TypeName, Count: 2, Recursive: false}
@@ -129,7 +128,7 @@ func TestGetCgroupCPUAndMemoryStats(t *testing.T) {
 
 	mockCadvisor.EXPECT().ContainerInfoV2(cgroupName, options).Return(containerInfoMap, nil)
 
-	provider := newStatsProvider(mockCadvisor, mockPodManager, mockRuntimeCache, fakeContainerStatsProvider{})
+	provider := newStatsProvider(mockCadvisor, mockPodManager, fakeContainerStatsProvider{})
 	cs, err := provider.GetCgroupCPUAndMemoryStats(cgroupName, updateStats)
 	assert.NoError(err)
 
@@ -147,9 +146,8 @@ func TestRootFsStats(t *testing.T) {
 	)
 
 	var (
-		mockCadvisor     = cadvisortest.NewMockInterface(t)
-		mockPodManager   = new(kubepodtest.MockManager)
-		mockRuntimeCache = new(kubecontainertest.MockRuntimeCache)
+		mockCadvisor   = cadvisortest.NewMockInterface(t)
+		mockPodManager = new(kubepodtest.MockManager)
 
 		assert  = assert.New(t)
 		options = cadvisorapiv2.RequestOptions{IdType: cadvisorapiv2.TypeName, Count: 2, Recursive: false}
@@ -162,7 +160,7 @@ func TestRootFsStats(t *testing.T) {
 	mockCadvisor.EXPECT().RootFsInfo().Return(rootFsInfo, nil)
 	mockCadvisor.EXPECT().ContainerInfoV2("/", options).Return(containerInfoMap, nil)
 
-	provider := newStatsProvider(mockCadvisor, mockPodManager, mockRuntimeCache, fakeContainerStatsProvider{})
+	provider := newStatsProvider(mockCadvisor, mockPodManager, fakeContainerStatsProvider{})
 	stats, err := provider.RootFsStats()
 	assert.NoError(err)
 
@@ -207,12 +205,11 @@ func TestHasDedicatedImageFs(t *testing.T) {
 	} {
 		t.Logf("TestCase %q", desc)
 		var (
-			mockCadvisor     = cadvisortest.NewMockInterface(t)
-			mockPodManager   = new(kubepodtest.MockManager)
-			mockRuntimeCache = new(kubecontainertest.MockRuntimeCache)
+			mockCadvisor   = cadvisortest.NewMockInterface(t)
+			mockPodManager = new(kubepodtest.MockManager)
 		)
 		mockCadvisor.EXPECT().RootFsInfo().Return(cadvisorapiv2.FsInfo{Device: test.rootfsDevice}, nil)
-		provider := newStatsProvider(mockCadvisor, mockPodManager, mockRuntimeCache, fakeContainerStatsProvider{
+		provider := newStatsProvider(mockCadvisor, mockPodManager, fakeContainerStatsProvider{
 			device:      test.imagefsDevice,
 			imageFs:     test.imageFsStats,
 			containerFs: test.containerFsStats,
@@ -632,6 +629,7 @@ type fakeContainerStatsProvider struct {
 	device      string
 	imageFs     *statsapi.FsStats
 	containerFs *statsapi.FsStats
+	podStats    *statsapi.PodStats
 }
 
 func (p fakeContainerStatsProvider) ListPodStats(context.Context) ([]statsapi.PodStats, error) {
@@ -640,6 +638,13 @@ func (p fakeContainerStatsProvider) ListPodStats(context.Context) ([]statsapi.Po
 
 func (p fakeContainerStatsProvider) ListPodStatsAndUpdateCPUNanoCoreUsage(context.Context) ([]statsapi.PodStats, error) {
 	return nil, fmt.Errorf("not implemented")
+}
+
+func (p fakeContainerStatsProvider) PodCPUAndMemoryStats(context.Context, *v1.Pod, *kubecontainer.PodStatus) (*statsapi.PodStats, error) {
+	if p.podStats != nil {
+		return p.podStats, nil
+	}
+	return nil, fmt.Errorf("no podStats set")
 }
 
 func (p fakeContainerStatsProvider) ListPodCPUAndMemoryStats(context.Context) ([]statsapi.PodStats, error) {

@@ -350,7 +350,7 @@ func (pl *VolumeBinding) podHasPVCs(pod *v1.Pod) (bool, error) {
 // PreFilter invoked at the prefilter extension point to check if pod has all
 // immediate PVCs bound. If not all immediate PVCs are bound, an
 // UnschedulableAndUnresolvable is returned.
-func (pl *VolumeBinding) PreFilter(ctx context.Context, state fwk.CycleState, pod *v1.Pod, nodes []*framework.NodeInfo) (*framework.PreFilterResult, *fwk.Status) {
+func (pl *VolumeBinding) PreFilter(ctx context.Context, state fwk.CycleState, pod *v1.Pod, nodes []fwk.NodeInfo) (*framework.PreFilterResult, *fwk.Status) {
 	logger := klog.FromContext(ctx)
 	// If pod does not reference any PVC, we don't need to do anything.
 	if hasPVC, err := pl.podHasPVCs(pod); err != nil {
@@ -414,7 +414,7 @@ func getStateData(cs fwk.CycleState) (*stateData, error) {
 //
 // The predicate returns true if all bound PVCs have compatible PVs with the node, and if all unbound
 // PVCs can be matched with an available and node-compatible PV.
-func (pl *VolumeBinding) Filter(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodeInfo *framework.NodeInfo) *fwk.Status {
+func (pl *VolumeBinding) Filter(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodeInfo fwk.NodeInfo) *fwk.Status {
 	logger := klog.FromContext(ctx)
 	node := nodeInfo.Node()
 
@@ -446,7 +446,7 @@ func (pl *VolumeBinding) Filter(ctx context.Context, cs fwk.CycleState, pod *v1.
 }
 
 // PreScore invoked at the preScore extension point. It checks whether volumeBinding can skip Score
-func (pl *VolumeBinding) PreScore(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodes []*framework.NodeInfo) *fwk.Status {
+func (pl *VolumeBinding) PreScore(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodes []fwk.NodeInfo) *fwk.Status {
 	if pl.scorer == nil {
 		return fwk.NewStatus(fwk.Skip)
 	}
@@ -461,7 +461,7 @@ func (pl *VolumeBinding) PreScore(ctx context.Context, cs fwk.CycleState, pod *v
 }
 
 // Score invoked at the score extension point.
-func (pl *VolumeBinding) Score(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodeInfo *framework.NodeInfo) (int64, *fwk.Status) {
+func (pl *VolumeBinding) Score(ctx context.Context, cs fwk.CycleState, pod *v1.Pod, nodeInfo fwk.NodeInfo) (int64, *fwk.Status) {
 	if pl.scorer == nil {
 		return 0, nil
 	}
@@ -541,6 +541,26 @@ func (pl *VolumeBinding) Reserve(ctx context.Context, cs fwk.CycleState, pod *v1
 	return nil
 }
 
+var errNoPodVolumeForNode = fmt.Errorf("no pod volume found for node")
+
+// PreBindPreFlight is called before PreBind, and determines whether PreBind is going to do something for this pod, or not.
+// It checks state.podVolumesByNode to determine whether there are any pod volumes for the node and hence the plugin has to handle them at PreBind.
+func (pl *VolumeBinding) PreBindPreFlight(ctx context.Context, state fwk.CycleState, pod *v1.Pod, nodeName string) *fwk.Status {
+	s, err := getStateData(state)
+	if err != nil {
+		return fwk.AsStatus(err)
+	}
+	if s.allBound {
+		// no need to bind volumes
+		return fwk.NewStatus(fwk.Skip)
+	}
+
+	if _, ok := s.podVolumesByNode[nodeName]; !ok {
+		return fwk.AsStatus(fmt.Errorf("%w %q", errNoPodVolumeForNode, nodeName))
+	}
+	return nil
+}
+
 // PreBind will make the API update with the assumed bindings and wait until
 // the PV controller has completely finished the binding operation.
 //
@@ -558,7 +578,7 @@ func (pl *VolumeBinding) PreBind(ctx context.Context, cs fwk.CycleState, pod *v1
 	// we don't need to hold the lock as only one node will be pre-bound for the given pod
 	podVolumes, ok := s.podVolumesByNode[nodeName]
 	if !ok {
-		return fwk.AsStatus(fmt.Errorf("no pod volumes found for node %q", nodeName))
+		return fwk.AsStatus(fmt.Errorf("%w %q", errNoPodVolumeForNode, nodeName))
 	}
 	logger := klog.FromContext(ctx)
 	logger.V(5).Info("Trying to bind volumes for pod", "pod", klog.KObj(pod))
