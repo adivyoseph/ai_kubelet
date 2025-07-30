@@ -1,3 +1,16 @@
+# Kubelet AI on AMD patches
+
+KubeletConfig has three reserved paramaters:
+
+KubeReserved  a resource list "cpu" is an option, cpu quanta
+
+SystemReserved  a resource list "cpu" is an option, cpu quanta defaults to whole topology based first Cores
+
+ReservedSystemCPUs  a cpu list hard coded, overrides the other settings if present
+
+
+
+
 # Kubernetes (K8s)
 
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/569/badge)](https://bestpractices.coreinfrastructure.org/projects/569) [![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/kubernetes)](https://goreportcard.com/report/github.com/kubernetes/kubernetes) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kubernetes/kubernetes)
