@@ -20,6 +20,7 @@ import (
 	"context"
 	"net/http"
 	"testing"
+	"time"
 
 	authorizationv1 "k8s.io/api/authorization/v1"
 	"k8s.io/apiserver/pkg/apis/apiserver"
@@ -110,6 +111,10 @@ func TestAuthorizerMetrics(t *testing.T) {
 			service.reviewHook = func(*authorizationv1.SubjectAccessReview) {
 				if scenario.canceledRequest {
 					cancel()
+					// net/http transport still attempts to use a response if it's
+					// available right when it's handling context cancellation,
+					// we need to delay the response a bit for the test.
+					time.Sleep(100 * time.Millisecond)
 				}
 			}
 			service.allow = !scenario.authFakeServiceDeny
