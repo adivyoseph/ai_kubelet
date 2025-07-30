@@ -1000,7 +1000,7 @@ func TestSchedulerScheduleOne(t *testing.T) {
 						var gotForgetPod *v1.Pod
 						var gotAssumedPod *v1.Pod
 						var gotBinding *v1.Binding
-						var gotNominatingInfo *framework.NominatingInfo
+						var gotNominatingInfo *fwk.NominatingInfo
 
 						client := clientsetfake.NewClientset(item.sendPod)
 						informerFactory := informers.NewSharedInformerFactory(client, 0)
@@ -1159,10 +1159,10 @@ func TestSchedulerScheduleOne(t *testing.T) {
 							t.Errorf("Unexpected error. Wanted %v, got %v", item.expectError.Error(), gotError.Error())
 						}
 						if item.expectError != nil {
-							var expectedNominatingInfo *framework.NominatingInfo
+							var expectedNominatingInfo *fwk.NominatingInfo
 							// Check nominatingInfo expectation based on feature gate
 							if !nominatedNodeNameForExpectationEnabled {
-								expectedNominatingInfo = &framework.NominatingInfo{NominatingMode: framework.ModeOverride, NominatedNodeName: ""}
+								expectedNominatingInfo = &fwk.NominatingInfo{NominatingMode: fwk.ModeOverride, NominatedNodeName: ""}
 							}
 							if diff := cmp.Diff(expectedNominatingInfo, gotNominatingInfo); diff != "" {
 								t.Errorf("Unexpected nominatingInfo (-want,+got):\n%s", diff)
