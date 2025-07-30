@@ -1,3 +1,10 @@
+# Kubelet for AI
+
+This fork is just focused on Kubelet. Kubelet places kubernetes namespace components on revereved cpus but does not isolate them, all burstable POD's are given cpus set that include these reserved cpus. This is not ideal. This patch changes how reserved cpus work. It depricates all existing kubeletConfig entries. Adds two new entries cpu_reserved_infrastructure, reserved cpus for non K8S components, not offered as members of schedulable cpu set. cpu_reserved_kubernetes, all kubernetes system components are place in this cGroup and  not offered as members of schedulable cpu set. Many worker node components have their own name space but should be placed on cpu_reserved_kubernetes cpu set so a list reserved_name_spaces is added so that they can be specified and placed in the reserved cGroup.
+
+
+
+
 # Kubernetes (K8s)
 
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/569/badge)](https://bestpractices.coreinfrastructure.org/projects/569) [![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/kubernetes)](https://goreportcard.com/report/github.com/kubernetes/kubernetes) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kubernetes/kubernetes?sort=semver)
