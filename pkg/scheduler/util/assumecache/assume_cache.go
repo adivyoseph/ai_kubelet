@@ -436,7 +436,13 @@ func (c *AssumeCache) Assume(obj interface{}) error {
 
 	objInfo, err := c.getObjInfo(name)
 	if err != nil {
-		return err
+		if !errors.Is(err, ErrNotFound) {
+			return err
+		} else {
+			c.add(obj)
+			c.logger.V(4).Info("Added object", "description", c.description, "cacheKey", name)
+			return nil
+		}
 	}
 
 	newVersion, err := c.getObjVersion(name, obj)

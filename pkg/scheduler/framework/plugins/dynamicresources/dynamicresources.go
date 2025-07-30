@@ -1447,7 +1447,7 @@ func (pl *DynamicResources) bindClaim(ctx context.Context, state *stateData, ind
 				// This can fail, but only for reasons that are okay (concurrent delete or update).
 				// Shouldn't happen in this case.
 				if err := pl.draManager.ResourceClaims().AssumeClaimAfterAPICall(claim); err != nil {
-					logger.V(5).Info("Claim not stored in assume cache", "err", finalErr)
+					logger.V(5).Info("Claim not stored in assume cache", "err", err)
 				}
 			}
 			for _, claimUID := range claimUIDs {

@@ -1317,7 +1317,7 @@ func TestPlugin(t *testing.T) {
 				},
 				postfilter: result{
 					status:  fwk.NewStatus(fwk.Unschedulable, `deletion of ResourceClaim completed`),
-					removed: []metav1.Object{extendedResourceClaimNode2},
+					removed: []metav1.Object{extendedResourceClaim},
 				},
 			},
 		},
@@ -1326,6 +1326,7 @@ func TestPlugin(t *testing.T) {
 			pod:                       podWithExtendedResourceName,
 			claims:                    []*resourceapi.ResourceClaim{extendedResourceClaimNode2},
 			classes:                   []*resourceapi.DeviceClass{deviceClassWithExtendResourceName},
+			objs:                      []apiruntime.Object{workerNodeSlice, podWithExtendedResourceName},
 			want: want{
 				filter: perNodeResult{
 					workerNode.Name: {
@@ -1844,6 +1845,10 @@ func TestPlugin(t *testing.T) {
 				result, status := testCtx.p.PostFilter(testCtx.ctx, testCtx.state, tc.pod, nil /* filteredNodeStatusMap not used by plugin */)
 				t.Run("postfilter", func(t *testing.T) {
 					assert.Equal(t, tc.want.postFilterResult, result)
+					// in case we delete the claim API object
+					// wait for assumed cache to sync with informer
+					// then assumed cache should be empty
+					time.Sleep(800 * time.Millisecond)
 					testCtx.verify(t, tc.want.postfilter, initialObjects, nil, status)
 				})
 			}
